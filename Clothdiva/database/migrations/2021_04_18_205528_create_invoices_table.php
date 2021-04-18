@@ -14,8 +14,18 @@ class CreateInvoicesTable extends Migration
     public function up()
     {
         Schema::create('invoices', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('id_invoice');
+            $table->float('netto_prize');
+            $table->float('VAT_prize');
+            $table->decimal('VAT_rate', 2, 0);
+            $table->float('brutto_prize');
+
+            /*
+            $table->foreign('id_user_address')
+            ->references('id_user_address')->on('user_addresses')
+            ->onDelete('cascade');
+            */
+
         });
     }
 
