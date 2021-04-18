@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/test', function(){
-    $products=DB::select('select * from products');
+    $products=DB::select('select * from help');
     return $products;
 });
