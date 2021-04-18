@@ -22,9 +22,6 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->text('composition_and_conservation');
             /*
-            $table->foreign('id_user')
-            ->references('id_user')->on('users')
-            ->onDelete('cascade');
             $table->foreign('id_sub_category')
             ->references('id_sub_category')->on('sub_categories')
             ->onDelete('cascade');
