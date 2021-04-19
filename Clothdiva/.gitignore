@@ -1,73 +1,13 @@
-
-        Clothdiva/.env
-        Clothdiva/vendor/asm89/stack-cors/LICENSE
-        Clothdiva/vendor/asm89/stack-cors/README.md
-        Clothdiva/vendor/asm89/stack-cors/composer.json
-        Clothdiva/vendor/asm89/stack-cors/src/Cors.php
-        Clothdiva/vendor/asm89/stack-cors/src/CorsService.php
-        Clothdiva/vendor/autoload.php
-        Clothdiva/vendor/bin/carbon
-        Clothdiva/vendor/bin/carbon.bat
-        Clothdiva/vendor/bin/commonmark
-        Clothdiva/vendor/bin/commonmark.bat
-        Clothdiva/vendor/bin/php-parse
-        Clothdiva/vendor/bin/php-parse.bat
-        Clothdiva/vendor/bin/phpunit
-        Clothdiva/vendor/bin/phpunit.bat
-        Clothdiva/vendor/bin/psysh
-        Clothdiva/vendor/bin/psysh.bat
-        Clothdiva/vendor/bin/var-dump-server
-        Clothdiva/vendor/bin/var-dump-server.bat
-        Clothdiva/vendor/brick/math/CHANGELOG.md
-        Clothdiva/vendor/brick/math/LICENSE
-        Clothdiva/vendor/brick/math/SECURITY.md
-        Clothdiva/vendor/brick/math/composer.json
-        Clothdiva/vendor/brick/math/random-tests.php
-        Clothdiva/vendor/brick/math/src/BigDecimal.php
-        Clothdiva/vendor/brick/math/src/BigInteger.php
-        Clothdiva/vendor/brick/math/src/BigNumber.php
-        Clothdiva/vendor/brick/math/src/BigRational.php
-        Clothdiva/vendor/brick/math/src/Exception/DivisionByZeroException.php
-        Clothdiva/vendor/brick/math/src/Exception/IntegerOverflowException.php
-        Clothdiva/vendor/brick/math/src/Exception/MathException.php
-        Clothdiva/vendor/brick/math/src/Exception/NegativeNumberException.php
-        Clothdiva/vendor/brick/math/src/Exception/NumberFormatException.php
-        Clothdiva/vendor/brick/math/src/Exception/RoundingNecessaryException.php
-        Clothdiva/vendor/brick/math/src/Internal/Calculator.php
-        Clothdiva/vendor/brick/math/src/Internal/Calculator/BcMathCalculator.php
-        Clothdiva/vendor/brick/math/src/Internal/Calculator/GmpCalculator.php
-        Clothdiva/vendor/brick/math/src/Internal/Calculator/NativeCalculator.php
-        Clothdiva/vendor/brick/math/src/RoundingMode.php
-        Clothdiva/vendor/composer/ClassLoader.php
-        Clothdiva/vendor/composer/InstalledVersions.php
-        Clothdiva/vendor/composer/LICENSE
-        Clothdiva/vendor/composer/autoload_classmap.php
-        Clothdiva/vendor/composer/autoload_files.php
-        Clothdiva/vendor/composer/autoload_namespaces.php
-        Clothdiva/vendor/composer/autoload_psr4.php
-        Clothdiva/vendor/composer/autoload_real.php
-        Clothdiva/vendor/composer/autoload_static.php
-        Clothdiva/vendor/composer/installed.json
-        Clothdiva/vendor/composer/installed.php
-        Clothdiva/vendor/composer/platform_check.php
-        Clothdiva/vendor/doctrine/inflector/LICENSE
-        Clothdiva/vendor/doctrine/inflector/README.md
-        Clothdiva/vendor/doctrine/inflector/composer.json
-        Clothdiva/vendor/doctrine/inflector/docs/en/index.rst
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/CachedWordInflector.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/GenericLanguageInflectorFactory.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Inflector.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/InflectorFactory.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Language.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/LanguageInflectorFactory.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/NoopWordInflector.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Inflectible.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/InflectorFactory.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Rules.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/English/Uninflected.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Inflectible.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/InflectorFactory.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Rules.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/French/Uninflected.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/Inflector/Rules/NorwegianBokmal/Inflectible.php
-        Clothdiva/vendor/doctrine/inflector/lib/Doctrine/
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
