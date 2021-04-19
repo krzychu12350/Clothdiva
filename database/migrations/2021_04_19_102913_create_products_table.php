@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             ->references('id_order')->on('orders')
             ->onDelete('cascade');
             */
+            
         });
     }
 
