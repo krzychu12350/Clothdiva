@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_invoice')
             ->references('id_invoice')->on('invoices')
             ->onDelete('cascade');
+            
             $table->foreign('id_user')
             ->references('id_user')->on('users')
             ->onDelete('cascade');
