@@ -15,7 +15,13 @@ class CreateFavoriteProductsTable extends Migration
     {
         Schema::create('favorite_products', function (Blueprint $table) {
             $table->increments('id_favorite_product');
-           
+            $table->increments('id_product');
+            $table->string('name', 100);
+            $table->integer('quantity');
+            $table->double('prize',6,2);
+            $table->string('color', 100);
+            $table->text('description');
+            $table->text('composition_and_conservation');
             /*
             $table->foreign('id_user')
             ->references('id_user')->on('users')
