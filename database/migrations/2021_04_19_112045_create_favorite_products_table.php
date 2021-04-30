@@ -15,20 +15,12 @@ class CreateFavoriteProductsTable extends Migration
     {
         Schema::create('favorite_products', function (Blueprint $table) {
             $table->increments('id_favorite_product');
-<<<<<<< HEAD
-             
-=======
              /*
->>>>>>> 2d3a7b0 (favanduser)
             $table->increments('id_user');
             $table->foreign('id_user')
             ->references('id_user')->on('users')
             ->onDelete('cascade');
-<<<<<<< HEAD
-             /*
-=======
             
->>>>>>> 2d3a7b0 (favanduser)
             $table->increments('id_product');
             $table->foreign('id_product')
             ->references('id_product')->on('products')
