@@ -20,7 +20,7 @@ class CreateFavoriteProductsTable extends Migration
             $table->foreign('id_user')
             ->references('id_user')->on('users')
             ->onDelete('cascade');
-            
+            dziala
             $table->increments('id_product');
             $table->foreign('id_product')
             ->references('id_product')->on('products')
