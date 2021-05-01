@@ -32,7 +32,7 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_user')
             ->references('id_user')->on('users')
             ->onDelete('cascade');
-
+            
             $table->foreignId('id_payment');
             $table->foreign('id_payment')
             ->references('id_payment')->on('payments')
