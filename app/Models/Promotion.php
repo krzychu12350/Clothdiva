@@ -9,5 +9,9 @@ class Promotion extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_promotion';
+
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
    
 }

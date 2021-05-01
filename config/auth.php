@@ -68,7 +68,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'oracle',
-            'model' => App\User::class,
+            'model' => App\Models\User::class,
         ],
 
         // 'users' => [

@@ -9,4 +9,8 @@ class Payment extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_payment';
+
+    public function orders(){
+        return $this->hasMany(Order::class);
+    }
 }
