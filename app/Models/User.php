@@ -14,9 +14,12 @@ class User extends Model
         return $this->belongsTo(Role::class);
     }
 
-
     public function favorite_products()
     {
         return $this->hasMany(Favorite_product::class);
+    }
+    
+    public function orders(){
+        return $this->hasMany(Order::class);
     }
 }

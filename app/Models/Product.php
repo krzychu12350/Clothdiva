@@ -23,4 +23,14 @@ class Product extends Model
         return $this->belongsTo(Promotion::class);
     }
 
+    public function favorite_products()
+    {
+        return $this->hasMany(Favorite_product::class);
+    }
+
+    public function sub_category()
+    {
+        return $this->belongsTo(Sub_category::class);
+    }
+
 }

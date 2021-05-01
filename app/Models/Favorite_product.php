@@ -10,7 +10,11 @@ class Favorite_product extends Model
     use HasFactory;
     protected $primaryKey = 'id_favorite_product';
     
-    public function favorite_product(){
+    public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function product(){
+        return $this->belongsTo(Product::class);
     }
 }

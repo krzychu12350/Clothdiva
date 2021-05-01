@@ -13,4 +13,9 @@ class Invoice extends Model
     public function user_address(){
         return $this->belongsTo(Invoice::class);
     }
+
+    public function order()
+    {
+        return $this->hasOne(Order::class);
+    }
 }
