@@ -25,6 +25,10 @@ class CreateFavoriteProductsTable extends Migration
             $table->foreign('id_product')
             ->references('id_product')->on('products')
             ->onDelete('cascade');
+<<<<<<< HEAD
+=======
+            
+>>>>>>> a839d74 (komit)
         });
     }
 

@@ -24,6 +24,7 @@ class CreateInvoicesTable extends Migration
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
             ->onDelete('cascade');
+            
         });
     }
 

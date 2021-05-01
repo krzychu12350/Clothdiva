@@ -22,7 +22,11 @@ class CreateOrdersTable extends Migration
             $table->date('shipping_date');
             $table->boolean('if_the_order_completed');
             $table->date('date_of_order_fulfillment');
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> a839d74 (komit)
             $table->foreignId('id_invoice');
             $table->foreign('id_invoice')
             ->references('id_invoice')->on('invoices')
@@ -37,6 +41,10 @@ class CreateOrdersTable extends Migration
             $table->foreign('id_payment')
             ->references('id_payment')->on('payments')
             ->onDelete('cascade');
+<<<<<<< HEAD
+=======
+            
+>>>>>>> a839d74 (komit)
         });
     }
 
