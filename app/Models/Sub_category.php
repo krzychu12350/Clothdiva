@@ -9,4 +9,8 @@ class Sub_category extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_sub_category';
+    
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
