@@ -20,11 +20,10 @@ class CreateInvoicesTable extends Migration
             $table->decimal('VAT_rate', 2, 0);
             $table->float('brutto_prize');
 
-            /*
+            $table->foreignId('id_user_address');
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
             ->onDelete('cascade');
-            */
         });
     }
 

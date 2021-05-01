@@ -16,6 +16,11 @@ class CreatePhotoGalleryTable extends Migration
         Schema::create('photo_gallery', function (Blueprint $table) {
             $table->increments('id_photo');
             $table->binary('image');
+
+            $table->foreignId('id_product');
+            $table->foreign('id_product')
+            ->references('id_product')->on('products')
+            ->onDelete('cascade');
         });
     }
 

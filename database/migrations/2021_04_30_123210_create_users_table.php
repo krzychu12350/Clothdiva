@@ -22,14 +22,15 @@ class CreateUsersTable extends Migration
             $table->string('user_login', 100);
             $table->string('user_password', 100);
             
-            $table->increments('id_role');
+            $table->foreignId('id_role');
             $table->foreign('id_role')
-            ->references('id_role')->on('roles')->onDelete('cascade');
-            
-            $table->increments('id_user_address');
-            
+            ->references('id_role')->on('roles')
+            ->onDelete('cascade');
+
+            $table->foreignId('id_user_address');
             $table->foreign('id_user_address')
-            ->references('id_user_address')->on('user_addresses')->onDelete('cascade');
+            ->references('id_user_address')->on('user_addresses')
+            ->onDelete('cascade');
         
         });
     }

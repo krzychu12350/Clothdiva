@@ -9,4 +9,5 @@ class Promotion extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_promotion';
+   
 }
