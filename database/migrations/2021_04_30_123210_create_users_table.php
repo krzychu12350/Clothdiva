@@ -14,6 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
+            /*
             $table->increments('id_user');
             $table->string('user_name', 100);
             $table->string('user_surname', 100);
@@ -31,7 +32,11 @@ class CreateUsersTable extends Migration
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
             ->onDelete('cascade');
-        
+            */
+            $table->id();
+            $table->string('name', 100);
+            $table->string('email', 100);
+            $table->string('password', 100);
         });
     }
 

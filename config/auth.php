@@ -75,6 +75,10 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        //'index' => [
+        //    'driver' => 'eloquent',
+       //    'model' => null
+       // ],
     ],
 
     /*

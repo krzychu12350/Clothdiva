@@ -26,7 +26,7 @@
          <h1>hello world</h1>
 
 
-         <button {{ Popper::pop('Działa') }}>Click Me!</button
+         <button {{ Popper::pop('Działa') }}>Click Me!</button>
          @include('popper::assets')
     </body>
 </html>

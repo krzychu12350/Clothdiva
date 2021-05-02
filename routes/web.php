@@ -21,6 +21,9 @@ Route::get('/test', function(){
     $products=DB::select('select * from help');
     return $products;
 });
-Route::get('/', function () {
+Route::get('/testhome', function () {
     return view('index');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
