@@ -9,6 +9,13 @@ class Invoice extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_invoice';
+
+    protected $fillable = [
+        'netto_prize',
+        'VAT_prize',
+        'VAT_rate',
+        'brutto_prize',
+    ];
     
     public function user_address(){
         return $this->belongsTo(Invoice::class);

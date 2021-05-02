@@ -10,6 +10,10 @@ class Payment extends Model
     use HasFactory;
     protected $primaryKey = 'id_payment';
 
+    protected $fillable = [
+        'payment_method',
+    ];
+
     public function orders(){
         return $this->hasMany(Order::class);
     }

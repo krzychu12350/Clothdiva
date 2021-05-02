@@ -10,6 +10,16 @@ class Product extends Model
     use HasFactory;
     protected $primaryKey = 'id_product';
 
+    protected $fillable = [
+        'name',
+        'quantity',
+        'prize',
+        'color',
+        'size',
+        'description',
+        'composition_and_conservation'
+    ];
+
     public function order()
     {
         return $this->belongsTo(Order::class);

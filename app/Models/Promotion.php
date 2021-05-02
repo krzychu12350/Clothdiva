@@ -10,6 +10,14 @@ class Promotion extends Model
     use HasFactory;
     protected $primaryKey = 'id_promotion';
 
+    protected $fillable = [
+        'name_of_promotion',
+        'size_of_promotion',
+        'promotion_start_date',
+        'promotion_end_date',
+        'description',
+    ];
+
     public function products(){
         return $this->hasMany(Product::class);
     }

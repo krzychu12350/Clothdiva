@@ -9,8 +9,17 @@ class User_address extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_user_address';
+
+    protected $fillable = [
+        'name_of_city',
+        'post_code',
+        'name_of_street',
+        'voideship',
+        'county',
+        'apartment_number',
+        'house_number',
+    ];
    
-    
     /**
      * Get the comments for the blog post.
      */
