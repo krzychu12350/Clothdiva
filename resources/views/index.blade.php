@@ -27,15 +27,15 @@
         <link rel="stylesheet" href="css/jquery-ui.css">
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    
         <link rel="stylesheet" href="css/aos.css">
         <link rel="stylesheet" href="css/style.css">
 
     </head>
     <body>
-            
+    <button {{ Popper::pop('Działa !!!') }}>Click Me!</button>
         <div class="site-wrap">
             
-
             <div class="site-navbar bg-white py-2">
 
             <div class="search-wrap">
@@ -413,8 +413,9 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/aos.js"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/aos.js') }}"></script>
 
-        <script src="js/main.js"></script>
+        <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
+        @include('popper::assets')
     </body>
 </html>
