@@ -2,24 +2,20 @@
 
 namespace App\Models;
 
-//use Illuminate\Database\Eloquent\Factories\HasFactory;
-//use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
-{   
-    use Notifiable;
-    //use HasFactory;
-    /*protected $primaryKey = 'id_user';*/
-    //public $incrementing = true;
+class User extends Model
+{
+    use HasFactory;
+    protected $primaryKey = 'id_user';
+    public $incrementing = true;
     //protected $keyType = 'integer';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    
     protected $fillable = [
         'name',
         'surname',
@@ -35,11 +31,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-    public $timestamps = false;
-    protected $primaryKey = 'id_user';
-    
-    public function role(){
+
+    public function roles(){
         return $this->belongsTo(Role::class);
     }
   /*
@@ -51,5 +44,4 @@ class User extends Authenticatable
     public function orders(){
         return $this->hasMany(Order::class);
     }
-    */
 }
