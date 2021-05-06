@@ -24,7 +24,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <!-- Surname field added
+                        <!-- Surname field added-->
                         <div class="form-group row">
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
 
@@ -38,7 +38,37 @@
                                 @enderror
                             </div>
                         </div>
-                        -->
+                        
+                         <!-- Mobile add-->
+                         <div class="form-group row">
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" autocomplete="mobile" autofocus>
+
+                                @error('mobile')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                           <!-- Login add-->
+                           <div class="form-group row">
+                            <label for="login" class="col-md-4 col-form-label text-md-right">{{ __('Login') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="login" type="text" class="form-control @error('login') is-invalid @enderror" name="login" value="{{ old('login') }}" autocomplete="login" autofocus>
+
+                                @error('login')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
