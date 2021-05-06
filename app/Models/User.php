@@ -26,7 +26,7 @@ class User extends Authenticatable
         'password',
         
     ];
-    
+    /*change*/
     protected $hidden = [
         'password', 'remember_token',
     ];
