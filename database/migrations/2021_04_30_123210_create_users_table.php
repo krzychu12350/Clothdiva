@@ -15,20 +15,21 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             
-            $table->increments('id');
-            //$table->id();
+            //$table->increments();
+            $table->id('id_user');
             $table->string('name', 100);
             $table->string('surname', 100);
             $table->string('mobile', 12);
             $table->string('login', 100);
             $table->string('email', 100);
             $table->string('password', 100);
-            /*
+            //$table->boolean('is_admin')->nullable();
+            
             $table->foreignId('id_role');
             $table->foreign('id_role')
             ->references('id_role')->on('roles')
             ->onDelete('cascade');
-
+            /*
             $table->foreignId('id_user_address');
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')

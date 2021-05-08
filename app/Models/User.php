@@ -27,6 +27,8 @@ class User extends Authenticatable
         'login',
         'email',
         'password',
+        'id_role',
+        //'is_admin',
         
     ];
  
@@ -35,11 +37,12 @@ class User extends Authenticatable
     ];
     
     public $timestamps = false;
-    /*
+    protected $primaryKey = 'id_user';
+    
     public function role(){
         return $this->belongsTo(Role::class);
     }
-
+  /*
     public function favorite_products()
     {
         return $this->hasMany(Favorite_product::class);

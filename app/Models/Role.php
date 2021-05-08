@@ -10,6 +10,7 @@ class Role extends Model
     use HasFactory;
     protected $primaryKey = 'id_role';
     public $incrementing = true;
+    public $timestamps = false;
     //protected $keyType = 'integer';
     /**
      * The attributes that are mass assignable.
