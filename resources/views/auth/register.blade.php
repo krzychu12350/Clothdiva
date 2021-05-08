@@ -24,12 +24,7 @@
                                 @enderror
                             </div>
                         </div>
-<<<<<<< HEAD
                         <!-- Surname field added-->
-=======
-<<<<<<< HEAD
-                        <!-- Surname field added
->>>>>>> fb5d58d (faf)
                         <div class="form-group row">
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
 
@@ -43,7 +38,6 @@
                                 @enderror
                             </div>
                         </div>
-<<<<<<< HEAD
                         
                          <!-- Mobile add-->
                          <div class="form-group row">
@@ -75,12 +69,6 @@
                             </div>
                         </div>
 
-=======
-                        -->
-=======
-
->>>>>>> 13c912d (faf)
->>>>>>> fb5d58d (faf)
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
