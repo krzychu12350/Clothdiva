@@ -2,31 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract
+class User extends Model
 {
-    use Authenticatable, CanResetPassword;
-    //use HasFactory;
-    /*protected $primaryKey = 'id_user';*/
-    //public $incrementing = true;
+    use HasFactory;
+    protected $primaryKey = 'id_user';
+    public $incrementing = true;
     //protected $keyType = 'integer';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-
     protected $fillable = [
         'name',
         'surname',
         'mobile',
         'login',
         'email',
+<<<<<<< HEAD
 <<<<<<< HEAD
         'password',
         'id_role',
@@ -36,13 +32,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
  
 =======
         'password'];
+=======
+        'password',
+        
+    ];
+>>>>>>> 12deadb (Revert "fafa")
     /*change*/
 >>>>>>> 97084e1 (fafa)
     protected $hidden = [
-        'password', 'remember_token'];
-    public $timestamps = false;
-    
-    
+        'password', 'remember_token',
+    ];
+
     public function roles(){
         return $this->belongsTo(Role::class);
     }
@@ -50,8 +50,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
   /*
 =======
 
+<<<<<<< HEAD
     /*
 >>>>>>> 97084e1 (fafa)
+=======
+>>>>>>> 12deadb (Revert "fafa")
     public function favorite_products()
     {
         return $this->hasMany(Favorite_product::class);
@@ -60,5 +63,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function orders(){
         return $this->hasMany(Order::class);
     }
-    */
 }

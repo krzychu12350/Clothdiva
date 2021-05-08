@@ -25,7 +25,6 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
             //$table->boolean('is_admin')->nullable();
             
-            
             $table->foreignId('id_role');
             $table->foreign('id_role')
             ->references('id_role')->on('roles')
@@ -34,9 +33,12 @@ class CreateUsersTable extends Migration
             /*
 =======
 
+<<<<<<< HEAD
 
             
 >>>>>>> 97084e1 (fafa)
+=======
+>>>>>>> 12deadb (Revert "fafa")
             $table->foreignId('id_user_address');
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
@@ -50,13 +52,15 @@ class CreateUsersTable extends Migration
             */
 =======
             */
-            $table->id('id_user');
-            $table->bigInteger('id_role');
+            $table->id();
             $table->string('name', 100);
             $table->string('email', 100);
             $table->string('password', 100);
+<<<<<<< HEAD
             
 >>>>>>> 97084e1 (fafa)
+=======
+>>>>>>> 12deadb (Revert "fafa")
         });
     }
 

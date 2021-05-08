@@ -3,8 +3,6 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use App\Http\Middleware\AdminMiddleware;
-use App\Http\Middleware\UserMiddleware;
 
 class Kernel extends HttpKernel
 {
@@ -65,6 +63,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 <<<<<<< HEAD
+<<<<<<< HEAD
         
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -72,5 +71,7 @@ class Kernel extends HttpKernel
         'admin' => AdminMiddleware::class,
         'user' => UserMiddleware::class,
 >>>>>>> 97084e1 (fafa)
+=======
+>>>>>>> 12deadb (Revert "fafa")
     ];
 }

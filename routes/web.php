@@ -28,6 +28,7 @@ Route::get('/testhome', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 /*
@@ -61,3 +62,5 @@ Route::group(['as'=>'user.','prefix' => 'user','namespace'=>'User','middleware'=
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 >>>>>>> 97084e1 (fafa)
+=======
+>>>>>>> 12deadb (Revert "fafa")
