@@ -12,21 +12,14 @@
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
         "jquery": "^3.2",
-<<<<<<< HEAD
         "laravel-mix": "^6.0.18",
-=======
-        "laravel-mix": "^6.0.0-beta.4",
->>>>>>> 13c912d (faf)
         "lodash": "^4.17.19",
         "popper.js": "^1.12",
         "postcss": "^8.1.14",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
-<<<<<<< HEAD
         "webpack": "^5.36.2",
-=======
->>>>>>> 13c912d (faf)
         "webpack-cli": "^4.6.0"
     },
     "dependencies": {}
