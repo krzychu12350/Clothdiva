@@ -27,16 +27,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     //protected $redirectTo = RouteServiceProvider::HOME;
     protected $redirectTo = '/home';
-=======
-    protected $redirectTo;
->>>>>>> 97084e1 (fafa)
-=======
-    protected $redirectTo = RouteServiceProvider::HOME;
->>>>>>> 12deadb (Revert "fafa")
 
     /**
      * Create a new controller instance.
