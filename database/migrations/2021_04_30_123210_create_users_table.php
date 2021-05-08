@@ -25,21 +25,38 @@ class CreateUsersTable extends Migration
             $table->string('password', 100);
             //$table->boolean('is_admin')->nullable();
             
+            
             $table->foreignId('id_role');
             $table->foreign('id_role')
             ->references('id_role')->on('roles')
             ->onDelete('cascade');
+<<<<<<< HEAD
             /*
+=======
+
+
+            
+>>>>>>> 97084e1 (fafa)
             $table->foreignId('id_user_address');
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
             ->onDelete('cascade');
+<<<<<<< HEAD
             
             $table->id();
             $table->string('user_name', 100);
             $table->string('user_email', 100);
             $table->string('user_password', 100);
             */
+=======
+            */
+            $table->id('id_user');
+            $table->bigInteger('id_role');
+            $table->string('name', 100);
+            $table->string('email', 100);
+            $table->string('password', 100);
+            
+>>>>>>> 97084e1 (fafa)
         });
     }
 

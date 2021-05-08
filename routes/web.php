@@ -29,6 +29,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+<<<<<<< HEAD
 /*
 
 |--------------------------------------------------------------------------
@@ -50,3 +51,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 */
 
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+=======
+Route::group(['as'=>'admin.','prefix' => 'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+
+
+Route::group(['as'=>'user.','prefix' => 'user','namespace'=>'User','middleware'=>['auth','user']], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+});
+>>>>>>> 97084e1 (fafa)
