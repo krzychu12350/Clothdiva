@@ -231,24 +231,5 @@ Created: Colorib
         $(".size__btn label").removeClass('active');
         $(this).addClass('active');
     });
-    /*-------------------
-		Toogle Login/Register
-	--------------------- */
-        
-    $(".account-icons").hover(function(e) {
-        $(".toogle-div").css('zIndex', '2');
-        $(".toogle-div").show();
-      });
-        
-         
-      $(".toogle-div").on({
-        mouseenter: function () {
-            $(this).show()
-           
-        },
-        mouseleave: function () {
-           $(this).hide()
-        }
-    });
 
 })(jQuery);
