@@ -136,10 +136,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
                     <div class="header__logo">
-                        <a href="{{ route('home') }}">
-                         <!--<h3>Clothdiva</h3>-->
-                        <img src="img/logo.png" alt="">
-                        </a>
+                        <a href="{{ route('home') }}"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-7">
@@ -162,7 +159,7 @@
                            <!-- <a href="#">Login</a>
                             <a href="#">Register</a>-->
                              <!-- Right Side Of Navbar -->
-                   <!--
+                   
                    <ul class="navbar-nav ml-auto">
                         
                         @if (Route::has('login'))
@@ -193,7 +190,7 @@
                                 </div>
                             </li>
                         @endif
-                    </ul> -->
+                    </ul> 
                         
                         </div>
                         <ul class="header__right__widget">
@@ -873,14 +870,10 @@ Services Section End
             <div class="col-lg-4 col-md-6 col-sm-7">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="./index.html">
-                        <img src="img/logo.png" alt="">
-                        <!--<h3>Clothdiva</h3>-->
-                        </a>
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     cilisis.</p>
-                    <!--
                     <div class="footer__payment">
                         <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
                         <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
@@ -888,7 +881,6 @@ Services Section End
                         <a href="#"><img src="img/payment/payment-4.png" alt=""></a>
                         <a href="#"><img src="img/payment/payment-5.png" alt=""></a>
                     </div>
-                -->
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-5">
@@ -915,23 +907,12 @@ Services Section End
             </div>
             <div class="col-lg-4 col-md-8 col-sm-8">
                 <div class="footer__newslatter">
-                    <!--
                     <h6>NEWSLETTER</h6>
                     <form action="#">
                         <input type="text" placeholder="Email">
                         <button type="submit" class="site-btn">Subscribe</button>
                     </form>
-                    -->
-                    <div class="footer__payment">
-                        <h6>Payments Methods</h6>
-                        <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-2.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-3.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-4.png" alt=""></a>
-                        <a href="#"><img src="img/payment/payment-5.png" alt=""></a>
-                    </div>
                     <div class="footer__social">
-                        <h6>Socials</h6>
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-youtube-play"></i></a>
@@ -943,11 +924,9 @@ Services Section End
         </div>
         <div class="row">
             <div class="col-lg-12">
-               
-                 <div class="footer__copyright__text">
-                    <p>Copyright Clothdiva &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved</p>
-                </div>
-               
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
         </div>
     </div>
