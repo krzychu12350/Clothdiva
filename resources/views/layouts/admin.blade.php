@@ -42,7 +42,7 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link rel="stylesheet" href="css/backend/theme.css"  media="all>
+    <link rel="stylesheet" href="{{ asset('css/theme.css')}}"  media="all>
    
 
 </head>
@@ -1077,8 +1077,8 @@
     </script>
 
     <!-- Main JS-->
-  <!--  <script src="{{ asset('js/merged.js')}}"></script>-->
-    <script src="js/backend/main.js"></script>
+    <script src="{{ asset('js/merged.js')}}"></script>
+    <!--<script src="js/backend/main.js"></script>-->
   <!-- <script src="{{ asset('js/app.js')}}"></script>-->
     
 
