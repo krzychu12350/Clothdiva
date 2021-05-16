@@ -39,7 +39,7 @@
     
     <!-- datatable CSS -->
     <link type="text/css" href="/frontend/css/DataTables/css/jquery.dataTables.min.css" rel="stylesheet">
-   
+   <!-- nie dziala-->
     @yield('css')
 
 </head>
