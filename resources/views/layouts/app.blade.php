@@ -2,6 +2,7 @@
 <html lang="zxx">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="description" content="Ashion Template">
     <meta name="keywords" content="Ashion, unica, creative, html">
@@ -25,6 +26,10 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <!-- ICON USER -->
+    <script src="https://kit.fontawesome.com/dadb75eae3.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -38,16 +43,52 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">
+        <li><div class="account-icons"><span class="far fa-user" aria-expanded="false"></span></div></li>
             <li><span class="icon_search search-switch"></span></li>
             <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip"></div>
+                <!--<div class="tip"></div>-->
             </a></li>
             <li><a href="#"><span class="icon_bag_alt"></span>
-                <div class="tip"></div>
+                <!--<div class="tip"></div>-->
             </a></li>
         </ul>
+
+        <div class="container">
+            <div class="row ">
+             <div class="toogle-div position-absolute float-right" style = "display:none"> 
+                <div class="list-group">
+            @if (Route::has('login'))
+            <div class="list-group-item"><a class = "text-dark" href="{{ route('login') }}">Login</a></div>
+            @if (Route::has('register'))
+            <div class="list-group-item"><a class = "text-dark" href="{{ route('register') }}">Register</a></div>
+            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endif
+                    </ul>
+        </div>
+    </div>
+  </div>
+ </div>
+
         <div class="offcanvas__logo">
-            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+            <a href="{{ route('home') }}"><img src="img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
@@ -56,7 +97,7 @@
              <!-- Right Side Of Navbar -->
              <ul class="navbar-nav">
                         <!-- Authentication Links -->
-                        @guest
+                      <!-- @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -84,9 +125,9 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </ul> -->
         </div>
-    </div>
+    </div> 
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
@@ -118,8 +159,8 @@
                            <!-- <a href="#">Login</a>
                             <a href="#">Register</a>-->
                              <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                   
+                   <ul class="navbar-nav ml-auto">
                         
                         @if (Route::has('login'))
                             <li class="nav-item">
@@ -149,19 +190,23 @@
                                 </div>
                             </li>
                         @endif
-                    </ul>
-                    
+                    </ul> 
+                        
                         </div>
                         <ul class="header__right__widget">
+                            <li><div class="account-icons"><span class="far fa-user" aria-expanded="false"></span></div></li>
                             <li><span class="icon_search search-switch"></span></li>
                             <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
+                                <!--<div class="tip">2</div> -->
                             </a></li>
                             <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
+                               <!-- <div class="tip">2</div> -->
                             </a></li>
                         </ul>
+                    
                     </div>
+
+              
                 </div>
             </div>
             <div class="canvas__open">
@@ -170,8 +215,44 @@
         </div>
     </header>
     <!-- Header Section End -->
-    <!-- @yield('content') -->
-    <!-- Categories Section Begin -->
+    
+<div class="container">
+  <div class="row float-right">
+    <div class="toogle-div position-absolute float-right col-2" style = "display:none"> 
+        <div class="list-group">
+            <!--@if (Route::has('login'))-->
+            <div class="list-group-item"><a class = "text-dark" href="{{ route('login') }}">Login</a></div></div>
+             <!--@if (Route::has('register'))-->
+            <div class="list-group-item"><a class = "text-dark" href="{{ route('register') }}">Register</a></div>
+            @endif
+                        @else
+                            <li class="list-group-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endif 
+                    </ul> 
+        </div>
+    </div>
+  </div>
+ </div>
+    @yield('content')
+    @yield('homepage')
+
+    <!-- Categories Section Begin 
     <section class="categories">
         <div class="container-fluid">
             <div class="row">
@@ -229,10 +310,10 @@
         </div>
     </div>
 </section>
-<!-- Categories Section End -->
+ Categories Section End -->
 
 
-<!-- Product Section Begin -->
+<!-- Product Section Begin 
 <section class="product spad">
     <div class="container">
         <div class="row">
@@ -436,9 +517,9 @@
         </div>
     </div>
 </section>
-<!-- Product Section End -->
+ Product Section End 
 
-<!-- Banner Section Begin -->
+ Banner Section Begin 
 <section class="banner set-bg" data-setbg="img/banner/banner-1.jpg">
     <div class="container">
         <div class="row">
@@ -470,9 +551,9 @@
         </div>
     </div>
 </section>
-<!-- Banner Section End -->
+ Banner Section End 
 
-<!-- Trend Section Begin -->
+ Trend Section Begin 
 <section class="trend spad">
     <div class="container">
         <div class="row">
@@ -644,9 +725,9 @@
         </div>
     </div>
 </section>
-<!-- Trend Section End -->
+Trend Section End 
 
-<!-- Discount Section Begin -->
+Discount Section Begin 
 <section class="discount">
     <div class="container">
         <div class="row">
@@ -686,9 +767,9 @@
         </div>
     </div>
 </section>
-<!-- Discount Section End -->
+ Discount Section End 
 
-<!-- Services Section Begin -->
+ Services Section Begin 
 <section class="services spad">
     <div class="container">
         <div class="row">
@@ -723,9 +804,9 @@
         </div>
     </div>
 </section>
-<!-- Services Section End -->
+Services Section End 
 
-<!-- Instagram Begin -->
+ Instagram Begin 
 <div class="instagram">
     <div class="container-fluid">
         <div class="row">
@@ -780,7 +861,7 @@
         </div>
     </div>
 </div>
-<!-- Instagram End -->
+ Instagram End -->
 
 <!-- Footer Section Begin -->
 <footer class="footer">
@@ -844,9 +925,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                <div class="footer__copyright__text">
-                    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
-                </div>
+                
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
         </div>
