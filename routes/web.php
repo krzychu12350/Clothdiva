@@ -3,6 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Backend\Store\adminOrdersController;
+use App\Http\Controllers\Backend\Store\productsManagementController;
+use App\Http\Controllers\Backend\Store\promotionsManagementController;
+use App\Http\Controllers\Backend\Store\subcategoriesManagementController;
+use App\Http\Controllers\Backend\usersManagementController;
+use App\Http\Controllers\Backend\bannersManagementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +37,13 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
+//Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 //Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
+Route::get('/orders', [adminOrdersController::class, 'index'])->name('admin.store.orders')->middleware('is_admin');
+Route::get('/products', [productsManagementController::class, 'index'])->name('admin.store.products')->middleware('is_admin');
+Route::get('/promotions', [promotionsManagementController::class, 'index'])->name('admin.store.promotions')->middleware('is_admin');
+Route::get('/subcategories', [subcategoriesManagementController::class, 'index'])->name('admin.store.subcategories')->middleware('is_admin');
+Route::get('/users', [usersManagementController::class, 'index'])->name('admin.users')->middleware('is_admin');
+Route::get('/banners', [bannersManagementController::class, 'index'])->name('admin.banners')->middleware('is_admin');
