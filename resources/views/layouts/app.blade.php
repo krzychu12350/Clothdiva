@@ -138,7 +138,8 @@
                     <div class="header__logo">
                         <a href="{{ route('home') }}">
                          <!--<h3>Clothdiva</h3>-->
-                        <img src="img/logo.png" alt="">
+                         
+                        <img src="img/logo.png" alt="Logo">
                         </a>
                     </div>
                 </div>
@@ -197,14 +198,45 @@
                         
                         </div>
                         <ul class="header__right__widget">
-                            <li><div class="account-icons"><span class="far fa-user" aria-expanded="false"></span></div></li>
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <!--<div class="tip">2</div> -->
-                            </a></li>
+                            <li>
+                                <div class="account-icons">
+                                    <div class="row-fluid">
+                                        <div class="span12 text-center">
+                                            <span class="far fa-user" aria-expanded="false"></span>
+                                        </div>
+                                            </div>
+                                        <p class="fs-6">Account</p>
+                                    </div>
+                            </li>
+                            <li>
+                               <!-- <span class="icon_search search-switch"></span>-->
+                                <div class="row-fluid search-switch">
+                                        <div class="span12 text-center">
+                                            <span class="icon_search" aria-expanded="false"></span>
+                                        </div>
+                                            </div>
+                                        <p class="fs-6">Search</p>
+                                </div>
+                            </li>
+
+
+                                <!--<a href="#"><span class="icon_heart_alt"></span>
+                                <div class="favourite-icons">
+                                    <div class="row-fluid">
+                                        <div class="span12 text-center">
+                                            <span class="icon_heart_alt" aria-expanded="false"></span>
+                                        </div>
+                                            </div>
+                                        <p class="fs-6">Account</p>
+                                    </div>
+                                <<div class="tip">2</div> </a>
+                            </li>
                             <li><a href="#"><span class="icon_bag_alt"></span>
-                               <!-- <div class="tip">2</div> -->
-                            </a></li>
+                                <div class="tip">2</div> 
+                            </a> -->
+                            
+                       
+
                         </ul>
                     
                     </div>
@@ -223,10 +255,15 @@
   <div class="row float-right">
     <div class="toogle-div position-absolute float-right col-2" style = "display:none"> 
         <div class="list-group">
+          
             <!--@if (Route::has('login'))-->
-            <div class="list-group-item"><a class = "text-dark" href="{{ route('login') }}">Login</a></div></div>
+            <div class="list-group-item">
+            <h5>Are you a new user?</h5>
+                <a class = "text-dark" href="{{ route('login') }}">Login</a></div></div>
              <!--@if (Route::has('register'))-->
-            <div class="list-group-item"><a class = "text-dark" href="{{ route('register') }}">Register</a></div>
+            <div class="list-group-item">
+            <h5>Are you here for the first time?</h5>
+            <a class = "text-dark" href="{{ route('register') }}">Register</a></div>
             @endif
                         @else
                             <li class="list-group-item dropdown">

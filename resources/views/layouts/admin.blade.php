@@ -39,6 +39,8 @@
 
 </head>
 <body class="animsition">
+  
+
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -46,7 +48,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="{{ route('admin.home') }}">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            <img src="img/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -61,7 +63,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                           <li class="has-sub"> 
                             <a class="js-arrow" href="{{ route ('admin.home') }}">
-                                <i class="fas fa-tachometer-alt"></i>Podsumowanie</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <!--
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
@@ -82,30 +84,34 @@
                         <li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-chart-bar"></i>Sklep</a>
+                                <i class="fas fa-chart-bar"></i>Store</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.store.promotions') }}">Promocje</a>
+                                    <a href="{{ route('admin.store.promotions') }}">Promotions</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.store.products') }}">Produkty</a>
+                                    <a href="{{ route('admin.store.products') }}">Products</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.store.subcategories') }}">Podkategorie</a>
+                                    <a href="{{ route('admin.store.subcategories') }}">Subcategories</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.store.orders') }}">Zamowienia</a>
+                                    <a href="{{ route('admin.store.orders') }}">Orders</a>
                                 </li>
                             </ul>
                         </li>
                         </li>
                         <li>
                             <a href="{{ route('admin.users') }}">
-                                <i class="fas fa-table"></i>Użytkownicy</a>
+                                <i class="fas fa-table"></i>Common Users</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.users') }}">
+                                <i class="fas fa-table"></i>Admins</a>
                         </li>
                         <li>
                             <a href="{{ route('admin.banners') }}">
-                                <i class="far fa-check-square"></i>Banner</a>
+                                <i class="far fa-check-square"></i>Banners</a>
                         </li>
                         </li>
                         <!--
@@ -183,7 +189,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="{{ route('admin.home') }}">
-                    <img class="img-fluid" src="images/icon/logo.png" alt="Cool Admin" />
+                    <img class="img-fluid" src="img/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -191,7 +197,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="active">
                             <a class="js-arrow" href="{{ route('admin.home') }}">
-                                <i class="fas fa-tachometer-alt"></i>Podsumowanie</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                                 <!--
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
@@ -212,30 +218,34 @@
                         <li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-chart-bar"></i>Sklep</a>
+                                <i class="fas fa-shopping-cart"></i>Store</a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.store.promotions') }}">Promocje</a>
+                                    <a href="{{ route('admin.store.promotions') }}">Promotion</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.store.products') }}">Produkty</a>
+                                    <a href="{{ route('admin.store.products') }}">Products</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.store.subcategories') }}">Podkategorie</a>
+                                    <a href="{{ route('admin.store.subcategories') }}">Subcategories</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.store.orders') }}">Zamowienia</a>
+                                    <a href="{{ route('admin.store.orders') }}">Orders</a>
                                 </li>
                             </ul>
                         </li>
                         </li>
                         <li>
                             <a href="{{ route('admin.users') }}">
-                                <i class="fas fa-table"></i>Użytkownicy</a>
+                                <i class="fas fa-user"></i>Common users</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.users') }}">
+                                <i class="fas fa-user"></i>Admins</a>
                         </li>
                         <li>
                             <a href="{{ route('admin.banners') }}">
-                                <i class="far fa-check-square"></i>Banner</a>
+                                <i class="far fa-image"></i>Banners</a>
                         </li>
                         <!--
                         <li>
@@ -315,7 +325,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search..." />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
@@ -464,10 +474,12 @@
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
                                                 </div>
+                                                <!--
                                                 <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                                </div>
+                                                </div>-->
+
                                             </div>
                                             <div class="account-dropdown__footer">
                                                 <a href="{{ route('logout') }}"
