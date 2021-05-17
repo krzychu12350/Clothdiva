@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('content')
+@section('homepage')
     <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container-fluid">

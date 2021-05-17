@@ -38,96 +38,28 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Offcanvas Menu Begin -->
-    <div class="offcanvas-menu-overlay"></div>
+<!-- Offcanvas Menu Begin -->
+<div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">
-        <li><div class="account-icons"><span class="far fa-user" aria-expanded="false"></span></div></li>
             <li><span class="icon_search search-switch"></span></li>
             <li><a href="#"><span class="icon_heart_alt"></span>
-                <!--<div class="tip"></div>-->
+                <div class="tip">2</div>
             </a></li>
             <li><a href="#"><span class="icon_bag_alt"></span>
-                <!--<div class="tip"></div>-->
+                <div class="tip">2</div>
             </a></li>
         </ul>
-
-        <div class="container">
-            <div class="row ">
-             <div class="toogle-div position-absolute float-right" style = "display:none"> 
-                <div class="list-group">
-            @if (Route::has('login'))
-            <div class="list-group-item"><a class = "text-dark" href="{{ route('login') }}">Login</a></div>
-            @if (Route::has('register'))
-            <div class="list-group-item"><a class = "text-dark" href="{{ route('register') }}">Register</a></div>
-            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endif
-                    </ul>
-        </div>
-    </div>
-  </div>
- </div>
-
         <div class="offcanvas__logo">
-            <a href="{{ route('home') }}"><img src="img/logo.png" alt=""></a>
+            <a href="./index.html"><img src="img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__auth">
-            <!--<a href="#">Login</a>
-            <a href="#">Register</a>-->
-             <!-- Right Side Of Navbar -->
-             <ul class="navbar-nav">
-                        <!-- Authentication Links -->
-                      <!-- @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul> -->
+            <a href="#">Login</a>
+            <a href="#">Register</a>
         </div>
-    </div> 
+    </div>
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section Begin -->
@@ -146,20 +78,21 @@
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="{{ route('home') }}">{{ __('Home') }}</a>
+                            <li><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
                             <li><a href="#">Women’s</a></li>
                             <li><a href="#">Men’s</a></li>
                             <li><a href="#">Girl’s</a></li>
-                            <li><a href="#">Boy’s</a>
+                            <li><a href="#">Boy’s</a></li>
                             <li><a href="">Shop</a></li>
-                            </li>
                             <li><a href="./contact.html">Contact</a></li>
                         </ul>
+                        <div> kasia </div>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
-                        <div class="header__right__auth">
+                    <!-- Od Krzycha-->
+                      <!--  <div class="header__right__auth"> -->
                            <!-- <a href="#">Login</a>
                             <a href="#">Register</a>-->
                              <!-- Right Side Of Navbar -->
@@ -196,6 +129,8 @@
                         @endif
                     </ul> -->
                         
+
+                        <!--
                         </div>
                         <ul class="header__right__widget">
                             <li>
@@ -209,7 +144,7 @@
                                     </div>
                             </li>
                             <li>
-                               <!-- <span class="icon_search search-switch"></span>-->
+                               <span class="icon_search search-switch"></span>
                                 <div class="row-fluid search-switch">
                                         <div class="span12 text-center">
                                             <span class="icon_search" aria-expanded="false"></span>
@@ -218,7 +153,7 @@
                                         <p class="fs-6">Search</p>
                                 </div>
                             </li>
-
+                        -->
 
                                 <!--<a href="#"><span class="icon_heart_alt"></span>
                                 <div class="favourite-icons">
@@ -237,37 +172,38 @@
                             
                        
 
+<!-- Koniec od Krzcha-->
+                        <ul class="header__right__widget">
+                            <li><div class="account-icons"><span class="far fa-user" aria-expanded="false"></span></div></li>
+                            <li><span class="icon_search search-switch"></span></li>
+                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
+                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                         </ul>
-                    
+                        </div>
                     </div>
-
-              
-                </div>
             </div>
-            <div class="canvas__open">
-                <i class="fa fa-bars"></i>
+                            <div class="canvas__open">
+                            <i class="fa fa-bars"></i>
             </div>
         </div>
     </header>
     <!-- Header Section End -->
     
-<div class="container">
-  <div class="row float-right">
-    <div class="toogle-div position-absolute float-right col-2" style = "display:none"> 
-        <div class="list-group">
-          
-            <!--@if (Route::has('login'))-->
-            <div class="list-group-item">
-            <h5>Are you a new user?</h5>
-                <a class = "text-dark" href="{{ route('login') }}">Login</a></div></div>
-             <!--@if (Route::has('register'))-->
-            <div class="list-group-item">
-            <h5>Are you here for the first time?</h5>
-            <a class = "text-dark" href="{{ route('register') }}">Register</a></div>
+    <div class="toogle-div position-absolute col-lg-2" style = "display:none"> 
+        <div class="list-group" style = "position: relative; left: 1380px;">
+        @guest    
+        <div class="list-group-item" style = "text-align:center">
+                <h6>Are you user?<br></br></h6>
+                <button type="submit" class="btn btn-primary bg-danger site-btn" style = "display: inline-block; margin: 0 auto;"><a class = "text-body" href="{{ route('login') }}">Login</a></button></div>
+            @if (Route::has('register'))
+            <div class="list-group-item" style = "text-align:center">
+                <h6>Are you a new user?<br></br></h6>
+                <button type="submit" class="btn btn-primary bg-danger site-btn" style = "display: inline-block; margin: 0 auto;"><a class = "text-body" href="{{ route('register') }}">Register</a></button></div>
+        
             @endif
-                        @else
-                            <li class="list-group-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                @else
+                    <div class="list-group-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -282,13 +218,13 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </li>
-                        @endif 
-                    </ul> 
+                            </div>
+            @endguest
+            </div>
         </div>
     </div>
-  </div>
- </div>
+
+
     @yield('content')
     @yield('homepage')
 
