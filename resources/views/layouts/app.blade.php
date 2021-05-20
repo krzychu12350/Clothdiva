@@ -68,29 +68,69 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
                     <div class="header__logo">
-                        <a href="{{ route('home') }}">
-                         <!--<h3>Clothdiva</h3>-->
-                         
-                        <img src="img/logo.png" alt="Logo">
-                        </a>
+                        <a href="{{ route('home') }}"><img src="img/logo.png" alt="Logo"></a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
                             <li><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-                            <li><a href="#">Women’s</a></li>
-                            <li><a href="#">Men’s</a></li>
+                            <li class = "women"><a href="#">Women’s</a>
+                            <li class = "men"><a href="#">Men’s</a></li>
                             <li><a href="#">Girl’s</a></li>
                             <li><a href="#">Boy’s</a></li>
                             <li><a href="">Shop</a></li>
                             <li><a href="./contact.html">Contact</a></li>
+                       <!-- <ul class = "toggle-menu bg-white" role = "menu" style = "display:none; width:100%">
+                        <li class = "menu">
+                            <h6> <br></br> CLOTHES <br></br> </h6>
+                        <ul class = "submenu-submenu">
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Dresses, jumpsuits</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Jackets, coats</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Shirts, blouses</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">T-shirts</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Trousers, jeans</a></li>
+                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Jackets, coats</a></li>
                         </ul>
-                        <div> kasia </div>
+                        </li>
+
+                        <li class = "menu">
+                            <h6> <br> SHOES <br></br> </h6>
+                        <ul class = "submenu-submenu">
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">All</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Heels</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Flats</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Leather</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sandals</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sliders, mules</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Espadrilles<</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sneakers</a></li>
+                        </ul>
+                        </li>
+                        
+                        <li class = "menu">
+                            <h6> <br> ACCESSORIES <br></br> </h6>
+                        <ul class = "submenu-submenu">
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Bags</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Hats</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Jewellery</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Hair accessories</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Belts<</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sunglasses</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Wallets</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Socks</a></li>
+                        </ul>
+                        </li>
+
+                        </ul> -->
+                        </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
+            
                     <!-- Od Krzycha-->
                       <!--  <div class="header__right__auth"> -->
                            <!-- <a href="#">Login</a>
@@ -182,22 +222,55 @@
                         </div>
                     </div>
             </div>
+
                             <div class="canvas__open">
                             <i class="fa fa-bars"></i>
             </div>
         </div>
     </header>
     <!-- Header Section End -->
-    
-    <div class="toogle-div position-absolute col-lg-2" style = "display:none"> 
-        <div class="list-group" style = "position: relative; left: 1380px;">
-        @guest    
+        <div class = "woman_products position-absolute bg-success col-xl-12" style = "display:none">
+        
+        <ul class = "submenu-submenu">
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Dresses, jumpsuits</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Jackets, coats</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Shirts, blouses</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">T-shirts</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Trousers, jeans</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Jackets, coats</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Kolejna rzecz</a></li>
+                            </ul>
+                            </li>
+        
+         </div>
+
+         <div class = "men_products" style = "display:none">
+        
+        <ul class = "submenu-submenu">
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Dresses, jumpsuits</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Jackets, coats</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Shirts, blouses</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">T-shirts</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Trousers, jeans</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Jackets, coats</a></li>
+                            <li class = "menu-item level-1" style = "display: block;"> <a href = "">Kolejna rzecz</a></li>
+                            </ul>
+                            </li>
+        
+         </div>
+
+        <div class="list-group toogle-div position-absolute" style = "display:none; position: relative; left: 85%; top: 10%">
+        @guest   
         <div class="list-group-item" style = "text-align:center">
-                <h6>Are you user?<br></br></h6>
+                <h6>Are you user?<br /></h6>
                 <button type="submit" class="btn btn-primary bg-danger site-btn" style = "display: inline-block; margin: 0 auto;"><a class = "text-body" href="{{ route('login') }}">Login</a></button></div>
             @if (Route::has('register'))
             <div class="list-group-item" style = "text-align:center">
-                <h6>Are you a new user?<br></br></h6>
+                <h6>Are you a new user?<br /></h6>
                 <button type="submit" class="btn btn-primary bg-danger site-btn" style = "display: inline-block; margin: 0 auto;"><a class = "text-body" href="{{ route('register') }}">Register</a></button></div>
         
             @endif
@@ -222,7 +295,6 @@
             @endguest
             </div>
         </div>
-    </div>
 
 
     @yield('content')

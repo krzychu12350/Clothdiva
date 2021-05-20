@@ -10000,4 +10000,12 @@ h3 {
     color: inherit;
     border-color: #dee2e6;
   }
+
+  .menu-item{
+    display: block;
+    }
+
+    .pizda{
+      display: block;
+      }
 }

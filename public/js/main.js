@@ -251,4 +251,38 @@ Created: Colorib
         }
     });
 
+    $(".women").hover(function(e) {
+        $(".woman_products").css('zIndex', '2');
+        $(".woman_products").show();
+      });
+        
+         
+      $(".woman_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+
+    $(".men").hover(function(e) {
+        $(".men_products").css('zIndex', '2');
+        $(".men_products").show();
+      });
+        
+         
+      $(".men_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+
+
+
 })(jQuery);
