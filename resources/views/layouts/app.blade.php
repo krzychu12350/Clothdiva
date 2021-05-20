@@ -131,7 +131,7 @@
                 <div class="col-lg-3">
                     <div class="header__right">
             
-                    <!-- Od Krzycha-->
+                    <!-- Od Krzychaa-->
                       <!--  <div class="header__right__auth"> -->
                            <!-- <a href="#">Login</a>
                             <a href="#">Register</a>-->
