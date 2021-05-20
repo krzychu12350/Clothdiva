@@ -9,7 +9,7 @@ class Promotion extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_promotion';
-
+    public $timestamps = false;
     protected $fillable = [
         'name_of_promotion',
         'size_of_promotion',

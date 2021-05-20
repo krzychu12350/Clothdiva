@@ -10,6 +10,7 @@ class Sub_category extends Model
     use HasFactory;
     protected $primaryKey = 'id_sub_category';
     public $incrementing = true;
+    public $timestamps = false;
     //protected $keyType = 'integer';
     /**
      * The attributes that are mass assignable.

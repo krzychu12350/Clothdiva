@@ -10,6 +10,8 @@ class Category extends Model
     use HasFactory;
     protected $primaryKey = 'id_category';
 
+    public $timestamps = false;
+    
     protected $fillable = [
         'name_of_category',
     ];

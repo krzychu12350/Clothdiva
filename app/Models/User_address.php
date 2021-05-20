@@ -9,7 +9,7 @@ class User_address extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_user_address';
-
+    public $timestamps = false;
     protected $fillable = [
         'name_of_city',
         'post_code',

@@ -9,7 +9,7 @@ class Favorite_product extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_favorite_product';
-    
+    public $timestamps = false;
     public function user(){
         return $this->belongsTo(User::class);
     }

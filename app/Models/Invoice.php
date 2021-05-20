@@ -9,7 +9,7 @@ class Invoice extends Model
 {
     use HasFactory;
     protected $primaryKey = 'id_invoice';
-
+    public $timestamps = false;
     protected $fillable = [
         'netto_prize',
         'VAT_prize',
