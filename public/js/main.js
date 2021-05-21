@@ -262,7 +262,7 @@ Created: Colorib
             $(this).show()
            
         },
-        mouseleave: function () {
+        mouseout: function () {
            $(this).hide()
         }
     });
@@ -274,6 +274,43 @@ Created: Colorib
         
          
       $(".men_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+
+    
+
+
+    $(".girls").hover(function(e) {
+        $(".girls_products").css('zIndex', '2');
+        $(".girls_products").show();
+      });
+        
+         
+      $(".girls_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+
+
+
+    $(".boys").hover(function(e) {
+        $(".boys_products").css('zIndex', '2');
+        $(".boys_products").show();
+      });
+        
+         
+      $(".boys_products").on({
         mouseenter: function () {
             $(this).show()
            
