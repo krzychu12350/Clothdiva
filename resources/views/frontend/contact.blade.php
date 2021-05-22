@@ -19,7 +19,7 @@
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-headphones"></i> Support</h6>
-                                    <p>clothdivaoffice@gmail.com</p>
+                                    <p>clothdiva@gmail.com</p>
                                 </li>
                             </ul>
                         </div>
