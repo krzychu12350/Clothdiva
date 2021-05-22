@@ -50,9 +50,9 @@
             </li>
 
             <li><span class=" mila icon_search search-switch"></span></li>
-            <li><a href="#"><span class=" kila icon_heart_alt"></span>
+            <li><a href="{{ route('favourites') }}"><span class=" kila icon_heart_alt"></span>
             </a></li>
-            <li><a href="#"><span class="fila icon_cart_alt"></span>
+            <li><a href="{{ route('shopcart') }}"><span class="fila icon_cart_alt"></span>
             </a></li>
         </ul>
         
