@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -68,7 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = User::create([
             'name' => $data['name'],
             'surname' => $data['surname'],
             'mobile' => $data['mobile'],
@@ -77,5 +78,20 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             "id_role" => 2,
         ]);
+
+         // email data
+        $email_data = array(
+            'name' => $data['name'],
+            'email' => $data['email'],
+        );
+
+        // send email with the template
+        Mail::send('welcome_email', $email_data, function ($message) use ($email_data) {
+            $message->to($email_data['email'], $email_data['name'])
+                ->subject('Welcome to Clothdiva')
+                ->from('info@mynotepaper.com', 'Clothdiva');
+        });
+
+    return $user;
     }
 }

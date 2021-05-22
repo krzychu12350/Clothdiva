@@ -250,22 +250,116 @@ Created: Colorib
            $(this).hide()
         }
     });
-
-    $(".women").hover(function(e) {
-        $(".woman_products").css('zIndex', '2');
-        $(".woman_products").show();
+    /* Women products*/
+    $(".women").on({
+        mouseenter: function () {
+            $(".women_products").css('zIndex', '2');
+            $(".women_products").show();
+            $(".men_products").hide();
+            
+        }
+       
       });
         
-         
-      $(".woman_products").on({
+   $(".women_products").on({
         mouseenter: function () {
             $(this).show()
            
         },
-        mouseout: function () {
+        mouseleave: function () {
            $(this).hide()
         }
     });
+
+    /* Men products*/
+    $(".men").on({
+        mouseenter: function () {
+            $(".men_products").css('zIndex', '2');
+            $(".men_products").show();
+            $(".women_products").hide();
+            $(".girls_products").hide();
+            $(".boys_products").hide();
+            
+        }
+       
+      });
+        
+   $(".men_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+     /* Girls products*/
+     $(".girls").on({
+        mouseenter: function () {
+            $(".girls_products").css('zIndex', '2');
+            $(".girls_products").show();
+            $(".women_products").hide();
+            $(".men_products").hide();
+            $(".boys_products").hide();
+            
+        }
+       
+      });
+        
+   $(".girls_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+
+    /* Girls products*/
+    $(".boys").on({
+        mouseenter: function () {
+            $(".boys_products").css('zIndex', '2');
+            $(".boys_products").show();
+            $(".women_products").hide();
+            $(".men_products").hide();
+            $(".girls_products").hide();
+            
+        }
+       
+      });
+        
+   $(".boys_products").on({
+        mouseenter: function () {
+            $(this).show()
+           
+        },
+        mouseleave: function () {
+           $(this).hide()
+        }
+    });
+    
+    $(".restlink").hover(function(e) {
+            $(".women_products").hide();
+            $(".men_products").hide();
+            $(".girls_products").hide();
+            $(".boys_products").hide();
+    });
+
+
+    
+    $(".header__right__widget").on({
+        mouseenter: function () {
+            $(".women_products").hide();
+            $(".men_products").hide();
+            $(".girls_products").hide();
+            $(".boys_products").hide();
+            
+        }
+       
+      });
+      
+        /*
 
     $(".men").hover(function(e) {
         $(".men_products").css('zIndex', '2');
@@ -320,6 +414,6 @@ Created: Colorib
         }
     });
 
-
+    */
 
 })(jQuery);

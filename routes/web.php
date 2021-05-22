@@ -9,6 +9,11 @@ use App\Http\Controllers\Backend\Store\promotionsManagementController;
 use App\Http\Controllers\Backend\Store\subcategoriesManagementController;
 use App\Http\Controllers\Backend\usersManagementController;
 use App\Http\Controllers\Backend\bannersManagementController;
+
+
+use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\ShopController;
+use App\Http\Controllers\Frontend\ShopcartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,10 +37,14 @@ Route::get('/testhome', function () {
     return view('index');
 });
 */
-Auth::routes();
 
+Auth::routes();
+//Frontend routes
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart');
 
 //Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

@@ -2,11 +2,11 @@
 
 @section('content')
 <br></br>
-<div class="container">
+<div class="container pt-4 pb-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-white " style = "border:none">
-                <div class="card-header bg-white"><h2 class = "text-dark" style = "color:#e21e13; text-align:center; padding-left: 20%;">Create an acount</h2></div>
+                <div class="card-header bg-white"><h2 class = "text-dark" style = "color:#e21e13; text-align:center; padding-left: 10%;">Create an acount</h2></div>
 
                 <div class="card-body bg-white">
                     <form method="POST" action="{{ route('register') }}">
@@ -108,7 +108,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary bg-dark site-btn" style = "border:none; text-align:center; width:100%">
+                                <button type="submit" class="btn btn-primary bg-dark" style = "border:none; text-align:center; width:100%">
                                     {{ __('Register') }}
                                 </button>
                             </div>

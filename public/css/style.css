@@ -320,10 +320,11 @@ ol {
 	background: #ffffff;
 	-webkit-box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
 	box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+	height: 85px !important;
 }
 
 .header__logo {
-	padding: 26px 0;
+	padding: 10px 0;
 }
 
 
@@ -493,7 +494,9 @@ ol {
 	text-align: center;
 	border-radius: 50%;
 }
-
+.header_icon_desc:hover{
+	text-decoration: underline;
+}
 .offcanvas-menu-wrapper {
 	display: none;
 }

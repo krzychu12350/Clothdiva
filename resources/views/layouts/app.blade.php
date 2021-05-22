@@ -43,12 +43,13 @@
 <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__close">+</div>
-        <ul class="offcanvas__widget">
+        <ul class="offcanvas__widget">  
+            <li><span class="far fa-user"></span></li>
             <li><span class="icon_search search-switch"></span></li>
             <li><a href="#"><span class="icon_heart_alt"></span>
                 <div class="tip">2</div>
             </a></li>
-            <li><a href="#"><span class="icon_bag_alt"></span>
+            <li><a href="#"><span class="icon_cart_alt"></span>
                 <div class="tip">2</div>
             </a></li>
         </ul>
@@ -69,19 +70,21 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
                     <div class="header__logo">
-                        <a href="{{ route('home') }}"><img src="img/logo.png" alt="Logo"></a>
+                        <a href="{{ route('home') }}">
+                            <img src="img/logo.png" alt="Logo">
+                        </a>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="{{ route('home') }}">{{ __('Home') }}</a></li>
-                            <li class = "women"><a href="#">Women’s</a>
-                            <li class = "men"><a href="#">Men’s</a></li>
-                            <li class = "girls"><a href="#">Girl’s</a></li>
-                            <li class = "boys"><a href="#">Boy’s</a></li>
-                            <li><a href="">Shop</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a class="restlink" href="{{ route('home') }}">{{ __('Home') }}</a></li>
+                            <li class = "women subcategory-toggle"><a href="#">Women</a>
+                            <li class = "men subcategory-toggle"><a href="#">Men</a></li>
+                            <li class = "girls subcategory-toggle"><a href="#">Girls</a></li>
+                            <li class = "boys subcategory-toggle"><a href="#">Boys</a></li>
+                            <li><a class="restlink" href="{{ route('shop') }}">Shop</a></li>
+                            <li><a class="restlink" href="{{ route('contact') }}">Contact</a></li>
                        <!-- <ul class = "toggle-menu bg-white" role = "menu" style = "display:none; width:100%">
                         <li class = "menu">
                             <h6> <br></br> CLOTHES <br></br> </h6>
@@ -215,10 +218,31 @@
 
 <!-- Koniec od Krzcha-->
                         <ul class="header__right__widget">
-                            <li><div class="account-icons"><span class="far fa-user" aria-expanded="false"></span></div></li>
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span></a></li>
+                            <li><div class="account-icons text-center">
+                            <span class="far fa-user" aria-expanded="false"></span>
+                            <p class="d-block header_icon_desc">Account</p>
+                            </div>
+                            </li>
+                            <li>
+                            <div class="search-icons text-center search-switch">
+                            <span class="icon_search"></span>
+                            <p class="d-block header_icon_desc">Search</p>
+                            </div>
+                            </li>
+                            <li>
+                            <div class="heart-icons text-center">
+                            <span class="icon_heart_alt"></span>
+                            <p class="d-block header_icon_desc">Favourite</p>
+                            </div>
+                            </li>
+                            <li>
+                            <a href="{{ route('shopcart') }}">
+                            <div class="cart-icons text-center">
+                            <span class="icon_cart_alt"></span>
+                            <p class="d-block header_icon_desc">Cart</p>
+                            </div>
+                            </a> 
+                            </li>
                         </ul>
                         </div>
                     </div>
@@ -230,127 +254,17 @@
         </div>
     </header>
     <!-- Header Section End -->
-        <div class = "woman_products position-absolute bg-white col-xl-12" style = "display:none">    
-                            <h4 style = "text-align:center"> <br></br> CLOTHES <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Dresses, jumpsuits</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Jackets, coats</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Shirts, blouses</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">T-shirts</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Sweatshirts, sweaters</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Sweatshirts, sweaters</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Jackets, coats</a></li>
-                            <br></br>
-                        </ul>    
-                            <h4 style = "text-align:center"> <br></br> SHOES <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">All</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Heels</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Flats</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Leather</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Sandals</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Sliders, mules</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Espadrilles</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Sneakers</a></li>
-                            <br></br>
-                            <br></br>
-                        </ul>
-         </div>
+    @include('frontend.subcategorieslist')
 
-         <div class = "men_products position-absolute bg-white col-xl-12" style = "display:none">
-                            <h4 style = "text-align:center"> <br></br> CLOTHES <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Coats, jackets</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Hoodies, sweatshirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Shirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">T-shirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Polo shirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Jumpers, Cardigans</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Sutis</a></li>
-                            <br></br>
-                            </ul>
-                            </li>
-
-                            <h4 style = "text-align:center"> <br></br> ACCESSORIES <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Shoes</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Bags</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Hats</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Socks</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Toiletry bags</a></li>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </ul>
-        
-         </div>
-
-         <div class = "girls_products position-absolute bg-white col-xl-12" style = "display:none">
-                            <h4 style = "text-align:center"> <br></br> GIRL 4-13 YEARS <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Coats, jackets</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Dresses</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Sweatshirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">T-shirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Sweaters</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Skirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Shirts, blouses</a></li>
-                            <br></br>
-                            </ul>
-                            </li>
-
-                            <h4 style = "text-align:center"> <br></br> GIRL 0-4 YEARS <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Coats, jackets</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Dresses, skirt</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Sweatshirts, sweaters</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">T-Shirts</a></li>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </ul>
-         </div>
-
-         <div class = "boys_products position-absolute bg-white col-xl-12" style = "display:none">
-                            <h4 style = "text-align:center"> <br></br> BOY 4-13 YEARS <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Coats, jackets</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Sweatshirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">T-shirts</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Shirts, blouses</a></li>
-                            <br></br>
-                            </ul>
-                            </li>
-
-                            <h4 style = "text-align:center"> <br></br> BOY 0-4 YEARS <br></br> </h4>
-                        <ul class = "submenu-submenu" style = "text-align:center">
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Coats, jackets</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Sweatshirts, sweaters</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">T-Shirts</a></li>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                        </ul>
-         </div>
-
-        <div class="list-group toogle-div position-absolute" style = "display:none; position: relative; left: 85%; top: 10%">
+        <div class="list-group toogle-div position-absolute col-xl-2" style = "display:none; position: relative; left: 80%;">
         @guest   
-        <div class="list-group-item" style = "text-align:center">
-                <h6 style>Are you user?<br /></h6>
-                <button type="submit" class="btn btn-primary site-btn bg-dark" style = "display: inline-block; margin: 0 auto;"><a style = "color:white"  href="{{ route('login') }}">Login</a></button></div>
+        <div class="list-group-item">
+                <h5 style="margin-bottom: 20px !important;">Are you user?<br /></h5>
+                <button type="submit" class="btn btn-primary" style = "display: inline-block; margin: 0 auto; width: 200px !important; background-color: #000000;"><a style = "color:white"  href="{{ route('login') }}">Login</a></button></div>
             @if (Route::has('register'))
-            <div class="list-group-item" style = "text-align:center">
-                <h6>Are you a new user?<br /></h6>
-                <button type="submit" class="btn btn-primary site-btn bg-dark" style = "display: inline-block; margin: 0 auto;"><a style = "color:white" href="{{ route('register') }}">Register</a></button></div>
+            <div class="list-group-item">
+                <h5 style="margin-bottom: 20px !important;">Are you a new user?<br /></h5>
+                <button type="submit" class="btn btn-primary" style = "display: inline-block; margin: 0 auto; width: 200px !important; background-color: #000000;"><a style = "color:white" href="{{ route('register') }}">Register</a></button></div>
         
             @endif
                 @else
@@ -378,7 +292,9 @@
 
     @yield('content')
     @yield('homepage')
-
+    @yield('contact')
+    @yield('shop')
+    @yield('shopcart')
     <!-- Categories Section Begin 
     <section class="categories">
         <div class="container-fluid">
@@ -931,66 +847,10 @@ Discount Section Begin
         </div>
     </div>
 </section>
-Services Section End 
+Services Section End -->
 
- Instagram Begin 
-<div class="instagram">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-1.jpg">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-2.jpg">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-3.jpg">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-4.jpg">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-5.jpg">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-4 p-0">
-                <div class="instagram__item set-bg" data-setbg="img/instagram/insta-6.jpg">
-                    <div class="instagram__text">
-                        <i class="fa fa-instagram"></i>
-                        <a href="#">@ ashion_shop</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- Instagram End -->
-
-<!-- Footer Section Begin -->
+@include('frontend.instagramsec')
+<!--Footer Section Begin -->
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -1082,10 +942,12 @@ Services Section End
 <div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch">+</div>
+        <img src="img/logo.png" alt="Logo">
         <form class="search-model-form">
             <input type="text" id="search-input" placeholder="Search here.....">
         </form>
     </div>
+  
 </div>
 <!-- Search End -->
 
