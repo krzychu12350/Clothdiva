@@ -251,25 +251,6 @@ Created: Colorib
         }
     });
 
-         
-    $(".account-icons2").hover(function(e) {
-        $(".maria").css('zIndex', '2');
-        $(".maria").show();
-        $(".mila").hide();
-        $(".kila").hide();
-        $(".fila").hide();
-      });
-        
-         
-      $(".maria").on({
-        mouseenter: function () {
-            $(this).show()
-           
-        },
-        mouseleave: function () {
-           $(this).hide()
-        }
-    });
     /* Women products*/
     $(".women").on({
         mouseenter: function () {
