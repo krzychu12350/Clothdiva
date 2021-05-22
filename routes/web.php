@@ -38,7 +38,7 @@ Route::get('/testhome', function () {
     return view('index');
 });
 */
-
+include('messenger.php');
 Auth::routes();
 //Frontend routes
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

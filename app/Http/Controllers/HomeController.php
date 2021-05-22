@@ -25,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {   
-        return view('frontend.firstlookpage');
+        //return view('frontend.firstlookpage');
+        return view('vendor\messenger\messenger');
     }
         /**
 

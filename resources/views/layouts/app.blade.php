@@ -980,6 +980,7 @@ Services Section End -->
 <!-- Search End -->
 
 <!-- Js Plugins -->
+@yield('js-scripts')
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.magnific-popup.min.js"></script>
