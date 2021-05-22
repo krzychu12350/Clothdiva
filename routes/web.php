@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\Store\promotionsManagementController;
 use App\Http\Controllers\Backend\Store\subcategoriesManagementController;
 use App\Http\Controllers\Backend\usersManagementController;
 use App\Http\Controllers\Backend\bannersManagementController;
+use App\Http\Controllers\Auth\MobileLogRegController;
 
 
 use App\Http\Controllers\Frontend\ContactController;
@@ -45,6 +46,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart');
+Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 
 //Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="public/css/klasa.css" type="text/css">
+    
 
     <!-- ICON USER -->
     <script src="https://kit.fontawesome.com/dadb75eae3.js" crossorigin="anonymous"></script>
@@ -44,23 +44,22 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">  
-            <li><span class="far fa-user"></span></li>
-            <li><span class="icon_search search-switch"></span></li>
-            <li><a href="#"><span class="icon_heart_alt"></span>
-                <div class="tip">2</div>
+            <li><div class="account-icons2 text-center">
+               <a href="{{ route('mobile') }}"><span class="far fa-user" aria-expanded="false"></span></a>
+            </div>
+            </li>
+
+            <li><span class=" mila icon_search search-switch"></span></li>
+            <li><a href="#"><span class=" kila icon_heart_alt"></span>
             </a></li>
-            <li><a href="#"><span class="icon_cart_alt"></span>
-                <div class="tip">2</div>
+            <li><a href="#"><span class="fila icon_cart_alt"></span>
             </a></li>
         </ul>
+        
         <div class="offcanvas__logo">
             <a href="./index.html"><img src="img/logo.png" alt=""></a>
         </div>
         <div id="mobile-menu-wrap"></div>
-        <div class="offcanvas__auth">
-            <a href="#">Login</a>
-            <a href="#">Register</a>
-        </div>
     </div>
     <!-- Offcanvas Menu End -->
 
@@ -255,26 +254,26 @@
     </header>
     <!-- Header Section End -->
     @include('frontend.subcategorieslist')
-
-        <div class="list-group toogle-div position-absolute col-xl-2" style = "display:none; position: relative; left: 80%;">
+<div class = "row no-gutters">
+        <div class="col-12 col-sm-6 col-md-8"></div>
+        <div class="col-6 col-md-4 kasia">
+            <ul class = "list-group toogle-div position-absolute col-8" style = "display:none;">
         @guest   
-        <div class="list-group-item">
-                <h5 style="margin-bottom: 20px !important;">Are you user?<br /></h5>
-                <button type="submit" class="btn btn-primary" style = "display: inline-block; margin: 0 auto; width: 200px !important; background-color: #000000;"><a style = "color:white"  href="{{ route('login') }}">Login</a></button></div>
+        <li class="list-group-item">
+                <h5 class = "h5_class">Are you user?<br /></h5>
+                <button type="submit" class="btn btn-primary button_class"><a class = "color_button" href="{{ route('login') }}">Login</a></button></li>
             @if (Route::has('register'))
-            <div class="list-group-item">
-                <h5 style="margin-bottom: 20px !important;">Are you a new user?<br /></h5>
-                <button type="submit" class="btn btn-primary" style = "display: inline-block; margin: 0 auto; width: 200px !important; background-color: #000000;"><a style = "color:white" href="{{ route('register') }}">Register</a></button></div>
+        <li class="list-group-item class2">
+                <h5 class = "h5_class">Are you a new user?<br /></h5>
+                <button type="submit" class="btn btn-primary button_class2"><a class = "color_button" href="{{ route('register') }}">Register</a></button></li>
         
             @endif
                 @else
-                    <div class="list-group-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                   <p>{{ Auth::user()->name }} </p>
+                                
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="list-group dropdown" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item"  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -286,15 +285,16 @@
                                 </div>
                             </div>
             @endguest
-            </div>
+            </ul>
         </div>
-
+</div>
 
     @yield('content')
     @yield('homepage')
     @yield('contact')
     @yield('shop')
     @yield('shopcart')
+    @yield('mobileauth')
     <!-- Categories Section Begin 
     <section class="categories">
         <div class="container-fluid">

@@ -10,7 +10,7 @@
 
           
 
-           <!--
+            <h4 style = "text-align:center"> <br></br> WOMEN <br></br> </h4>
                             <h4 style = "text-align:center"> <br></br> CLOTHES <br></br> </h4>
                         <ul class = "submenu-submenu" style = "text-align:center">
                             <li class = "menu-item level-2" style = "display: block;"> <a style = "color:black" href = "">Dresses, jumpsuits</a></li>
@@ -36,7 +36,7 @@
                             <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Sneakers</a></li>
                             <br></br>
                             <br></br>
-                        </ul>-->
+                        </ul>
          </div>
 
          <div class = "subcategories men_products position-absolute bg-white col-xl-12" style = "display:none">
@@ -46,8 +46,8 @@
                 <li class = "menu-item level-2" style = "display: block;">{{$sub_category_man->name_of_subcategory}}</li>
             </ul>
             @endforeach
-         <!--
-         <h4 style = "text-align:center"> <br></br> MEZCZYZNI <br></br> </h4>
+         
+         <h4 style = "text-align:center"> <br></br> MEN <br></br> </h4>
                             <h4 style = "text-align:center"> <br></br> CLOTHES <br></br> </h4>
                         <ul class = "submenu-submenu" style = "text-align:center">
                             <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Coats, jackets</a></li>
@@ -72,7 +72,7 @@
                             <br></br>
                             <br></br>
                             <br></br>
-                        </ul>-->
+                        </ul>
             
          </div>
 
@@ -84,8 +84,8 @@
             </ul>
             @endforeach
 
-         <!--
-         <h4 style = "text-align:center"> <br></br> DZIEWCZYNKI<br></br> </h4>
+         
+         <h4 style = "text-align:center"> <br></br> GIRLS <br></br> </h4>
                             <h4 style = "text-align:center"> <br></br> GIRL 4-13 YEARS <br></br> </h4>
                         <ul class = "submenu-submenu" style = "text-align:center">
                             <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Coats, jackets</a></li>
@@ -110,8 +110,7 @@
                             <br></br>
                             <br></br>
                             <br></br>
-                            <br></br>
-                        </ul>-->
+                        </ul>
          </div>
 
          <div class = "boys_products position-absolute bg-white col-xl-12" style = "display:none">
@@ -121,7 +120,7 @@
                 </ul>
                 @endforeach
 
-        <!-- <h4 style = "text-align:center"> <br></br> CHLOPCY<br></br> </h4>
+         <h4 style = "text-align:center"> <br></br> BOYS <br></br> </h4>
                             <h4 style = "text-align:center"> <br></br> BOY 4-13 YEARS <br></br> </h4>
                         <ul class = "submenu-submenu" style = "text-align:center">
                             <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Coats, jackets</a></li>
@@ -131,8 +130,8 @@
                             <li class = "menu-item level-1" style = "display: block;"> <a style = "color:black" href = "">Shirts, blouses</a></li>
                             <br></br>
                             </ul>
-                            </li>-->
-                            <!--
+                            </li>
+                            
                             <h4 style = "text-align:center"> <br></br> BOY 0-4 YEARS <br></br> </h4>
                         <ul class = "submenu-submenu" style = "text-align:center">
                             <li class = "menu-item level-1" style = "display: block;"><a style = "color:black" href = "">Coats, jackets</a></li>
@@ -144,5 +143,5 @@
                             <br></br>
                             <br></br>
                             <br></br>
-                        </ul>-->
+                        </ul>
          </div>

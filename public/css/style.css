@@ -3623,6 +3623,49 @@ ol {
 	}
 }
 
+
+.kasia{
+	left: 10%;
+}
+
+.h5_class{
+	margin-bottom: 20px !important;
+}
+
+.button_class{
+	display: inline-block; 
+	margin: 0 auto; 
+	width: 200px !important; 
+	background-color: #000000;
+	border-color:black;
+}
+
+.button_class2{
+	display: inline-block; 
+	margin: 0 auto; 
+	width: 200px !important; 
+	background-color: #D3D3D3;
+	border-style: solid;
+	border-color:rgba(0, 0, 0, 0.7);
+}
+
+.class2{
+
+	background-color: #D3D3D3;
+
+}
+
+
+
+.color_button{
+	color:white;
+}
+
+.color_button2{
+	color:black;
+}
+
+
 /* Small Device = 320px */
 
 @media only screen and (max-width: 479px) {
