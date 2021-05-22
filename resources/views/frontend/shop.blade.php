@@ -33,13 +33,16 @@
                                         </div>
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
+                                                <!--
+                                             @foreach($sub_categories_men as $sub_category_man)
+            <ul class = "submenu-submenu" style = "text-align:center">
+                <li class = "menu-item level-2" style = "display: block;">{{$sub_category_man->name_of_subcategory}}</li>
+            </ul>
+            @endforeach-->
                                                 <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
+                                                    @foreach($sub_categories_women as $sub_category_woman)
+                                                    <li><a href="#">{{$sub_category_woman->name_of_subcategory}}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
@@ -51,63 +54,37 @@
                                         <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
+                                                    @foreach($sub_categories_men as $sub_category_man)
+                                                    <li><a href="#">{{$sub_category_man->name_of_subcategory}}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseThree">Kids</a>
+                                            <a data-toggle="collapse" data-target="#collapseThree">Girls</a>
                                         </div>
                                         <div id="collapseThree" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
+                                                    @foreach($sub_categories_girls as $sub_category_girl)
+                                                    <li><a href="#">{{$sub_category_girl->name_of_subcategory}}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFour">Accessories</a>
+                                            <a data-toggle="collapse" data-target="#collapseFour">Boys</a>
                                         </div>
                                         <div id="collapseFour" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card">
-                                        <div class="card-heading">
-                                            <a data-toggle="collapse" data-target="#collapseFive">Cosmetic</a>
-                                        </div>
-                                        <div id="collapseFive" class="collapse" data-parent="#accordionExample">
-                                            <div class="card-body">
-                                                <ul>
-                                                    <li><a href="#">Coats</a></li>
-                                                    <li><a href="#">Jackets</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shirts</a></li>
-                                                    <li><a href="#">T-shirts</a></li>
-                                                    <li><a href="#">Jeans</a></li>
+                                                    @foreach($sub_categories_boys as $sub_category_boy)
+                                                    <li><a href="#">{{$sub_category_boy->name_of_subcategory}}</a></li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
@@ -137,19 +114,9 @@
                                 <h4>Shop by size</h4>
                             </div>
                             <div class="size__list">
-                                <label for="xxs">
-                                    xxs
-                                    <input type="checkbox" id="xxs">
-                                    <span class="checkmark"></span>
-                                </label>
                                 <label for="xs">
                                     xs
                                     <input type="checkbox" id="xs">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="xss">
-                                    xs-s
-                                    <input type="checkbox" id="xss">
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="s">
@@ -162,11 +129,6 @@
                                     <input type="checkbox" id="m">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label for="ml">
-                                    m-l
-                                    <input type="checkbox" id="ml">
-                                    <span class="checkmark"></span>
-                                </label>
                                 <label for="l">
                                     l
                                     <input type="checkbox" id="l">
@@ -175,6 +137,11 @@
                                 <label for="xl">
                                     xl
                                     <input type="checkbox" id="xl">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label for="xxl">
+                                    xxl
+                                    <input type="checkbox" id="xxl">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
@@ -207,11 +174,6 @@
                                 <label for="blues">
                                     Blues
                                     <input type="checkbox" id="blues">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label for="beige">
-                                    Beige Tones
-                                    <input type="checkbox" id="beige">
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="greens">

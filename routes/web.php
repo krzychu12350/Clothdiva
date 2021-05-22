@@ -15,6 +15,8 @@ use App\Http\Controllers\Auth\MobileLogRegController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\ShopcartController;
+use App\Http\Controllers\Frontend\FavouritesController;
+use App\Http\Controllers\InstagramController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,7 +40,6 @@ Route::get('/testhome', function () {
     return view('index');
 });
 */
-include('messenger.php');
 Auth::routes();
 //Frontend routes
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -47,6 +48,7 @@ Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart');
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
+Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites');
 
 //Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
@@ -58,3 +60,9 @@ Route::get('/promotions', [promotionsManagementController::class, 'index'])->nam
 Route::get('/subcategories', [subcategoriesManagementController::class, 'index'])->name('admin.store.subcategories')->middleware('is_admin');
 Route::get('/users', [usersManagementController::class, 'index'])->name('admin.users')->middleware('is_admin');
 Route::get('/banners', [bannersManagementController::class, 'index'])->name('admin.banners')->middleware('is_admin');
+#$function=[InstagramController::class, 'feed'];
+Route::get('/instagram', [
+    'name' => 'Instagram Feed',
+    'as' => 'app.instagram.feed',
+    'uses' => 'App\Http\Controllers\InstagramController@feed',
+]);

@@ -229,10 +229,12 @@
                             </div>
                             </li>
                             <li>
+                            <a href="{{ route('favourites') }}">
                             <div class="heart-icons text-center">
                             <span class="icon_heart_alt"></span>
                             <p class="d-block header_icon_desc">Favourite</p>
                             </div>
+                            </a> 
                             </li>
                             <li>
                             <a href="{{ route('shopcart') }}">
@@ -293,6 +295,7 @@
     @yield('homepage')
     @yield('contact')
     @yield('shop')
+    @yield('favourites')
     @yield('shopcart')
     @yield('mobileauth')
     <!-- Categories Section Begin 
