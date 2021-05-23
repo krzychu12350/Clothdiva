@@ -31,16 +31,16 @@ class Order extends Model
     public function products(){
         return $this->hasMany(Product::class);
     }
-
+    
     public function invoice()
     {
         return $this->hasOne(Invoice::class);
-    }
-
+    }  
+    
     public function user()
     {
         return $this->belongsTo(User::class);
     }
-
+    
 
 }

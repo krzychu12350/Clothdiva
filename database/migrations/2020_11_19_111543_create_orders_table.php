@@ -23,17 +23,17 @@ class CreateOrdersTable extends Migration
             //$table->boolean('if_the_order_completed');
             //$table->date('date_of_order_fulfillment');
  
-            $table->foreignId('id_invoice');
+            /*$table->foreignId('id_invoice');
             $table->foreign('id_invoice')
             ->references('id_invoice')->on('invoices')
             ->onDelete('cascade');
-            
+            */
             $table->foreignId('id_user');
             $table->foreign('id_user')
             ->references('id_user')->on('users')
             ->onDelete('cascade');
             
-            $table->foreignId('id_payment');
+           /* $table->foreignId('id_payment');
             $table->foreign('id_payment')
             ->references('id_payment')->on('payments')
             ->onDelete('cascade'); 

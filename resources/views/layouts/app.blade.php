@@ -84,50 +84,7 @@
                             <li class = "boys subcategory-toggle"><a href="#">Boys</a></li>
                             <li><a class="restlink" href="{{ route('shop') }}">Shop</a></li>
                             <li><a class="restlink" href="{{ route('contact') }}">Contact</a></li>
-                       <!-- <ul class = "toggle-menu bg-white" role = "menu" style = "display:none; width:100%">
-                        <li class = "menu">
-                            <h6> <br></br> CLOTHES <br></br> </h6>
-                        <ul class = "submenu-submenu">
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Dresses, jumpsuits</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Jackets, coats</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Shirts, blouses</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">T-shirts</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Sweatshirts, sweaters</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Trousers, jeans</a></li>
-                            <li class = "menu-item level-2" style = "display: block;"> <a href = "">Jackets, coats</a></li>
-                        </ul>
-                        </li>
-
-                        <li class = "menu">
-                            <h6> <br> SHOES <br></br> </h6>
-                        <ul class = "submenu-submenu">
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">All</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Heels</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Flats</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Leather</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sandals</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sliders, mules</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Espadrilles<</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sneakers</a></li>
-                        </ul>
-                        </li>
-                        
-                        <li class = "menu">
-                            <h6> <br> ACCESSORIES <br></br> </h6>
-                        <ul class = "submenu-submenu">
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Bags</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Hats</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Jewellery</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Hair accessories</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Belts<</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Sunglasses</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Wallets</a></li>
-                            <li class = "menu-item level-1" style = "display: block;"><a href = "">Socks</a></li>
-                        </ul>
-                        </li>
-
-                        </ul> -->
+                    
                         </ul>
                     </nav>
                 </div>

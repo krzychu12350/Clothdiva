@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Product;
 
 class CreateProductsSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class CreateProductsSeeder extends Seeder
      */
     public function run()
     {
-        $product = [
+         $product = [
             [
                'name'=>'stringi',
                'quantity'=>'200',

@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Yajra\Oci8\Oci8ServiceProvider::class,
         andcarpi\Popper\PopperServiceProvider::class,
-        BaklySystems\LaravelMessenger\LaravelMessengerServiceProvider::class,
+        //BaklySystems\LaravelMessenger\LaravelMessengerServiceProvider::class,
         /*
          * Package Service Providers...
          */
