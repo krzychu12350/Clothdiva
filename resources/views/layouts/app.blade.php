@@ -219,7 +219,13 @@
                         <ul class="header__right__widget">
                             <li><div class="account-icons text-center">
                             <span class="far fa-user" aria-expanded="false"></span>
+                            @guest   
                             <p class="d-block header_icon_desc">Account</p>
+                            @if (Route::has('register'))
+                                @endif
+                                    @else
+                                    <p class="d-block header_icon_desc">{{ Auth::user()->name }}</p>
+                            @endguest
                             </div>
                             </li>
                             <li>
@@ -256,25 +262,29 @@
     </header>
     <!-- Header Section End -->
     @include('frontend.subcategorieslist')
-<div class = "row no-gutters">
+    
+<div class = "row">
+        <!--
         <div class="col-12 col-sm-6 col-md-8"></div>
-        <div class="col-6 col-md-4 kasia">
-            <ul class = "list-group toogle-div position-absolute col-8" style = "display:none;">
+        <div class="col-6 col-md-4">-->
+        <div class="offset-10">
+            <ul class = "list-group toogle-div position-absolute col-2 border-0 float-right" style = "display:none;">
         @guest   
         <li class="list-group-item">
                 <h5 class = "h5_class">Are you user?<br /></h5>
-                <button type="submit" class="btn btn-primary button_class"><a class = "color_button" href="{{ route('login') }}">Login</a></button></li>
-            @if (Route::has('register'))
+               <!-- <button type="submit" class="btn btn-primary button_class"><a class = "color_button" href="{{ route('login') }}">Login</a></button></li>-->
+               <a class = "color_button btn btn-primary button_class" href="{{ route('login') }}">Login</a>
+               @if (Route::has('register'))
         <li class="list-group-item class2">
                 <h5 class = "h5_class">Are you a new user?<br /></h5>
-                <button type="submit" class="btn btn-primary button_class2"><a class = "color_button" href="{{ route('register') }}">Register</a></button></li>
-        
+                <!-- <button type="submit" class="btn btn-primary button_class2"><a class = "color_button" href="{{ route('register') }}">Register</a></button></li>-->
+                <a class = "color_button btn btn-primary button_class2" href="{{ route('register') }}">Register</a>
             @endif
                 @else
-                   <p>{{ Auth::user()->name }} </p>
+                  <!-- <p>{{ Auth::user()->name }} </p>-->
                                 
 
-                                <div class="list-group dropdown" aria-labelledby="navbarDropdown">
+                                <div class="list-group dropdown bg-white" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item"  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -285,10 +295,11 @@
                                         @csrf
                                     </form>
                                 </div>
-                            </div>
+                           <!-- </div>-->
             @endguest
             </ul>
-        </div>
+       <!--</div>-->
+    </div>
 </div>
 
     @yield('content')

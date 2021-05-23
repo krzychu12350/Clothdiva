@@ -237,12 +237,14 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.users') }}">
-                                <i class="fas fa-user"></i>Common users</a>
+                                <i class="fas fa-user"></i>Users</a>
                         </li>
+                        <!--
                         <li>
                             <a href="{{ route('admin.users') }}">
                                 <i class="fas fa-user"></i>Admins</a>
                         </li>
+                        -->
                         <li>
                             <a href="{{ route('admin.banners') }}">
                                 <i class="far fa-image"></i>Banners</a>

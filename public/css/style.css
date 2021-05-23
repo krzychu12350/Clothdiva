@@ -3623,11 +3623,6 @@ ol {
 	}
 }
 
-
-.kasia{
-	left: 10%;
-}
-
 .h5_class{
 	margin-bottom: 20px !important;
 }
@@ -3654,7 +3649,10 @@ ol {
 	background-color: #D3D3D3;
 
 }
-
+.list-group-item{
+	border: 0px !important;
+	border-radius: 0px !important;
+}
 
 
 .color_button{

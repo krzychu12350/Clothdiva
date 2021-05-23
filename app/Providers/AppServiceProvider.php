@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
         $sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
         $sub_categories_men = DB::select('select name_of_subcategory from sub_categories where id_category=2');
         $sub_categories_girls = DB::select('select name_of_subcategory from sub_categories where id_category=3');
