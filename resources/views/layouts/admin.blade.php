@@ -84,7 +84,7 @@
                         <li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-chart-bar"></i>Store</a>
+                                <i class="fas fa-shopping-cart"></i>Store</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                     <a href="{{ route('admin.store.promotions') }}">Promotions</a>
@@ -103,15 +103,15 @@
                         </li>
                         <li>
                             <a href="{{ route('admin.users') }}">
-                                <i class="fas fa-table"></i>Common Users</a>
+                                <i class="fas fa-user"></i>Common Users</a>
                         </li>
                         <li>
                             <a href="{{ route('admin.users') }}">
-                                <i class="fas fa-table"></i>Admins</a>
+                                <i class="fas fa-user"></i>Admins</a>
                         </li>
                         <li>
                             <a href="{{ route('admin.banners') }}">
-                                <i class="far fa-check-square"></i>Banners</a>
+                                <i class="far fa-image"></i>Banners</a>
                         </li>
                         </li>
                         <!--
