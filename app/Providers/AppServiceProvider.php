@@ -4,6 +4,7 @@ namespace App\Providers;
 use DB;
 use Illuminate\Support\ServiceProvider;
 
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -22,9 +23,44 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    {        
+        //$sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
+        //$sub_categories_women = DB::select("select categories_women2() as name_of_subcategory from sub_categories");
+        $sub_categories_women = DB::select("select subcategories_women() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
+        //print_r($sub_categories_women);
+        //return $sub_categories_women->value;
+
+
+        //print_r($sub_categories_women->value); //It is an array print
+
+        //$str_json = json_encode($sub_categories_women); //array to json string conversion
+        //echo  $str_json; // printing json string
+
+        //print_r(json_decode($str_json)); //printing array after convert json strinsg to array
+
+        //exit; // exiting further execution to check resutls
+   
+
+
+
+
+        //$sub_categories_women = DB::executeFunction('categories_women2');
+        //return $sub_categories_women->value;
+        /*Prawie dziala
+        $pdo = DB::getPdo();
+        $stmt = $pdo->prepare("SELECT categories_women2 AS Value FROM sub_categories");
+        $stmt->execute();
+        $sub_categories_women = $stmt->fetch();*/
+        //$result = DB::executeFunction('declare result VARCHAR2(200); categories_women2');
+
+        //$pdo = DB::getPdo();
+        //$stmt = $pdo->prepare("SELECT categories_women2 AS Value FROM sub_categories");
+        //$result = $stmt->execute();
+        //$sub_categories_women =  $result->name_of_subcategory;
+       
         
-        $sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
+
+       // $sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
         $sub_categories_men = DB::select('select name_of_subcategory from sub_categories where id_category=2');
         $sub_categories_girls = DB::select('select name_of_subcategory from sub_categories where id_category=3');
         $sub_categories_boys = DB::select('select name_of_subcategory from sub_categories where id_category=4');
@@ -32,5 +68,7 @@ class AppServiceProvider extends ServiceProvider
         view()->share('sub_categories_men',$sub_categories_men);
         view()->share('sub_categories_girls',$sub_categories_girls);
         view()->share('sub_categories_boys',$sub_categories_boys);
+
+        
     }
 }

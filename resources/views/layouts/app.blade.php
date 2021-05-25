@@ -862,7 +862,12 @@ Discount Section Begin
     </div>
 </section>
 Services Section End -->
+<?php
 
+//echo $sub_categories_women;
+
+
+?>
 @include('frontend.instagramsec')
 <!--Footer Section Begin -->
 <footer class="footer">

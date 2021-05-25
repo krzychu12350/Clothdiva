@@ -35,11 +35,16 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
    
 
 </head>
-<body class="animsition">
-  
+<!--<body class="animsition">-->
+<body>
+        <!-- Page Preloder -->
+        <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
@@ -1084,8 +1089,8 @@
 
     <!-- Main JS-->
     <script src="{{ asset('js/merged.js') }}"></script>
-    
-
+    <!-- Move preloader function JS-->
+    <script src="js/main.js"></script>
 </body> 
 
 </html>

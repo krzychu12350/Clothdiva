@@ -66,3 +66,14 @@ Route::get('/instagram', [
     'as' => 'app.instagram.feed',
     'uses' => 'App\Http\Controllers\InstagramController@feed',
 ]);
+Route::get('/Jeans', function () {
+    return view('frontend.shop');
+})->name('Jeans');
+
+Route::get('/Shorts', function () {
+    return view('frontend.shop');
+})->name('Shorts');
+
+Route::get('/Sneakers', function () {
+    return view('frontend.shop');
+})->name('Sneakers');
