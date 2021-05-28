@@ -21,7 +21,8 @@ class CreateUsersSeeder extends Seeder
                'login'=>'administrator',
                'email'=>'admin@gmail.com',
                'password'=> bcrypt('Password123'),
-                'id_role'=>'1',
+               'id_role'=>'1',
+               'id_user_address'=>'1',
 
             ],
 
@@ -33,6 +34,7 @@ class CreateUsersSeeder extends Seeder
                'email'=>'user@gmail.com',
                'password'=> bcrypt('User123'),
                 'id_role'=>'2',
+                'id_user_address'=>'1',
 
             ],
 
@@ -44,6 +46,7 @@ class CreateUsersSeeder extends Seeder
                 'email'=>'Patrycja123@gmail.com',
                 'password'=> bcrypt('Patrycja123'),
                  'id_role'=>'2',
+                 'id_user_address'=>'1',
  
              ],
         ];

@@ -1,11 +1,7 @@
 
 
 
-<<<<<<< HEAD
     <!-- Instagram Begin -->
-=======
-         <!-- Instagram Begin  -->
->>>>>>> 1214806 (dbmod)
     <div class="instagram">
         <div class="container-fluid">
             <div class="row">
@@ -62,8 +58,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
      <!--Instagram End -->
-=======
-     <!-- Instagram End -->
->>>>>>> 1214806 (dbmod)
