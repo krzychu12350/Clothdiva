@@ -68,16 +68,16 @@
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </td>
-                                                <td>Lori Lynch</td>
+                                                <td>Karol Wiśniewski</td>
                                                 <td>
-                                                    <span class="block-email">lori@example.com</span>
+                                                    <span class="block-email">karolwisniewski@gmail.com</span>
                                                 </td>
-                                                <td class="desc">Samsung S8 Black</td>
-                                                <td>2018-09-27 02:12</td>
+                                                <td class="desc">Black jacket</td>
+                                                <td>2020-05-03 15:15</td>
                                                 <td>
                                                     <span class="status--process">Processed</span>
                                                 </td>
-                                                <td>$679.00</td>
+                                                <td>79.99 PLN</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
@@ -95,7 +95,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr class="spacer"></tr>
+                                           <!-- <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
                                                 <td>
                                                     <label class="au-checkbox">
@@ -129,7 +129,7 @@
                                                         </button>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
                                                 <td>
@@ -138,16 +138,16 @@
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </td>
-                                                <td>Lori Lynch</td>
+                                                <td>Jan Kowalski</td>
                                                 <td>
-                                                    <span class="block-email">lyn@example.com</span>
+                                                    <span class="block-email">jan.kowalski@gmail.com</span>
                                                 </td>
-                                                <td class="desc">iPhone X 256Gb Black</td>
-                                                <td>2018-09-25 19:03</td>
+                                                <td class="desc">Yellow T-Shirt</td>
+                                                <td>2020-09-25 19:03</td>
                                                 <td>
                                                     <span class="status--denied">Denied</span>
                                                 </td>
-                                                <td>$1199.00</td>
+                                                <td>30.99 PLN</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
@@ -164,7 +164,7 @@
                                                         </button>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                           <!-- </tr>
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
                                                 <td>
@@ -199,7 +199,7 @@
                                                         </button>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                            </tr>-->
                                         </tbody>
                                     </table>
                                 </div>

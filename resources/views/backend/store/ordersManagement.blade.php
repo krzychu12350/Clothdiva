@@ -10,7 +10,8 @@
                                         <thead>
                                             <tr>
                                                 <th>date</th>
-                                                <th>type</th>
+                                                <th>Categories</th>
+                                                <th>Subcategories</th>
                                                 <th>description</th>
                                                 <th>status</th>
                                                 <th>price</th>
@@ -18,20 +19,22 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>Mobile</td>
-                                                <td>iPhone X 64Gb Grey</td>
+                                                <td>2020-05-03 15:15</td>
+                                                <td>Men</td>
+                                                <td>Black jacket</td>
+                                                <td>-</td>
                                                 <td class="process">Processed</td>
-                                                <td>$999.00</td>
+                                                <td>79.99 PLN</td>
                                             </tr>
                                             <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>Mobile</td>
-                                                <td>Samsung S8 Black</td>
+                                                <td>2020-09-25 19:03</td>
+                                                <td>Men</td>
+                                                <td>Yellow T-Shirt</td>
+                                                <td>-</td>
                                                 <td class="process">Processed</td>
-                                                <td>$756.00</td>
+                                                <td>30.99 PLN</td>
                                             </tr>
-                                            <tr>
+                                           <!-- <tr>
                                                 <td>2018-09-27 02:12</td>
                                                 <td>Game</td>
                                                 <td>Game Console Controller</td>
@@ -72,7 +75,7 @@
                                                 <td>Macbook Pro Retina 2017</td>
                                                 <td class="process">Processed</td>
                                                 <td>$10.00</td>
-                                            </tr>
+                                            </tr>-->
                                         </tbody>
                                     </table>
                                 </div>

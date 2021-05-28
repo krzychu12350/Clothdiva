@@ -37,7 +37,7 @@
                                                     </td>
                                                     <td>name</td>
                                                     <td>role</td>
-                                                    <td>type</td>
+                                                    <!--<td>type</td>-->
                                                     <td></td>
                                                 </tr>
                                             </thead>
@@ -51,16 +51,16 @@
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
+                                                            <h6>ADMIN</h6>
                                                             <span>
-                                                                <a href="#">johndoe@gmail.com</a>
+                                                                <a href="#">admin@gmail.com</a>
                                                             </span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <span class="role admin">admin</span>
                                                     </td>
-                                                    <td>
+                                                    <!--<td>
                                                         <div class="rs-select2--trans rs-select2--sm">
                                                             <select class="js-select2" name="property">
                                                                 <option selected="selected">Full Control</option>
@@ -69,7 +69,7 @@
                                                             </select>
                                                             <div class="dropDownSelect2"></div>
                                                         </div>
-                                                    </td>
+                                                    </td>-->
                                                     <td>
                                                         <span class="more">
                                                             <i class="zmdi zmdi-more"></i>
@@ -85,16 +85,16 @@
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
+                                                            <h6>User</h6>
                                                             <span>
-                                                                <a href="#">johndoe@gmail.com</a>
+                                                                <a href="#">user@gmail.com</a>
                                                             </span>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <span class="role user">user</span>
                                                     </td>
-                                                    <td>
+                                                    <!--<td>
                                                         <div class="rs-select2--trans rs-select2--sm">
                                                             <select class="js-select2" name="property">
                                                                 <option value="">Full Control</option>
@@ -103,14 +103,14 @@
                                                             </select>
                                                             <div class="dropDownSelect2"></div>
                                                         </div>
-                                                    </td>
+                                                    </td>-->
                                                     <td>
                                                         <span class="more">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </span>
                                                     </td>
                                                 </tr>
-                                                <tr>
+                                                <!-- <tr>
                                                     <td>
                                                         <label class="au-checkbox">
                                                             <input type="checkbox">
@@ -185,7 +185,7 @@
                                         <button class="au-btn au-btn-load">load more</button>
                                     </div>
                                 </div>
-                                <!-- END USER DATA-->
+                                 END USER DATA-->
     </div>
 </div>
 @endsection

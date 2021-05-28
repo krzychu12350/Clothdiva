@@ -36,7 +36,7 @@
                                     <td class="cart__product__item">
                                         <img src="img/shop-cart/cp-1.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Chain bucket bag</h6>
+                                            <h6>Black bag</h6>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -46,20 +46,20 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 150.0</td>
+                                    <td class="cart__price">150.0 PLN</td>
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
                                     </td>
-                                    <td class="cart__total">$ 300.0</td>
+                                    <td class="cart__total">150.0 PLN</td>
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
                                         <img src="img/shop-cart/cp-2.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Zip-pockets pebbled tote briefcase</h6>
+                                            <h6>Big bag</h6>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -69,20 +69,20 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 170.0</td>
+                                    <td class="cart__price">170.0 PLN</td>
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
                                     </td>
-                                    <td class="cart__total">$ 170.0</td>
+                                    <td class="cart__total">170.0 PLN</td>
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
                                         <img src="img/shop-cart/cp-3.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Black jean</h6>
+                                            <h6>Black jeans</h6>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -92,20 +92,20 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 85.0</td>
+                                    <td class="cart__price">80.0 PLN </td>
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
                                     </td>
-                                    <td class="cart__total">$ 170.0</td>
+                                    <td class="cart__total">80.0 PLN</td>
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
                                     <td class="cart__product__item">
                                         <img src="img/shop-cart/cp-4.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Cotton Shirt</h6>
+                                            <h6>Green Shirt</h6>
                                             <div class="rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -115,13 +115,13 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="cart__price">$ 55.0</td>
+                                    <td class="cart__price">55.0 PLN</td>
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
                                     </td>
-                                    <td class="cart__total">$ 110.0</td>
+                                    <td class="cart__total">55.0 PLN</td>
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                             </tbody>
@@ -155,8 +155,8 @@
                     <div class="cart__total__procced">
                         <h6>Cart total</h6>
                         <ul>
-                            <li>Subtotal <span>$ 750.0</span></li>
-                            <li>Total <span>$ 750.0</span></li>
+                            <li>Subtotal <span>455.0 PLN</span></li>
+                            <li>Total <span>455.0 PLN</span></li>
                         </ul>
                         <a href="#" class="primary-btn">Proceed to checkout</a>
                     </div>
