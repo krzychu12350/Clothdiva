@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             ->references('id_role')->on('roles')
             ->onDelete('cascade');
             
-            $table->foreignId('id_user_address');
+            $table->foreignId('id_user_address')->nullable();
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
             ->onDelete('cascade');

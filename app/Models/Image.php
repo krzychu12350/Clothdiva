@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Photo_gallery extends Model
+class Image extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id_photo';
+    protected $primaryKey = 'id_image';
     public $timestamps = false;
     protected $fillable = [
-        'id_product',
+        'image',
     ];
-    public function product(){
+    /*public function product(){
         return $this->belongsTo(Product::class);
-    }
+    }*/
 }

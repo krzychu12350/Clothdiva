@@ -29,9 +29,9 @@ class Product extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function photo_gallery(){
+   /* public function photo_gallery(){
         return $this->hasMany(Photo_gallery::class);
-    }
+    }*/
 
     public function promotion(){
         return $this->belongsTo(Promotion::class);
