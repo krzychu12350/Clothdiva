@@ -63,6 +63,8 @@ Route::get('/orders', [adminOrdersController::class, 'index'])->name('admin.stor
 Route::get('/products', [productsManagementController::class, 'index'])->name('admin.store.products')->middleware('is_admin');
 Route::get('/promotions', [promotionsManagementController::class, 'index'])->name('admin.store.promotions')->middleware('is_admin');
 Route::get('/subcategories', [subcategoriesManagementController::class, 'index'])->name('admin.store.subcategories')->middleware('is_admin');
+Route::post('/subcategories-delete', [subcategoriesManagementController::class, 'destroy'])->name('admin.store.subcategories.destroy')->middleware('is_admin');
+
 Route::get('/users', [usersManagementController::class, 'index'])->name('admin.users')->middleware('is_admin');
 Route::get('/banners', [bannersManagementController::class, 'index'])->name('admin.banners')->middleware('is_admin');
 #$function=[InstagramController::class, 'feed'];

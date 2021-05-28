@@ -86,9 +86,18 @@
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
+                                                        <a href="{{ route('admin.store.subcategories.destroy') }}"
+                                                     onclick="event.preventDefault();
+                                                     document.getElementById('subcatdel-form').submit();">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                        <!-- wywołanie procedury po nacisnieciu tego przycisku -->
+
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
+                                                        </a>
+                                                        <form id="subcatdel-form" action="{{ route('admin.store.subcategories.destroy') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                        </form>
                                                     </div>
                                                 </td>
                                                 </tr>
