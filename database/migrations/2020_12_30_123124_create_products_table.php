@@ -28,10 +28,10 @@ class CreateProductsTable extends Migration
             ->references('id_sub_category')->on('sub_categories')
             ->onDelete('cascade');
 
-           /* $table->foreignId('id_promotion');
+            $table->foreignId('id_promotion');
             $table->foreign('id_promotion')
             ->references('id_promotion')->on('promotions')
-            ->onDelete('cascade');*/
+            ->onDelete('cascade');
 
             $table->foreignId('id_order');
             $table->foreign('id_order')
