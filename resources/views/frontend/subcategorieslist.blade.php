@@ -5,9 +5,10 @@
             
             <?php
             //echo $sub_category_woman->name_of_subcategory;
+            //,['subcategory'=> $sub_category_woman->name_of_subcategory]
             ?>
             <ul class = "submenu-submenu" style = "text-align:center">
-                <li class = "menu-item level-2" style = "display: block;"><a href="{{ route($sub_category_woman->name_of_subcategory) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
+               <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
             </ul>
             @endforeach
 

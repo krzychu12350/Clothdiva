@@ -964,7 +964,9 @@ ol {
 	margin-right: 6px;
 	margin-bottom: 5px;
 }
-
+.footer__social a:hover {
+	background-color:#e83e8c;;
+}
 .footer__social a:last-child {
 	margin-right: 0;
 }

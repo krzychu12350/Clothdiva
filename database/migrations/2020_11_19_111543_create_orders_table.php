@@ -17,11 +17,11 @@ class CreateOrdersTable extends Migration
             $table->increments('id_order');
             $table->string('status', 100);
             $table->date('date_of_placing_order');
-            $table->boolean('if_the_order_accepted');	
-            $table->date('date_of_order_addmision');		
-            $table->date('shipping_date');
-            $table->boolean('if_the_order_completed');
-            $table->date('date_of_order_fulfillment');
+            //$table->boolean('if_the_order_accepted');	
+            //$table->date('date_of_order_addmision');		
+            //$table->date('shipping_date');
+            //$table->boolean('if_the_order_completed');
+            //$table->date('date_of_order_fulfillment');
  
             $table->foreignId('id_invoice');
             $table->foreign('id_invoice')
@@ -36,7 +36,7 @@ class CreateOrdersTable extends Migration
             $table->foreignId('id_payment');
             $table->foreign('id_payment')
             ->references('id_payment')->on('payments')
-            ->onDelete('cascade');
+            ->onDelete('cascade'); 
             
         });
     }

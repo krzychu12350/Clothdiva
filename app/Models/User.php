@@ -28,8 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
         'id_role',
-        //'is_admin',
-        
+        'id_user_address',
     ];
  
     protected $hidden = [
@@ -42,7 +41,11 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo(Role::class);
     }
-  /*
+
+    public function user_address(){
+        return $this->belongsTo(User_address::class);
+    }
+  
     public function favorite_products()
     {
         return $this->hasMany(Favorite_product::class);
@@ -51,5 +54,4 @@ class User extends Authenticatable
     public function orders(){
         return $this->hasMany(Order::class);
     }
-    */
 }

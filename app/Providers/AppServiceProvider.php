@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {        
         //$sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
         //$sub_categories_women = DB::select("select categories_women2() as name_of_subcategory from sub_categories");
-        $sub_categories_women = DB::select("select subcategories_women() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
+ //$sub_categories_women = DB::select("select subcategories_women() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
         //print_r($sub_categories_women);
         //return $sub_categories_women->value;
 
@@ -61,14 +61,20 @@ class AppServiceProvider extends ServiceProvider
         
 
        // $sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
+       /*
         $sub_categories_men = DB::select('select name_of_subcategory from sub_categories where id_category=2');
         $sub_categories_girls = DB::select('select name_of_subcategory from sub_categories where id_category=3');
         $sub_categories_boys = DB::select('select name_of_subcategory from sub_categories where id_category=4');
+
+        $scmanagement = DB::select("select subcategories_management() as scmanagement from sub_categories FETCH FIRST 1 ROWS ONLY");
+        $all_categories = DB::select("select all_categories() all_categories from categories FETCH FIRST 1 ROWS ONLY");
+
         view()->share('sub_categories_women',$sub_categories_women);
         view()->share('sub_categories_men',$sub_categories_men);
         view()->share('sub_categories_girls',$sub_categories_girls);
         view()->share('sub_categories_boys',$sub_categories_boys);
-
-        
+        view()->share('scmanagement', $scmanagement);
+        view()->share('all_categories', $all_categories);
+        */
     }
 }

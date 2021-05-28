@@ -13,11 +13,14 @@ class Order extends Model
     protected $fillable = [
         'status',
         'date_of_placing_order',
-        'if_the_order_accepted',
-        'date_of_order_addmision',
-        'shipping_date',
-        'if_the_order_completed',
-        'date_of_order_fufillment',
+        //'if_the_order_accepted',
+        //'date_of_order_addmision',
+        //'shipping_date',
+        //'if_the_order_completed',
+        //'date_of_order_fufillment',
+        'id_invoice',
+        'id_user',
+        'id_payment',
     ];
 
     public function payment()

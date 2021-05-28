@@ -39,13 +39,63 @@
                         </div>
                         <div class="contact__form">
                             <h5>SEND MESSAGE</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Name">
-                                <input type="text" placeholder="Email">
-                                <input type="text" placeholder="Subject">
-                                <textarea placeholder="Message"></textarea>
-                                <button type="submit" class="site-btn" style="background-color: black; !important;">Send Message</button>
+                           <!-- Success message -->
+                            @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{Session::get('success')}}
+                                </div>
+                            @endif
+
+              
+                            <form method="get" action="{{ route('ContactUsForm') }}">
+
+                                @csrf
+
+                           
+                                    <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}" name="name" id="name" placeholder="Your name">
+
+                                    <!-- Error -->
+                                    @if ($errors->has('name'))
+                                    <div class="error">
+                                        {{ $errors->first('name') }}
+                                    </div>
+                                    @endif
+                            
+
+                              
+                                    <input type="email" class="form-control {{ $errors->has('email') ? 'error' : '' }}" name="email" id="email"  placeholder="Your email">
+
+                                    @if ($errors->has('email'))
+                                    <div class="error">
+                                        {{ $errors->first('email') }}
+                                    </div>
+                                    @endif
+                            
+                               
+                                    <input type="text" class="form-control {{ $errors->has('subject') ? 'error' : '' }}" name="subject"
+                                    id="subject" placeholder="Subject">
+
+                                    @if ($errors->has('subject'))
+                                    <div class="error">
+                                        {{ $errors->first('subject') }}
+                                    </div>
+                                    @endif
+                    
+
+                                    <textarea class="form-control {{ $errors->has('message') ? 'error' : '' }}" name="message" id="message"
+                                        rows="3" placeholder="Your message..."></textarea>
+
+                                    @if ($errors->has('message'))
+                                    <div class="error">
+                                        {{ $errors->first('message') }}
+                                    </div>
+                                    @endif
+                             
+                                <button type="submit"  name="send" class="site-btn" style="background-color: black; !important;">Send Message</button>
+                                <!--<input type="submit" name="send" value="Submit" class="site-btn" style="background-color: black; !important;">-->
                             </form>
+                        
+                          
                         </div>
                     </div>
                 </div>

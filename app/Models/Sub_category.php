@@ -17,7 +17,7 @@ class Sub_category extends Model
      *
      * @var array
      */
-    protected $fillable = ['name_of_subcategory'];
+    protected $fillable = ['name_of_subcategory', 'id_category'];
 
     public function category(){
         return $this->belongsTo(Category::class);

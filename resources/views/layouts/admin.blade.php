@@ -226,7 +226,7 @@
                                 <i class="fas fa-shopping-cart"></i>Store</a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="{{ route('admin.store.promotions') }}">Promotion</a>
+                                    <a href="{{ route('admin.store.promotions') }}">Promotions</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('admin.store.products') }}">Products</a>

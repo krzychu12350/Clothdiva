@@ -19,16 +19,9 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->double('prize',6,2);
             $table->string('color', 100);
-            $table->integer('size');
+            $table->string('size');
             $table->text('description');
             $table->text('composition_and_conservation');
-            /*
-            $table->foreignId('id_user');
-            $table->foreign('id_user')
-            ->references('id_user')->on('users')
-            ->onDelete('cascade');
-            tylko pytanie czy klucz "id_user" bierze z tabelki favourite_products czy z tabelki users?? NIE WIEM
-            */
             
             $table->foreignId('id_sub_category');
             $table->foreign('id_sub_category')
@@ -43,7 +36,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('id_order');
             $table->foreign('id_order')
             ->references('id_order')->on('orders')
-            ->onDelete('cascade');
+            ->onDelete('cascade')->nullable();
         });
     }
 

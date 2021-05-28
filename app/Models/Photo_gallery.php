@@ -10,6 +10,9 @@ class Photo_gallery extends Model
     use HasFactory;
     protected $primaryKey = 'id_photo';
     public $timestamps = false;
+    protected $fillable = [
+        'id_product',
+    ];
     public function product(){
         return $this->belongsTo(Product::class);
     }

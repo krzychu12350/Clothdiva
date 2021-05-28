@@ -13,9 +13,11 @@ use App\Http\Controllers\Auth\MobileLogRegController;
 
 
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\ContactUsMailController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\ShopcartController;
 use App\Http\Controllers\Frontend\FavouritesController;
+use App\Http\Controllers\Frontend\ProductsController;
 use App\Http\Controllers\InstagramController;
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +47,10 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/contact-us',[ContactUsMailController::class, 'ContactUsForm'])->name('ContactUsForm');
+
 Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart');
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites');
@@ -66,6 +71,7 @@ Route::get('/instagram', [
     'as' => 'app.instagram.feed',
     'uses' => 'App\Http\Controllers\InstagramController@feed',
 ]);
+/*
 Route::get('/Jeans', function () {
     return view('frontend.shop');
 })->name('Jeans');
@@ -77,3 +83,4 @@ Route::get('/Shorts', function () {
 Route::get('/Sneakers', function () {
     return view('frontend.shop');
 })->name('Sneakers');
+*/

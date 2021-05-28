@@ -18,6 +18,10 @@ class Product extends Model
         'size',
         'description',
         'composition_and_conservation'
+        'id_user',
+        'id_subcategory',
+        'id_promotion',
+        'id_order',
     ];
 
     public function order()

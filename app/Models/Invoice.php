@@ -15,6 +15,7 @@ class Invoice extends Model
         'VAT_prize',
         'VAT_rate',
         'brutto_prize',
+        'id_user_address',
     ];
     
     public function user_address(){
