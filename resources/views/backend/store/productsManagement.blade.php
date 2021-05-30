@@ -46,38 +46,40 @@
                                         <thead>
                                             <tr>
                                                 <th>
-                                                    <label class="au-checkbox">
+                                                   <!-- <label class="au-checkbox">
                                                         <input type="checkbox">
                                                         <span class="au-checkmark"></span>
-                                                    </label>
+                                                    </label> -->
                                                 </th>
                                                 <th>name</th>
-                                                <th>email</th>
+                                                <th>image</th>
+                                                <th>prize</th>
+                                                <th>color</th>
+                                                <th>size</th>
                                                 <th>description</th>
-                                                <th>date</th>
-                                                <th>status</th>
-                                                <th>price</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="tr-shadow">
+
+                                        @foreach($products_management as $singlerow)
+                                          <!--  <tr class="tr-shadow">
                                                 <td>
                                                     <label class="au-checkbox">
                                                         <input type="checkbox">
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </td>
-                                                <td>Karol Wiśniewski</td>
+                                                <td>-</td>
                                                 <td>
-                                                    <span class="block-email">karolwisniewski@gmail.com</span>
+                                                    <span class="block-email">-</span>
                                                 </td>
-                                                <td class="desc">Black jacket</td>
-                                                <td>2020-05-03 15:15</td>
+                                                <td class="desc">-</td>
+                                                <td>-</td>
                                                 <td>
-                                                    <span class="status--process">Processed</span>
+                                                    <span class="status--process">-</span>
                                                 </td>
-                                                <td>79.99 PLN</td>
+                                                <td>-</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
@@ -94,7 +96,7 @@
                                                         </button>
                                                     </div>
                                                 </td>
-                                            </tr>
+                                            </tr> -->
                                            <!-- <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
                                                 <td>
@@ -138,16 +140,16 @@
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </td>
-                                                <td>Jan Kowalski</td>
+                                                <td>{{$singlerow->name}}</td>
                                                 <td>
-                                                    <span class="block-email">jan.kowalski@gmail.com</span>
+                                                    <span class="block-email">{{$singlerow->image}}</span>
                                                 </td>
-                                                <td class="desc">Yellow T-Shirt</td>
-                                                <td>2020-09-25 19:03</td>
+                                                <td class="desc">{{$singlerow->prize}}</td>
+                                                <td>{{$singlerow->color}}</td>
                                                 <td>
-                                                    <span class="status--denied">Denied</span>
+                                                    <span class="status--denied">{{$singlerow->size_of_product}}</span>
                                                 </td>
-                                                <td>30.99 PLN</td>
+                                                <td>{{$singlerow->description}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
@@ -197,9 +199,10 @@
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="More">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
-                                                    </div>
+                                                    </div>-->
                                                 </td>
-                                            </tr>-->
+                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

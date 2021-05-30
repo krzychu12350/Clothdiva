@@ -49,6 +49,18 @@ class CreateUsersSeeder extends Seeder
                  'id_user_address'=>'1',
  
              ],
+
+             [
+                'name'=>'Mirek',
+                'surname'=>'Klocek',
+                'mobile'=>'232323232',
+                'login'=>'Mirek213',
+                'email'=>'Mirek321@gmail.com',
+                'password'=> bcrypt('Mirek123'),
+                 'id_role'=>'2',
+                 'id_user_address'=>'1',
+ 
+             ],
         ];
 
         foreach ($user as $key => $value) {

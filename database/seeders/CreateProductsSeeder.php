@@ -16,15 +16,36 @@ class CreateProductsSeeder extends Seeder
     {
          $product = [
             [
-               'name'=>'stringi',
+               'name'=>'Niebieskie jeansy',
                'quantity'=>'200',
-               'prize'=>'2.42',
-               'color'=>'sraczkowo-buraczkowy',
-               'size'=>'XL',
-               'description'=>'eluwina',
-               'composition_and_conservation'=>'wypierdoldokosza i sie ciesz',
-               'id_sub_category'=>'1',
-               'id_order'=>'1',
+               'prize'=>'79.99',
+               'color'=>'Blue',
+               'size_of_product'=>'XS',
+               'description'=>'Fajne jeansy',
+               'composition_and_conservation'=>'NEWAE',
+               'id_sub_category'=>'2',
+            ],
+
+            [
+                'name'=>'Czerwone spodenki',
+                'quantity'=>'20',
+                'prize'=>'49.99',
+                'color'=>'Red',
+                'size_of_product'=>'L',
+                'description'=>'Fajne spodenki',
+                'composition_and_conservation'=>'NEWAE',
+                'id_sub_category'=>'3',
+            ],
+
+            [
+                'name'=>'Białe snekarsy',
+                'quantity'=>'20',
+                'prize'=>'49.99',
+                'color'=>'Red',
+                'size_of_product'=>'XL',
+                'description'=>'Fajne buty',
+                'composition_and_conservation'=>'NEWAE',
+                'id_sub_category'=>'4',
             ],
 
            

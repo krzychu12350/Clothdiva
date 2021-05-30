@@ -229,18 +229,13 @@
         @guest   
         <li class="list-group-item">
                 <h5 class = "h5_class">Are you user?<br /></h5>
-               <!-- <button type="submit" class="btn btn-primary button_class"><a class = "color_button" href="{{ route('login') }}">Login</a></button></li>-->
                <a class = "color_button btn btn-primary button_class" href="{{ route('login') }}">Login</a>
                @if (Route::has('register'))
         <li class="list-group-item class2">
                 <h5 class = "h5_class">Are you a new user?<br /></h5>
-                <!-- <button type="submit" class="btn btn-primary button_class2"><a class = "color_button" href="{{ route('register') }}">Register</a></button></li>-->
                 <a class = "color_button btn btn-primary button_class2" href="{{ route('register') }}">Register</a>
             @endif
-                @else
-                  <!-- <p>{{ Auth::user()->name }} </p>-->
-                                
-
+                @else                                
                                 <div class="list-group dropdown bg-white" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item"  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -252,10 +247,8 @@
                                         @csrf
                                     </form>
                                 </div>
-                           <!-- </div>-->
             @endguest
             </ul>
-       <!--</div>-->
     </div>
 </div>
 
@@ -838,8 +831,7 @@ Services Section End -->
                         <!--<h3>Clothdiva</h3>-->
                         </a>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    cilisis.</p>
+                    <p>Shop with passion. Clothes made in Poland.They are of high quality, which makes them pleasant to the touch, airy and suitable for any season.</p>
                     <!--
                     <div class="footer__payment">
                         <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
@@ -915,12 +907,13 @@ Services Section End -->
 <!-- Footer Section End -->
 
 <!-- Search Begin -->
+
 <div class="search-model">
+  <div class = "logo_searching"><img src="img/logo.png" alt="Logo" class = img_logo_search></div>
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch">+</div>
-        <img src="img/logo.png" alt="Logo">
         <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
+            <input type="text" id="search-input" placeholder="Search here...">
         </form>
     </div>
   

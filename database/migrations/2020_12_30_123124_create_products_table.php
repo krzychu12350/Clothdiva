@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->double('prize',6,2);
             $table->string('color', 100);
-            $table->string('size');
+            $table->string('size_of_product');
             $table->text('description');
             $table->text('composition_and_conservation');
             
@@ -28,7 +28,7 @@ class CreateProductsTable extends Migration
             ->references('id_sub_category')->on('sub_categories')
             ->onDelete('cascade');
 
-            $table->foreignId('id_promotion');
+           /* $table->foreignId('id_promotion');
             $table->foreign('id_promotion')
             ->references('id_promotion')->on('promotions')
             ->onDelete('cascade');
@@ -36,7 +36,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('id_order');
             $table->foreign('id_order')
             ->references('id_order')->on('orders')
-            ->onDelete('cascade')->nullable();
+            ->onDelete('cascade')->nullable();*/
         });
     }
 

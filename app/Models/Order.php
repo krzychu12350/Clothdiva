@@ -28,9 +28,9 @@ class Order extends Model
         return $this->belongsTo(Payment::class);
     }
 
-    public function products(){
+    /*public function products(){
         return $this->hasMany(Product::class);
-    }
+    }*/
     
     public function invoice()
     {

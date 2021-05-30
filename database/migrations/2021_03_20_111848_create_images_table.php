@@ -14,8 +14,8 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->increments('id_image');
-            $table->binary('image');
+            $table->id('id_image');
+            $table->string('image');
 
             $table->foreignId('id_product');
             $table->foreign('id_product')

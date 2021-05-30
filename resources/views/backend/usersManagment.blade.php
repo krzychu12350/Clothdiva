@@ -29,36 +29,37 @@
                                         <table class="table">
                                             <thead>
                                                 <tr>
-                                                    <td>
+                                                    <!--<td>
                                                         <label class="au-checkbox">
                                                             <input type="checkbox">
                                                             <span class="au-checkmark"></span>
                                                         </label>
-                                                    </td>
+                                                    </td>-->
                                                     <td>name</td>
                                                     <td>role</td>
-                                                    <!--<td>type</td>-->
-                                                    <td></td>
+                                              
                                                 </tr>
                                             </thead>
                                             <tbody>
+
+                                            @foreach($users_data as $singlerow)
                                                 <tr>
-                                                    <td>
+                                                    <!-- <td>
                                                         <label class="au-checkbox">
                                                             <input type="checkbox">
                                                             <span class="au-checkmark"></span>
                                                         </label>
-                                                    </td>
+                                                    </td> -->
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>ADMIN</h6>
-                                                            <span>
-                                                                <a href="#">admin@gmail.com</a>
-                                                            </span>
+                                                            <h6>{{$singlerow->name}} {{$singlerow->surname}}</h6>
+                                                             <span>
+                                                             {{$singlerow->email}}
+                                                            </span> 
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="role admin">admin</span>
+                                                        <span class="role admin">{{$singlerow->role_name}}</span>
                                                     </td>
                                                     <!--<td>
                                                         <div class="rs-select2--trans rs-select2--sm">
@@ -70,7 +71,7 @@
                                                             <div class="dropDownSelect2"></div>
                                                         </div>
                                                     </td>-->
-                                                    <td>
+                                                   <!-- <td>
                                                         <span class="more">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </span>
@@ -83,8 +84,8 @@
                                                             <span class="au-checkmark"></span>
                                                         </label>
                                                     </td>
-                                                    <td>
-                                                        <div class="table-data__info">
+                                                    <td>-->
+                                                        <!--<div class="table-data__info">
                                                             <h6>User</h6>
                                                             <span>
                                                                 <a href="#">user@gmail.com</a>
@@ -93,7 +94,7 @@
                                                     </td>
                                                     <td>
                                                         <span class="role user">user</span>
-                                                    </td>
+                                                    </td> -->
                                                     <!--<td>
                                                         <div class="rs-select2--trans rs-select2--sm">
                                                             <select class="js-select2" name="property">
@@ -110,74 +111,9 @@
                                                         </span>
                                                     </td>
                                                 </tr>
-                                                <!-- <tr>
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
-                                                            <span>
-                                                                <a href="#">johndoe@gmail.com</a>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role user">user</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                            <select class="js-select2" name="property">
-                                                                <option value="">Full Control</option>
-                                                                <option value="" selected="selected">Post</option>
-                                                                <option value="">Watch</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="more">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="table-data__info">
-                                                            <h6>lori lynch</h6>
-                                                            <span>
-                                                                <a href="#">johndoe@gmail.com</a>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role member">member</span>
-                                                    </td>
-                                                    <td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                            <select class="js-select2" name="property">
-                                                                <option selected="selected">Full Control</option>
-                                                                <option value="">Post</option>
-                                                                <option value="">Watch</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="more">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </span>
-                                                    </td>
-                                                </tr>
+                                                @endforeach
+
+                                               
                                             </tbody>
                                         </table>
                                     </div>

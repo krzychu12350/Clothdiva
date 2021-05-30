@@ -3728,3 +3728,13 @@ ol {
 	}
 
 }
+
+.logo_searching{
+	text-align:center; 
+	position: relative; 
+	top:30%;
+}
+
+.img_logo_search{
+	width:22%;
+}
