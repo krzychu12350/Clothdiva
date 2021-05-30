@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             //CreatePaymentsSeeder::class,
             //CreateOrdersSeeder::class,
             //CreateProductsSeeder::class,
-            //CreatePhotoGallerySeeder::class,
+            CreateImagesSeeder::class,
             //CreateFavouriteProductsSeeder::class,
         ]);
     }

@@ -95,7 +95,7 @@
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
                                                         </a>
-                                                        <form id="subcatdel-form" action="{{ route('admin.store.subcategories.destroy') }}" method="POST" class="d-none">
+                                                        <form id="subcatdel-form" action="{{ route('admin.store.subcategories.destroy',[$subcat, $cat]) }}" method="POST" class="d-none">
                                                         @csrf
                                                         </form>
                                                     </div>

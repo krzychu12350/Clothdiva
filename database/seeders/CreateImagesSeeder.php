@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Image;
+use DB;
 
 class CreateImagesSeeder extends Seeder
 {
@@ -43,5 +44,7 @@ class CreateImagesSeeder extends Seeder
         foreach ($image as $key => $value) {
             Image::create($value);
         }
+        
+ 
     }
 }

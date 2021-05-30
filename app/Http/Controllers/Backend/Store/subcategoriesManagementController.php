@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Backend\Store;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Providers\RouteServiceProvider;
 use PDO;
 use DB;
 
 class subcategoriesManagementController extends Controller
 {
-
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     public function index()
     {
@@ -18,19 +19,20 @@ class subcategoriesManagementController extends Controller
     }
     public function destroy()
     {   
-        return view('frontend.shopcart');
-        /*
+       // return view('frontend.shopcart');
+        
         $procedureName = 'system.del_subcategory';
-
+        
         $bindings = [
-            'subcategory_name'  => 'Dresses',
-            'category_name'  => 'Girls',
+            'subcategory_name'  => 'Flats',
+            'category_name'  => 'Men',
         ];
-
+            
         $result = DB::executeProcedure($procedureName, $bindings);
-
         dd($result);
-           
+
+        return redirect()->back();
+                /*
         $pdo = DB::getPdo();
         $p1 = 'Dresses';
         $p2 = 'Girls';
