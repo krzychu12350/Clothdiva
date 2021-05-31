@@ -1,5 +1,11 @@
 @extends('layouts.app')
 @section('favourites')
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+
  <!-- Breadcrumb Begin -->
  <div class="breadcrumb-option">
         <div class="container">

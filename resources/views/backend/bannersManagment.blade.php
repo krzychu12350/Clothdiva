@@ -2,7 +2,7 @@
 @section('orderssection')
 <div class="container">
     <div class="row justify-content-center">
-       <h1>Banners</h1>
+       <h2>Banners management</h2>
     </div>
 </div>
 @endsection

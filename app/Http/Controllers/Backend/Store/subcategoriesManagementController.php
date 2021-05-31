@@ -24,13 +24,13 @@ class subcategoriesManagementController extends Controller
         $procedureName = 'system.del_subcategory';
         
         $bindings = [
-            'subcategory_name'  => 'Flats',
-            'category_name'  => 'Men',
+            'subcategory_name'  => 'Caps',
+            'category_name'  => 'Boys',
         ];
             
         $result = DB::executeProcedure($procedureName, $bindings);
-        dd($result);
-
+        //dd($result);
+        
         return redirect()->back();
                 /*
         $pdo = DB::getPdo();

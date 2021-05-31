@@ -38,7 +38,37 @@ class CreateImagesSeeder extends Seeder
             'image' => $path2,
             'id_product' => '3',
             ],
+
+            [
+            'image' => $path,
+            'id_product' => '4',
+            ],
     
+            [
+            'image' => $path1,
+            'id_product' => '5',
+            ],
+    
+            [
+            'image' => $path2,
+            'id_product' => '3',
+            ],
+
+            [
+            'image' => $path,
+            'id_product' => '5',
+            ],
+        
+            [
+            'image' => $path1,
+            'id_product' => '5',
+            ],
+        
+            [
+            'image' => $path2,
+            'id_product' => '4',
+            ],
+            
 
         ];
         foreach ($image as $key => $value) {

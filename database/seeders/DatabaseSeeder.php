@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             CreateCategoriesSeeder::class,
             CreateSubCategoriesSeeder::class,
             CreatePromotionsSeeder::class,
-            //CreatePaymentsSeeder::class,
+            CreatePaymentsSeeder::class,
             //CreateOrdersSeeder::class,
-            //CreateProductsSeeder::class,
+            CreateProductsSeeder::class,
             CreateImagesSeeder::class,
             //CreateFavouriteProductsSeeder::class,
         ]);

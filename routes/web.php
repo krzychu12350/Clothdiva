@@ -51,9 +51,10 @@ Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->nam
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact-us',[ContactUsMailController::class, 'ContactUsForm'])->name('ContactUsForm');
 
-Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart');
+Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart')->middleware('auth');
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
-Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites');
+Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');
+Route::get('/add-favourite', [FavouritesController::class, 'addFavouriteProduct'])->name('add.favourite')->middleware('auth');
 
 //Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

@@ -2,7 +2,7 @@
 @section('orderssection')
 <div class="container">
     <div class="row justify-content-center">
-    <h1 style="margin-bottom: 20px;">Orders</h1>
+    <h2 style="margin-bottom: 20px;">Orders management</h2>
  <!-- DATA TABLE-->
  <div class="table-responsive m-b-40">
    

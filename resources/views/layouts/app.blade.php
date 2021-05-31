@@ -252,6 +252,7 @@
     </div>
 </div>
 
+
     @yield('content')
     @yield('homepage')
     @yield('contact')
@@ -831,7 +832,7 @@ Services Section End -->
                         <!--<h3>Clothdiva</h3>-->
                         </a>
                     </div>
-                    <p>Shop with passion. Clothes made in Poland.They are of high quality, which makes them pleasant to the touch, airy and suitable for any season.</p>
+                    <p>Shop with passion. Clothes made in Poland. <br />They are of high quality, which makes them pleasant to the touch, airy and suitable <br />for any season.</p>
                     <!--
                     <div class="footer__payment">
                         <a href="#"><img src="img/payment/payment-1.png" alt=""></a>
@@ -847,9 +848,9 @@ Services Section End -->
                 <div class="footer__widget">
                     <h6>Quick links</h6>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                         <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
