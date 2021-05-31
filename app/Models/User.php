@@ -19,7 +19,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    
+    protected $table = "ushop";
     protected $fillable = [
         'name',
         'surname',
@@ -36,7 +36,7 @@ class User extends Authenticatable
     ];
     
     public $timestamps = false;
-    protected $primaryKey = 'id_user';
+    protected $primaryKey = 'id_ushop';
     
     public function role(){
         return $this->belongsTo(Role::class);

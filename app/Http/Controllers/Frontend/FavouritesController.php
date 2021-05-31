@@ -13,14 +13,15 @@ class FavouritesController extends Controller
 {
     public function index()
     {
+        $id = Auth::user()->id_ushop;
         $favourite_products = DB::table('products')
             ->join('favorite_products', 'favorite_products.id_product', '=', 'products.id_product')
-            ->join('favorite_products', 'favorite_products.id_user', '=', 'users.id_user')
             ->select('products.id_product', 'products.name', 'products.prize')
+            ->where('favorite_products.id_ushop', '=', $id)
             ->get();
+            
         
-        
-            return view('frontend.favourites');
+            return view('frontend.favourites',['favourite_products'=>$favourite_products]);
     }
     public function addFavouriteProduct(Request $request)
     {
@@ -44,7 +45,7 @@ class FavouritesController extends Controller
         $procedureName = 'system.add_fav_products';
         //$id = Sentry::getUser()->id
         //execute add_fav_products(2, 29);
-        $id = Auth::user()->id_user;
+        $id = Auth::user()->id_ushop;
         $bindings = [
             'id_user'  => $id,
             //'id_product'  => 34,

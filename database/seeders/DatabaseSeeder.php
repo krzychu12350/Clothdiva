@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             //CreateOrdersSeeder::class,
             CreateProductsSeeder::class,
             CreateImagesSeeder::class,
-            //CreateFavouriteProductsSeeder::class,
+            CreateFavouriteProductsSeeder::class,
         ]);
     }
 }

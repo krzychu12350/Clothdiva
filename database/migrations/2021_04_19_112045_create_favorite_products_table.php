@@ -16,9 +16,9 @@ class CreateFavoriteProductsTable extends Migration
         Schema::create('favorite_products', function (Blueprint $table) {
             $table->increments('id_favorite_product');
              
-            $table->foreignId('id_user');
-            $table->foreign('id_user')
-            ->references('id_user')->on('users')
+            $table->foreignId('id_ushop');
+            $table->foreign('id_ushop')
+            ->references('id_ushop')->on('ushop')
             ->onDelete('cascade');
              
             $table->foreignId('id_product');

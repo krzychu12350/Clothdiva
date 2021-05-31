@@ -237,7 +237,7 @@ use Illuminate\Support\Facades\Storage;
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">{{$single_product->name}}</a></h6>
-                                    {{$single_product->id_product}}
+                                  
                                 
 
                                     <div class="product__price">$ {{$single_product->prize}}</div>

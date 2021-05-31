@@ -38,14 +38,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                        
+                            @foreach($favourite_products as $single_fav_product)
                                 <tr>
                                     <td class="cart__product__item">
                                         <img src="img/shop-cart/cp-1.jpg" alt="">
                                         <div class="cart__product__item__title">
-                                            <h6>Black bag</h6>
+                                            <h6>{{$single_fav_product->name}}</h6>
                                         </div>
                                     </td>
-                                    <td class="cart__price">150.0 PLN</td>
+                                    <td class="cart__price">$ {{$single_fav_product->prize}}</td>
                                      <!--
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
@@ -56,6 +58,8 @@
                                     -->
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
+                                @endforeach
+                                <!--
                                 <tr>
                                     <td class="cart__product__item">
                                         <img src="img/shop-cart/cp-2.jpg" alt="">
@@ -64,14 +68,14 @@
                                         </div>
                                     </td>
                                     <td class="cart__price">170.0 PLN</td>
-                                    <!--
+                                   
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
                                     </td>
                                     <td class="cart__total">$ 170.0</td>
-                                    -->
+                                 
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
@@ -89,7 +93,7 @@
                                         </div>
                                     </td>
                                     <td class="cart__total">$ 170.0</td>
-                                    -->
+                                  
                                     <td class="cart__close"><span class="icon_close"></span></td>
                                 </tr>
                                 <tr>
@@ -100,16 +104,16 @@
                                         </div>
                                     </td>
                                     <td class="cart__price">55.0 PLN</td>
-                                    <!--
+                                  
                                     <td class="cart__quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
                                         </div>
                                     </td>
                                     <td class="cart__total">$ 110.0</td>
-                                    -->
+                                   
                                     <td class="cart__close"><span class="icon_close"></span></td>
-                                </tr>
+                                </tr>-->
                             </tbody>
                         </table>
                     </div>
