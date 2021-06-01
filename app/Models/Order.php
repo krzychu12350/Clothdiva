@@ -13,23 +13,33 @@ class Order extends Model
     protected $fillable = [
         'status',
         'date_of_placing_order',
-        'payment_method',
-        //'id_invoice',
+        //'if_the_order_accepted',
+        //'date_of_order_addmision',
+        //'shipping_date',
+        //'if_the_order_completed',
+        //'date_of_order_fufillment',
+        'id_invoice',
         'id_user',
+        'id_payment',
     ];
 
-    public function products(){
-        return $this->hasMany(Product::class);
+    public function payment()
+    {
+        return $this->belongsTo(Payment::class);
     }
+
+    /*public function products(){
+        return $this->hasMany(Product::class);
+    }*/
     
-   /* public function invoice()
+    public function invoice()
     {
         return $this->hasOne(Invoice::class);
-    }  */
+    }  
     
-    public function shop_users()
+    public function user()
     {
-        return $this->belongsTo(Shop_User::class);
+        return $this->belongsTo(User::class);
     }
     
 

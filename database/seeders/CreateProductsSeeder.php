@@ -24,8 +24,8 @@ class CreateProductsSeeder extends Seeder
                'description'=>'Fajne jeansy',
                'composition_and_conservation'=>'NEWAE',
                'id_sub_category'=>'2',
-               'id_promotion',
-               'id_order',
+               //'id_promotion',
+               //'id_order',
                
             ],
 
@@ -38,8 +38,8 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Fajne spodenki',
                 'composition_and_conservation'=>'NEWAE',
                 'id_sub_category'=>'3',
-                'id_promotion',
-                'id_order',
+                //'id_promotion',
+                //'id_order',
                 
             ],
 
@@ -52,8 +52,8 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Fajne buty',
                 'composition_and_conservation'=>'NEWAE',
                 'id_sub_category'=>'4',
-                'id_promotion',
-                'id_order',
+                //'id_promotion',
+               // 'id_order', 
             ],
             
             [
