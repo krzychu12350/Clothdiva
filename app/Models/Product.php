@@ -19,22 +19,22 @@ class Product extends Model
         'description',
         'composition_and_conservation',
         'id_subcategory',
-        //'id_promotion',
-        //'id_order',
+        'id_promotion',
+        'id_order',
     ];
 
-   /* public function order()
+   public function order()
     {
         return $this->belongsTo(Order::class);
-    }*/
-
+    }
+    
     public function image(){
         return $this->hasMany(Image::class);
     }
 
-   /* public function promotion(){
+    public function promotion(){
         return $this->belongsTo(Promotion::class);
-    }*/
+    }
 
     public function favorite_products()
     {

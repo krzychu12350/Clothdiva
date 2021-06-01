@@ -13,6 +13,16 @@ class CreatePromotionsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $promotion
+        [
+            [
+                'name_of_promotion' => 'Super rabat',
+                'size_of_promotion' => '20',
+                'promotion_start_date' => '',
+                'promotion_end_date' => '',
+                'description' => '',
+            ],
+
+        ];
     }
 }

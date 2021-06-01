@@ -17,26 +17,17 @@ class CreateOrdersTable extends Migration
             $table->increments('id_order');
             $table->string('status', 100);
             $table->date('date_of_placing_order');
-            //$table->boolean('if_the_order_accepted');	
-            //$table->date('date_of_order_addmision');		
-            //$table->date('shipping_date');
-            //$table->boolean('if_the_order_completed');
-            //$table->date('date_of_order_fulfillment');
+            $table->string('payment_method', 30);
  
-            $table->foreignId('id_invoice');
+          /*  $table->foreignId('id_invoice');
             $table->foreign('id_invoice')
             ->references('id_invoice')->on('invoices')
-            ->onDelete('cascade');
+            ->onDelete('cascade');*/
             
             $table->foreignId('id_ushop');
             $table->foreign('id_ushop')
             ->references('id_ushop')->on('ushop')
             ->onDelete('cascade');
-            
-            $table->foreignId('id_payment');
-            $table->foreign('id_payment')
-            ->references('id_payment')->on('payments')
-            ->onDelete('cascade'); 
             
         });
     }

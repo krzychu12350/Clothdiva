@@ -23,9 +23,9 @@ class User_address extends Model
     /**
      * Get the comments for the blog post.
      */
-    public function users()
+    public function shop_users()
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Shop_User::class);
     }
     public function invoices()
     {

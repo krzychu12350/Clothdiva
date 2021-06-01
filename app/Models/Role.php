@@ -19,7 +19,7 @@ class Role extends Model
      */
     protected $fillable = ['role_name'];
 
-    public function users(){
-        return $this->hasMany(User::class);
+    public function shop_users(){
+        return $this->hasMany(Shop_User::class);
     }
 }

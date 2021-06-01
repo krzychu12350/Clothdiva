@@ -16,16 +16,25 @@ class CreateOrdersSeeder extends Seeder
     {
         $order = [
             [
-               'status'=>'niewkuriwaj',
+               'status'=>'Wysłano',
                'date_of_placing_order'=>'2021-05-01',
                'id_user'=>'2',
+               'payment_method' => 'Blik',
             ],
 
             [
-               'status'=>'mnie',
+               'status'=>'W trakcie realizacji',
                'date_of_placing_order'=>'2021-03-01',
                'id_user'=>'3',
+               'payment_method' => 'PayPal',
             ],
+
+            [
+                'status'=>'niewkuriwaj',
+                'date_of_placing_order'=>'2021-09-12',
+                'id_user'=>'4', 
+                'payment_method' => 'PayPal',
+             ],
         ];
         foreach ($order as $key => $value) {
             Order::create($value);
