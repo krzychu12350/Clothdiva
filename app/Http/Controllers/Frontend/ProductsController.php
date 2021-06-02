@@ -11,9 +11,9 @@ use DB;
 
 class ProductsController extends Controller
 {
-    public function showProducts(Request $request, $type)
+    public function showProducts(Request $request)
     {
-        try{
+        //try{
         //$products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
         // $category = Category::where('name_of_category', $type)->first();
         // $subcategory = Sub_category::where('id_category', $category->id)->first();
@@ -38,7 +38,7 @@ class ProductsController extends Controller
         ->join('categories c', 'c.id_category', '=', 'sb.id_category')
         ->join('images i', 'i.id_product', '=', 'p.id_product')
         ->where('sb.name_of_subcategory', '=', 'Shorts')
-        ->where('c.name_of_category', '=', 'Women')
+        ->where('c.name_of_category', '=',  'Women')
         ->select('p.id_product', 'p.name', 'p.prize', 'i.image')
         ->get();
         
@@ -46,11 +46,11 @@ class ProductsController extends Controller
         return view('frontend.shop', compact('products_selection'));
         //return view('frontend.shop');
         //return view('frontend.shop', ['products_selection' => $products_selection]);
-        
+        /*
         }
         catch(Exception $e){
             //return view('frontend.firstlookpage');
             report($e);
-        }
+        }*/
     }
 }

@@ -219,7 +219,7 @@ use Illuminate\Support\Facades\Storage;
                             </div>
                         </div>-->
                         <?php
-                        // $products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
+                         //$products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
                         ?>
                           
 

@@ -8,7 +8,7 @@
             //,['subcategory'=> $sub_category_woman->name_of_subcategory]
             ?>
             <ul class = "submenu-submenu" style = "text-align:center">
-               <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
+               <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
             </ul>
             @endforeach
 
@@ -18,7 +18,7 @@
             
             @foreach($sub_categories_men as $sub_category_man)
             <ul class = "submenu-submenu" style = "text-align:center">
-                <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'men','subcategory'=> $sub_category_man->name_of_subcategory]) }}">{{$sub_category_man->name_of_subcategory}}</a></li>
+                <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'Men','subcategory'=> $sub_category_man->name_of_subcategory]) }}">{{$sub_category_man->name_of_subcategory}}</a></li>
             </ul>
             @endforeach
      
@@ -29,7 +29,7 @@
 
          @foreach($sub_categories_girls as $sub_category_girl)
             <ul class = "submenu-submenu" style = "text-align:center">
-                <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'girls','subcategory'=> $sub_category_girl->name_of_subcategory]) }}">{{$sub_category_girl->name_of_subcategory}}</a></li>
+                <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'Girls','subcategory'=> $sub_category_girl->name_of_subcategory]) }}">{{$sub_category_girl->name_of_subcategory}}</a></li>
             </ul>
             @endforeach
 
@@ -39,7 +39,7 @@
          <div class = "boys_products position-absolute bg-white col-xl-12" style = "display:none">
             @foreach($sub_categories_boys as $sub_category_boy)
                 <ul class = "submenu-submenu" style = "text-align:center">
-                    <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'boys','subcategory'=> $sub_category_boy->name_of_subcategory]) }}">{{$sub_category_boy->name_of_subcategory}}</a></li>
+                    <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'Boys','subcategory'=> $sub_category_boy->name_of_subcategory]) }}">{{$sub_category_boy->name_of_subcategory}}</a></li>
                 </ul>
                 @endforeach
 

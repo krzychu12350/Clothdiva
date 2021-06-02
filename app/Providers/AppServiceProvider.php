@@ -71,7 +71,7 @@ class AppServiceProvider extends ServiceProvider
 
         $scmanagement = DB::select("select subcategories_management() as scmanagement from sub_categories FETCH FIRST 1 ROWS ONLY");
         $all_categories = DB::select("select all_categories() all_categories from categories FETCH FIRST 1 ROWS ONLY");
-
+        $products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
 
         view()->share('sub_categories_women',$sub_categories_women);
         view()->share('sub_categories_men',$sub_categories_men);
@@ -79,13 +79,14 @@ class AppServiceProvider extends ServiceProvider
         view()->share('sub_categories_boys',$sub_categories_boys);
         view()->share('scmanagement', $scmanagement);
         view()->share('all_categories', $all_categories);
+        view()->share('products_selection', $products_selection);//przekazuje wszystkie produkty z bazy na sklep
         
         //view()->share('users_data', $users_data); 
        // view()->share('users_roles',  $users_roles); 
         view()->share('products_management', $products_management);
         view()->share('orders_management', $orders_management);
-
-           
+            
+        
             
 
         
