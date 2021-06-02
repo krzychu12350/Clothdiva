@@ -219,7 +219,7 @@ use Illuminate\Support\Facades\Storage;
                             </div>
                         </div>-->
                         <?php
-                         $products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
+                        // $products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
                         ?>
                           
 
@@ -228,7 +228,6 @@ use Illuminate\Support\Facades\Storage;
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg='{{ asset("$single_product->image") }}'>
-                              
                                     <ul class="product__hover">
                                         <li><a href='{{ asset("$single_product->image") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="{{ route('add.favourite', ['id' => $single_product->id_product]) }}"><span class="icon_heart_alt"></span></a></li>

@@ -252,7 +252,7 @@ Created: Colorib
     });
 
     /* Women products*/
-    $(".women").on({
+    $(".Women").on({
         mouseenter: function () {
             $(".women_products").css('zIndex', '2');
             $(".women_products").show();
@@ -273,7 +273,7 @@ Created: Colorib
     });
 
     /* Men products*/
-    $(".men").on({
+    $(".Men").on({
         mouseenter: function () {
             $(".men_products").css('zIndex', '2');
             $(".men_products").show();
@@ -295,7 +295,7 @@ Created: Colorib
         }
     });
      /* Girls products*/
-     $(".girls").on({
+     $(".Girls").on({
         mouseenter: function () {
             $(".girls_products").css('zIndex', '2');
             $(".girls_products").show();
@@ -318,7 +318,7 @@ Created: Colorib
     });
 
     /* Girls products*/
-    $(".boys").on({
+    $(".Boys").on({
         mouseenter: function () {
             $(".boys_products").css('zIndex', '2');
             $(".boys_products").show();

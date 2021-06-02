@@ -78,10 +78,15 @@
                     <nav class="header__menu">
                         <ul>
                             <li><a class="restlink" href="{{ route('home') }}">{{ __('Home') }}</a></li>
-                            <li class = "women subcategory-toggle"><a href="#">Women</a>
-                            <li class = "men subcategory-toggle"><a href="#">Men</a></li>
-                            <li class = "girls subcategory-toggle"><a href="#">Girls</a></li>
-                            <li class = "boys subcategory-toggle"><a href="#">Boys</a></li>
+                            @foreach($all_categories as $single_category)
+                            <!--
+                            <li class = "Women subcategory-toggle"><a href="#">Women</a>
+                            <li class = "Men subcategory-toggle"><a href="#">Men</a></li>
+                            <li class = "Girls subcategory-toggle"><a href="#">Girls</a></li>
+                            <li class = "Boys subcategory-toggle"><a href="#">Boys</a></li>
+                            -->
+                            <li class = "{{$single_category->name_of_category}} subcategory-toggle"><a href="#">{{$single_category->name_of_category}}</a>
+                            @endforeach
                             <li><a class="restlink" href="{{ route('shop') }}">Shop</a></li>
                             <li><a class="restlink" href="{{ route('contact') }}">Contact</a></li>
                     

@@ -16,9 +16,9 @@ class CreateImagesSeeder extends Seeder
     public function run()
     {
 
-        $path = 'storage/app/public/images/jeans1.jpg';
-        $path1 = 'storage/app/public/images/jeans2.jpg';
-        $path2 = 'storage/app/public/images/kurtka1.jpg';
+        $path = 'storage/images/jacket-1.jpg';
+        $path1 = 'storage/images/suit-1.jpg';
+        $path2 = 'storage/images/tracksuits.jpg';
         
         //$base64 = bin2hex($path);
 
