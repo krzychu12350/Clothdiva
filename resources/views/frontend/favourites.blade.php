@@ -45,6 +45,7 @@
                                         <img src="img/shop-cart/cp-1.jpg" alt="">
                                         <div class="cart__product__item__title">
                                             <h6>{{$single_fav_product->name}}</h6>
+                                                {{$single_fav_product->id_product}}
                                         </div>
                                     </td>
                                     <td class="cart__price">$ {{$single_fav_product->prize}}</td>
@@ -56,7 +57,12 @@
                                     </td>
                                     <td class="cart__total">$ 300.0</td>
                                     -->
-                                    <td class="cart__close"><span class="icon_close"></span></td>
+                                    <td class="cart__close">
+                                    <a href="{{ route('del.favourite', ['id' => $single_fav_product->id_product]) }}">
+                            
+                                    <span class="icon_close"></span>
+                                    </a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 <!--

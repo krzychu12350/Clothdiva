@@ -52,18 +52,11 @@
                                                         <div class="table-data__info">
                                                       
                                                             <h6>{{$singlerow->name_of_subcategory}}</h6>
-                                                            <!--
-                                                            <span>
-                                                                <a href="#">johndoe@gmail.com</a>
-                                                            </span>-->
+                                            
                                                           
                                                         </div>
                                                     </td>
-                                                    <!--
-                                                    <td>
-                                                        <span class="role admin">admin</span>
-                                                    </td>
-                                                    -->
+                                        
                                                     <td>
                                                         <div class="rs-select2--trans rs-select2--sm">
                                                             <select class="js-select2" name="property">

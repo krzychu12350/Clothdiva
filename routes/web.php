@@ -55,6 +55,7 @@ Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart')
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');
 Route::get('/add-favourite', [FavouritesController::class, 'addFavouriteProduct'])->name('add.favourite')->middleware('auth');
+Route::get('/del-favourite', [FavouritesController::class, 'delFavouriteProduct'])->name('del.favourite')->middleware('auth');
 
 //Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

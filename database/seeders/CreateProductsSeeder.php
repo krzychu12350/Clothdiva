@@ -24,9 +24,7 @@ class CreateProductsSeeder extends Seeder
                'description'=>'Fajne jeansy',
                'composition_and_conservation'=>'NEWAE',
                'id_sub_category'=>'2',
-               //'id_promotion',
-               //'id_order',
-               
+               'id_order' => '1',
             ],
 
             [
@@ -37,10 +35,8 @@ class CreateProductsSeeder extends Seeder
                 'size_of_product'=>'L',
                 'description'=>'Fajne spodenki',
                 'composition_and_conservation'=>'NEWAE',
-                'id_sub_category'=>'3',
-                //'id_promotion',
-                //'id_order',
-                
+                'id_sub_category'=>'2',
+                'id_order' => '2',    
             ],
 
             [
@@ -52,8 +48,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Fajne buty',
                 'composition_and_conservation'=>'NEWAE',
                 'id_sub_category'=>'4',
-                //'id_promotion',
-               // 'id_order', 
+                'id_order' => '3',
             ],
             
             [
@@ -65,6 +60,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Fajne jeansy',
                 'composition_and_conservation'=>'NEWAE',
                 'id_sub_category'=>'2',
+                'id_order' => '',
              ],
  
              [
@@ -76,6 +72,7 @@ class CreateProductsSeeder extends Seeder
                  'description'=>'Fajne spodenki',
                  'composition_and_conservation'=>'NEWAE',
                  'id_sub_category'=>'3',
+                 'id_order' => '',
              ],
  
              [
@@ -87,8 +84,9 @@ class CreateProductsSeeder extends Seeder
                  'description'=>'Fajne buty',
                  'composition_and_conservation'=>'NEWAE',
                  'id_sub_category'=>'4',
+                 'id_order' => '',
              ],
-           
+
         ];
         foreach ($product as $key => $value) {
             Product::create($value);

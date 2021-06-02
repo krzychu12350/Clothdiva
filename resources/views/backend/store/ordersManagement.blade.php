@@ -9,73 +9,39 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>date</th>
-                                                <th>Categories</th>
-                                                <th>Subcategories</th>
-                                                <th>description</th>
-                                                <th>status</th>
-                                                <th>price</th>
+                                                <th>Order number</th>
+                                                <th>Name of product</th>
+                                                <th>Status</th>
+                                                <th>Date of placing order</th>
+                                                <th>Payment method</th>
+                                                <th>Name client</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        
+                                        @foreach($orders_management as $singlerow)
                                             <tr>
-                                                <td>2020-05-03 15:15</td>
+                                                <td>{{$singlerow->name}}</td>
                                                 <td>Men</td>
                                                 <td>Black jacket</td>
                                                 <td>-</td>
                                                 <td class="process">Processed</td>
                                                 <td>79.99 PLN</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2020-09-25 19:03</td>
-                                                <td>Men</td>
-                                                <td>Yellow T-Shirt</td>
-                                                <td>-</td>
-                                                <td class="process">Processed</td>
-                                                <td>30.99 PLN</td>
-                                            </tr>
-                                           <!-- <tr>
-                                                <td>2018-09-27 02:12</td>
-                                                <td>Game</td>
-                                                <td>Game Console Controller</td>
-                                                <td class="denied">Denied</td>
-                                                <td>$22.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-26 23:06</td>
-                                                <td>Mobile</td>
-                                                <td>iPhone X 256Gb Black</td>
-                                                <td class="denied">Denied</td>
-                                                <td>$1199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-25 19:03</td>
-                                                <td>Accessories</td>
-                                                <td>USB 3.0 Cable</td>
-                                                <td class="process">Processed</td>
-                                                <td>$10.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-29 05:57</td>
-                                                <td>Accesories</td>
-                                                <td>Smartwatch 4.0 LTE Wifi</td>
-                                                <td class="denied">Denied</td>
-                                                <td>$199.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-24 19:10</td>
-                                                <td>Camera</td>
-                                                <td>Camera C430W 4k</td>
-                                                <td class="process">Processed</td>
-                                                <td>$699.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-22 00:43</td>
-                                                <td>Computer</td>
-                                                <td>Macbook Pro Retina 2017</td>
-                                                <td class="process">Processed</td>
-                                                <td>$10.00</td>
-                                            </tr>-->
+                                            
+                                            <td>
+                                                    <div class="table-data-feature">
+    
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                </tr>
+                                                @endforeach
                                         </tbody>
                                     </table>
                                 </div>

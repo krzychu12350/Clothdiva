@@ -13,14 +13,9 @@ class Order extends Model
     protected $fillable = [
         'status',
         'date_of_placing_order',
-        //'if_the_order_accepted',
-        //'date_of_order_addmision',
-        //'shipping_date',
-        //'if_the_order_completed',
-        //'date_of_order_fufillment',
-        'id_invoice',
-        'id_user',
-        'id_payment',
+        'payment_method',
+        //'id_invoice',
+        'id_ushop',
     ];
 
     public function payment()
@@ -32,10 +27,10 @@ class Order extends Model
         return $this->hasMany(Product::class);
     }*/
     
-    public function invoice()
+  /*  public function invoice()
     {
         return $this->hasOne(Invoice::class);
-    }  
+    }  */
     
     public function user()
     {

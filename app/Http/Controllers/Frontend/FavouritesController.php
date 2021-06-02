@@ -23,6 +23,27 @@ class FavouritesController extends Controller
         
             return view('frontend.favourites',['favourite_products'=>$favourite_products]);
     }
+ 
+    public function delFavouriteProduct(Request $request) 
+    {
+        $product_id = $request->input('id');
+
+        //print($id);
+       // echo $id;
+        $procedureName = 'system.del_fav_products';
+        //$id = Sentry::getUser()->id
+        //execute add_fav_products(2, 29);
+        $id = Auth::user()->id_ushop;
+        $bindings = [
+            'id_user'  => $id,
+            //'id_product'  => 34,
+            'id_product'  => $product_id,
+        ];
+            
+        $result = DB::executeProcedure($procedureName, $bindings);
+        //dd($result);
+        return redirect()->route('favourites')->with('status', 'Products has been delete from favourite products!');
+    }
     public function addFavouriteProduct(Request $request)
     {
         /*

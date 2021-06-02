@@ -18,21 +18,21 @@ class CreateOrdersSeeder extends Seeder
             [
                'status'=>'Wysłano',
                'date_of_placing_order'=>'2021-05-01',
-               'id_user'=>'2',
+               'id_ushop'=>'2',
                'payment_method' => 'Blik',
             ],
 
             [
                'status'=>'W trakcie realizacji',
                'date_of_placing_order'=>'2021-03-01',
-               'id_user'=>'3',
+               'id_ushop'=>'3',
                'payment_method' => 'PayPal',
             ],
 
             [
-                'status'=>'niewkuriwaj',
+                'status'=>'Wysłano',
                 'date_of_placing_order'=>'2021-09-12',
-                'id_user'=>'4', 
+                'id_ushop'=>'4', 
                 'payment_method' => 'PayPal',
              ],
         ];
