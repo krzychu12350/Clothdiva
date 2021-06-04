@@ -28,79 +28,79 @@ class CreateImagesSeeder extends Seeder
         $path7 = 'public/images/women/dress_C_2';
         $path8 = 'public/images/women/dress_C_3';
 
-        $path9 = 'public/images/women/jeans_A_1';
-        $path10 = 'public/images/women/jeans_A_2';
-        $path11 = 'public/images/women/jeans_A_3';
+        $path9 = 'public/images/women/skirt_A_1';
+        $path10 = 'public/images/women/skirt_A_2';
+        $path11 = 'public/images/women/skirt_A_3';
 
-        $path12 = 'public/images/women/jeans_B_1';
-        $path13 = 'public/images/women/jeans_B_2';
-        $path14 = 'public/images/women/jeans_B_3';
+        $path12 = 'public/images/women/skirt_B_1';
+        $path13 = 'public/images/women/skirt_B_2';
+        $path14 = 'public/images/women/skirt_B_3';
 
-        $path15 = 'public/images/women/jeans_C_1';
-        $path16 = 'public/images/women/jeans_C_2';
-        $path17 = 'public/images/women/jeans_C_3';
+        $path15 = 'public/images/women/skirt_C_1';
+        $path16 = 'public/images/women/skirt_C_2';
+        $path17 = 'public/images/women/skirt_C_3';
 
-        $path18 = 'public/images/women/skirt_A_1';
-        $path19 = 'public/images/women/skirt_A_2';
-        $path20 = 'public/images/women/skirt_A_3';
+        $path18 = 'public/images/women/tshirt_A_1';
+        $path19 = 'public/images/women/tshirt_A_2';
+        $path20 = 'public/images/women/tshirt_A_3';
 
-        $path21 = 'public/images/women/skirt_B_1';
-        $path22 = 'public/images/women/skirt_B_2';
-        $path23 = 'public/images/women/skirt_B_3';
+        $path21 = 'public/images/women/tshirt_B_1';
+        $path22 = 'public/images/women/tshirt_B_2';
+        $path23 = 'public/images/women/tshirt_B_3';
 
-        $path24 = 'public/images/women/skirt_C_1';
-        $path25 = 'public/images/women/skirt_C_2';
-        $path26 = 'public/images/women/skirt_C_3';
+        $path24 = 'public/images/women/tshirt_C_1';
+        $path25 = 'public/images/women/tshirt_C_2';
+        $path26 = 'public/images/women/tshirt_C_3';
 
         $path27 = 'public/images/women/tshirt_A_1';
         $path28 = 'public/images/women/tshirt_A_2';
         $path29 = 'public/images/women/tshirt_A_3';
 
-        $path30 = 'public/images/women/tshirt_B_1';
-        $path31 = 'public/images/women/tshirt_B_2';
-        $path32 = 'public/images/women/tshirt_B_3';
+        $path30 = 'public/images/women/jeans_B_1';
+        $path31 = 'public/images/women/jeans_B_2';
+        $path32 = 'public/images/women/jeans_B_3';
 
-        $path33 = 'public/images/women/tshirt_C_1';
-        $path34 = 'public/images/women/tshirt_C_2';
-        $path35 = 'public/images/women/tshirt_C_3';
+        $path33 = 'public/images/women/jeans_C_1';
+        $path34 = 'public/images/women/jeans_C_2';
+        $path35 = 'public/images/women/jeans_C_3';
 
         //MEN
 
-        $path36 = 'public/images/men/hoodie_A_1';
-        $path37 = 'public/images/men/hoodie_A_2';
-        $path38 = 'public/images/men/hoodie_A_3';
+        $path36 = 'public/images/men/shirt_A_1';
+        $path37 = 'public/images/men/shirt_A_2';
+        $path38 = 'public/images/men/shirt_A_3';
 
-        $path39 = 'public/images/men/hoodie_B_1';
-        $path40 = 'public/images/men/hoodie_B_2';
-        $path41 = 'public/images/men/hoodie_B_3';
+        $path39 = 'public/images/men/shirt_B_1';
+        $path40 = 'public/images/men/shirt_B_2';
+        $path41 = 'public/images/men/shirt_B_3';
 
-        $path42 = 'public/images/men/hoodie_C_1';
-        $path43 = 'public/images/men/hoodie_C_2';
-        $path44 = 'public/images/men/hoodie_C_3';
+        $path42 = 'public/images/men/shirt_C_1';
+        $path43 = 'public/images/men/shirt_C_2';
+        $path44 = 'public/images/men/shirt_C_3';
 
-        $path45 = 'public/images/men/jeans_A_1';
-        $path46 = 'public/images/men/jeans_A_2';
-        $path47 = 'public/images/men/jeans_A_3';
+        $path45 = 'public/images/men/hoodie_A_1';
+        $path46 = 'public/images/men/hoodie_A_2';
+        $path47 = 'public/images/men/hoodie_A_3';
 
-        $path48 = 'public/images/men/jeans_B_1';
-        $path49 = 'public/images/men/jeans_B_2';
-        $path50 = 'public/images/men/jeans_B_3';
+        $path48 = 'public/images/men/hoodie_B_1';
+        $path49 = 'public/images/men/hoodie_B_2';
+        $path50 = 'public/images/men/hoodie_B_3';
 
-        $path51 = 'public/images/men/jeans_C_1';
-        $path52 = 'public/images/men/jeans_C_2';
-        $path53 = 'public/images/men/jeans_C_3';
+        $path51 = 'public/images/men/hoodie_C_1';
+        $path52 = 'public/images/men/hoodie_C_2';
+        $path53 = 'public/images/men/hoodie_C_3';
 
-        $path54 = 'public/images/men/shirt_A_1';
-        $path55 = 'public/images/men/shirt_A_2';
-        $path56 = 'public/images/men/shirt_A_3';
+        $path54 = 'public/images/men/jeans_A_1';
+        $path55 = 'public/images/men/jeans_A_2';
+        $path56 = 'public/images/men/jeans_A_3';
 
-        $path57 = 'public/images/men/shirt_B_1';
-        $path58 = 'public/images/men/shirt_B_2';
-        $path59 = 'public/images/men/shirt_B_3';
+        $path57 = 'public/images/men/jeans_B_1';
+        $path58 = 'public/images/men/jeans_B_2';
+        $path59 = 'public/images/men/jeans_B_3';
 
-        $path60 = 'public/images/men/shirt_C_1';
-        $path61 = 'public/images/men/shirt_C_2';
-        $path62 = 'public/images/men/shirt_C_3';
+        $path60 = 'public/images/men/jeans_C_1';
+        $path61 = 'public/images/men/jeans_C_2';
+        $path62 = 'public/images/men/jeans_C_3';
 
         $path63 = 'public/images/men/shorts_A_1';
         $path64 = 'public/images/men/shorts_A_2';
@@ -128,29 +128,29 @@ class CreateImagesSeeder extends Seeder
         $path79 = 'public/images/girls/dress_C_2';
         $path80 = 'public/images/girls/dress_C_3';
 
-        $path81 = 'public/images/girls/shirt_A_1';
-        $path82 = 'public/images/girls/shirt_A_2';
-        $path83 = 'public/images/girls/shirt_A_3';
+        $path81 = 'public/images/girls/skirt_A_1';
+        $path82 = 'public/images/girls/skirt_A_2';
+        $path83 = 'public/images/girls/skirt_A_3';
 
-        $path84 = 'public/images/girls/shirt_B_1';
-        $path85 = 'public/images/girls/shirt_B_2';
-        $path86 = 'public/images/girls/shirt_B_3';
+        $path84 = 'public/images/girls/skirt_B_1';
+        $path85 = 'public/images/girls/skirt_B_2';
+        $path86 = 'public/images/girls/skirt_B_3';
 
-        $path87 = 'public/images/girls/shirt_C_1';
-        $path88 = 'public/images/girls/shirt_C_2';
-        $path89 = 'public/images/girls/shirt_C_3';
+        $path87 = 'public/images/girls/skirt_C_1';
+        $path88 = 'public/images/girls/skirt_C_2';
+        $path89 = 'public/images/girls/skirt_C_3';
 
-        $path90 = 'public/images/girls/skirt_A_1';
-        $path91 = 'public/images/girls/skirt_A_2';
-        $path92 = 'public/images/girls/skirt_A_3';
+        $path90 = 'public/images/girls/shirt_A_1';
+        $path91 = 'public/images/girls/shirt_A_2';
+        $path92 = 'public/images/girls/shirt_A_3';
 
-        $path93 = 'public/images/girls/skirt_B_1';
-        $path94 = 'public/images/girls/skirt_B_2';
-        $path95 = 'public/images/girls/skirt_B_3';
+        $path93 = 'public/images/girls/shirt_B_1';
+        $path94 = 'public/images/girls/shirt_B_2';
+        $path95 = 'public/images/girls/shirt_B_3';
 
-        $path96 = 'public/images/girls/skirt_C_1';
-        $path97 = 'public/images/girls/skirt_C_2';
-        $path98 = 'public/images/girls/skirt_C_3';
+        $path96 = 'public/images/girls/shirt_C_1';
+        $path97 = 'public/images/girls/shirt_C_2';
+        $path98 = 'public/images/girls/shirt_C_3';
 
         $path99  = 'public/images/girls/trousers_A_1';
         $path100 = 'public/images/girls/trousers_A_2';
@@ -166,53 +166,53 @@ class CreateImagesSeeder extends Seeder
 
         //boys
 
-        $path108 = 'public/images/boys/hoodie_A_1';
-        $path109 = 'public/images/boys/hoodie_A_2';
-        $path110 = 'public/images/boys/hoodie_A_3';
+        $path108 = 'public/images/boys/tshirt_A_1';
+        $path109 = 'public/images/boys/tshirt_A_2';
+        $path110 = 'public/images/boys/tshirt_A_3';
 
-        $path111 = 'public/images/boys/hoodie_B_1';
-        $path112 = 'public/images/boys/hoodie_B_2';
-        $path113 = 'public/images/boys/hoodie_B_3';
+        $path111 = 'public/images/boys/tshirt_B_1';
+        $path112 = 'public/images/boys/tshirt_B_2';
+        $path113 = 'public/images/boys/tshirt_B_3';
 
-        $path114 = 'public/images/boys/hoodie_C_1';
-        $path115 = 'public/images/boys/hoodie_C_2';
-        $path116 = 'public/images/boys/hoodie_C_3';
+        $path114 = 'public/images/boys/tshirt_C_1';
+        $path115 = 'public/images/boys/tshirt_C_2';
+        $path116 = 'public/images/boys/tshirt_C_3';
 
-        $path117 = 'public/images/boys/shirt_A_1';
-        $path118 = 'public/images/boys/shirt_A_2';
-        $path119 = 'public/images/boys/shirt_A_3';
+        $path117 = 'public/images/boys/hoodie_A_1';
+        $path118 = 'public/images/boys/hoodie_A_2';
+        $path119 = 'public/images/boys/hoodie_A_3';
 
-        $path120 = 'public/images/boys/shirt_B_1';
-        $path121 = 'public/images/boys/shirt_B_2';
-        $path122 = 'public/images/boys/shirt_B_3';
+        $path120 = 'public/images/boys/hoodie_B_1';
+        $path121 = 'public/images/boys/hoodie_B_2';
+        $path122 = 'public/images/boys/hoodie_B_3';
 
-        $path123 = 'public/images/boys/shirt_C_1';
-        $path124 = 'public/images/boys/shirt_C_2';
-        $path125 = 'public/images/boys/shirt_C_3';
+        $path123 = 'public/images/boys/hoodie_C_1';
+        $path124 = 'public/images/boys/hoodie_C_2';
+        $path125 = 'public/images/boys/hoodie_C_3';
 
-        $path126 = 'public/images/boys/tshirt_A_1';
-        $path127 = 'public/images/boys/tshirt_A_2';
-        $path128 = 'public/images/boys/tshirt_A_3';
+        $path126 = 'public/images/boys/trousers_A_1';
+        $path127 = 'public/images/boys/trousers_A_2';
+        $path128 = 'public/images/boys/trousers_A_3';
 
-        $path129 = 'public/images/boys/tshirt_B_1';
-        $path130 = 'public/images/boys/tshirt_B_2';
-        $path131 = 'public/images/boys/tshirt_B_3';
+        $path129 = 'public/images/boys/trousers_B_1';
+        $path130 = 'public/images/boys/trousers_B_2';
+        $path131 = 'public/images/boys/trousers_B_3';
 
-        $path132 = 'public/images/boys/tshirt_C_1';
-        $path133 = 'public/images/boys/tshirt_C_2';
-        $path134 = 'public/images/boys/tshirt_C_3';
+        $path132 = 'public/images/boys/trousers_C_1';
+        $path133 = 'public/images/boys/trousers_C_2';
+        $path134 = 'public/images/boys/trousers_C_3';
 
-        $path135 = 'public/images/boys/trousers_A_1';
-        $path136 = 'public/images/boys/trousers_A_2';
-        $path137 = 'public/images/boys/trousers_A_3';
+        $path135 = 'public/images/boys/shirt_A_1';
+        $path136 = 'public/images/boys/shirt_A_2';
+        $path137 = 'public/images/boys/shirt_A_3';
 
-        $path138 = 'public/images/boys/trousers_B_1';
-        $path139 = 'public/images/boys/trousers_B_2';
-        $path140 = 'public/images/boys/trousers_B_3';
+        $path138 = 'public/images/boys/shirt_B_1';
+        $path139 = 'public/images/boys/shirt_B_2';
+        $path140 = 'public/images/boys/shirt_B_3';
 
-        $path141 = 'public/images/boys/trousers_C_1';
-        $path142 = 'public/images/boys/trousers_C_2';
-        $path143 = 'public/images/boys/trousers_C_3';
+        $path141 = 'public/images/boys/shirt_C_1';
+        $path142 = 'public/images/boys/shirt_C_2';
+        $path143 = 'public/images/boys/shirt_C_3';
 
         $image = [
 
