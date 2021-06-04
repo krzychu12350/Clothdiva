@@ -47,7 +47,7 @@ use Illuminate\Support\Facades\Storage;
             @endforeach-->
                                                 <ul>
                                                     @foreach($sub_categories_women as $sub_category_woman)
-                                                    <li><a href="#">{{$sub_category_woman->name_of_subcategory}}</a></li>
+                                                    <li><a href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -61,7 +61,7 @@ use Illuminate\Support\Facades\Storage;
                                             <div class="card-body">
                                                 <ul>
                                                     @foreach($sub_categories_men as $sub_category_man)
-                                                    <li><a href="#">{{$sub_category_man->name_of_subcategory}}</a></li>
+                                                    <li><a href="{{ route('showProducts',['type'=> 'Men','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_man->name_of_subcategory}}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -75,7 +75,7 @@ use Illuminate\Support\Facades\Storage;
                                             <div class="card-body">
                                                 <ul>
                                                     @foreach($sub_categories_girls as $sub_category_girl)
-                                                    <li><a href="#">{{$sub_category_girl->name_of_subcategory}}</a></li>
+                                                    <li><a href="{{ route('showProducts',['type'=> 'Girls','subcategory'=> $sub_category_woman->name_of_subcategory]) }}" >{{$sub_category_girl->name_of_subcategory}}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -89,7 +89,7 @@ use Illuminate\Support\Facades\Storage;
                                             <div class="card-body">
                                                 <ul>
                                                     @foreach($sub_categories_boys as $sub_category_boy)
-                                                    <li><a href="#">{{$sub_category_boy->name_of_subcategory}}</a></li>
+                                                    <li><a href="{{ route('showProducts',['type'=> 'Boys','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_boy->name_of_subcategory}}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </div>
@@ -151,10 +151,19 @@ use Illuminate\Support\Facades\Storage;
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
+
+                            <div class="sidebar__filter">
+                                <div class="filter-range-wrap">
+                                    <div class="range-slider">
+                                    </div>
+                                </div>
+                                <a href="#">Filter</a>
+                            </div>
+
                         </div>
                         <div class="sidebar__color">
                             <div class="section-title">
-                                <h4>Shop by size</h4>
+                                <h4>Shop by color</h4>
                             </div>
                             <div class="size__list color__list">
                                 <label for="black">
@@ -193,6 +202,13 @@ use Illuminate\Support\Facades\Storage;
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
+                            <div class="sidebar__filter">
+                                <div class="filter-range-wrap">
+                                    <div class="range-slider">
+                                    </div>
+                                </div>
+                                <a href="#">Filter</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -200,24 +216,6 @@ use Illuminate\Support\Facades\Storage;
          
                 <div class="col-lg-9 col-md-9">
                     <div class="row">
-                        <!--
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-1.jpg') }}">
-                                    <div class="label new">New</div>
-                                    <ul class="product__hover">
-                                        <li><a href="{{ asset('img/shop/shop-1.jpg') }}" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Furry hooded parka</a></h6>
-                    
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>-->
                         <?php
                          //$products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
                         ?>
@@ -235,138 +233,13 @@ use Illuminate\Support\Facades\Storage;
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{$single_product->name}}</a></h6>
-                                  
-                                
-
+                                   <!-- <h6><a href="{{$single_product->name}}/{{$single_product->id_product}}">{{$single_product->name}}</a></h6>-->
+                                   <h6><a href="details/{{$single_product->id_product}}">{{$single_product->name}}</a></h6>
                                     <div class="product__price">$ {{$single_product->prize}}</div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
-                        
-                        <!--
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-3.jpg') }}">
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-3.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Croc-effect bag</a></h6>
-                                  
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-4.jpg') }}">
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-4.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Dark wash Xavi jeans</a></h6>
-                                  
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-5.jpg') }}">
-                                    <div class="label">Sale</div>
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-5.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Ankle-cuff sandals</a></h6>
-                                  
-                                    <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-6.jpg') }}">
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-6.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Contrasting sunglasses</a></h6>
-                                  
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-7.jpg') }}">
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-7.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Circular pendant earrings</a></h6>
-                                   
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-8.jpg') }}">
-                                    <div class="label stockout stockblue">Out Of Stock</div>
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-8.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Cotton T-Shirt</a></h6>
-                                   
-                                    <div class="product__price">$ 59.0</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6">
-                            <div class="product__item sale">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/shop/shop-9.jpg') }}">
-                                    <div class="label">Sale</div>
-                                    <ul class="product__hover">
-                                        <li><a href="img/shop/shop-9.jpg" class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="#"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="#"><span class="icon_bag_alt"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6><a href="#">Water resistant zips backpack</a></h6>
-                                    <div class="product__price">$ 49.0 <span>$ 59.0</span></div>
-                                </div>
-                            </div>
-                        
-                        </div> -->
                         <div class="col-lg-12 text-center">
                             <div class="pagination__option">
                                 <a href="#">1</a>
