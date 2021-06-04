@@ -23,8 +23,8 @@ class CreateProductsSeeder extends Seeder
                'size_of_product'=>'S',
                'description'=>'Height of female model: 180 cm. Round neck, short sleeves, ruffle hem.',
                'composition_and_conservation'=>'100% COTTON',
-               'id_sub_category'=>'1',
-               'id_order' => '1',
+               'id_sub_category'=>1,
+               'id_order' => 1,
             ],
 
             [

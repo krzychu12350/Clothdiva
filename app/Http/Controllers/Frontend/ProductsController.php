@@ -55,6 +55,9 @@ class ProductsController extends Controller
         $url = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         $category = $url[2];
         $subcategory = $_GET['subcategory'];
+        //dd($subcategory);
+        //$category = $request->input('type');
+         //$subcategory = $request->input('subcategory');
 
         $products_selection = DB::table('products p as products_selection')
         ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')

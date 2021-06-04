@@ -219,27 +219,29 @@ use Illuminate\Support\Facades\Storage;
                         <?php
                          //$products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
                         ?>
-                          
+                        
+                     
 
                         @foreach($products_selection as $single_product)
-                        
+                     
                         <div class="col-lg-4 col-md-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg='{{ asset("$single_product->image") }}'>
+                                <div class="product__item__pic set-bg" data-setbg='{{ asset("$single_product->image.jpg") }}'>
+                       
                                     <ul class="product__hover">
-                                        <li><a href='{{ asset("$single_product->image") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
+                                        <li><a href='{{ asset("$single_product->image.jpg") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
                                         <li><a href="{{ route('add.favourite', ['id' => $single_product->id_product]) }}"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                   <!-- <h6><a href="{{$single_product->name}}/{{$single_product->id_product}}">{{$single_product->name}}</a></h6>-->
-                                   <h6><a href="details/{{$single_product->id_product}}">{{$single_product->name}}</a></h6>
+                                    <h6><a href="/products/details/{{$single_product->id_product}}">{{$single_product->name}}</a></h6>
                                     <div class="product__price">$ {{$single_product->prize}}</div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
+                      
                         <div class="col-lg-12 text-center">
                             <div class="pagination__option">
                                 <a href="#">1</a>
@@ -248,6 +250,7 @@ use Illuminate\Support\Facades\Storage;
                                 <a href="#"><i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@
                             @foreach($images as $image)
                          
                             <a class="pt active" href="#photo-{{$i}}">
-                                <img src='{{ asset("$image->image") }}' alt="">
+                                <img src='{{ asset("$image->image.jpg") }}' alt="">
                             </a>
                             <?php
                             $i++
@@ -56,7 +56,7 @@
                                 ?>
                                 @foreach($images as $image)
                             
-                                <img data-hash="photo-{{$i}}" class="product__big__img" src='{{ asset("$image->image") }}' alt="">
+                                <img data-hash="photo-{{$i}}" class="product__big__img" src='{{ asset("$image->image.jpg") }}' alt="">
                                 <!--
                                 <img data-hash="product-2" class="product__big__img" src="{{ asset('storage/images/tracksuits.jpg') }}" alt="">
                                 <img data-hash="product-3" class="product__big__img" src="{{ asset('storage/images/suit-1.jpg') }}" alt="">
@@ -72,7 +72,7 @@
                 <div class="col-lg-6">
                     <div class="product__details__text">
                         <h3>
-                        {{$product['name']}}
+                        {{$product['name']}} - {{$product['size_of_product']}}
               
                         <!--<span>Brand: SKMEIMore Men Watches from SKMEI</span>-->
                          </h3>
@@ -125,6 +125,7 @@
                                         </label>
                                     </div>
                                 </li>
+                                <!--
                                 <li>
                                     <span>Available size:</span>
                                     <div class="size__btn">
@@ -146,6 +147,7 @@
                                         </label>
                                     </div>
                                 </li>
+                                -->
                                 <li>
                                     <span>Promotion:</span>
                                     <p>-15%</p>

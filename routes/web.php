@@ -39,7 +39,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
 Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
-Route::get('/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');
+Route::get('/products/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact-us',[ContactUsMailController::class, 'ContactUsForm'])->name('ContactUsForm');
@@ -48,7 +48,7 @@ Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart')
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
 
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
-Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');
+Route::get('/favourites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');
 Route::get('/add-favourite', [FavouritesController::class, 'addFavouriteProduct'])->name('add.favourite')->middleware('auth');
 Route::get('/del-favourite', [FavouritesController::class, 'delFavouriteProduct'])->name('del.favourite')->middleware('auth');
 
