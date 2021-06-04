@@ -86,7 +86,7 @@ class AppServiceProvider extends ServiceProvider
         view()->share('products_management', $products_management);
         view()->share('orders_management', $orders_management);
             
-        
+     */   
             
 
         
