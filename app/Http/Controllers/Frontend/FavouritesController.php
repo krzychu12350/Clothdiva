@@ -13,6 +13,7 @@ class FavouritesController extends Controller
 {
     public function index()
     {
+    
         $id = Auth::user()->id_ushop;
         $favourite_products = DB::table('products')
             ->join('favorite_products', 'favorite_products.id_product', '=', 'products.id_product')

@@ -16,9 +16,11 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\ContactUsMailController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\ShopcartController;
+use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FavouritesController;
 use App\Http\Controllers\Frontend\ProductsController;
 use App\Http\Controllers\InstagramController;
+use App\Http\Controllers\Frontend\ProductsDetailsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,29 +31,22 @@ use App\Http\Controllers\InstagramController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/test', function(){
-    $products=DB::select('select * from help');
-    return $products;
-});
-Route::get('/testhome', function () {
-    return view('index');
-});
-*/
 Auth::routes();
 //Frontend routes
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
 Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
+Route::get('/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');
+
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact-us',[ContactUsMailController::class, 'ContactUsForm'])->name('ContactUsForm');
 
 Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart')->middleware('auth');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
+
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 Route::get('/favorites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');
 Route::get('/add-favourite', [FavouritesController::class, 'addFavouriteProduct'])->name('add.favourite')->middleware('auth');
@@ -75,16 +70,4 @@ Route::get('/instagram', [
     'as' => 'app.instagram.feed',
     'uses' => 'App\Http\Controllers\InstagramController@feed',
 ]);
-/*
-Route::get('/Jeans', function () {
-    return view('frontend.shop');
-})->name('Jeans');
 
-Route::get('/Shorts', function () {
-    return view('frontend.shop');
-})->name('Shorts');
-
-Route::get('/Sneakers', function () {
-    return view('frontend.shop');
-})->name('Sneakers');
-*/

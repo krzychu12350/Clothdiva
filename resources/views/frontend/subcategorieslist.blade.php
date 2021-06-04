@@ -1,12 +1,6 @@
 
 <div class = "subcategories women_products position-absolute bg-white col-xl-12" style = "display:none">    
-        <!--<h4 style = "text-align:center"> <br></br> KOBIETY <br></br> </h4>-->
             @foreach($sub_categories_women as $sub_category_woman)
-            
-            <?php
-            //echo $sub_category_woman->name_of_subcategory;
-            //,['subcategory'=> $sub_category_woman->name_of_subcategory]
-            ?>
             <ul class = "submenu-submenu" style = "text-align:center">
                <li class = "menu-item level-2" style = "display: block;"><a href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
             </ul>

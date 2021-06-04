@@ -1,7 +1,4 @@
-
-
-
-    <!-- Instagram Begin -->
+     <!-- Instagram Begin -->
     <div class="instagram">
         <div class="container-fluid">
             <div class="row">
