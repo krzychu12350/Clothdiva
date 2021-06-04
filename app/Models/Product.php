@@ -15,7 +15,7 @@ class Product extends Model
         'quantity',
         'prize',
         'color',
-        'size',
+        'size_of_product',
         'description',
         'composition_and_conservation',
         'id_subcategory',

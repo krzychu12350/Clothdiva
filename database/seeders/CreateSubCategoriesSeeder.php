@@ -23,68 +23,94 @@ class CreateSubCategoriesSeeder extends Seeder
          //$photo = 'C:\Users\Krzychu\Desktop\Jagermeister.jpg';
         $sub_category = [
             [
-               'name_of_subcategory'=>'Jeans',
-               'id_category'=>'1',
+               'name_of_subcategory'=>'Dresses',
+               'id_category'=>'1',  //1
+            ],
+
+            [
+                'name_of_subcategory'=>'Skirts',
+             
+                'id_category'=>'1', //2
+            ],
+            [
+                'name_of_subcategory'=>'T-shirts',
+    
+                'id_category'=>'1', //3
+            ],
+            [
+                'name_of_subcategory'=>'Jeans',
+            
+                'id_category'=>'1', //4
+             ],
+ 
+             [
+                 'name_of_subcategory'=>'T-shirts',
+              
+                 'id_category'=>'2', //5
+             ],
+
+             [
+                 'name_of_subcategory'=>'Hoodies',
+              
+                 'id_category'=>'2', //6
+             ],
+
+             [
+                'name_of_subcategory'=>'Jeans',
+             
+                'id_category'=>'2', //7
             ],
 
             [
                 'name_of_subcategory'=>'Shorts',
              
-                'id_category'=>'1',
+                'id_category'=>'2', //8
             ],
-            [
-                'name_of_subcategory'=>'Sneakers',
-    
-                'id_category'=>'1',
-            ],
-            [
-                'name_of_subcategory'=>'Suits',
-            
-                'id_category'=>'2',
-             ],
- 
+
              [
-                 'name_of_subcategory'=>'Flats',
-              
-                 'id_category'=>'2',
-             ],
-             [
-                 'name_of_subcategory'=>'Leather',
-              
-                 'id_category'=>'2',
-             ],
-             [
-                'name_of_subcategory'=>'Shoes',
+                'name_of_subcategory'=>'Dresses',
              
-                'id_category'=>'3',
+                'id_category'=>'3', //9
              ],
  
              [
-                 'name_of_subcategory'=>'Dresses',
+                 'name_of_subcategory'=>'Skirts',
                 
-                 'id_category'=>'3',
+                 'id_category'=>'3', //10
              ],
              [
-                 'name_of_subcategory'=>'Bags',
+                 'name_of_subcategory'=>'T-Shirts',
               
-                 'id_category'=>'3',
+                 'id_category'=>'3', //11
              ],
              [
-                'name_of_subcategory'=>'Jackets',
+                'name_of_subcategory'=>'Trousers',
                
-                'id_category'=>'4',
+                'id_category'=>'3', //12
              ],
  
-             [
-                 'name_of_subcategory'=>'Caps',
-               
-                 'id_category'=>'4',
-             ],
              [
                  'name_of_subcategory'=>'T-shirts',
-                
-                 'id_category'=>'4',
+               
+                 'id_category'=>'4', //13
              ],
+             [
+                 'name_of_subcategory'=>'Hoodies',
+                
+                 'id_category'=>'4', //14
+             ],
+
+             [
+                'name_of_subcategory'=>'Trousers',
+              
+                'id_category'=>'4', //15
+            ],
+
+            [
+                'name_of_subcategory'=>'Shirts',
+              
+                'id_category'=>'4', //16
+            ],
         ];
         foreach ($sub_category as $key => $value) {
             Sub_category::create($value);

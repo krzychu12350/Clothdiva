@@ -20,9 +20,9 @@
                                         </thead>
                                         <tbody>
                                         
-                                        @foreach($orders_management as $singlerow)
+                                        
                                             <tr>
-                                                <td>{{$singlerow->name}}</td>
+                                                <td></td>
                                                 <td>Men</td>
                                                 <td>Black jacket</td>
                                                 <td>-</td>
@@ -41,7 +41,7 @@
                                                     </div>
                                                 </td>
                                                 </tr>
-                                                @endforeach
+                                       
                                         </tbody>
                                     </table>
                                 </div>
