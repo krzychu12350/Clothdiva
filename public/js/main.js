@@ -417,4 +417,19 @@ Created: Colorib
 
     */
 
+
+function display(){
+$(".button_add_promotion").click(function(e){
+    $(".div_promotion").toggle(function(e) {
+            if ($(this).is(":visible")) {
+                $(".div_promotion").show();
+            }
+            else {
+                $(".div_promotion").hide(); 
+            };
+        });
+    });
+}
+
+
 })(jQuery);

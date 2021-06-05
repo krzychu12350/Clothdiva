@@ -6076,3 +6076,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
   return hooks;
 });
+
+$( ".add-promotion" ).on( "click", function() {
+  alert("Obsługuje przycisk!");
+ 
+  $("#table-promotion").find('tbody')
+  
+    var $lastRow = $("[id$=table-promotion]tr:last"); //grab row before the last row
+    var $newRow = $lastRow.clone(); //clone it
+    $newRow.find(":text").val(""); //clear out textbox values    
+    $lastRow.after($newRow); //add in the new row at the end
+
+});

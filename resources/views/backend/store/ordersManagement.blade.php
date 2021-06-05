@@ -20,14 +20,14 @@
                                         </thead>
                                         <tbody>
                                         
-                                        
+                                            @foreach($orders_management as $singlerow)
                                             <tr>
-                                                <td></td>
+                                                <td>{{$singlerow->id_order}}</td>
                                                 <td>Men</td>
-                                                <td>Black jacket</td>
-                                                <td>-</td>
-                                                <td class="process">Processed</td>
-                                                <td>79.99 PLN</td>
+                                                <td>{{$singlerow->status}}</td>
+                                                <td>{{$singlerow->date_of_placing_order}}</td>
+                                                <td class="process">{{$singlerow->payment_method}}</td>
+                                                <td>{{$singlerow->name}} {{$singlerow->surname}}</td>
                                             
                                             <td>
                                                     <div class="table-data-feature">
@@ -41,7 +41,7 @@
                                                     </div>
                                                 </td>
                                                 </tr>
-                                       
+                                                @endforeach
                                         </tbody>
                                     </table>
                                 </div>

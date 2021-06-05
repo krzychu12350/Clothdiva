@@ -76,9 +76,6 @@
                                                     </td>
                                                     <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
                                                         <a href="{{ route('admin.store.subcategories.destroy',['id_subcat' => $singlerow->name_of_subcategory,'id_cat' => $category->name_of_category]) }}"
                                                      onclick="event.preventDefault();
                                                      document.getElementById('subcatdel-form').submit();">

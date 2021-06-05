@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
            // CreateInvoicesSeeder::class,
             CreateCategoriesSeeder::class,
             CreateSubCategoriesSeeder::class,
-            //CreatePromotionsSeeder::class,
+            CreatePromotionsSeeder::class,
             CreateOrdersSeeder::class,
             CreateProductsSeeder::class,
             CreateImagesSeeder::class,

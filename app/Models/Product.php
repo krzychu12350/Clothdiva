@@ -19,7 +19,7 @@ class Product extends Model
         'description',
         'composition_and_conservation',
         'id_subcategory',
-       // 'id_promotion',
+        'id_promotion',
         'id_order',
     ];
 
@@ -32,9 +32,9 @@ class Product extends Model
         return $this->hasMany(Image::class);
     }
 
-   /* public function promotion(){
+    public function promotion(){
         return $this->belongsTo(Promotion::class);
-    }*/
+    }
 
     public function favorite_products()
     {

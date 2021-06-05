@@ -24,6 +24,7 @@ class CreateProductsSeeder extends Seeder
                'description'=>'Height of female model: 180 cm. Round neck, short sleeves, ruffle hem.',
                'composition_and_conservation'=>'100% COTTON',
                'id_sub_category'=>'1',
+               'id_promotion' => '1',
                'id_order' => '1',
             ],
 
@@ -36,6 +37,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Height of female model: 180 cm. Model wears size M/38. Classic collar and button-through front',
                 'composition_and_conservation'=>'100% COTTON',
                 'id_sub_category'=>'1',
+                'id_promotion' => '',
                 'id_order' => '2',    
             ],
 
@@ -48,6 +50,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Height of female model: 178 cm. Model wears size S/36. ',
                 'composition_and_conservation'=>'100% COTTON',
                 'id_sub_category'=>'1',
+                'id_promotion' => '',
                 'id_order' => '3',
             ],
             
@@ -60,6 +63,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=>'Height of female model: 180 cm. Ruffle hem and midi length',
                 'composition_and_conservation'=>'52% VISCOSE, 48% POLYAMIDE',
                 'id_sub_category'=>'2',
+                'id_promotion' => '',
                 'id_order' => '',
              ],
  
@@ -72,6 +76,7 @@ class CreateProductsSeeder extends Seeder
                  'description'=>'Height of female model: 178 cm. ECO AWARE. Midi length',
                  'composition_and_conservation'=>'100% POLYESTER',
                  'id_sub_category'=>'2',
+                 'id_promotion' => '3',
                  'id_order' => '',
              ],
  
@@ -84,6 +89,7 @@ class CreateProductsSeeder extends Seeder
                  'description'=> 'Height of female model: 178 cm. Model wears size S/36. Concealed side zip fastening',
                  'composition_and_conservation' => '97% POLYESTER, 3% ELASTANE',
                  'id_sub_category'=>'2',
+                 'id_promotion' => '4',
                  'id_order' => '',
              ],
 
@@ -96,6 +102,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Height of female model: 178 cm. Model wears size S/36.' ,
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'3',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -108,6 +115,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Height of female model: 178 cm. Model wears size S/36. V neck, short sleeves.' ,
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'3',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -120,6 +128,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Height of female model: 176 cm. Model wears size S/36.' ,
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'3',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -133,6 +142,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Height of female model: 175 cm. Model wears size S/36. Zip and button fastening and five pockets' ,
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'4',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -145,6 +155,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Height of female model: 174 cm. Model wears size S/36.' ,
                 'composition_and_conservation'=> '98% COTTON, 2% ELASTANE',
                 'id_sub_category'=>'4',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -157,6 +168,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Height of female model: 178 cm. Model wears size S/36. Five pockets' ,
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'4',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -171,6 +183,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck and short sleeves', 
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'5',
+                'id_promotion' => '2',
                 'id_order' => '',
             ],
 
@@ -183,6 +196,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck and short sleeves' ,
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'5',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -196,6 +210,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck with trimming and wide straps',
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'5',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -208,6 +223,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Model’s height: 190 cm. Model wears size M. Round ribbed neckline, subtly dropped shoulders, long sleeves',
                 'composition_and_conservation'=> '70% COTTON, 30% POLYESTER',
                 'id_sub_category'=>'6',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -220,6 +236,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Wide hood, zip fastening, open front pockets, long sleeves, ribbed neckline, hemline and cuffs',
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'6',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -232,6 +249,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Large hood, long sleeves with ribbed trim, dropped shoulders',
                 'composition_and_conservation'=> '80% COTTON, 20% POLYESTER',
                 'id_sub_category'=>'6',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -246,6 +264,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Zip and button fastening, open front pockets, back patch pockets, long fitted leg',
                 'composition_and_conservation'=> '98% COTTON, 2% ELASTANE',
                 'id_sub_category'=>'7',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -258,6 +277,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Zip and button fastening, open front pockets, back patch pockets',
                 'composition_and_conservation'=> '99% COTTON, 1% ELASTANE',
                 'id_sub_category'=>'7',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -270,6 +290,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Zip and button fastening, open front pockets, back patch pockets',
                 'composition_and_conservation'=> '99% COTTON, 1% ELASTANE',
                 'id_sub_category'=>'7',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -283,6 +304,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Model’s height: 190 cm. Model wears size 32. Two pockets in side seams',
                 'composition_and_conservation'=> '60% COTTON, 40% POLYESTER',
                 'id_sub_category'=>'8',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -295,6 +317,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Model’s height: 190 cm. Model wears size 32. Two pockets in side seams',
                 'composition_and_conservation'=> '60% COTTON, 40% POLYESTER',
                 'id_sub_category'=>'8',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -307,8 +330,11 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Model’s height: 190 cm. Model wears size 32. Two pockets in side seams, patch pocket to the back.',
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'8',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
+
+            //girls
 
             [
                 'name'=>'Colorful dress',
@@ -319,6 +345,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck, wide straps and fitted waist',
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'9',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -331,6 +358,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Wide straps, 100% organic cotton.',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'9',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -343,6 +371,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck, wide straps and fitted waist.',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'9',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -355,6 +384,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Elasticated waist, midi length, smooth lining.',
                 'composition_and_conservation'=> '65% POLYESTER, 35% COTTON.',
                 'id_sub_category'=>'10',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -367,6 +397,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Zip and button fastening three pockets.',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'10',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -379,6 +410,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Elasticated waist.',
                 'composition_and_conservation'=> '71% POLYESTER, 26% VISCOSE, 3% ELASTANE.',
                 'id_sub_category'=>'10',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -391,6 +423,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck with trimming short sleeves',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'11',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -403,6 +436,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck, short sleeves',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'11',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -416,6 +450,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck with trimming, short sleeves',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'11',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -428,6 +463,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Elasticated waist, long fitted leg',
                 'composition_and_conservation'=> '95% COTTON, 5% ELASTANE.',
                 'id_sub_category'=>'12',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -440,6 +476,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Long fitted leg',
                 'composition_and_conservation'=> '100% LYOCELL.',
                 'id_sub_category'=>'12',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -452,6 +489,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> '-',
                 'composition_and_conservation'=> '100% POLYSTER.',
                 'id_sub_category'=>'12',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -464,6 +502,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round ribbed neckline, dropped shoulders, short sleeves, decorative sleeve patch',
                 'composition_and_conservation'=> '100% POLYSTER.',
                 'id_sub_category'=>'13',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -477,6 +516,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck with trimming, short sleeves, slightly dropped shoulders',
                 'composition_and_conservation'=> ' 100% COTTON.',
                 'id_sub_category'=>'13',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -489,6 +529,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck with trimming, short sleeves.',
                 'composition_and_conservation'=> ' 100% COTTON.',
                 'id_sub_category'=>'13',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -501,6 +542,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Round neck with trimming, dropped shoulders, ribbed hemline and cuffs.',
                 'composition_and_conservation'=> '77% POLYESTER, 18% VISCOSE, 5% ELASTANE.',
                 'id_sub_category'=>'14',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -513,6 +555,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Long sleeves, two side sewn-in pockets, dropped shoulders, ribbed neckline, hemline and cuffs.',
                 'composition_and_conservation'=> '80% COTTON, 20% POLYESTER.',
                 'id_sub_category'=>'14',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -525,6 +568,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Two side sewn-in pockets, ribbed neckline, hemline and cuffs.',
                 'composition_and_conservation'=> '80% COTTON, 20% POLYESTER.',
                 'id_sub_category'=>'14',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -537,6 +581,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Elasticated waist.',
                 'composition_and_conservation'=> '75% POLYESTER, 25% COTTON.',
                 'id_sub_category'=>'15',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -549,6 +594,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Elasticated waist.',
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'15',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -561,6 +607,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Elasticated waist.',
                 'composition_and_conservation'=> '70% COTTON, 30% POLYESTER.',
                 'id_sub_category'=>'15',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -573,6 +620,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Long sleeves, classic collar, button-through front, button cuffs.',
                 'composition_and_conservation'=> ' 98% COTTON, 2% ELASTANE.',
                 'id_sub_category'=>'16',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -586,6 +634,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Long sleeves, classic collar, button-through front, button cuffs.',
                 'composition_and_conservation'=> ' 98% COTTON, 2% ELASTANE.',
                 'id_sub_category'=>'16',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
@@ -598,6 +647,7 @@ class CreateProductsSeeder extends Seeder
                 'description'=> 'Long sleeves, classic collar, button-through front, button cuffs.',
                 'composition_and_conservation'=> ' 98% COTTON, 2% ELASTANE.',
                 'id_sub_category'=>'16',
+                'id_promotion' => '',
                 'id_order' => '',
             ],
 
