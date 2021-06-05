@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Image;
 use DB;
+use Session;
 
 class ProductsDetailsController extends Controller
 {
@@ -17,6 +18,9 @@ class ProductsDetailsController extends Controller
     
     function details($id){
         $data1 = Product::find($id);
+
+        $category = Session::get('category');
+        
         //$data2 = Image::where("id_product", $id);
        /*
        $data = DB::table('products')
@@ -33,7 +37,7 @@ class ProductsDetailsController extends Controller
             ->get();
 
 
-        //dd($data2);
-        return view('frontend.productdetails',['product'=>$data1, 'images'=>$data2]);
+        //dd($id);
+        return view('frontend.productdetails',['product'=>$data1, 'images'=>$data2, 'category_name'=>$category]);
     }
 }

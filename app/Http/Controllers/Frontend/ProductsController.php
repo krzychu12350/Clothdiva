@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Sub_category;
 use App\Models\Product;
 use DB;
+use Session;
 
 class ProductsController extends Controller
 {
@@ -50,22 +51,46 @@ class ProductsController extends Controller
         }*/
  
         // $allparams is an associative array, you can also read individual element as $allparams['model']
-      
-
+   
+        
         $url = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         $category = $url[2];
         $subcategory = $_GET['subcategory'];
+        Session::put('category', $category);
+      
 
+        //dd($subcategory);
+        //$category = $request->input('type');
+         //$subcategory = $request->input('subcategory');
+        /*
         $products_selection = DB::table('products p as products_selection')
         ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
         ->join('categories c', 'c.id_category', '=', 'sb.id_category')
-        ->join('images i', 'i.id_product', '=', 'p.id_product')
         ->where('sb.name_of_subcategory', '=', $subcategory)
         ->where('c.name_of_category', '=',  $category)
-        ->select('p.id_product', 'p.name', 'p.prize', 'i.image')
+        ->select('p.id_product', 'p.name', 'p.prize', 'p.size_of_product')
+        ->get();*/
+      
+        $products_selection = DB::table('products p as products_selection')
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=',  $category)
+        ->select('p.id_product', 'p.name', 'p.prize', 'p.size_of_product')
         ->get();
         
-        return view('frontend.shop', compact('products_selection'));
+        
+        $products_shop_view = DB::select("select products_shop_view('$subcategory','$category') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        //dd($image_for_product);
+        /*
+        $data2 = DB::table('images')
+        ->join('products p', 'p.id_product', '=', 'images.id_product')
+        ->where('images.id_product', '=', )
+        ->select('images.image')
+        ->get();
+        dd($data2);*/
+        
+        return view('frontend.shop', compact('products_selection','products_shop_view'));
 
         /*
         }
