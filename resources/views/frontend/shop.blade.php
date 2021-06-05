@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="{{ route('home')}}"><i class="fa fa-home"></i> Home</a>
                         <span>Shop</span>
                     </div>
                 </div>
@@ -218,19 +218,36 @@ use Illuminate\Support\Facades\Storage;
                     <div class="row">
                         <?php
                          //$products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
+                         //$products_selection = $products_selection->toArray();
+                         //$array = array_merge($products_selection,$image_for_product);
+                         //dd($array);
+                         //  @foreach ($array as $key=>$row)
+                        //{{$key}}
+                        //  @endforeach
+                        //@foreach($products_selection as $single_product) 
+                        //{{$single_product->id_product}}
+                        //@endforeach
+                        //@foreach($rows as $row=>$value) 
+                      
+                       // {{$value['id_product']}}
+                   
+               
+                        // @endforeach
+                        //dd($image_for_product);
                         ?>
-                        
-                     
+                  
+                  
+                   
+                  @foreach($products_shop_view as $single_product) 
+               
 
-                        @foreach($products_selection as $single_product)
-                     
                         <div class="col-lg-4 col-md-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg='{{ asset("$single_product->image.jpg") }}'>
-                       
+                            <div class="product__item" href="/products/details/{{$single_product->id_product}}">
+                                <div onclick='location.href="/products/details/{{$single_product->id_product}}"' style='cursor:pointer;' class="product__item__pic set-bg" data-setbg='{{ asset ("$single_product->image_src.jpg") }}'>
                                     <ul class="product__hover">
-                                        <li><a href='{{ asset("$single_product->image.jpg") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
-                                        <li><a href="{{ route('add.favourite', ['id' => $single_product->id_product]) }}"><span class="icon_heart_alt"></span></a></li>
+                                        <li><a href='{{ asset("$single_product->image_src.jpg") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
+                                     
+                                        <li><a href="{{ route('add.favourite', ['id' =>$single_product->id_product]) }}"><span class="icon_heart_alt"></span></a></li>
                                         <li><a href="#"><span class="icon_bag_alt"></span></a></li>
                                     </ul>
                                 </div>
@@ -240,8 +257,9 @@ use Illuminate\Support\Facades\Storage;
                                 </div>
                             </div>
                         </div>
+                  
                         @endforeach
-                      
+                       
                         <div class="col-lg-12 text-center">
                             <div class="pagination__option">
                                 <a href="#">1</a>
