@@ -2,10 +2,10 @@
 @section('orderssection')
 <div class="container">
     <div class="row justify-content-center">
-       <div class="row justify-content-center">
+    <h2 class="text-center">Promotions management</h2>
                             <div class="col-md-12 m-t-30">
                                 <!-- DATA TABLE-->
-                                <h1 class="m-b-35 text-center">Promotions</h1>
+                                <!--<h1 class="m-b-35 text-center">Promotions</h1>-->
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">

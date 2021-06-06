@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
     
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
 
     <!-- ICON USER -->
     <script src="https://kit.fontawesome.com/dadb75eae3.js" crossorigin="anonymous"></script>
@@ -53,6 +56,7 @@
             <li><a href="{{ route('favourites') }}"><span class=" kila icon_heart_alt"></span>
             </a></li>
             <li><a href="{{ route('shopcart') }}"><span class="fila icon_cart_alt"></span>
+            <div class="tip">2</div>
             </a></li>
         </ul>
         
@@ -92,7 +96,7 @@
                         
                               
                                 
-                            <li><a class="restlink" href="{{ route('shop') }}">Shop</a></li>
+                           <!-- <li><a class="restlink" href="{{ route('shop') }}">Shop</a></li>-->
                             <li><a class="restlink" href="{{ route('contact') }}">Contact</a></li>
                     
                         </ul>
@@ -122,6 +126,7 @@
                             <a href="{{ route('favourites') }}">
                             <div class="heart-icons text-center">
                             <span class="icon_heart_alt"></span>
+                            <div id="fav__count" class="tip"> 2<!--count($favourite_products)--> </div>
                             <p class="d-block header_icon_desc">Favourite</p>
                             </div>
                             </a> 
@@ -130,6 +135,7 @@
                             <a href="{{ route('shopcart') }}">
                             <div class="cart-icons text-center">
                             <span class="icon_cart_alt"></span>
+                            <div id="cart__count" class="tip">{{ count((array) session('cart')) }}</div>
                             <p class="d-block header_icon_desc">Cart</p>
                             </div>
                             </a> 
@@ -542,7 +548,8 @@ Discount Section Begin
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
+<script src="{{ asset('js/sweetalerts.js') }}"></script>
+@yield('scripts')
 </body>
 
 </html>

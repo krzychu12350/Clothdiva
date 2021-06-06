@@ -45,7 +45,14 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact-us',[ContactUsMailController::class, 'ContactUsForm'])->name('ContactUsForm');
 
 Route::get('/shop-cart', [ShopcartController::class, 'index'])->name('shopcart')->middleware('auth');
+
+Route::get('/add-to-cart/{id}', [ShopcartController::class, 'addtocart'])->name('addtoCart')->middleware('auth');
+
+Route::delete('/remove-from-cart',  [ShopcartController::class, 'removefromCart'])->name('remove.cart')->middleware('auth');
+Route::patch('/update-cart',  [ShopcartController::class, 'updatefromCart'])->name('update.cart')->middleware('auth');
+
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
+Route::post('/place-order', [CheckoutController::class, 'placeOrder'])->name('place.order')->middleware('auth');
 
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 Route::get('/favourites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');

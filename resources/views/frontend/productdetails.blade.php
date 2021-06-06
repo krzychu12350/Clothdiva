@@ -15,7 +15,11 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
         <div class="container">
@@ -85,7 +89,7 @@
                                     <input type="number" value="1" max="{{$product['quantity']}}">
                                 </div>
                             </div>
-                            <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a>
+                            <a href="{{ url('add-to-cart/'.$product['id_product']) }}" class="cart-btn"><span class="icon_cart_alt"></span> Add to cart</a>
                          
                             
                             <ul>

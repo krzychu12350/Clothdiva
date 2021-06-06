@@ -69,8 +69,8 @@ class ProductsController extends Controller
         ->where('sb.name_of_subcategory', '=', $subcategory)
         ->where('c.name_of_category', '=',  $category)
         ->select('p.id_product', 'p.name', 'p.prize', 'p.size_of_product')
-        ->get();*/
-      
+        ->get();
+    
         $products_selection = DB::table('products p as products_selection')
         ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
         ->join('categories c', 'c.id_category', '=', 'sb.id_category')
@@ -78,10 +78,47 @@ class ProductsController extends Controller
         ->where('c.name_of_category', '=',  $category)
         ->select('p.id_product', 'p.name', 'p.prize', 'p.size_of_product')
         ->get();
-        
-        
+        */
+        $all_sizes = DB::table('products p')->select('p.size_of_product')->distinct()
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=',  $category)
+        ->orderByRaw('size_of_product DESC')->get();
+
+        $all_colors = DB::table('products p')->select('p.color')->distinct()
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=',  $category)
+        ->orderByRaw('color DESC')->get();
+        /*
+  
+        $minPrize = DB::table('products p')
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=',  $category)
+        ->where('p.prize', \DB::raw("(select min(`p.prize`))"))
+        ->get();*/
+
+    
+        $minPrize = DB::table('products p')
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=',  $category)
+        ->min('prize');
+    
+        $maxPrize = DB::table('products p')
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=',  $category)
+        ->max('prize');
+
         $products_shop_view = DB::select("select products_shop_view('$subcategory','$category') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
-        //dd($image_for_product);
+       
         /*
         $data2 = DB::table('images')
         ->join('products p', 'p.id_product', '=', 'images.id_product')
@@ -89,8 +126,8 @@ class ProductsController extends Controller
         ->select('images.image')
         ->get();
         dd($data2);*/
-        
-        return view('frontend.shop', compact('products_selection','products_shop_view'));
+       
+        return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize'));
 
         /*
         }
