@@ -15,7 +15,11 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-
+    @if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
     <!-- Product Details Section Begin -->
     <section class="product-details spad">
         <div class="container">
@@ -85,7 +89,7 @@
                                     <input type="number" value="1" max="{{$product['quantity']}}">
                                 </div>
                             </div>
-                            <a href="#" class="cart-btn"><span class="icon_bag_alt"></span> Add to cart</a>
+                            <a href="{{ url('add-to-cart/'.$product['id_product']) }}" class="cart-btn"><span class="icon_cart_alt"></span> Add to cart</a>
                          
                             
                             <ul>
@@ -162,10 +166,11 @@
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Composition and Conservation</a>
                             </li>
-                            <!--
+                       
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Specification</a>
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Description</a>
                             </li>
+                            <!--
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Reviews ( 2 )</a>
                             </li>-->
@@ -175,16 +180,11 @@
                                 <!--<h6>Description</h6>-->
                                 <p>{{$product['composition_and_conservation']}}</p>
                             </div>
-                            <!--
+                      
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                <h6>Specification</h6>
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed
-                                    quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret.
-                                    Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsam
-                                    voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia ipsu
-                                    consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nulla
-                                consequat massa quis enim.</p>
+                                <p>{{$product['description']}}</p>
                             </div>
+                            <!--
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <h6>Reviews ( 2 )</h6>
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed

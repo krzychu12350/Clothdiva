@@ -135,8 +135,9 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active">
-                            <a class="js-arrow" href="{{ route('admin.home') }}">
+                        <!-- class="active"-->
+                        <li>
+                            <a href="{{ route ('admin.home') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>

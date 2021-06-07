@@ -14,15 +14,24 @@ class FavouritesController extends Controller
     public function index()
     {
     
-        $id = Auth::user()->id_ushop;
-        $favourite_products = DB::table('products')
+     
+        /*$favourite_products = DB::table('products')
             ->join('favorite_products', 'favorite_products.id_product', '=', 'products.id_product')
-            ->select('products.id_product', 'products.name', 'products.prize')
+            ->select('products.id_product', 'products.name', 'products.prize','products.size_of_product')
             ->where('favorite_products.id_ushop', '=', $id)
             ->get();
-            
         
-            return view('frontend.favourites',['favourite_products'=>$favourite_products]);
+        $favourite_products =  DB::table('images i')
+        ->leftJoin('products p', 'p.id_product', '=', 'i.id_product')
+        ->join('favorite_products fp', 'fp.id_product', '=', 'p.id_product')
+        ->select('MIN(i.image) as image_src', ' p.id_product', 'p.name','p.prize', 'p.size_of_product')
+        ->where('fp.id_ushop', '=', $id)
+        ->groupBy('p.id_product', 'p.name','p.prize','p.size_of_product')
+        ->get();  */
+        $id = Auth::user()->id_ushop;
+        $favourite_products = DB::select("select fav_products('$id') as fav_products from images FETCH FIRST 1 ROWS ONLY");
+        
+        return view('frontend.favourites',['favourite_products'=>$favourite_products]);
     }
  
     public function delFavouriteProduct(Request $request) 

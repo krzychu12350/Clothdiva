@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
     
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
 
     <!-- ICON USER -->
     <script src="https://kit.fontawesome.com/dadb75eae3.js" crossorigin="anonymous"></script>
@@ -52,15 +55,65 @@
             <li><span class=" mila icon_search search-switch"></span></li>
             <li><a href="{{ route('favourites') }}"><span class=" kila icon_heart_alt"></span>
             </a></li>
-            <li><a href="{{ route('shopcart') }}"><span class="fila icon_cart_alt"></span>
-            </a></li>
         </ul>
         
         <div class="offcanvas__logo">
             <a href="/"><img src="{{ asset('img/logo.png') }}" alt=""></a>
         </div>
 
-        <div id="mobile-menu-wrap"></div>
+        <div>  
+
+
+        <nav>
+                        <ul style = "list-style-type: none;">
+                            <li><a class="restlink" style = "color:black" href="{{ route('home') }}">{{ __('Home') }}</a></li>
+                          
+                            <li class = "women_li"> Women <a style = "color:orange">↓</a> </li>
+                            <div class = " bg-white women_div all_div">    
+                            @foreach($sub_categories_women as $sub_category_woman)
+                            <ul class = "submenu-submenu">
+                            <li class = "menu-item" style = "display: block"><a style = "color:black" href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
+                            </ul>
+                             @endforeach
+                             </div>
+
+                            <li class = "men_li"> Men <a style = "color:orange">↓</a> </li>
+                            <div class = " bg-white men_div all_div" style = "display:none">    
+                            @foreach($sub_categories_men as $sub_category_man)
+                            <ul class = "submenu-submenu">
+                            <li class = "menu-item" style = "display: block"><a style = "color:black" href="{{ route('showProducts',['type'=> 'Men','subcategory'=> $sub_category_man->name_of_subcategory]) }}">{{$sub_category_man->name_of_subcategory}}</a></li>
+                            </ul>
+                             @endforeach
+                             </div>
+
+                             <li class = "girls_li"> Girls <a style = "color:orange">↓</a> </li>
+                            <div class = " bg-white girls_div all_div" style = "display:none">    
+                            @foreach($sub_categories_girls as $sub_category_girl)
+                            <ul class = "submenu-submenu">
+                            <li class = "menu-item" style = "display: block"><a style = "color:black" href="{{ route('showProducts',['type'=> 'Girls','subcategory'=> $sub_category_girl->name_of_subcategory]) }}">{{$sub_category_girl->name_of_subcategory}}</a></li>
+                            </ul>
+                             @endforeach
+                             </div>
+
+
+                             <li class = "boys_li"> Boys <a style = "color:orange">↓</a> </li>
+                            <div class = " bg-white boys_div all_div" style = "display:none">    
+                            @foreach($sub_categories_boys as $sub_category_boy)
+                            <ul class = "submenu-submenu">
+                            <li class = "menu-item" style = "display: block"><a style = "color:black" href="{{ route('showProducts',['type'=> 'Boys','subcategory'=> $sub_category_boy->name_of_subcategory]) }}">{{$sub_category_boy->name_of_subcategory}}</a></li>
+                            </ul>
+                             @endforeach
+                             </div>
+                            
+                            <li><a class="restlink" style = "color:black" href="{{ route('contact') }}">Contact</a></li>
+                            
+                        </ul>
+                    </nav>
+
+
+        </div>
+
+        <!--<div id="mobile-menu-wrap"></div>-->
     </div>
     <!-- Offcanvas Menu End -->
 
@@ -118,6 +171,7 @@
                             <a href="{{ route('favourites') }}">
                             <div class="heart-icons text-center">
                             <span class="icon_heart_alt"></span>
+                            <div id="fav__count" class="tip"> 2<!--count($favourite_products)--> </div>
                             <p class="d-block header_icon_desc">Favourite</p>
                             </div>
                             </a> 
@@ -126,6 +180,7 @@
                             <a href="{{ route('shopcart') }}">
                             <div class="cart-icons text-center">
                             <span class="icon_cart_alt"></span>
+                            <div id="cart__count" class="tip">{{ count((array) session('cart')) }}</div>
                             <p class="d-block header_icon_desc">Cart</p>
                             </div>
                             </a> 
@@ -316,7 +371,8 @@
 <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
-
+<script src="{{ asset('js/sweetalerts.js') }}"></script>
+@yield('scripts')
 </body>
 
 </html>

@@ -1,9 +1,5 @@
 <h2>Message from customer</h2>
-
-You have got an email from : {{ $name }} 
-
-User details: <br><br>
-
+User details: <br>
 Name: {{ $name }} <br>
 Email: {{ $email }} <br>
 Subject: {{ $subject }} <br>

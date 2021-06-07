@@ -33,7 +33,7 @@
                                 </li>
                                 <li>
                                     <h6><i class="fa fa-headphones"></i> Support</h6>
-                                    <p>clothdiva@gmail.com</p>
+                                    <p>clothdivaoffice@gmail.com</p>
                                 </li>
                             </ul>
                         </div>

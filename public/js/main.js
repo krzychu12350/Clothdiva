@@ -215,10 +215,10 @@ Created: Colorib
 			var newVal = parseFloat(oldValue) + 1;
 		} else {
 			// Don't allow decrementing below zero
-			if (oldValue > 0) {
+			if (oldValue > 1) {
 				var newVal = parseFloat(oldValue) - 1;
 			} else {
-				newVal = 0;
+				newVal = 1;
 			}
 		}
 		$button.parent().find('input').val(newVal);
@@ -359,6 +359,27 @@ Created: Colorib
         }
        
       });
+
+//MOBILE WOMEN PRODUCTS
+      $(document).ready(function(){
+        $('.women_li').click(function() {
+          $('.women_div').toggle();
+        });
+    });
+
+//MOBILE MEN PRODUCTS
+    $(document).ready(function(){
+        $('.men_li').click(function() {
+          $('.men_div').toggle();
+        });
+    });
+
+//MOBILE GIRLS PRODUCTS
+$(document).ready(function(){
+    $('.girls_li').click(function() {
+      $('.girls_div').toggle();
+    });
+});
       
         /*
 

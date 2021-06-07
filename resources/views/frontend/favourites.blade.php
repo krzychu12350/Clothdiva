@@ -42,11 +42,11 @@
                             @foreach($favourite_products as $single_fav_product)
                                 <tr>
                                     <td class="cart__product__item">
-                                        <a href="details/{{$single_fav_product->id_product}}">
-                                            <img src="img/shop-cart/cp-1.jpg" alt="">
+                                        <a href="/products/details/{{$single_fav_product->id_product}}">
+                                            <img src="{{$single_fav_product->image_src}}.jpg" alt="">
                                             </a>
                                         <div class="cart__product__item__title">
-                                            <a href="details/{{$single_fav_product->id_product}}"><h6>{{$single_fav_product->name}}</h6></a>
+                                        <a href="/products/details/{{$single_fav_product->id_product}}"><h6>{{$single_fav_product->name}} - {{$single_fav_product->size_of_product}}</h6></a>
                                         </div>
                                     </td>
                                     <td class="cart__price">$ {{$single_fav_product->prize}}</td>
@@ -59,7 +59,7 @@
                                     <td class="cart__total">$ 300.0</td>
                                     -->
                                     <td class="cart__close">
-                                    <a href="{{ route('del.favourite', ['id' => $single_fav_product->id_product]) }}">
+                                    <a class="favdel" onclick="handleDelete(event);" href="{{ route('del.favourite', ['id' => $single_fav_product->id_product]) }}">
                             
                                     <span class="icon_close"></span>
                                     </a>

@@ -168,6 +168,10 @@ ol {
 	background: #000;
 }
 
+.primary-btn:hover {
+	background-color: #ca1515 !important;
+}
+
 .site-btn {
 	font-size: 14px;
 	color: #ffffff;
@@ -482,8 +486,7 @@ ol {
 
 .header__right__widget li a .tip {
 	position: absolute;
-	right: -12px;
-	top: -11px;
+	top: 1px;
 	height: 18px;
 	width: 18px;
 	background: #111111;
@@ -493,6 +496,12 @@ ol {
 	line-height: 18px;
 	text-align: center;
 	border-radius: 50%;
+}
+#fav__count{
+	right: 7px !important;
+}
+#cart__count{
+	right: -10px !important;
 }
 .header_icon_desc:hover{
 	text-decoration: underline;
@@ -977,7 +986,7 @@ ol {
 	margin-bottom: 5px;
 }
 .footer__social a:hover {
-	background-color:#e83e8c;;
+	background-color:#ca1515;
 }
 .footer__social a:last-child {
 	margin-right: 0;
@@ -1806,7 +1815,7 @@ ol {
 	display: inline-block;
 	font-size: 14px;
 	color: #ffffff;
-	background: #ca1515;
+	background: #000;
 	font-weight: 600;
 	text-transform: uppercase;
 	padding: 14px 30px 15px;
@@ -1816,6 +1825,9 @@ ol {
 	margin-bottom: 10px;
 }
 
+.product__details__button .cart-btn:hover {
+	background: #ca1515;
+}
 .product__details__button ul {
 	float: left;
 }
@@ -1839,6 +1851,9 @@ ol {
 	line-height: 50px;
 	text-align: center;
 	padding-top: 1px;
+}
+.product__details__button ul li a:hover {
+background-color: #ebebeb;;
 }
 
 .product__details__button ul li a span {
@@ -2128,6 +2143,7 @@ ol {
 .shop__cart__table tbody tr .cart__product__item img {
 	float: left;
 	margin-right: 25px;
+	height: 100px !important;
 }
 
 .shop__cart__table tbody tr .cart__product__item .cart__product__item__title {
@@ -2309,7 +2325,9 @@ ol {
 	text-align: center;
 	padding: 12px 0 10px;
 }
-
+.cart__total__procced .primary-btn:hover{
+	color: #FFFFFF;
+}
 /*---------------------
   Checkout
 -----------------------*/
@@ -3749,5 +3767,17 @@ ol {
 
 .img_logo_search{
 	width:22%;
+}
+
+.all_div{
+	display:none; 
+	border-style: solid;
+	border-color: orange;
+	border-width: 1px;
+}
+
+.submenu-submenu{
+	text-align:left; 
+	padding-left: 5%
 }
 
