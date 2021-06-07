@@ -37,6 +37,8 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::post('/products/{size_p}', [ProductsController::class, 'showProductsbySize'])->name('filter.bysize');
+
 
 Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
 Route::get('/products/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');

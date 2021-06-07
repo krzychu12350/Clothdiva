@@ -146,7 +146,7 @@ use Illuminate\Support\Facades\Storage;
                                     <div class="range-slider">
                                     </div>
                                 </div>
-                                <a href="#">Filter</a>
+                                <a href="{{ route('filter.bysize', ['size_p' => $single_size->size_of_product]) }}">Filter</a>
                             </div>
 
                         </div>

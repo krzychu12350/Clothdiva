@@ -57,7 +57,7 @@ class ProductsController extends Controller
         $category = $url[2];
         $subcategory = $_GET['subcategory'];
         Session::put('category', $category);
-      
+        Session::put('subcategory', $subcategory);
 
         //dd($subcategory);
         //$category = $request->input('type');
@@ -136,5 +136,7 @@ class ProductsController extends Controller
             report($e);
         }*/
     }
+ 
+    
     
 }

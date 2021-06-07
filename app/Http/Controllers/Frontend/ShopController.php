@@ -11,4 +11,17 @@ class ShopController extends Controller
     {
         return view('frontend.shop');
     }
+    public function showProductsbySize(Request $request)
+    {
+
+        $category = Session::get('category');
+        $subcategory = Session::get('subcategory');
+
+        $size = $request->input('size_p');
+
+    
+        //$products_shop_view = DB::select("select products_shop_view_by_size('$subcategory','$category', '$size') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+
+        return view('frontend.shop');
+    }
 }
