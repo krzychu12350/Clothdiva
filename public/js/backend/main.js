@@ -1670,6 +1670,18 @@
     console.log(error);
   }
 
- 
+ // Add row in table products
+
+ let lineNo = 1;
+
+     $(".add-promotion").click(function () {
+        alert("działa");
+         markup = "<tr><td>This is row " 
+             + lineNo + "</td></tr>";
+         tableBody = $("#products-table");
+         tableBody.append(markup);
+         lineNo++;
+     });
+
 
 })(jQuery);

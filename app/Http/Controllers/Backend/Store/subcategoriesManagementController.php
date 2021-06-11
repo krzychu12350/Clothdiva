@@ -20,14 +20,14 @@ class subcategoriesManagementController extends Controller
     public function destroy(Request $request)
     {   
        // return view('frontend.shopcart');
-       $subcat_id = $request->input('id_subcat');
-       $cat_id = $request->input('id_cat');
-
+       $subcat_name = $request->input('subcat_name');
+       $cat_name = $request->input('cat_name');
+        //dd($request);
         $procedureName = 'system.del_subcategory';
         
         $bindings = [
-            'subcategory_name'  => $subcat_id,
-            'category_name'  => $cat_id,
+            'subcategory_name'  =>  $subcat_name,
+            'category_name'  => $cat_name,
         ];
             
         $result = DB::executeProcedure($procedureName, $bindings);

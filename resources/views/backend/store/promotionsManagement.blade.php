@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class ="div_promotion">
-                                    <!-- ADD PROMOTION -->
+                                    <!-- ADD PROMOTION 
                                 <form action="/action_page.php">
                                     <input type="text" id="pname" name="pname"> PROMOTION NAME <br><br>
                                     <input type="text" id="psize" name="psize">SIZE OF PROMOTION<br><br>
@@ -33,12 +33,14 @@
                                     <input type="text" id="pstart" name="pstart">START OF PROMOTION<br><br>
                                     <input type="text" id="pend" name="pend">END OF PROMOTION<br><br>
                                      <input type="text" id="pnumber" name="pnumber">NUMBER PRODUCT<br><br>
+                                    </form>
+                               
                                      <button class="au-btn au-btn-icon au-btn--green au-btn--small button_add_promotion " onclick = "display()">
                                             <i class="zmdi zmdi-plus"></i>add</button>
-                                    </div>
+                                    </div>-->
                                     <br><br>
                                 <div class="table-responsive table-responsive-data2">
-                                    <table id="table-promotion"class="table table-data2">
+                                    <table id="promotion-table" class="table table-data2">
                                         <thead>
                                             <tr>
                                                 <th>promotion name</th>
@@ -51,7 +53,8 @@
                                         </thead>
                                         <tbody>
                                             @foreach($promotions_management as $singlerow)
-                                            <tr class="tr-shadow">
+                                            <tr id="editp-row-{{$singlerow->id_promotion}}" class="tr-shadow">
+        
                                                 <td>{{$singlerow->name_of_promotion}}</td>
                                                 <td>{{$singlerow->size_of_promotion}}</td>
                                                 <td>{{$singlerow->description}}</td>
@@ -60,13 +63,33 @@
                                                 <td>{{$singlerow->id_product}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item edit_button" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                      <!--  <button class="item edit_button" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
-                                                    </div>
+                                                       <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
+                                             
+                                                <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
+                                                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                </button>
+                                                            </a>
+                                                            -->
+                                                          
+                                                            <button class="item edit-promotion" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                            </button>
+                                                          
+
+                                                            <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
+                                                            <button class="item">
+                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button>
+                                                            </a>
+
+                                                        </div>
+                                
                                                 </td>
                                             </tr>
                                             @endforeach 

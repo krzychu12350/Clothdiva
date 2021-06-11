@@ -47,14 +47,39 @@
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__close">+</div>
         <ul class="offcanvas__widget">  
-            <li><div class="account-icons2 text-center">
-               <a href="{{ route('mobile') }}"><span class="far fa-user" aria-expanded="false"></span></a>
-            </div>
+            <li>
+            @guest   
+            <a href="{{ route('mobile') }}"><span class="far fa-user" aria-expanded="false"></span></a>
+                @if (Route::has('register'))
+                    @endif
+                        @else
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                       <span class="fas fa-sign-out-alt" aria-expanded="false">
+                                       </span>
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                    
+            @endguest
+         
+         
             </li>
 
             <li><span class=" mila icon_search search-switch"></span></li>
-            <li><a href="{{ route('favourites') }}"><span class=" kila icon_heart_alt"></span>
-            </a></li>
+            <li>
+            <a href="{{ route('favourites') }}"><span class=" kila icon_heart_alt"></span>
+            </a>
+            </li>
+
+            <li>
+                <a href="{{ route('shopcart') }}"><span class="fila icon_cart_alt"></span>
+                <div class="tip">{{ count((array) session('cart')) }}</div>
+            </a>
+            </li>
         </ul>
         
         <div class="offcanvas__logo">
@@ -68,7 +93,7 @@
                         <ul style = "list-style-type: none;">
                             <li><a class="restlink" style = "color:black" href="{{ route('home') }}">{{ __('Home') }}</a></li>
                           
-                            <li class = "women_li"> Women <a style = "color:orange">↓</a> </li>
+                            <li class = "women_li"> Women <a style = "color: #dc3545">↓</a> </li>
                             <div class = " bg-white women_div all_div">    
                             @foreach($sub_categories_women as $sub_category_woman)
                             <ul class = "submenu-submenu">
@@ -77,7 +102,7 @@
                              @endforeach
                              </div>
 
-                            <li class = "men_li"> Men <a style = "color:orange">↓</a> </li>
+                            <li class = "men_li"> Men <a style = "color: #dc3545">↓</a> </li>
                             <div class = " bg-white men_div all_div" style = "display:none">    
                             @foreach($sub_categories_men as $sub_category_man)
                             <ul class = "submenu-submenu">
@@ -86,7 +111,7 @@
                              @endforeach
                              </div>
 
-                             <li class = "girls_li"> Girls <a style = "color:orange">↓</a> </li>
+                             <li class = "girls_li"> Girls <a style = "color: #dc3545">↓</a> </li>
                             <div class = " bg-white girls_div all_div" style = "display:none">    
                             @foreach($sub_categories_girls as $sub_category_girl)
                             <ul class = "submenu-submenu">
@@ -96,7 +121,7 @@
                              </div>
 
 
-                             <li class = "boys_li"> Boys <a style = "color:orange">↓</a> </li>
+                             <li class = "boys_li"> Boys <a style = "color: #dc3545">↓</a> </li>
                             <div class = " bg-white boys_div all_div" style = "display:none">    
                             @foreach($sub_categories_boys as $sub_category_boy)
                             <ul class = "submenu-submenu">

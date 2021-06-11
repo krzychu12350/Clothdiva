@@ -113,6 +113,8 @@
                                                             <i class="zmdi zmdi-more"></i>
                                                         </span>-->
                                                         <div class="table-data-feature">
+
+                                                        <!--    
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
@@ -120,7 +122,6 @@
                                                      onclick="event.preventDefault();
                                                      document.getElementById('subcatdel-form').submit();">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <!-- wywołanie procedury po nacisnieciu tego przycisku -->
 
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
@@ -128,8 +129,14 @@
                                                         <form id="subcatdel-form" action="{{ route('home') }}" method="POST" class="d-none">
                                                         @csrf
                                                         </form>
+                                                        -->
+                                                        <a class="userdel" href="{{ route('admin.user.destroy',['id_user' => $singlerow->id_ushop]) }}">
+                                                        <button class="item">
+                                                        <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        </a>
                                                     </div>
-
+                                                    
 
                                                     </td>
                                                 </tr>

@@ -360,26 +360,25 @@ Created: Colorib
        
       });
 
-//MOBILE WOMEN PRODUCTS
-      $(document).ready(function(){
-        $('.women_li').click(function() {
-          $('.women_div').toggle();
-        });
+//MOBILE WOMEN SUBCATEGORIES
+    $('.women_li').click(function() {
+        $('.women_div').toggle();
     });
 
-//MOBILE MEN PRODUCTS
-    $(document).ready(function(){
-        $('.men_li').click(function() {
-          $('.men_div').toggle();
-        });
+//MOBILE MEN SUBCATEGORIES
+    $('.men_li').click(function() {
+        $('.men_div').toggle();
     });
 
-//MOBILE GIRLS PRODUCTS
-$(document).ready(function(){
+//MOBILE GIRLS SUBCATEGORIES
     $('.girls_li').click(function() {
       $('.girls_div').toggle();
     });
-});
+
+//MOBILE BOYS SUBCATEGORIES
+$('.boys_li').click(function() {
+    $('.boys_div').toggle();
+  });
       
         /*
 

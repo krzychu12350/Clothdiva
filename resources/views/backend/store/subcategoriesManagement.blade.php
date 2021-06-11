@@ -52,7 +52,7 @@
                                                         <div class="table-data__info">
                                                       
                                                             <h6>{{$singlerow->name_of_subcategory}}</h6>
-                                            
+                                                         
                                                           
                                                         </div>
                                                     </td>
@@ -65,7 +65,7 @@
                                                              
                                                                 @if($category->name_of_category !== $singlerow->name_of_category)
                                                                 <option value="">
-                                                                {{$category->name_of_category}}
+                                                                    {{$category->name_of_category}}
                                                                 </option>
                                                                 @endif
                                                            
@@ -75,19 +75,30 @@
                                                         </div>
                                                     </td>
                                                     <td>
+                                                 
                                                     <div class="table-data-feature">
-                                                        <a href="{{ route('admin.store.subcategories.destroy',['id_subcat' => $singlerow->name_of_subcategory,'id_cat' => $category->name_of_category]) }}"
+                                                        <!---
+                                                    {{$singlerow->name_of_subcategory}}
+                                                        <a href="{{ route('admin.store.subcategories.destroy',['subcat_name' => $singlerow->name_of_subcategory,'cat_name' => $category->name_of_category]) }}"
                                                      onclick="event.preventDefault();
                                                      document.getElementById('subcatdel-form').submit();">
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                        <!-- wywołanie procedury po nacisnieciu tego przycisku -->
-
+                                                       wywołanie procedury po nacisnieciu tego przycisku 
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
                                                         </a>
-                                                        <form id="subcatdel-form" action="{{ route('admin.store.subcategories.destroy',['id_subcat' => $singlerow->name_of_subcategory,'id_cat' => $category->name_of_category]) }}" method="POST" class="d-none">
+                                                        <form id="subcatdel-form" action="{{ route('admin.store.subcategories.destroy',['subcat_name' => $singlerow->name_of_subcategory,'cat_name' => $category->name_of_category]) }}" method="POST" class="d-none">
                                                         @csrf
                                                         </form>
+                                                        to nizej jest dzialajace
+                                                        -->
+                                                        <a class="favdel" href="{{ route('admin.store.subcategories.destroy',['subcat_name' => $singlerow->name_of_subcategory,'cat_name' => $category->name_of_category]) }}">
+                                                        <button class="item">
+                                                        <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        
+                                            
+                                                        </a>
                                                     </div>
                                                 </td>
                                                 </tr>
