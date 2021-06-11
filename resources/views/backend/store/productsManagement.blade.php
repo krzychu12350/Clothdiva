@@ -18,7 +18,7 @@
                                        
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-promotion">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-product">
                                             <i class="zmdi zmdi-plus"></i>add item</button>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             
@@ -27,15 +27,9 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
-                                    <table class="table table-data2">
+                                    <table  id="product-table" class="table table-data2">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                   <!-- <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label> -->
-                                                </th>
                                                 <th>name</th>
                                                 <th>image</th>
                                                 <th>prize</th>
@@ -45,19 +39,13 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody id="products-table">
+                                        <tbody id="products-table" class="table table-data2">
 
                                         @foreach($products_management as $singlerow)
                                          
                                             <tr class="spacer"></tr>
                                             <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>{{$singlerow->name}}</td>
+                                                <td>{{$singlerow->id_product}}{{$singlerow->name}}</td>
                                                 <td>
                                                     <span class="block-email"><img src = '$singlerow->image'></img></span>
                                                 </td>
@@ -75,9 +63,11 @@
                                                         </button>
                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                             <i class="zmdi zmdi-delete"></i>
-                                                        </button>
+                                                        </button> 
+
+                                                       <!-- tu ma być procedura usuwania produktów-->
+                                                    
                                                     </div>
-                                                </td>
                                                 </td>
                                             </tr>
                                             @endforeach

@@ -6077,15 +6077,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   return hooks;
 });
 
+
+
 $( ".add-promotion" ).on( "click", function() {
   alert("Obsługuje przycisk!");
-  /*
-    $("#promotion-table").find('tbody')
-  
-    var $lastRow = $("[id$=promotion-table]tr:last"); //grab row before the last row
-    var $newRow = $lastRow.clone(); //clone it
-    $newRow.find(":text").val(""); //clear out textbox values    
-    $lastRow.after($newRow); //add in the new row at the end*/
 
     $("#promotion-table").find('tbody')
     .prepend($('<tr>')
@@ -6094,8 +6089,46 @@ $( ".add-promotion" ).on( "click", function() {
           '<td><input type="text" name="promotion-name"></input></td> <td><input type="text" name="size-of-promotion"></input></td> <td><input type="text" name="description"></input></td>  <td><input type="text" name="start-of-promotion"></input></td>        <td><input type="text" name="end-of-promotion"></input></td> <td><input type="text" name="number-products"></input></td>  <td> <div class="table-data-feature"> <button class="item"><i class="zmdi zmdi-collection-add"></i></button></a></div></td>')
         )
     );
-
 });
+
+$( ".add-product" ).on( "click", function() {
+  alert("Obsługuje przycisk!");
+
+    $("#product-table").find('tbody')
+    .prepend($('<tr>')
+      .attr('class', 'tr-shadow')
+        .prepend($(
+          '<td><input type="text" name="product-name"></input></td> <td><input type="text" name="image"></input></td> <td><input type="text" name="prize"></input></td>  <td><input type="text" name="color"></input></td>  <td><input type="text" name="size"></input></td> <td><input type="text" name="description"></input></td>  <td> <div class="table-data-feature"> <button class="item"><i class="zmdi zmdi-collection-add"></i></button></a></div></td>')
+        )
+    );
+});
+
+$( ".add-user" ).on( "click", function() {
+  alert("Obsługuje przycisk!");
+
+    $("#user-table").find('tbody')
+    .prepend($('<tr>')
+      .attr('class', 'tr-shadow')
+        .prepend($(
+          '<td><input type="text" name="user-name"></input></td> <td><input type="text" name="user-role"></input></td>  <td> <div class="table-data-feature"> <button class="item"><i class="zmdi zmdi-collection-add"></i></button></a></div></td>')
+        )
+    );
+});
+
+//KATEGORIE PONIŻEJ DODANE SĄ NA SZTYWNO BO NIE UMIAŁAM Z BAZY
+
+$( ".add-subcategories" ).on( "click", function() {
+  alert("Obsługuje przycisk!");
+
+    $("#subcategories-table").find('tbody')
+    .prepend($('<tr>')
+      .attr('class', 'tr-shadow')
+        .prepend($(
+          '<td><input type="text" name="user-name"></input></td> <td><div><select name="property"><option> {!! json_encode($singlerow->name_of_category) !!} </option> <option> Men </option> <option> Girls </option> <option> Boys </option> </select></div></td>  <td> <div class="table-data-feature"> <button class="item"><i class="zmdi zmdi-collection-add"></i></button></a></div></td>')
+        )
+    );
+});
+
 $(".edit-promotion").on( "click", function() {
   alert("Działa edycja!");
   
@@ -6103,9 +6136,9 @@ $(".edit-promotion").on( "click", function() {
 
 
   $('#promotion-table #editp-row-1').find('td').empty();
-  $('#promotion-table #editp-row-1').find('td').append("<input type='text' name='promotion-name'></input> <button class='item'><i class='zmdi zmdi-check'></i></button>");
-  //.append($('<input/>',{type:'text',id: 'hid3',placeholder: 'stare dane'}));
-  //<input type="text" name="promotion-name" placeholder="stare dane"></input>
+  $('#promotion-table #editp-row-1').find('td').append("<input type='text' name='promotion-name'></input>")
+  .append($('<input/>',{type:'text',id: 'hid3',placeholder: 'stare dane'}));
   
+  //<button class='item'><i class='zmdi zmdi-check'></i></button>")
  
 });

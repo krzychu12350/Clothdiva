@@ -23,7 +23,7 @@
                                             @foreach($orders_management as $singlerow)
                                             <tr>
                                                 <td>{{$singlerow->id_order}}</td>
-                                                <td>Men</td>
+                                                <td>nazwa produktu której nie pobiera z bazy!</td>
                                                 <td>{{$singlerow->status}}</td>
                                                 <td>{{$singlerow->date_of_placing_order}}</td>
                                                 <td class="process">{{$singlerow->payment_method}}</td>
