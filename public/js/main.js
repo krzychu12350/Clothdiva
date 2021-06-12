@@ -63,11 +63,11 @@ Created: Colorib
 
     /*------------------
 		Navigation
-	--------------------*/
+	--------------------
     $(".header__menu").slicknav({
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
-    });
+    });*/
 
     /*------------------
         Accordin Active
@@ -82,7 +82,7 @@ Created: Colorib
 
     /*--------------------------
         Banner Slider
-    ----------------------------*/
+    ----------------------------
     $(".banner__slider").owlCarousel({
         loop: true,
         margin: 0,
@@ -91,11 +91,11 @@ Created: Colorib
         smartSpeed: 1200,
         autoHeight: false,
         autoplay: true
-    });
+    });*/
 
     /*--------------------------
         Product Details Slider
-    ----------------------------*/
+    ----------------------------
     $(".product__details__pic__slider").owlCarousel({
         loop: false,
         margin: 0,
@@ -111,7 +111,7 @@ Created: Colorib
     }).on('changed.owl.carousel', function(event) {
         var indexNum = event.item.index + 1;
         product_thumbs(indexNum);
-    });
+    });*/
 
     function product_thumbs (num) {
         var thumbs = document.querySelectorAll('.product__thumb a');
@@ -437,19 +437,6 @@ $('.boys_li').click(function() {
 
     */
 
-
-function display(){
-$(".button_add_promotion").click(function(e){
-    $(".div_promotion").toggle(function(e) {
-            if ($(this).is(":visible")) {
-                $(".div_promotion").show();
-            }
-            else {
-                $(".div_promotion").hide(); 
-            };
-        });
-    });
-}
 
 
 })(jQuery);
