@@ -26,8 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {   
-
-        return view('frontend.firstlookpage');
+        $banner_image = DB::table('banner_images')->get();
+        //dd($banner_image);
+        return view('frontend.firstlookpage', compact('banner_image'));
     }
         /**
 

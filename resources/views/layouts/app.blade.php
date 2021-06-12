@@ -230,12 +230,38 @@
         <li class="list-group-item">
                 <h5 class = "h5_class">Are you user?<br /></h5>
                <a class = "color_button btn btn-primary button_class" href="{{ route('login') }}">Login</a>
+        </li>
                @if (Route::has('register'))
         <li class="list-group-item class2">
                 <h5 class = "h5_class">Are you a new user?<br /></h5>
                 <a class = "color_button btn btn-primary button_class2" href="{{ route('register') }}">Register</a>
+        </li>
             @endif
-                @else                                
+                @else             
+                                <!--
+                                <div class="list-group dropdown bg-white" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item"  href="{{ route('admin.home') }}">
+                                    {{ __('Dashboard') }}
+                                </a>
+                                </div>-->
+                                @if (auth()->user()->id_role == 1)
+                                <li class="list-group-item">
+                                <h5 class = "h5_class">Shop management<br /></h5>
+                                <a class = "color_button btn btn-primary button_class" href="{{ route('admin.home') }}"> {{ __('Dashboard') }}</a>
+                                </li>
+                                @endif         
+                                <li class="list-group-item class2">
+                                <h5 class = "h5_class">Log off<br /></h5>
+                                <a class = "color_button btn btn-primary button_class2"  href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
+                                <!--
                                 <div class="list-group dropdown bg-white" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item"  href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -246,7 +272,8 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                </div>-->
+                    
             @endguest
             </ul>
     </div>

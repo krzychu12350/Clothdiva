@@ -326,6 +326,10 @@
                                                         <i class="zmdi zmdi-account"></i>Account</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
+                                                    <a href="{{ route('home') }}">
+                                                        <i class="zmdi zmdi-shopping-cart"></i>Shop</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
                                                     <a href="#">
                                                         <i class="zmdi zmdi-settings"></i>Setting</a>
                                                 </div>

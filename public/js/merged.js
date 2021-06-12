@@ -6080,7 +6080,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 });
 
 $( ".add-promotion" ).on( "click", function() {
-  alert("Obsługuje przycisk!");
+  //alert("Obsługuje przycisk!");
     $("#promotion-table").find('tbody')
     .prepend($('<tr>')
       .attr('class', 'tr-shadow')
@@ -6091,7 +6091,7 @@ $( ".add-promotion" ).on( "click", function() {
 
 });
 $(".edit-promotion").on( "click", function() {
-  alert("Działa edycja!");
+  //alert("Działa edycja!");
   var selRow = String($(this).closest('tr').attr('id'));
   //alert(selRow);
   $('#promotion-table #' + selRow).find('td').empty();
@@ -6102,5 +6102,7 @@ $(".edit-promotion").on( "click", function() {
   $('#promotion-table').find('tr#' + selRow)
   //.append($('<td><input type="text" name="promotion-name"></input></td>'));
   //.append($('<p>fewewew</p>'));
-  .replaceWith($( '<td><input type="text" name="promotion-name"></input></td> <td><input type="text" name="size-of-promotion"></input></td> <td><input type="text" name="description"></input></td>  <td><input type="text" name="start-of-promotion"></input></td>        <td><input type="text" name="end-of-promotion"></input></td> <td><input type="text" name="number-products"></input></td>  <td> <div class="table-data-feature"> <button class="item"><i class="zmdi zmdi-check"></i></button></a></div></td>'));
+  .replaceWith($( '<td><input type="text" name="promotion-name"></input></td> <td><input type="text" name="size-of-promotion"></input></td> <td><input type="text" name="description"></input></td>  <td><input type="text" name="start-of-promotion"></input></td>        <td><input type="text" name="end-of-promotion"></input></td> <td><input type="text" name="number-products"></input></td>  <td> <div class="table-data-feature"> <button class="item enter-edit-promotion"><i class="zmdi zmdi-check"></i></button></a></div></td>'));
 });
+
+

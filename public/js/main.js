@@ -95,7 +95,7 @@ Created: Colorib
 
     /*--------------------------
         Product Details Slider
-    ----------------------------
+    ----------------------------*/
     $(".product__details__pic__slider").owlCarousel({
         loop: false,
         margin: 0,
@@ -111,7 +111,7 @@ Created: Colorib
     }).on('changed.owl.carousel', function(event) {
         var indexNum = event.item.index + 1;
         product_thumbs(indexNum);
-    });*/
+    });
 
     function product_thumbs (num) {
         var thumbs = document.querySelectorAll('.product__thumb a');
@@ -379,64 +379,9 @@ Created: Colorib
 $('.boys_li').click(function() {
     $('.boys_div').toggle();
   });
-      
-        /*
 
-    $(".men").hover(function(e) {
-        $(".men_products").css('zIndex', '2');
-        $(".men_products").show();
-      });
-        
-         
-      $(".men_products").on({
-        mouseenter: function () {
-            $(this).show()
-           
-        },
-        mouseleave: function () {
-           $(this).hide()
-        }
-    });
-
-    
-
-
-    $(".girls").hover(function(e) {
-        $(".girls_products").css('zIndex', '2');
-        $(".girls_products").show();
-      });
-        
-         
-      $(".girls_products").on({
-        mouseenter: function () {
-            $(this).show()
-           
-        },
-        mouseleave: function () {
-           $(this).hide()
-        }
-    });
-
-
-
-    $(".boys").hover(function(e) {
-        $(".boys_products").css('zIndex', '2');
-        $(".boys_products").show();
-      });
-        
-         
-      $(".boys_products").on({
-        mouseenter: function () {
-            $(this).show()
-           
-        },
-        mouseleave: function () {
-           $(this).hide()
-        }
-    });
-
-    */
-
+$('.carousel-item:nth-child(1)').addClass('active');
+$('.carousel-indicators:nth-child(1)').addClass('active');
 
 
 })(jQuery);
