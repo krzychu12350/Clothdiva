@@ -67,8 +67,8 @@ Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->
 
 Route::get('/orders', [adminOrdersController::class, 'index'])->name('admin.store.orders')->middleware('is_admin');
 Route::get('/products', [productsManagementController::class, 'index'])->name('admin.store.products')->middleware('is_admin');
-Route::get('/products-delete', [productsManagementController::class, 'destroy'])->name('admin.product.destroy')->middleware('is_admin');
 Route::get('/promotions', [promotionsManagementController::class, 'index'])->name('admin.store.promotions')->middleware('is_admin');
+
 Route::get('/promotions-delete', [promotionsManagementController::class, 'destroy'])->name('admin.promotion.destroy')->middleware('is_admin');
 
 Route::get('/subcategories', [subcategoriesManagementController::class, 'index'])->name('admin.store.subcategories')->middleware('is_admin');
