@@ -1,3 +1,5 @@
+const { ValidationError } = require("webpack");
+
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
@@ -6131,14 +6133,15 @@ $( ".add-subcategories" ).on( "click", function() {
 
 $(".edit-promotion").on( "click", function() {
   alert("Działa edycja!");
-  
-  //$("#promotion-table").find('tbody').append($('.editp')('<input type="text" value="newest text">'));
+  var selRow = String($(this).closest('tr').attr('id'));
+  alert(selRow);
 
-
-  $('#promotion-table #editp-row-1').find('td').empty();
-  $('#promotion-table #editp-row-1').find('td').append("<input type='text' name='promotion-name'></input>")
+ 
+  $('#promotion-table editp-row-1').find('td').empty();
+  $('#promotion-table editp-row-1').find('td')
   .append($('<input/>',{type:'text',id: 'hid3',placeholder: 'stare dane'}));
   
   //<button class='item'><i class='zmdi zmdi-check'></i></button>")
- 
+
+
 });

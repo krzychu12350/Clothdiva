@@ -42,7 +42,7 @@
                                         <tbody>
                                             @foreach($promotions_management as $singlerow)
                                             <tr id="editp-row-{{$singlerow->id_promotion}}" class="tr-shadow">
-        
+                                    
                                                 <td>{{$singlerow->name_of_promotion}}</td>
                                                 <td>{{$singlerow->size_of_promotion}}</td>
                                                 <td>{{$singlerow->description}}</td>
