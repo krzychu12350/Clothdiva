@@ -21,6 +21,7 @@ use App\Http\Controllers\Frontend\FavouritesController;
 use App\Http\Controllers\Frontend\ProductsController;
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\Frontend\ProductsDetailsController;
+use App\Http\Controllers\Frontend\SearchEngineController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,11 +38,22 @@ Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
-Route::post('/products/{size_p}', [ProductsController::class, 'showProductsbySize'])->name('filter.bysize');
+//Route::get('/products/{type}/{subcategory}', [ProductsController::class, 'showProductsbySize'])->name('productsbySize');
 
+Route::post('/productsbySize/{category}/{subcategory}', [ProductsController::class, 'showProductsbySize']);
 
 Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
 Route::get('/products/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');
+
+
+
+Route::post('/search', [SearchEngineController::class, 'searchProducts'])->name('search');
+
+
+
+
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/contact-us',[ContactUsMailController::class, 'ContactUsForm'])->name('ContactUsForm');
@@ -60,6 +72,8 @@ Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 Route::get('/favourites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');
 Route::get('/add-favourite', [FavouritesController::class, 'addFavouriteProduct'])->name('add.favourite')->middleware('auth');
 Route::get('/del-favourite', [FavouritesController::class, 'delFavouriteProduct'])->name('del.favourite')->middleware('auth');
+
+
 
 //Admin panel routes
 Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

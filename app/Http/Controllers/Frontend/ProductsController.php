@@ -117,8 +117,17 @@ class ProductsController extends Controller
         ->where('c.name_of_category', '=',  $category)
         ->max('prize');
 
-        $products_shop_view = DB::select("select products_shop_view('$subcategory','$category') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
-       
+        Session::put('all_sizes', $all_sizes);
+        Session::put('all_colors', $all_colors);
+        Session::put('minPrize', $minPrize);
+        Session::put('maxPrize', $maxPrize);
+        
+        //$size = "";
+        //$sizep = $request->input('sizep');
+        //dd($sizep);
+
+        $products_shop_view = DB::select("select products_shop_view('$subcategory','$category','') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        
         /*
         $data2 = DB::table('images')
         ->join('products p', 'p.id_product', '=', 'images.id_product')
@@ -127,7 +136,7 @@ class ProductsController extends Controller
         ->get();
         dd($data2);*/
        
-        return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize'));
+        return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
 
         /*
         }
@@ -136,6 +145,34 @@ class ProductsController extends Controller
             report($e);
         }*/
     }
+    public function showProductsbySize(Request $request){
+        $url = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+        //$category = $url[2];
+        //$subcategory = $url[3];
+        $category = Session::get('category');
+        $subcategory = Session::get('subcategory');
+
+        //$sizep = $_GET['sizep'];
+        $checked = $request->input('checked');
+       
+
+        //dd($checked[0],$checked[1]);
+        //dd(count($checked));
+        $all_sizes = Session::get('all_sizes');
+        $all_colors = Session::get('all_colors');
+        $minPrize = Session::get('minPrize');
+        $maxPrize = Session::get('maxPrize');
+
+      
+       
+
+        $products_shop_view = DB::select("select products_shop_view('$subcategory','$category','$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+      
+     
+       //dd($products_shop_view);
+        return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
+    }
+
  
     
     

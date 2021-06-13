@@ -18,14 +18,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/jquery-ui.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/magnific-popup.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/owl.carousel.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/slicknav.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/style.css') }}" type="text/css">
     
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
@@ -72,6 +72,20 @@
             <li><span class=" mila icon_search search-switch"></span></li>
             <li>
             <a href="{{ route('favourites') }}"><span class=" kila icon_heart_alt"></span>
+            @guest   
+                            <div id="fav__count" class="tip">0</div>
+                                @if (Route::has('register'))
+                                @endif
+                                    @else
+                                        <?php
+                                           $id = Auth::user()->id_ushop;
+
+                                           $favourite_products = DB::table('favorite_products')
+                                           ->where('favorite_products.id_ushop', '=', $id)
+                                           ->count();
+                                        ?>
+                                        <div id="fav__count" class="tip">{{$favourite_products}}</div>
+                            @endguest
             </a>
             </li>
 
@@ -196,7 +210,22 @@
                             <a href="{{ route('favourites') }}">
                             <div class="heart-icons text-center">
                             <span class="icon_heart_alt"></span>
-                            <div id="fav__count" class="tip"> 2<!--count($favourite_products)--> </div>
+                            <!--count($favourite_products)-->
+                            @guest   
+                            <div id="fav__count" class="tip">0</div>
+                                @if (Route::has('register'))
+                                @endif
+                                    @else
+                                        <?php
+                                           $id = Auth::user()->id_ushop;
+
+                                           $favourite_products = DB::table('favorite_products')
+                                           ->where('favorite_products.id_ushop', '=', $id)
+                                           ->count();
+                                        ?>
+                                        <div id="fav__count" class="tip">{{$favourite_products}}</div>
+                            @endguest
+                        
                             <p class="d-block header_icon_desc">Favourite</p>
                             </div>
                             </a> 
@@ -401,10 +430,15 @@
 
 <div class="search-model">
   <div class = "logo_searching"><img src="{{ asset('img/logo.png') }}" alt="Logo" class = img_logo_search></div>
-    <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="h-75 d-flex align-items-center justify-content-center">
         <div class="search-close-switch">+</div>
-        <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here...">
+        <form class="search-model-form" method="POST" action="{{ route('search') }}">
+            @csrf
+            <input type="text" id="search-input" name="search-input" placeholder="Search products..."> 
+            <br/>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary bg-dark text-center border-0 col-8 mt-4">Search</button>
+            </div>
         </form>
     </div>
   
@@ -413,17 +447,17 @@
 
 <!-- Js Plugins -->
 @yield('js-scripts')
-<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('js/mixitup.min.js') }}"></script>
-<script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
-<script src="{{ asset('js/jquery.slicknav.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
-<script src="{{ asset('js/sweetalerts.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('js/frontend/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('js/frontend/mixitup.min.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery.slicknav.js') }}"></script>
+<script src="{{ asset('js/frontend/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery.nicescroll.min.js') }}"></script>
+<script src="{{ asset('js/frontend/main.js') }}"></script>
+<script src="{{ asset('js/frontend/sweetalerts.js') }}"></script>
 @yield('scripts')
 </body>
 

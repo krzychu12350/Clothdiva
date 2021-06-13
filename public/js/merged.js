@@ -1,5 +1,3 @@
-
-
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
@@ -6080,29 +6078,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 });
 
 $( ".add-promotion" ).on( "click", function() {
-  //alert("Obsługuje przycisk!");
-    $("#promotion-table").find('tbody')
-    .prepend($('<tr>')
-      .attr('class', 'tr-shadow')
-        .prepend($(
-          '<td><input type="text" name="promotion-name"></input></td> <td><input type="text" name="size-of-promotion"></input></td> <td><input type="text" name="description"></input></td>  <td><input type="text" name="start-of-promotion"></input></td>        <td><input type="text" name="end-of-promotion"></input></td> <td><input type="text" name="number-products"></input></td>  <td> <div class="table-data-feature"> <button class="item"><i class="zmdi zmdi-collection-add"></i></button></a></div></td>')
-        )
-    );
+  alert("Obsługuje przycisk!");
+ 
+  $("#table-promotion").find('tbody')
+  
+    var $lastRow = $("[id$=table-promotion]tr:last"); //grab row before the last row
+    var $newRow = $lastRow.clone(); //clone it
+    $newRow.find(":text").val(""); //clear out textbox values    
+    $lastRow.after($newRow); //add in the new row at the end
 
 });
-$(".edit-promotion").on( "click", function() {
-  //alert("Działa edycja!");
-  var selRow = String($(this).closest('tr').attr('id'));
-  //alert(selRow);
-  $('#promotion-table #' + selRow).find('td').empty();
-  /*
-  $('#promotion-table #' + selRow).find('td')
-  .append($('<input/>',{type:'text',id: 'hid3',placeholder: 'stare dane'}));
-  */
-  $('#promotion-table').find('tr#' + selRow)
-  //.append($('<td><input type="text" name="promotion-name"></input></td>'));
-  //.append($('<p>fewewew</p>'));
-  .replaceWith($( '<td><input type="text" name="promotion-name"></input></td> <td><input type="text" name="size-of-promotion"></input></td> <td><input type="text" name="description"></input></td>  <td><input type="text" name="start-of-promotion"></input></td>        <td><input type="text" name="end-of-promotion"></input></td> <td><input type="text" name="number-products"></input></td>  <td> <div class="table-data-feature"> <button class="item enter-edit-promotion"><i class="zmdi zmdi-check"></i></button></a></div></td>'));
-});
-
-

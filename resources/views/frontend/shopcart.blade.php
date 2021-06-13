@@ -15,7 +15,18 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
+    @if(count((array) session('cart')) == 0)
+    <div class="text-center mt-4"> Cart is empty </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 mt-4">
+            <div class="cart__btn text-center">
+                <a href="{{ route('home')}}">Continue Shopping</a>
+             </div>
+        </div>
+              
+    </div>
 
+    @else
     <!-- Shop Cart Section Begin -->
     <section class="shop-cart spad">
         <div class="container">
@@ -33,8 +44,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $total = 0 ?>
-                            @if(session('cart'))
+                         
+                            <?php $total = 0 
+                            //  @if(session('cart'))
+                            ?>
+                                
                                 @foreach(session('cart') as $id => $details)
                                     <?php $total += $details['prize'] * $details['quantity'] ?>
                                 <tr>
@@ -57,12 +71,14 @@
                                     <td class="cart__total">$ {{ $details['prize'] * $details['quantity'] }} </td>
                                     <td class="cart__close">
                                     <a class="remove-from-cart" data-id="{{ $id }}"><span class="icon_close"></span></a>
-                             
+
+                                    <a class="update-cart" data-id="{{ $id }}"><span class="icon_loading"></span></a>
+                                    
                                     </td>
                                 </tr>
                             </tbody>
                             @endforeach
-                            @endif
+                          
                         </table>
                     </div>
                 </div>
@@ -76,8 +92,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="cart__btn update__btn">
                    
-                        <a href="#" class="update-cart" data-id="{{ $id }}"><span class="icon_loading"></span> Update cart</a>
-                        <!--<button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>-->
+                 
                     </div>
                 </div>
             </div>
@@ -92,6 +107,7 @@
                         </form>
                     </div>-->
                 </div>
+             
                 <div class="col-lg-4 offset-lg-2">
                     <div class="cart__total__procced">
                         <h6>Cart total</h6>
@@ -104,7 +120,9 @@
                 </div>
             </div>
         </div>
+
     </section>
+    @endif
     <!-- Shop Cart Section End -->
     
     @section('scripts')

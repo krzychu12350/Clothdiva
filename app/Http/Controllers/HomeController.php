@@ -42,6 +42,7 @@ class HomeController extends Controller
 
     public function adminHome()
     {
-        return view('layouts.admin');
+        $all_registred_users = DB::table('ushop')->count();
+        return view('backend.overview', compact('all_registred_users'));
     }
 }

@@ -35,6 +35,7 @@
                                     <!--<th>Quantity</th>
                                     <th>Total</th>-->
                                     <th></th>
+                                 
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,11 +60,17 @@
                                     <td class="cart__total">$ 300.0</td>
                                     -->
                                     <td class="cart__close">
-                                    <a class="favdel" onclick="handleDelete(event);" href="{{ route('del.favourite', ['id' => $single_fav_product->id_product]) }}">
+                                        
+                                    <a class="add__to__cart" href="{{ url('add-to-cart/'.$single_fav_product->id_product) }}">
+                                    <span class="icon_cart"></span>
+                                    </a>
                             
+                                 
+                                    <a class="favdel" onclick="handleDelete(event);" href="{{ route('del.favourite', ['id' => $single_fav_product->id_product]) }}">
                                     <span class="icon_close"></span>
                                     </a>
-                                    </td>
+
+                                    </td>  
                                 </tr>
                                 @endforeach
                             </tbody>

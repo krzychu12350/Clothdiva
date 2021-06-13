@@ -132,23 +132,43 @@ use Illuminate\Support\Facades\Storage;
                                 <h4>Shop by size</h4>
                             </div>
                             <div class="size__list">
+                                <?php
+                                 $category = Session::get('category');
+                                 $subcategory = Session::get('subcategory');
+                                ?>
+                                
+                               
+                            <form method="post" action="/productsbySize/{{$category}}/{{$subcategory}}">
+                                    @csrf
+                               
                                 @foreach( $all_sizes as $single_size) 
                                 <label for="{{$single_size->size_of_product}}">
                                     {{$single_size->size_of_product}}
-                                    <input type="checkbox" id="{{$single_size->size_of_product}}">
+                                   <input type="checkbox" id="{{$single_size->size_of_product}}" name="checked[]" value="{{$single_size->size_of_product}}">
+                                   
                                     <span class="checkmark"></span>
                                 </label>
                                 @endforeach
-                            </div>
 
-                            <div class="sidebar__filter">
+                                <div class="sidebar__filter">
                                 <div class="filter-range-wrap">
                                     <div class="range-slider">
                                     </div>
                                 </div>
-                                <a href="{{ route('filter.bysize', ['size_p' => $single_size->size_of_product]) }}">Filter</a>
-                            </div>
+                                <!--<input type="submit">Send</a>-->
+                                <a style="cursor: pointer;" onclick="this.closest('form').submit();return false;">Filter</a>
+                          
+                                </div>
 
+                         
+                                </form>
+                                
+                            
+                               
+                              
+                            </div>
+                          
+                          
                         </div>
                         <div class="sidebar__color">
                             <div class="section-title">

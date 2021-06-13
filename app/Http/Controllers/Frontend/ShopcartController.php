@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use App\Models\Product;
 use DB;
+use Session;
 
 class ShopcartController extends Controller
 {
@@ -68,7 +69,6 @@ class ShopcartController extends Controller
             "prize" => $product->prize,
         ];
         session()->put('cart', $cart);
-
         return redirect()->back()->with('status', 'Product added to cart successfully!');
     }
 
