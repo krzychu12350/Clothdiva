@@ -25,58 +25,44 @@
                                     </div>
                                 </div>
                                 <div class ="div_promotion">
-                                    <!-- ADD PROMOTION 
-                                <form action="/action_page.php">
-                                    <input type="text" id="pname" name="pname"> PROMOTION NAME <br><br>
-                                    <input type="text" id="psize" name="psize">SIZE OF PROMOTION<br><br>
-                                    <input type="text" id="pdesc" name="pdesc">DESCRIPTION<br><br>
-                                    <input type="text" id="pstart" name="pstart">START OF PROMOTION<br><br>
-                                    <input type="text" id="pend" name="pend">END OF PROMOTION<br><br>
-                                     <input type="text" id="pnumber" name="pnumber">NUMBER PRODUCT<br><br>
-                                    </form>
-                               
-                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small button_add_promotion " onclick = "display()">
-                                            <i class="zmdi zmdi-plus"></i>add</button>
-                                    </div>-->
                                     <br><br>
+                                <div class="table-responsive table-responsive-data2">
+                                <form method="POST" action="{{ route('admin.promotion.create')}}" id="addp">
+                                    @csrf
+                                </form>
+                                <form method="POST" action="{{ route('admin.promotion.update')}}" id="editp">
+                                    @csrf
+                                </form>
                                 <div class="table-responsive table-responsive-data2">
                                     <table id="promotion-table" class="table table-data2">
                                         <thead>
                                             <tr>
+                                                <th class="d-none"></th>
                                                 <th>promotion name</th>
                                                 <th>size of promotion</th>
                                                 <th>description</th>
                                                 <th>start of promotion</th>
                                                 <th>end of promotion</th>
                                                 <th>number product</th>
+                                                <th>category</th>
+                                                <th>subcategory</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($promotions_management as $singlerow)
+                                          
                                             <tr id="editp-row-{{$singlerow->id_promotion}}" class="tr-shadow">
-                                    
+                                                <td id="id-p" class="d-none">{{$singlerow->id_promotion}}</td>
                                                 <td>{{$singlerow->name_of_promotion}}</td>
                                                 <td>{{$singlerow->size_of_promotion}}</td>
                                                 <td>{{$singlerow->description}}</td>
                                                 <td class="desc">{{$singlerow->promotion_start_date}}</td>
                                                 <td>{{$singlerow->promotion_end_date}}</td>
                                                 <td>{{$singlerow->id_product}}</td>
+                                                <td>{{$singlerow->name_of_subcategory}}</td>
+                                                <td>{{$singlerow->name_of_category}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                      <!--  <button class="item edit_button" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                       <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
-                                             
-                                                <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
-                                                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                </button>
-                                                            </a>
-                                                            -->
-                                                          
                                                             <button class="item edit-promotion" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                             </button>
@@ -87,14 +73,13 @@
                                                                 <i class="zmdi zmdi-delete"></i>
                                                             </button>
                                                             </a>
-
                                                         </div>
-                                
                                                 </td>
                                             </tr>
                                             @endforeach 
                                         </tbody>
                                     </table>
+                                    </div>
                                 </div>
                                 <!-- END DATA TABLE -->
                             </div>
@@ -102,8 +87,3 @@
     </div>
 </div>
 @endsection
-
-<!-- Main JS-->
-<script src="{{ asset('js/merged.js') }}"></script>
-<!-- Move preloader function JS-->
-<script src="js/main.js"></script>

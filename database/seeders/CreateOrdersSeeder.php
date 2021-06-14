@@ -16,23 +16,23 @@ class CreateOrdersSeeder extends Seeder
     {
         $order = [
             [
-               'status'=>'Wysłano',
+               'status'=>'Picked up by the courier',
                'date_of_placing_order'=>'2021-05-01',
                'id_ushop'=>'2',
                'payment_method' => 'Blik',
             ],
 
             [
-               'status'=>'W trakcie realizacji',
+               'status'=>'In progress',
                'date_of_placing_order'=>'2021-03-01',
                'id_ushop'=>'3',
                'payment_method' => 'PayPal',
             ],
 
             [
-                'status'=>'Wysłano',
+                'status'=>'Sent',
                 'date_of_placing_order'=>'2021-09-12',
-                'id_ushop'=>'4', 
+                'id_ushop'=>'2', 
                 'payment_method' => 'PayPal',
              ],
         ];

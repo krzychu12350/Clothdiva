@@ -45,4 +45,17 @@ class HomeController extends Controller
         $all_registred_users = DB::table('ushop')->count();
         return view('backend.overview', compact('all_registred_users'));
     }
+
+    public function privacyPolicy()
+    {
+        return view('frontend.privacy');
+    }
+    public function faq()
+    {
+        return view('frontend.faq');
+    }
+    public function about()
+    {
+        return view('frontend.about-us');
+    }
 }

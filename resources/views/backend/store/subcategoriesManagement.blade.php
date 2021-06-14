@@ -19,35 +19,42 @@
                                             <div class="dropDownSelect2"></div>
                                         </div>
                                        
-                                               <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right">
+                                               <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-subcategory">
                                                 <i class="zmdi zmdi-plus"></i>add subcategories</button>
                                     </div>
                                     <div class="table-responsive table-data">
-                                        <table class="table">
+
+                                    <form method="POST" action="{{ route('admin.store.subcategories.create')}}" id="addsc">
+                                    @csrf
+                                    </form>
+                                    <form method="POST" action="{{ route('admin.store.subcategories.update')}}" id="editsc">
+                                        @csrf
+                                    </form>
+
+                                        <table id="subcategories-table" class="table table-data2">
                                             <thead>
                                                 <tr>
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>Subcategory</td>
-                                                    <!--<td>Category</td>-->
+                                                    <td class="d-none">id subcategory</td>
+                                                    <td>Subcategory</td> 
                                                     <td>Category</td>
                                                     <td></td>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody id="subcategories-table">
                                         
                                             @foreach($scmanagement as $singlerow)
-                                                <tr>
-                                                    <td>
+                                            <tr id="editsc-row-{{$singlerow->id_sub_category}}">
+                                                    <!-- <td>
                                                         <label class="au-checkbox">
                                                             <input type="checkbox">
                                                             <span class="au-checkmark"></span>
                                                         </label>
+                                                    </td> -->
+                                                    <td id="id-sc" class="d-none">
+                                                        {{$singlerow->id_sub_category}}
                                                     </td>
+
+                                            
                                                     <td>
                                                         <div class="table-data__info">
                                                       
@@ -68,7 +75,7 @@
                                                                     {{$category->name_of_category}}
                                                                 </option>
                                                                 @endif
-                                                           
+                                                         
                                                                 @endforeach    
                                                             </select>
                                                             <div class="dropDownSelect2"></div>
@@ -92,6 +99,10 @@
                                                         </form>
                                                         to nizej jest dzialajace
                                                         -->
+                                                        <button class="item edit-subcategory">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+
                                                         <a class="favdel" href="{{ route('admin.store.subcategories.destroy',['subcat_name' => $singlerow->name_of_subcategory,'cat_name' => $category->name_of_category]) }}">
                                                         <button class="item">
                                                         <i class="zmdi zmdi-delete"></i>

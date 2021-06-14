@@ -18,8 +18,8 @@
                                        
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-promotion">
-                                            <i class="zmdi zmdi-plus"></i>add item</button>
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-product">
+                                            <i class="zmdi zmdi-plus"></i>add product</button>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             
                                             <div class="dropDownSelect2"></div>
@@ -27,15 +27,16 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
-                                    <table class="table table-data2">
+                                <form method="POST" action="{{ route('admin.store.subcategories.create')}}" id="addprod">
+                                    @csrf
+                                    </form>
+                                    <form method="POST" action="{{ route('admin.store.subcategories.update')}}" id="editprod">
+                                        @csrf
+                                    </form>
+                                    <table id="products-table" class="table table-data2">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                   <!-- <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label> -->
-                                                </th>
+                                                
                                                 <th>name</th>
                                                 <th>image</th>
                                                 <th>prize</th>
@@ -49,17 +50,11 @@
 
                                         @foreach($products_management as $singlerow)
                                          
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
+                                            <tr class="tr-shadow" id="editprod-row-{{$singlerow->id_product}}">
+                                               
                                                 <td>{{$singlerow->name}}</td>
                                                 <td>
-                                                    <span class="block-email"><img src = '$singlerow->image'></img></span>
+                                                   <img src="{{$singlerow->image_src}}.jpg"></img>
                                                 </td>
                                                 <td class="desc">{{$singlerow->prize}}</td>
                                                 <td>{{$singlerow->color}}</td>
@@ -70,12 +65,22 @@
                                                 <td>
                                                     <div class="table-data-feature">
     
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <button class="item edit-product" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
+
+                                                        <a class="proddel" 
+                                                        href="{{ route('admin.store.product.destroy',
+                                                        [
+                                                            'name'=>$singlerow->name,
+                                                            'prize'=>$singlerow->prize,
+                                                            'size'=>$singlerow->size_of_product,
+                                                            'description'=>$singlerow->description,
+                                                        ])}}">
+                                                        <button class="item">
+                                                        <i class="zmdi zmdi-delete"></i>
                                                         </button>
+
                                                     </div>
                                                 </td>
                                                 </td>
@@ -83,6 +88,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                     <!-- END DATA TABLE -->
                                 </div>
                                 <!-- END DATA TABLE -->
                             </div>

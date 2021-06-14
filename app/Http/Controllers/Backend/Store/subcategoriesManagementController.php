@@ -17,13 +17,22 @@ class subcategoriesManagementController extends Controller
         return view('backend.store.subcategoriesManagement');
        
     }
+    public function create(Request $request)
+    {
+        dd($request);
+    }
+    public function update(Request $request)
+    {
+        dd($request);
+    }
+
     public function destroy(Request $request)
     {   
        // return view('frontend.shopcart');
        $subcat_name = $request->input('subcat_name');
        $cat_name = $request->input('cat_name');
-        //dd($request);
-        $procedureName = 'system.del_subcategory';
+        dd($request);
+        $procedureName = 'subcategories_CRUD.del_subcategory';
         
         $bindings = [
             'subcategory_name'  =>  $subcat_name,

@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/frontend/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/frontend/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/frontend/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/frontend/custom.css') }}" type="text/css">
     
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
@@ -152,7 +152,6 @@
 
         </div>
 
-        <!--<div id="mobile-menu-wrap"></div>-->
     </div>
     <!-- Offcanvas Menu End -->
 
@@ -172,15 +171,11 @@
                         <ul>
                             <li><a class="restlink" href="{{ route('home') }}">{{ __('Home') }}</a></li>
                             @foreach($all_categories as $single_category)
-                            <!--
-                            <li class = "Women subcategory-toggle"><a href="#">Women</a>
-                            <li class = "Men subcategory-toggle"><a href="#">Men</a></li>
-                            <li class = "Girls subcategory-toggle"><a href="#">Girls</a></li>
-                            <li class = "Boys subcategory-toggle"><a href="#">Boys</a></li>
-                            -->
                             <li class = "{{$single_category->name_of_category}} subcategory-toggle"><a href="#">{{$single_category->name_of_category}}</a>
                              
                             @endforeach
+                        
+                            <li><a class="restlink" href="{{ route('faq') }}">Faq</a></li>
                             <li><a class="restlink" href="{{ route('contact') }}">Contact</a></li>
                     
                         </ul>
@@ -210,7 +205,7 @@
                             <a href="{{ route('favourites') }}">
                             <div class="heart-icons text-center">
                             <span class="icon_heart_alt"></span>
-                            <!--count($favourite_products)-->
+                   
                             @guest   
                             <div id="fav__count" class="tip">0</div>
                                 @if (Route::has('register'))
@@ -226,7 +221,7 @@
                                         <div id="fav__count" class="tip">{{$favourite_products}}</div>
                             @endguest
                         
-                            <p class="d-block header_icon_desc">Favourite</p>
+                            <p class="d-block header_icon_desc">Favourites</p>
                             </div>
                             </a> 
                             </li>
@@ -267,12 +262,7 @@
         </li>
             @endif
                 @else             
-                                <!--
-                                <div class="list-group dropdown bg-white" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item"  href="{{ route('admin.home') }}">
-                                    {{ __('Dashboard') }}
-                                </a>
-                                </div>-->
+                        
                                 @if (auth()->user()->id_role == 1)
                                 <li class="list-group-item">
                                 <h5 class = "h5_class">Shop management<br /></h5>
@@ -290,19 +280,7 @@
                                         @csrf
                                     </form>
                                 </li>
-                                <!--
-                                <div class="list-group dropdown bg-white" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item"  href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>-->
-                    
+                              
             @endguest
             </ul>
     </div>
@@ -374,10 +352,10 @@
                 <div class="footer__widget">
                     <h6>Quick links</h6>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="{{ route('about-us') }}">About Us</a></li>
+                        <li><a href="{{ route('policy') }}">Privacy policy</a></li>
+                        <li><a href="{{ route('faq') }}">FAQ</a></li>
                         <li><a href="{{ route('contact') }}">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
             </div>
@@ -387,15 +365,15 @@
                     <ul>
                         <li><a href="#">My Account</a></li>
                         <li><a href="#">Orders Tracking</a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="{{ route('shopcart') }}">Cart</a></li>
+                        <li><a href="{{ route('favourites') }}">Favourites</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-8 col-sm-8">
                 <div class="footer__newslatter">
                     <div class="footer__payment">
-                        <h6>Payments Methods</h6>
+                        <h6 class="mb-2">Payments Methods</h6>
                         <a href="#"><img src="{{ asset('img/payment/payment-1.png') }}" alt=""></a>
                         <a href="#"><img src="{{ asset('img/payment/payment-2.png') }}" alt=""></a>
                         <a href="#"><img src="{{ asset('img/payment/payment-3.png') }}" alt=""></a>
@@ -403,7 +381,7 @@
                         <a href="#"><img src="{{ asset('img/payment/payment-5.png') }}" alt=""></a>
                     </div>
                     <div class="footer__social">
-                        <h6>Socials</h6>
+                        <h6 class="mb-2">Socials</h6>
                         <a href="https://www.facebook.com/Clothdiva-100631378898245"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
                         <a href="#"><i class="fa fa-youtube-play"></i></a>

@@ -1,44 +1,3 @@
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:  CoolAdmin
-Version:	1.0
-Last change:	08/10/2018 [Add Define a table of contents Link]
-Assigned to:	Hau Nguyen
-Primary use:	Open Source
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[LAYOUT]
-
-* body
-    + Header / header
-	+ Page Content / .page-content .name-page
-        + Section Layouts / section .name-section
-        ...
-	+ Footer / footer
-
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-# [Color codes]
-
-# Text Color (text): #666666
-# Text Color Deep (Text, title): #333333
-
-------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[Typography]
-
-Notes:	decreasing heading by 0.4em with every subsequent heading level
--------------------------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*                   SETTINGS                          */
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*                   TOOLS                             */
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*                   GENERIC                           */
-/*-----------------------------------------------------*/
 /* ----- Normalize ----- */
 * {
     margin: 0;
@@ -879,11 +838,11 @@ section {
 }
 
 .rs-select2--sm {
-    width: 114px;
+    width: 200px;
 }
 
 .rs-select2--md {
-    width: 160px;
+    width: 180px;
 }
 
 .select2-container {
@@ -4513,7 +4472,7 @@ section {
     -webkit-border-bottom-left-radius: 3px;
     -moz-border-radius-bottomleft: 3px;
     border-bottom-left-radius: 3px;
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 .table-data2.table tbody tr td:first-child .au-checkbox {
@@ -4550,7 +4509,8 @@ section {
 }
 
 .table-data2.table tbody td input{
-   width: 120px !important;
+   width: 70px !important;
+   height: 70px !important;
 }
 
 .table-data2.table tbody td.desc {
