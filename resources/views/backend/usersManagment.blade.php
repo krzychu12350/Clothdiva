@@ -18,16 +18,7 @@
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
-                                       <!-- <div class="rs-select2--dark rs-select2--sm rs-select2--border">
-                                            <select class="js-select2 au-select-dark" name="time">
-                                                <option selected="selected">All Time</option>
-                                                <option value="">By Month</option>
-                                                <option value="">By Day</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-user">
-                                                <i class="zmdi zmdi-plus"></i>add user</button>-->
+                                    
                                     </div>
                                     <div class="table-responsive table-data">
 
@@ -40,12 +31,6 @@
                                         <table id="users-table" class="table table-data2">
                                             <thead>
                                                 <tr>
-                                                    <!--<td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>-->
                                                     <td class="d-none">id user</td>
                                                     <td>name</td>
                                                     <td>surname</td>
@@ -58,13 +43,8 @@
 
                                             @foreach($users_data as $singlerow)
                                                 <tr id="editu-row-{{$singlerow->id_ushop}}">
-                                                    <!-- <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td> -->
-                                                    <td id="id-u" class="d-none">
+                    
+                                                    <td id="id-u" class="id_ushop d-none">
                                                         {{$singlerow->id_ushop}}
                                                     </td>
 
@@ -91,77 +71,14 @@
                                                     <td>
                                                         <span class="role {{$singlerow->role_name}}">{{$singlerow->role_name}}</span>
                                                     </td>
-                                                    <!--<td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                            <select class="js-select2" name="property">
-                                                                <option selected="selected">Full Control</option>
-                                                                <option value="">Post</option>
-                                                                <option value="">Watch</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>-->
-                                                   <!-- <td>
-                                                        <span class="more">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
+                                                   
                                                     <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox" checked="checked">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>-->
-                                                        <!--<div class="table-data__info">
-                                                            <h6>User</h6>
-                                                            <span>
-                                                                <a href="#">user@gmail.com</a>
-                                                            </span>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <span class="role user">user</span>
-                                                    </td> -->
-                                                    <!--<td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                            <select class="js-select2" name="property">
-                                                                <option value="">Full Control</option>
-                                                                <option value="" selected="selected">Post</option>
-                                                                <option value="">Watch</option>
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
-                                                        </div>
-                                                    </td>-->
-                                                    <td>
-                                                    <!--
-                                                        <span class="more">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </span>-->
                                                         <div class="table-data-feature">
-
-                                                        <!--    
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        
+                                                        
+                                                        <button class="item edit-user" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <a href="{{ route('home') }}"
-                                                     onclick="event.preventDefault();
-                                                     document.getElementById('subcatdel-form').submit();">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        </a>
-                                                        <form id="subcatdel-form" action="{{ route('home') }}" method="POST" class="d-none">
-                                                        @csrf
-                                                        </form>
-                                                        -->
-                                                      
-                                                        <button class="item edit-user">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
+                                                            </button>
                                                 
 
                                                         <a class="userdel" href="{{ route('admin.user.destroy',['id_user' => $singlerow->id_ushop]) }}">

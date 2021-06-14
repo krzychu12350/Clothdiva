@@ -17,8 +17,8 @@ class CreatePromotionsTable extends Migration
             $table->increments('id_promotion');
             $table->string('name_of_promotion', 100);
             $table->decimal('size_of_promotion', 2, 0);
-            $table->date('promotion_start_date', 100);
-            $table->date('promotion_end_date', 100);
+            $table->string('promotion_start_date');
+            $table->string('promotion_end_date');
             $table->text('description');
 
         });

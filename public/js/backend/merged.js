@@ -565,12 +565,15 @@ $( ".add-user" ).on( "click", function() {
 
 $( ".edit-user").on( "click", function() {
   var selRow = String($(this).closest('tr').attr('id'));
-  //alert(selRow);
-  var textOfTd = $("#id-u").text();
-  alert(textOfTd);
+ // alert(selRow);
+  var currentRow=$(this).closest("tr"); 
+  var id_ushop=currentRow.find("td:eq(0)").text();
+  //var textOfTd = $("#id-u").find("id_ushop").text();
+  //var textOfTd = $("#id-u").text();
+  //alert("id usera" + id_ushop);
   $('#users-table #' + selRow).find('td').empty();
   $('#users-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editu" type="text" value=' + textOfTd + ' name="user-id"></input></td> <td> <input form="editu" type="text" name="user-name"></input></td> <td><input type="text" form="editu"  name="user-surname"></input></td> <td><input type="text" form="editu" name="user-mobile"></input></td>  <td><input type="text" form="addu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-role"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editu" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($('<td> <input form="editu" type="hidden" value=' + id_ushop + ' name="id_user"> <input form="editu" type="text" name="user-name"></input></td> <td><input type="text" form="editu"  name="user-surname"></input></td> <td><input type="text" form="editu" name="user-mobile"></input></td>  <td><input type="text" form="editu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-role"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editu" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
 
@@ -602,7 +605,7 @@ $( ".add-product" ).on( "click", function() {
     $("#products-table").find('tbody')
     .prepend($('<tr>')
         .prepend($(
-          '<td> <input form="addprod" type="text" name="product-name"></input></td> <td><input type="text" form="addprod"  name="product-image"></input></td> <td><input type="text" form="addprod"  name="product-prize"></input></td> <td><input type="text" form="addprod"  name="product-color"></input></td> <td><input type="text" form="addprod"  name="product-size"></input></td> <td><input type="text" form="addprod"  name="product-desc"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addprod" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+          '<td> <input form="addprod" type="text" name="product-name"></input></td> <td><input type="text" form="addprod"  name="product-image"></input></td> <td><input type="text" form="addprod"  name="product-prize"></input></td> <td><input type="text" form="addprod"  name="product-color"></input></td> <td><input type="text" form="addprod"  name="product-size"></input></td> <td><input type="text" form="addprod"  name="product-desc"></input></td>   <td><input type="text" form="addprod"  name="id_subcat"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addprod" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
         )
     );
 });
@@ -613,7 +616,7 @@ $( ".edit-product").on( "click", function() {
   var textOfTd = $("#id-u").text();
   $('#products-table #' + selRow).find('td').empty();
   $('#products-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editprod" type="text" name="product-name"></input></td> <td><input type="text" form="editprod"  name="product-image"></input></td> <td><input type="text" form="editprod"  name="product-prize"></input></td> <td><input type="text" form="editprod"  name="product-color"></input></td> <td><input type="text" form="editprod"  name="product-size"></input></td> <td><input type="text" form="editprod"  name="product-desc"></input></td> <td> <div class="table-data-feature"><button type="submit" form="editprod" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($('<td> <input form="editprod" type="text" name="product-name"></input></td> <td><input type="text" form="editprod"  name="product-image"></input></td> <td><input type="text" form="editprod"  name="product-prize"></input></td> <td><input type="text" form="editprod"  name="product-color"></input></td> <td><input type="text" form="editprod"  name="product-size"></input></td> <td><input type="text" form="editprod"  name="product-desc"></input></td> <td><input type="text" form="editprod"  name="id_subcat"></input></td>  <td> <div class="table-data-feature"><button type="submit" form="editprod" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
 

@@ -43,6 +43,7 @@
                                                 <th>color</th>
                                                 <th>size</th>
                                                 <th>description</th>
+                                                <th>id_subcategory</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -62,6 +63,7 @@
                                                     <span class="status--denied">{{$singlerow->size_of_product}}</span>
                                                 </td>
                                                 <td>{{$singlerow->description}}</td>
+                                                <td>id</td>
                                                 <td>
                                                     <div class="table-data-feature">
     

@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id_order');
             $table->string('status', 100);
-            $table->date('date_of_placing_order');
+            $table->string('date_of_placing_order');
             $table->string('payment_method', 20);
 
  
