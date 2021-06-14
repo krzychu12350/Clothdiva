@@ -65,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
         ->where('favorite_products.id_ushop', '=', $id)
         ->get();
         */
-        $sub_categories_women = DB::select("select subcategories_women() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
+      /*  $sub_categories_women = DB::select("select subcategories_women() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
         $sub_categories_men = DB::select("select subcategories_men() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
         $sub_categories_girls = DB::select("select subcategories_girls() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
         $sub_categories_boys = DB::select("select subcategories_boys() as name_of_subcategory from sub_categories FETCH FIRST 1 ROWS ONLY");
@@ -95,8 +95,8 @@ class AppServiceProvider extends ServiceProvider
         view()->share('users_data', $users_data); 
         view()->share('users_roles',  $users_roles); 
         view()->share('products_management', $products_management);
-        //view()->share('orders_management', $orders_management);
-        view()->share('promotions_management', $promotions_management);
+        view()->share('orders_management', $orders_management);
+        view()->share('promotions_management', $promotions_management);*/
            
      
 
