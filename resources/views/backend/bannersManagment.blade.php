@@ -17,7 +17,7 @@
                                        
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-product">
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-slide">
                                             <i class="zmdi zmdi-plus"></i>add slide</button>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             
@@ -32,7 +32,7 @@
                                     <form method="POST" action="{{ route('admin.slider.update')}}" id="editslider">
                                         @csrf
                                     </form>
-                                    <table id="products-table" class="table table-data2">
+                                    <table id="banner-table" class="table table-data2">
                                         <thead>
                                             <tr>
                                                 <th class="d-none">id slide</th>
@@ -63,7 +63,7 @@
                                                 <td>
                                                     <div class="table-data-feature">
     
-                                                        <button class="item edit-product" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <button class="item edit-slide" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
 

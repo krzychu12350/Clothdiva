@@ -33,7 +33,7 @@ class ShopcartController extends Controller
         ->get();
         $plucked = $image->pluck('image');
         $plucked->all();
-
+     
         //dd($plucked[0]);
         
 

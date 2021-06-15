@@ -635,3 +635,13 @@ $( ".edit-order").on( "click", function() {
 $( ".order-update").on( "click", function() {
   alert($('#selectOption').find(":selected").text());
 });
+
+
+$( ".add-slide" ).on( "click", function() {
+  $("#banner-table").find('tbody')
+  .prepend($('<tr>')
+      .prepend($(
+        '<td><form action="" method="POST" enctype="multipart/form-data"> @csrf <div class="row"><input type="file" name="image" class="form-control"><button type="submit" class="btn btn-success">Upload</button></div></form> </td> <td><input type="text" form="addslider"  name="paragraph-large"></input></td> <td><input type="text" form="addslider"  name="paragraph-small"></input></td> <td><input type="text" form="addslider"  name="link"></input></td> <td><input type="text" form="addslider"  name="link-description"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addslider" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+      )
+  );
+});

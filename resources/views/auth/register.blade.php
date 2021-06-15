@@ -9,7 +9,7 @@
                 <div class="card-header bg-white"><h2 class = "text-dark" style = "color:#e21e13; text-align:center; padding-left: 10%;">Create an acount</h2></div>
 
                 <div class="card-body bg-white">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" id="register" name="register" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -99,10 +99,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password_confirmation" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 

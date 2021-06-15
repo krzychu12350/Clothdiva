@@ -1,14 +1,10 @@
 @extends('layouts.app')
 @section('contact')
-@if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-    @endif
+
 <!-- Checkout Section Begin -->
 <section class="checkout spad">
         <div class="container">
-            <form action="{{ route('place.order') }}" method="POST" class="checkout__form">
+            <form action="{{ route('place.order') }}" method="GET" name="checkout" class="checkout__form">
             @csrf
                 <div class="row">
                     <div class="col-lg-8">
@@ -17,48 +13,48 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>First Name <span>*</span></p>
-                                    <input type="text" id="fname" name="fname" required>
+                                    <input type="text" id="fname" name="fname" min-length="3" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Last Name <span>*</span></p>
-                                    <input type="text" id="lname" name="lname" required>
+                                    <input type="text" id="lname" name="lname" min-length="3" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Phone <span>*</span></p>
-                                    <input type="text" id="phone" name="phone" required>
+                                    <input type="text" id="phone" name="phone" min-length="3" equired>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Email <span>*</span></p>
-                                    <input type="email" id="email" name="email" required>
+                                    <input type="email" id="email" name="email" min-length="5" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="checkout__form__input">
-                                    <p>Country <span>*</span></p>
-                                    <input type="text" id="country" name="country" required>
+                                    <p>State <span>*</span></p>
+                                    <input type="text" id="state" name="state" min-length="3" required>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Address <span>*</span></p>
-                                    <input type="text" placeholder="Street Address" id="street" name="street" required>
-                                    <input type="text" placeholder="Apartment. suite, unite ect ( optinal )" id="apartment-number" name="apartment-number" required>
+                                    <input type="text" placeholder="Street Address" id="street" name="street" min-length="3" required>
+                                    <input type="text" placeholder="Apartment. suite, unite ect ( optinal )" id="apartment_number" name="apartment_number" min-length="2" required>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Postcode/Zip <span>*</span></p>
-                                    <input type="text" id="postcode" name="postcode" required>
+                                    <input type="text" id="postcode" name="postcode" min-length="5" required>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Town/City <span>*</span></p>
-                                    <input type="text" id="city" name="city" required>
+                                    <input type="text" id="city" name="city" min-length="3" required>
                                 </div>
                                 <div class="checkout__form__input">
                                     <p>Country/State <span>*</span></p>
-                                    <input type="text" id="country" name="country" required>
+                                    <input type="text" id="country" name="country" min-length="3" required>
                                 </div>
                             </div>
                             <!--
@@ -137,4 +133,5 @@
             </div>
         </section>
         <!-- Checkout Section End -->
+
 @endsection

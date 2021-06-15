@@ -34,6 +34,11 @@
     </div>
 </section>
 Banner Section End-->
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
 <section class="mt-1">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 

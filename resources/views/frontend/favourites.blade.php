@@ -60,8 +60,9 @@
                                     <td class="cart__total">$ 300.0</td>
                                     -->
                                     <td class="cart__close">
-                                        
-                                    <a class="add__to__cart" href="{{ url('add-to-cart/'.$single_fav_product->id_product) }}">
+                            
+                                    <a class="add__to__cart" href="{{ route('addtoCart', ['id' =>$single_fav_product->id_product,'quantity' => 1]) }}">
+                                
                                     <span class="icon_cart"></span>
                                     </a>
                             

@@ -20,11 +20,11 @@ Swal.fire({
   })
   return confirm('Are sure to remove this product from your favourite products?');
     });
-
+/*
 $(".place-order").on("click", function(e) {
   Swal.fire(
     'Attention!',
     'Your order has been placed !',
     'success'
   )
-});
+});*/

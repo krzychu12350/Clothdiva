@@ -10,7 +10,7 @@
                 <div class="card-header bg-white"><h2 class = "text-dark" style = "color:#e21e13; text-align:center; padding-left: 10%;">Are you user?</h2></div>
                 
                 <div class="card-body bg-white" style = "border:none">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" name="login" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">

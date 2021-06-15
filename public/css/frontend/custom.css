@@ -2020,6 +2020,11 @@ background-color: #ebebeb;;
 	color: #666666;
 }
 
+.checkout__form .checkout__form__input label {
+	font-weight: bold;
+	color: #ca1515;
+	font-size: 14px;
+}
 .checkout__form .checkout__form__input input::-webkit-input-placeholder {
 	color: #666666;
 }
@@ -2993,3 +2998,9 @@ background-color: #ebebeb;;
 	padding-left: 5%
 }
 
+
+#password-confirm-error, #password-error, #login-error,#email-error,#mobile-error,#surname-error,#name-error{
+	font-weight: bold;
+	color: #ca1515;
+	font-size: 14px;
+}

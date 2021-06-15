@@ -70,7 +70,8 @@ Route::delete('/remove-from-cart',  [ShopcartController::class, 'removefromCart'
 Route::patch('/update-cart',  [ShopcartController::class, 'updatefromCart'])->name('update.cart')->middleware('auth');
 
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
-Route::post('/place-order', [CheckoutController::class, 'placeOrder'])->name('place.order')->middleware('auth');
+
+Route::get('/place-order', [CheckoutController::class, 'placeOrder'])->name('place.order')->middleware('auth');
 
 Route::get('/mobile',[MobileLogRegController::class,'index'])->name('mobile');
 Route::get('/favourites', [FavouritesController::class, 'index'])->name('favourites')->middleware('auth');

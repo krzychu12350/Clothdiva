@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="{{ asset('css/frontend/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/frontend/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/frontend/custom.css') }}" type="text/css">
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.5.1/sweetalert2.all.min.js"></script>
@@ -444,6 +446,11 @@
 <script src="{{ asset('js/frontend/jquery.nicescroll.min.js') }}"></script>
 <script src="{{ asset('js/frontend/main.js') }}"></script>
 <script src="{{ asset('js/frontend/sweetalerts.js') }}"></script>
+<script src="{{ asset('js/frontend/jquery.validate.min.js') }}"></script>
+<script src="{{ asset('js/frontend/checkout-form-validation.js') }}"></script>
+
+
+
 @yield('scripts')
 </body>
 
