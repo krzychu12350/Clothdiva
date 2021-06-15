@@ -58,4 +58,23 @@ class HomeController extends Controller
     {
         return view('frontend.about-us');
     }
+    public function showDashboard()
+    {
+        $id = Auth::user()->id_ushop;
+
+        $user_data = DB::table('ushop u')
+        ->join('user_addresses ua', 'ua.id_user_address', '=', 'u.id_user_address')
+        ->where('u.id_ushop', '=', $id)
+        ->get();
+
+        $user_orders = DB::table('orders o')
+        ->join('ushop u', 'u.id_ushop', '=', 'o.id_ushop')
+        ->join('products pr', 'pr.id_order', '=', 'o.id_order')
+        ->where('u.id_ushop', '=', $id)
+        ->get();
+     
+        
+        return view('frontend.user-dashboard',compact('user_data','user_orders'));
+    }
+  
 }

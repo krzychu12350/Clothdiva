@@ -115,17 +115,23 @@ use Illuminate\Support\Facades\Storage;
                                 data-min="{{$minPrize}}" data-max="{{$maxPrize}}"></div>
                                 <div class="range-slider">
                                     <div class="price-input">
-                           
-                                   
+
+                                    <form id="filtr-by-prize" action="{{ route('shop.by.price') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                        <br />
                                         <p>Price:</p>
-                                  
-                                        <input type="text" id="minamount">
-                                        <input type="text" id="maxamount">
+                                        <input type="text" name="min-amount" id="minamount" form="filtr-by-prize">$
+                                        -
+                                        <input type="text" name="max-amount" id="maxamount" form="filtr-by-prize">$
                                     </div>
                                 </div>
                              
                             </div>
-                            <a href="#">Filter</a>
+                            <br /><br />
+                            <a form="filtr-by-prize" style="cursor:pointer" onclick="document.getElementById('filtr-by-prize').submit();">
+                                Filter
+                            </a>
                         </div>
                         <div class="sidebar__sizes">
                             <div class="section-title">
@@ -175,10 +181,13 @@ use Illuminate\Support\Facades\Storage;
                                 <h4>Shop by color</h4>
                             </div>
                             <div class="size__list color__list">
-                                @foreach( $all_colors as $single_color) 
+
+                            <form method="post" id="filtr-by-color" action="/productsbyColor/{{$category}}/{{$subcategory}}">
+                                    @csrf
+                                @foreach($all_colors as $single_color) 
                                 <label for="{{$single_color->color}}">
                                     {{$single_color->color}}
-                                    <input type="checkbox" id="{{$single_color->color}}">
+                                    <input type="checkbox" id="{{$single_color->color}}" name="checked[]" value="{{$single_color->color}}">
                                     <span class="checkmark"></span>
                                 </label>
                                 @endforeach
@@ -188,8 +197,10 @@ use Illuminate\Support\Facades\Storage;
                                     <div class="range-slider">
                                     </div>
                                 </div>
-                                <a href="#">Filter</a>
+                                <a style="cursor: pointer;" onclick="document.getElementById('filtr-by-color').submit();">Filter</a>
                             </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
@@ -229,7 +240,8 @@ use Illuminate\Support\Facades\Storage;
                                         <li><a href='{{ asset("$single_product->image_src.jpg") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
                                      
                                         <li><a href="{{ route('add.favourite', ['id' =>$single_product->id_product]) }}"><span class="icon_heart_alt"></span></a></li>
-                                        <li><a href="{{ url('add-to-cart/'.$single_product->id_product) }}"><span class="icon_cart_alt"></span></a></li>
+                                        
+                                        <li><a href="{{ route('addtoCart', ['id' =>$single_product->id_product,'quantity' => 1]) }}"><span class="icon_cart_alt"></span></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">

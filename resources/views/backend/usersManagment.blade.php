@@ -25,9 +25,9 @@
                                                 <option value="">By Day</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
-                                        </div>-->
+                                        </div>
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-user">
-                                                <i class="zmdi zmdi-plus"></i>add user</button>
+                                                <i class="zmdi zmdi-plus"></i>add user</button>-->
                                     </div>
                                     <div class="table-responsive table-data">
 

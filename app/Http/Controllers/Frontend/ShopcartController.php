@@ -18,8 +18,11 @@ class ShopcartController extends Controller
        
     }
 
-    public function addToCart($id)
+    public function addToCart($id, Request $request)
     {
+      
+        $quantity_of_product = $request->input('quantity');
+        
         $product = Product::find($id);
         $int = (int)$id;
 
@@ -46,7 +49,7 @@ class ShopcartController extends Controller
                         "name" => $product->name,
                         "image" => $plucked[0],
                         "size_of_product" => $product->size_of_product,
-                        "quantity" => 1,
+                        "quantity" => $quantity_of_product,
                         "prize" => $product->prize,
                     ]
             ];
@@ -55,7 +58,7 @@ class ShopcartController extends Controller
         }
         // if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['quantity'] += $quantity_of_product;
             session()->put('cart', $cart);
             return redirect()->back()->with('status', 'Product added to cart successfully!');
         }
@@ -65,7 +68,7 @@ class ShopcartController extends Controller
             "name" => $product->name,
             "image" => $plucked[0],
             "size_of_product" => $product->size_of_product,
-            "quantity" => 1,
+            "quantity" => $quantity_of_product,
             "prize" => $product->prize,
         ];
         session()->put('cart', $cart);

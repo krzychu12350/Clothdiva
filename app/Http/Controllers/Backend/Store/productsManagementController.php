@@ -27,7 +27,6 @@ class productsManagementController extends Controller
     {   
 
         $id_product = $request->input('idproduct');
-        $id_product = $request->input('idproduct');
         /*
         'name'=>$singlerow->name,
         'prize'=>$singlerow->prize,

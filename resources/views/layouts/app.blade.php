@@ -34,6 +34,8 @@
     <!-- ICON USER -->
     <script src="https://kit.fontawesome.com/dadb75eae3.js" crossorigin="anonymous"></script>
 
+  
+
 </head>
 
 <body>
@@ -268,6 +270,12 @@
                                 <h5 class = "h5_class">Shop management<br /></h5>
                                 <a class = "color_button btn btn-primary button_class" href="{{ route('admin.home') }}"> {{ __('Dashboard') }}</a>
                                 </li>
+                                @endif  
+                                @if (auth()->user()->id_role == 2)
+                                <li class="list-group-item">
+                                <h5 class = "h5_class">Account management<br /></h5>
+                                <a class = "color_button btn btn-primary button_class" href="{{ route('user.dashboard') }}"> {{ __('Dashboard') }}</a>
+                                </li>
                                 @endif         
                                 <li class="list-group-item class2">
                                 <h5 class = "h5_class">Log off<br /></h5>
@@ -363,8 +371,8 @@
                 <div class="footer__widget">
                     <h6>Account</h6>
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Orders Tracking</a></li>
+                        <li><a href="{{ route('user.dashboard') }}">My Account</a></li>
+                        <li><a href="{{ route('user.dashboard') }}">My Orders</a></li>
                         <li><a href="{{ route('shopcart') }}">Cart</a></li>
                         <li><a href="{{ route('favourites') }}">Favourites</a></li>
                     </ul>

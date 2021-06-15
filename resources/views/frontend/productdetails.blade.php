@@ -78,7 +78,6 @@
                         <h3>
                         {{$product['name']}} - {{$product['size_of_product']}}
               
-                        <!--<span>Brand: SKMEIMore Men Watches from SKMEI</span>-->
                          </h3>
                         <div class="product__details__price">$ {{$product['prize']}}<span>$ 83.0</span></div>
                         <p></p>
@@ -86,11 +85,16 @@
                             <div class="quantity">
                                 <span>Quantity:</span>
                                 <div class="pro-qty">
-                                    <input type="number" value="1" max="{{$product['quantity']}}">
+
+                                <form id="add-to-cart" action="{{ route('addtoCart', ['id' => $product['id_product']]) }}" method="GET" class="d-none">
+                                    @csrf
+                                </form>
+                               
+                                    <input type="number" name="quantity" form="add-to-cart" value="1" min="1" max="{{$product['quantity']}}">
                                 </div>
                             </div>
-                            <a href="{{ url('add-to-cart/'.$product['id_product']) }}" class="cart-btn"><span class="icon_cart_alt"></span> Add to cart</a>
                          
+                            <a style="cursor: pointer;" onclick="document.getElementById('add-to-cart').submit();" class="cart-btn"><span class="icon_cart_alt"></span> Add to cart</a>
                             
                             <ul>
                                 <li><a href="{{ route('add.favourite', ['id' => $product['id_product']]) }}"><span class="icon_heart_alt"></span></a></li>

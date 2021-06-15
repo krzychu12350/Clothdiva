@@ -567,9 +567,10 @@ $( ".edit-user").on( "click", function() {
   var selRow = String($(this).closest('tr').attr('id'));
   //alert(selRow);
   var textOfTd = $("#id-u").text();
+  alert(textOfTd);
   $('#users-table #' + selRow).find('td').empty();
   $('#users-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editu" type="text" name="user-name"></input></td> <td><input type="text" form="editu"  name="user-surname"></input></td> <td><input type="text" form="editu" name="user-mobile"></input></td>  <td><input type="text" form="addu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-role"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editu" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($('<td> <input form="editu" type="text" value=' + textOfTd + ' name="user-id"></input></td> <td> <input form="editu" type="text" name="user-name"></input></td> <td><input type="text" form="editu"  name="user-surname"></input></td> <td><input type="text" form="editu" name="user-mobile"></input></td>  <td><input type="text" form="addu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-role"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editu" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
 

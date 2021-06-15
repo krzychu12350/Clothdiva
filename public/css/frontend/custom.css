@@ -1141,20 +1141,10 @@ ol {
 	margin-bottom: 0;
 }
 
-.filter-range-wrap .range-slider .price-input:after {
-	position: absolute;
-	left: 81px;
-	top: 12px;
-	height: 1px;
-	width: 5px;
-	background: #0d0d0d;
-	content: "";
-}
-
 .filter-range-wrap .range-slider .price-input input {
 	font-size: 16px;
 	color: #0d0d0d;
-	max-width: 16%;
+	max-width: 25%;
 	border: none;
 }
 
@@ -2389,6 +2379,21 @@ background-color: #ebebeb;;
 .contact__map iframe {
 	width: 100%;
 }
+/*---------------------
+  Dashboard User
+-----------------------*/
+.dashboard-div{
+	background: #ffffff;
+	-webkit-box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+	box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+	padding-left: -30px !important;
+	padding-right: -30px !important;
+}
+
+.dashboard-div:nth-child(5){
+
+	height: 228px;
+}	
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 

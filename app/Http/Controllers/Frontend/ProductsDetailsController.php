@@ -19,8 +19,17 @@ class ProductsDetailsController extends Controller
     function details($id){
         $data1 = Product::find($id);
 
-        $category = Session::get('category');
-        
+        //$category = Session::get('category');
+
+        $category = DB::table('products pr')
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'pr.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->select('c.name_of_category')
+        ->where('pr.id_product', '=', $id)
+        ->get();
+        $category_name = $category->pluck('name_of_category');
+        $category_name->all();
+
         //$data2 = Image::where("id_product", $id);
        /*
        $data = DB::table('products')
@@ -38,6 +47,6 @@ class ProductsDetailsController extends Controller
 
 
         //dd($id);
-        return view('frontend.productdetails',['product'=>$data1, 'images'=>$data2, 'category_name'=>$category]);
+        return view('frontend.productdetails',['product'=>$data1, 'images'=>$data2, 'category_name' => $category_name[0]]);
     }
 }
