@@ -19,23 +19,42 @@ class subcategoriesManagementController extends Controller
     }
     public function create(Request $request)
     {
-        $subcat_name = $request->input('subcategory-name');
-        $cat_name = $request->input('category-name');
-        $id_subcat = $request->input('id_subcat');
-         $procedureName = 'subcategories_CRUD.add_subcategory';
-         
-         $bindings = [
-             'subc_name'  =>  $subcat_name,
-             'id_cat'  => $cat_name,
-         ];
-             
-         $result = DB::executeProcedure($procedureName, $bindings);
-         
-         return redirect()->back();
+      /*  $id_subcategory = $request->input('id_subcategory');
+        $name_of_category = $request->input('subcategory-name');
+        $id_category = $request->input('category-name');
+    
+        //dd($request);
+
+        $procedureName = 'subcategories_CRUD.add_subcategory';
+        
+        $bindings = [
+            'id_subcategory'       =>  $id_subcategory,
+            'name_of_category'     =>  $name_of_category, 
+            'id_category'          =>  $id_category, 
+        ];
+            
+        $result = DB::executeProcedure($procedureName, $bindings);
+        return redirect()->back();*/
     }
+
     public function update(Request $request)
     {
-        dd($request);
+        $id_subcategory1 = $request->input('id_subcategory1');
+        $name_of_category = $request->input('subcategory-name');
+        $id_category = $request->input('category-name');
+    
+        //dd($request);
+
+        $procedureName = 'subcategories_CRUD.edit_subcategory';
+        
+        $bindings = [
+            'id_subcategory'       =>  $id_subcategory1,
+            'name_of_category'     =>  $name_of_category, 
+            'id_category'          =>  $id_category, 
+        ];
+            
+        $result = DB::executeProcedure($procedureName, $bindings);
+        return redirect()->back();
     }
 
     public function destroy(Request $request)

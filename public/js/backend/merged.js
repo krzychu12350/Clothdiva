@@ -591,11 +591,13 @@ $( ".add-subcategory" ).on( "click", function() {
 
 $( ".edit-subcategory").on( "click", function() {
   var selRow = String($(this).closest('tr').attr('id'));
-  alert(selRow);
-  var textOfTd = $("#id-u").text();
+  //alert(selRow);
+  var currentRow1=$(this).closest("tr"); 
+  var id_subcategory=currentRow1.find("td:eq(0)").text();
+  //var textOfTd = $("#id-u").text();
   $('#subcategories-table #' + selRow).find('td').empty();
   $('#subcategories-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editsc" type="text" name="subcategory-name"></input></td> <td><input type="text" form="editsc"  name="category-name"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editsc" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($('<td> <input form="editsc type="hidden" value=' + id_subcategory + ' name="id_subcategory1"> <input form="editsc" type="text" name="subcategory-name"></input></td> <td><input type="number" form="editsc"  name="category-name"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editsc" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
 

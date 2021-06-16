@@ -44,12 +44,7 @@
                                         
                                             @foreach($scmanagement as $singlerow)
                                             <tr id="editsc-row-{{$singlerow->id_sub_category}}">
-                                                    <!-- <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td> -->
+                                                    
                                                     <td id="id-sc" class="d-none">
                                                         {{$singlerow->id_sub_category}}
                                                     </td>
