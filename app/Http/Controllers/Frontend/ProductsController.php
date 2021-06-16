@@ -172,12 +172,12 @@ class ProductsController extends Controller
 
         //$sizep = $_GET['sizep'];
         $checked = $request->input('checked');
-       
-        $all_size = implode(', ', $checked);
+        //dd($checked);
+        //$all_size = implode(', ', $checked);
 
-        ///dd($checked[0],$checked[1]);
+        //dd($checked[0],$checked[1]);
         //dd(count($checked));
-        dd($all_size);
+        //dd($all_size);
         $all_sizes = Session::get('all_sizes');
         $all_colors = Session::get('all_colors');
         $minPrize = Session::get('minPrize');
@@ -186,7 +186,7 @@ class ProductsController extends Controller
       
        
 
-        $products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', $all_size) as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        $products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
      
        //dd($products_shop_view);
@@ -204,8 +204,8 @@ class ProductsController extends Controller
         $checked = $request->input('checked-color');
        
 
-        $checked_colors = implode(', ', $checked);
-        dd($checked_colors);
+        ///$checked_colors = implode(', ', $checked);
+        //dd($checked_colors);
         
         ///dd($checked[0],$checked[1]);
         //dd(count($checked));
@@ -218,7 +218,7 @@ class ProductsController extends Controller
       
        
 
-        $products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', $checked_colors) as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        $products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
      
        //dd($products_shop_view);

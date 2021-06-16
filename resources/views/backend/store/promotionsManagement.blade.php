@@ -17,8 +17,7 @@
                                     </div>
                                     <div class="table-data__tool-right">
                                   
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-promotion">
-                                            <i class="zmdi zmdi-plus"></i>add promotion</button>
+                                    
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -63,9 +62,7 @@
                                                 <td>{{$singlerow->name_of_category}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                            <button class="item edit-promotion" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                            </button>
+                                                       
                                                           
 
                                                             <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
