@@ -53,12 +53,7 @@
                                                 <td class="process">{{$singlerow->payment_method}}</td>
                                                 <td>{{$singlerow->name}} {{$singlerow->surname}}</td>
                                                 <td>
-                                                    <div class="table-data-feature">
-                                                        <a class="order-update" href="{{ route('admin.store.order.update',['id_o' => $singlerow->id_order, 'status' => 'ggge']) }}">
-                                                        <button class="item edit-order" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        </a>
+                                        
                                                     
 
                                                         <a class="orderdel" href="{{ route('admin.store.order.destroy',['id_o' => $singlerow->id_order]) }}">

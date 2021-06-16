@@ -33,7 +33,7 @@ class productsManagementController extends Controller
         'size'=>$singlerow->size_of_product,
         'description'=>$singlerow->description,*/
 
-        dd($id_product);
+        //dd($id_product);
         $procedureName = 'products_CRUD.del_product';
         
         $bindings = [

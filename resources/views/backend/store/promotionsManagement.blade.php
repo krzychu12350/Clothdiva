@@ -17,7 +17,11 @@
                                     </div>
                                     <div class="table-data__tool-right">
                                   
+<<<<<<< HEAD
                                     
+=======
+                                       
+>>>>>>> 47e3ffa (l)
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -61,8 +65,12 @@
                                                 <td>{{$singlerow->name_of_subcategory}}</td>
                                                 <td>{{$singlerow->name_of_category}}</td>
                                                 <td>
+<<<<<<< HEAD
                                                     <div class="table-data-feature">
                                                        
+=======
+                                                  
+>>>>>>> 47e3ffa (l)
                                                           
 
                                                             <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">

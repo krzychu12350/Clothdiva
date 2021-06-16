@@ -19,8 +19,7 @@
                                             <div class="dropDownSelect2"></div>
                                         </div>
                                        
-                                               <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-subcategory">
-                                                <i class="zmdi zmdi-plus"></i>add subcategories</button>
+                                        
                                     </div>
                                     <div class="table-responsive table-data">
 
@@ -94,9 +93,7 @@
                                                         </form>
                                                         to nizej jest dzialajace
                                                         -->
-                                                        <button class="item edit-subcategory">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
+                                                       
 
                                                         <a class="favdel" href="{{ route('admin.store.subcategories.destroy',['subcat_name' => $singlerow->name_of_subcategory,'cat_name' => $category->name_of_category]) }}">
                                                         <button class="item">
