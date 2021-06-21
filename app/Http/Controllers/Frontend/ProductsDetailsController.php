@@ -27,6 +27,26 @@ class ProductsDetailsController extends Controller
         ->select('c.name_of_category')
         ->where('pr.id_product', '=', $id)
         ->get();
+        
+        $size_of_promotion = DB::table('products pr')
+        ->join('promotions p', 'pr.id_promotion', '=', 'p.id_promotion')
+        ->select('p.size_of_promotion')
+        ->where('pr.id_product', '=', $id)
+        ->get();
+
+        if($size_of_promotion->isEmpty()){
+            $size_of_promotion[0] = 0;
+        }
+  
+        $promotion_s = $size_of_promotion->pluck('size_of_promotion');
+        $promotion_s->all();
+        $promotion_price2 = number_format((float) $data1['prize'] * (1.00 - $promotion_s[0]/100), 2, '.', '') ;
+
+
+
+        //$promotion_price= $normal_price[0] * $promotion_price[0];
+        //dd($normal_price[0]);
+
         $category_name = $category->pluck('name_of_category');
         $category_name->all();
 
@@ -46,7 +66,7 @@ class ProductsDetailsController extends Controller
             ->get();
 
 
-        //dd($id);
-        return view('frontend.productdetails',['product'=>$data1, 'images'=>$data2, 'category_name' => $category_name[0]]);
+        //dd($id);  ,'normal_prize' => $normal_price[0], 'promotion_price' => $promotion_price2,'size_promotion' => $promotion_price[0]
+        return view('frontend.productdetails',[ 'product'=>$data1, 'images'=>$data2, 'category_name' => $category_name[0], 'promotion_price' => $promotion_price2, 'size_promotion' => $promotion_s[0] ]);
     }
 }

@@ -375,5 +375,74 @@ $('.carousel-item:nth-child(1)').addClass('active');
 $('.carousel-indicators:nth-child(1)').addClass('active');
 
 
+
+$( ".edit-user-data").on( "click", function() {
+    $(".user-data").prepend('<form action="" method="POST">');
+    $(".user-name").replaceWith($('<input class="mt-2 mb-2" name="user-name" placeholder="' + $(".user-name").text() + '"></input>'));
+    $(".user-surname").replaceWith($('<input class="mt-2 mb-2" name="user-surname" placeholder="' + $(".user-surname").text() + '"></input>'));
+    $(".user-mobile").replaceWith($('<input class="mt-2 mb-2" name="user-mobile" placeholder="' + $(".user-mobile").text() + '"></input>'));
+    $(".user-email").replaceWith($('<input class="mt-2 mb-2" name="user-email" placeholder="' + $(".user-email").text() + '"></input>'));
+    $(".user-data").css("padding-bottom", "20px");
+    $(".user-data").append('<button class="btn btn-primary button_class" type="submit">Change</button></form>');
+    $(".user-data").prepend('</form>');
+
+  });
+
+  $( ".add-user-address-data").on( "click", function() {
+      /*
+    $(".add-user-address-data").append($('<h6 class="mt-4">Street<h6><input class="mt-2 mb-2" name="name-of-street" placeholder="Street"></input>'));
+    $(".add-user-address-data").append($('<h6>Apartment number<h6><input class="mt-2 mb-2" name="apartment-number" placeholder="Apartment number"></input>'));
+    $(".add-user-address-data").append($('<h6>House number<h6><input class="mt-2 mb-2" name="house-number" placeholder="House number"></input>'));
+    $(".add-user-address-data").append($('<h6>Post_code<h6><input class="mt-2 mb-2" name="post-code" placeholder="Post code"></input>'));
+    $(".add-user-address-data").append($('<h6>City<h6><input class="mt-2 mb-2" name="name-of-city" placeholder="City"></input>'));
+    $(".add-user-address-data").append($('<h6>State<h6><input class="mt-2 mb-2" name="name-of-state" placeholder="State"></input>'));*/
+    
+    $("#add-desc").replaceWith('<h5 class="mt-4">YOUR ADDRESS DETAILS</h5>'
+    +'<h6 class="mt-4">Street<h6><input class="mt-2 mb-2" name="name-of-street" placeholder="Street"></input>'
+    +'<h6>Apartment number<h6><input class="mt-2 mb-2" name="apartment-number" placeholder="Apartment number"></input>'
+    +'<h6>House number<h6><input class="mt-2 mb-2" name="house-number" placeholder="House number"></input>'
+    +'<h6>Post_code<h6><input class="mt-2 mb-2" name="post-code" placeholder="Post code"></input>'
+    +'<h6>City<h6><input class="mt-2 mb-2" name="name-of-city" placeholder="City"></input>'
+    +'<h6>State<h6><input class="mt-2 mb-2" name="name-of-state" placeholder="State"></input>'
+    +'<br /><button class="btn btn-primary button_class" type="submit">Add</button>');
+    $("#add-icon").replaceWith('');
+    $(".user-address-data").css("padding-bottom", "20px");
+ 
+});
+
+
+$( ".edit-user-address-data").on( "click", function() {
+  
+    $(".name-of-street").replaceWith($('<input class="mt-2 mb-2" name="name-of-street" placeholder="' + $(".name-of-street").text() + '"></input>'));
+    $(".apartment-number").replaceWith($('<input class="mt-2 mb-2" name="apartment-number" placeholder="' + $(".apartment-number").text() + '"></input>'));
+    $(".house-number").replaceWith($('<input class="mt-2 mb-2" name="house-number" placeholder="' + $(".house-number").text() + '"></input>'));
+    $(".post-code").replaceWith($('<input class="mt-2 mb-2" name="post-code" placeholder="' + $(".post-code").text() + '"></input>'));
+    $(".name-of-city").replaceWith($('<input class="mt-2 mb-2" name="name-of-city" placeholder="' + $(".name-of-city").text() + '"></input>'));
+    $(".name-of-state").replaceWith($('<input class="mt-2 mb-2" name="name-of-state" placeholder="' + $(".name-of-state").text() + '"></input>'));
+    $(".user-address-data").css("padding-bottom", "20px");
+    $(".user-address-data").append('<button class="btn btn-primary button_class" type="submit">Change</button>');
+});
+
+
+
+$("#address-data").change(function() {
+    if(this.checked) {
+        $("#fname").val($('#fname').attr('placeholder'));
+        $("#lname").val($('#lname').attr('placeholder'));
+        $("#phone").val($('#phone').attr('placeholder'));
+        $("#email").val($('#email').attr('placeholder'));
+        $("#state").val($('#state').attr('placeholder'));
+        $("#street").val($('#street').attr('placeholder'));
+        $("#apartment_number").val($('#apartment_number').attr('placeholder'));
+        $("#house_number").val($('#house_number').attr('placeholder'));
+        $("#postcode").val($('#postcode').attr('placeholder'));
+        $("#city").val($('#city').attr('placeholder'));
+        $("#country").val($('#country').attr('placeholder'));
+    }
+    else{
+        $(".checkout__form .checkout__form__input input").val("");
+    }
+});
+
 })(jQuery);
 

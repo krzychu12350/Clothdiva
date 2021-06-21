@@ -1283,6 +1283,18 @@ ol {
 	color: #ffffff;
 }
 
+/* Chrome, Safari, Edge, Opera */
+#number__quantity::-webkit-outer-spin-button,
+#number__quantity::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#number__quantity[type=number] {
+  -moz-appearance: textfield;
+}
+
 /*---------------------
   Product Details
 -----------------------*/
@@ -2395,10 +2407,7 @@ background-color: #ebebeb;;
 	padding-right: -30px !important;
 }
 
-.dashboard-div:nth-child(5){
 
-	height: 228px;
-}	
 
 /*--------------------------------- Responsive Media Quaries -----------------------------*/
 

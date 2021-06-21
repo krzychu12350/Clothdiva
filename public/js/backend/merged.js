@@ -645,3 +645,4 @@ $( ".add-slide" ).on( "click", function() {
       )
   );
 });
+

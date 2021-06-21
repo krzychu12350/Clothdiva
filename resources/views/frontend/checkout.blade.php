@@ -11,81 +11,160 @@
                         <h5>Billing detail</h5>
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="mt-1 mb-1">
+                                    @if($user_data->isNotEmpty())
+                                    <input type="checkbox" id="address-data" name="address-data">
+                                    <span>Fill in with your account details</span><br>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">        
+                        @if($user_data->isNotEmpty())
+                        @foreach($user_data as $single_info) 
+                            <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>First Name <span>*</span></p>
-                                    <input type="text" id="fname" name="fname" min-length="3" required>
+                                    <input type="text" id="fname" name="fname" min-length="3" placeholder="{{$single_info->name}}" required>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Last Name <span>*</span></p>
-                                    <input type="text" id="lname" name="lname" min-length="3" required>
+                                    <input type="text" id="lname" name="lname" min-length="3" placeholder="{{$single_info->surname}}" required>
                                 </div>
                             </div>
+
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Phone <span>*</span></p>
-                                    <input type="text" id="phone" name="phone" min-length="3" equired>
+                                    <input type="text" id="phone" name="phone" min-length="3" placeholder="{{$single_info->mobile}}" equired>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>Email <span>*</span></p>
-                                    <input type="email" id="email" name="email" min-length="5" required>
+                                    <input type="email" id="email" name="email" min-length="5" placeholder="{{$single_info->email}}" required>
                                 </div>
                             </div>
-                            <div class="col-lg-12">
+                           <!-- <div class="col-lg-12">-->
+                                <div class="col-lg-12">
                                 <div class="checkout__form__input">
-                                    <p>State <span>*</span></p>
-                                    <input type="text" id="state" name="state" min-length="3" required>
+                                    <p>Street <span>*</span></p>
+                                    <input type="text" id="street" name="street" min-length="3" placeholder="{{$single_info->name_of_street}}" required>
                                 </div>
-                                <div class="checkout__form__input">
-                                    <p>Address <span>*</span></p>
-                                    <input type="text" placeholder="Street Address" id="street" name="street" min-length="3" required>
-                                    <input type="text" placeholder="Apartment. suite, unite ect ( optinal )" id="apartment_number" name="apartment_number" min-length="2" required>
                                 </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="checkout__form__input">
+                                        <p>Apartment number <span>*</span></p>
+                                        <input type="text" id="apartment_number" name="apartment_number" min-length="2" placeholder="{{ $single_info->apartment_number }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="checkout__form__input">
+                                        <p>House number <span>*</span></p>
+                                         <input type="text" id="house_number" name="house_number" min-length="2" placeholder="{{ $single_info->house_number }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
                                 <div class="checkout__form__input">
                                     <p>Postcode/Zip <span>*</span></p>
-                                    <input type="text" id="postcode" name="postcode" min-length="5" required>
+                                    <input type="text" id="postcode" name="postcode" min-length="5" placeholder="{{$single_info->post_code}}" required>
                                 </div>
+                                </div>
+                                <div class="col-lg-12">
                                 <div class="checkout__form__input">
                                     <p>Town/City <span>*</span></p>
-                                    <input type="text" id="city" name="city" min-length="3" required>
+                                    <input type="text" id="city" name="city" min-length="3" placeholder="{{$single_info->name_of_city}}" required>
                                 </div>
+                                </div>
+                                <div class="col-lg-12">
                                 <div class="checkout__form__input">
-                                    <p>Country/State <span>*</span></p>
-                                    <input type="text" id="country" name="country" min-length="3" required>
+                                    <p>State <span>*</span></p>
+                                    <input type="text" id="state" name="state" min-length="3" placeholder="{{$single_info->county}}" required>
+                                </div>
+                                </div>
+                                <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Country<span>*</span></p>
+                                    <input type="text" id="country" name="country" min-length="3" placeholder="Country" required>
+                                </div>
                                 </div>
                             </div>
-                            <!--
-                            <div class="col-lg-12">
-                                <div class="checkout__form__checkbox">
-                                    <label for="acc">
-                                        Create an acount?
-                                        <input type="checkbox" id="acc">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <p>Create am acount by entering the information below. If you are a returing
-                                        customer login at the <br />top of the page</p>
-                                    </div>
-                                    <div class="checkout__form__input">
-                                        <p>Account Password <span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                    <div class="checkout__form__checkbox">
-                                        <label for="note">
-                                            Note about your order, e.g, special noe for delivery
-                                            <input type="checkbox" id="note">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </div>
-                                    <div class="checkout__form__input">
-                                        <p>Oder notes <span>*</span></p>
-                                        <input type="text"
-                                        placeholder="Note about your order, e.g, special noe for delivery">
-                                    </div>
-                                </div> -->
+                          <!--  </div>-->
+                            @endforeach
+                            @else
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>First Name <span>*</span></p>
+                                    <input type="text" id="fname" name="fname" min-length="3" placeholder="Name" required>
+                                </div>
                             </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Last Name <span>*</span></p>
+                                    <input type="text" id="lname" name="lname" min-length="3" placeholder="Surname" required>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Phone <span>*</span></p>
+                                    <input type="text" id="phone" name="phone" min-length="3" placeholder="Mobile phone" equired>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="checkout__form__input">
+                                    <p>Email <span>*</span></p>
+                                    <input type="email" id="email" name="email" min-length="5" placeholder="E-mail" required>
+                                </div>
+                            </div>
+                           <!-- <div class="col-lg-12">-->
+                                <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Street <span>*</span></p>
+                                    <input type="text" id="street" name="street" min-length="3" placeholder="Street" required>
+                                </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="checkout__form__input">
+                                        <p>Apartment number <span>*</span></p>
+                                        <input type="text" id="apartment_number" name="apartment_number" min-length="2" placeholder="Apartment number" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="checkout__form__input">
+                                        <p>House number <span>*</span></p>
+                                         <input type="text" id="house_number" name="house_number" min-length="2" placeholder="House number" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Postcode/Zip <span>*</span></p>
+                                    <input type="text" id="postcode" name="postcode" min-length="5" placeholder="Post code" required>
+                                </div>
+                                </div>
+                                <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Town/City <span>*</span></p>
+                                    <input type="text" id="city" name="city" min-length="3" placeholder="City" required>
+                                </div>
+                                </div>
+                                <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>State <span>*</span></p>
+                                    <input type="text" id="state" name="state" min-length="3" placeholder="State" required>
+                                </div>
+                                </div>
+                                <div class="col-lg-12">
+                                <div class="checkout__form__input">
+                                    <p>Country<span>*</span></p>
+                                    <input type="text" id="country" name="country" min-length="3" placeholder="Country" required>
+                                </div>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                         <div class="col-lg-4">
                             <div class="checkout__order">
@@ -116,15 +195,7 @@
                                     </ul>
                                 </div>
                                 <div class="checkout__order__widget">
-                                    <!--
-                                    <label for="o-acc">
-                                        Create an acount?
-                                        <input type="checkbox" id="o-acc">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <p>Create am acount by entering the information below. If you are a returing customer
-                                    login at the top of the page.</p>
-                                </div>-->
+                                    
                                 <button type="submit" class="site-btn place-order">Place oder</button>
                             </div>
                         </div>

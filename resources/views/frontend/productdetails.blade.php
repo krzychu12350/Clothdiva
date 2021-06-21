@@ -79,7 +79,15 @@
                         {{$product['name']}} - {{$product['size_of_product']}}
               
                          </h3>
-                        <div class="product__details__price">$ {{$product['prize']}}<span>$ 83.0</span></div>
+                        <div class="product__details__price">
+                            @if($promotion_price != $product['prize'])
+                                    $ {{$promotion_price}}
+                                    <span>$ {{$product['prize']}} </span>
+                            @else  
+                            $ {{$product['prize']}}
+                            @endif
+                        
+                        </div>
                         <p></p>
                         <div class="product__details__button">
                             <div class="quantity">
@@ -90,7 +98,7 @@
                                     @csrf
                                 </form>
                                
-                                    <input type="number" name="quantity" form="add-to-cart" value="1" min="1" max="{{$product['quantity']}}">
+                                    <input type="number" id="number__quantity" name="quantity" form="add-to-cart" value="1" min="1" max="{{$product['quantity']}}">
                                 </div>
                             </div>
                          
@@ -156,10 +164,12 @@
                                     </div>
                                 </li>
                                 -->
+                                @if(!empty($size_promotion))
                                 <li>
                                     <span>Promotion:</span>
-                                    <p>-15%</p>
+                                    <p>-{{ $size_promotion }}%</p>
                                 </li>
+                                @endif
                             </ul>
                         </div>
                     </div>

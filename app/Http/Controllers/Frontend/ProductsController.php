@@ -127,7 +127,7 @@ class ProductsController extends Controller
         //dd($sizep);
 
         $products_shop_view = DB::select("select products_shop_view('$subcategory','$category','') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
-        
+
         /*
         $data2 = DB::table('images')
         ->join('products p', 'p.id_product', '=', 'images.id_product')

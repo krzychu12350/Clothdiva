@@ -246,7 +246,17 @@ use Illuminate\Support\Facades\Storage;
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="/products/details/{{$single_product->id_product}}">{{$single_product->name}} - {{$single_product->size_of_product}}</a></h6>
-                                    <div class="product__price">$ {{$single_product->prize}}</div>
+
+                                     <?php $promotion_price2 = number_format((float) $single_product->prize * (1.00 - $single_product->size_of_promotion/100), 2, '.', '') ; ?>
+
+                                    <div class="product__price">                             
+                                    @if($promotion_price2 != $single_product->prize)
+                                        $ {{$promotion_price2}}
+                                        <span>$ {{$single_product->prize}}</span>
+                                    @else  
+                                        $ {{$single_product->prize}}
+                                    @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>

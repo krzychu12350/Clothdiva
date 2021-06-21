@@ -63,7 +63,7 @@ class HomeController extends Controller
         $id = Auth::user()->id_ushop;
 
         $user_data = DB::table('ushop u')
-        ->join('user_addresses ua', 'ua.id_user_address', '=', 'u.id_user_address')
+        ->leftJoin('user_addresses ua', 'ua.id_user_address', '=', 'u.id_user_address')
         ->where('u.id_ushop', '=', $id)
         ->get();
 
@@ -73,7 +73,7 @@ class HomeController extends Controller
         ->where('u.id_ushop', '=', $id)
         ->get();
      
-        
+  
         return view('frontend.user-dashboard',compact('user_data','user_orders'));
     }
   

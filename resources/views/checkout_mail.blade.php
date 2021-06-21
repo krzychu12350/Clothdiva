@@ -1,17 +1,11 @@
 <html>
     <body>
 
-        <h1>Order summary</h1>
+        <h3>Order confirmation</h3>
         <strong>Dear {{ $user->surname }} {{ $user->name }},</strong>
-        <p>Your order looks following: </p>
-        <p>No.           |Product Name                                               | Size                      |Price                 | Quantity            |Total Price </p>
-        <?php $i=1; $sum=0?>
-        @foreach($cart as $id => $details)
-        <p>|{{$i}}      | {{ $details['name'] }} - {{ $details['size_of_product'] }} | {{ $details['quantity']}} | ${{$details['prize'] }} | ${{ $details['quantity'] * $details['prize'] }}</p>
-        <p>Sub total: ${{$sum += $details['quantity'] * $details['prize']}}</p>
-        <?php $i++?>
-        @endforeach
-        <p>Total: ${{ number_format((float) 1.03 * $sum, 2, '.', '') }} </p>
+        <p>Thank you for ordering from Clothdiva!</p>
+        <p>You can review your order status at any time by visiting your account.</p> 
+        <p>We hope you enjoyed your shopping experience with us and that you will visit us again soon.</p>
         <p>Regards,</p>
         <p>Team Clothdiva</p>
     </body>
