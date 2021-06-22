@@ -27,8 +27,21 @@ class ordersManagementController extends Controller
 
     public function update(Request $request)
     {   
-        $option = $request->selectOption;
-        dd($option);  
+        //dd($request->all());  
+        $id_order = $request->input('order-id');
+        $sel_status = $request->input('selectOption');
+
+        $procedureName = 'orders_CRUD.upd_order';
+        
+        $bindings = [
+            'sel_status'  => $sel_status,
+            'id_order'  =>  $id_order,
+        ];
+            
+        $result = DB::executeProcedure($procedureName, $bindings);
+        
+        return redirect()->back()->with('status', 'Order has been updated!');
+
     }
     public function destroy(Request $request)
     {   
@@ -43,7 +56,7 @@ class ordersManagementController extends Controller
             
         $result = DB::executeProcedure($procedureName, $bindings);
         
-        return redirect()->back();
+        return redirect()->back()->with('status', 'User has been removed!');
    
     }
 

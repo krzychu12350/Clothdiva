@@ -184,10 +184,11 @@ use Illuminate\Support\Facades\Storage;
 
                             <form method="post" id="filtr-by-color" action="/productsbyColor/{{$category}}/{{$subcategory}}">
                                     @csrf
+                                    
                                 @foreach($all_colors as $single_color) 
                                 <label for="{{$single_color->color}}">
                                     {{$single_color->color}}
-                                    <input type="checkbox" id="{{$single_color->color}}" name="checked[]" value="{{$single_color->color}}">
+                                    <input type="checkbox" id="{{$single_color->color}}" form="filtr-by-color" name="checked-color[]" value="{{$single_color->color}}">
                                     <span class="checkmark"></span>
                                 </label>
                                 @endforeach
@@ -199,6 +200,7 @@ use Illuminate\Support\Facades\Storage;
                                 </div>
                                 <a style="cursor: pointer;" onclick="document.getElementById('filtr-by-color').submit();">Filter</a>
                             </div>
+
                             </form>
 
                         </div>

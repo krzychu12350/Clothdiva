@@ -43,7 +43,9 @@ class HomeController extends Controller
     public function adminHome()
     {
         $all_registred_users = DB::table('ushop')->count();
-        return view('backend.overview', compact('all_registred_users'));
+        $all_products = DB::table('products')->count();
+       
+        return view('backend.overview', compact('all_registred_users','all_products'));
     }
 
     public function privacyPolicy()

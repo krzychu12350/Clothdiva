@@ -92,7 +92,7 @@ Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin.home')->
 
 Route::get('/orders', [ordersManagementController::class, 'index'])->name('admin.store.orders')->middleware('is_admin');
 Route::post('/order-create', [ordersManagementController::class, 'create'])->name('admin.store.order.create')->middleware('is_admin');
-Route::get('/order-update', [ordersManagementController::class, 'update'])->name('admin.store.order.update')->middleware('is_admin');
+Route::post('/order-update', [ordersManagementController::class, 'update'])->name('admin.store.order.update')->middleware('is_admin');
 Route::get('/order-delete', [ordersManagementController::class, 'destroy'])->name('admin.store.order.destroy')->middleware('is_admin');
 
 

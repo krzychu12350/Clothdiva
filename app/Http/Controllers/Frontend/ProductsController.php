@@ -173,23 +173,55 @@ class ProductsController extends Controller
         //$sizep = $_GET['sizep'];
         $checked = $request->input('checked');
         //dd($checked);
-        //$all_size = implode(', ', $checked);
+        foreach ($checked as &$value) {
+            $value =  "'".$value."'";
+        }
+        unset($value);
+
+        //$all_size = implode("', '", $checked);
+        //$all_size2 = implode("','", $all_size);
 
         //dd($checked[0],$checked[1]);
         //dd(count($checked));
+        $all_size = implode(', ', $checked);
         //dd($all_size);
+
         $all_sizes = Session::get('all_sizes');
         $all_colors = Session::get('all_colors');
         $minPrize = Session::get('minPrize');
         $maxPrize = Session::get('maxPrize');
-    
-      
-       
+        /*
+        select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
+        left join products p on p.id_product = i.id_product
+        INNER JOIN sub_categories sb ON sb.id_sub_category = p.id_sub_category
+        INNER JOIN categories c ON c.id_category = sb.id_category 
+        LEFT JOIN promotions prom ON  prom.id_promotion = p.id_promotion
+        WHERE sb.name_of_subcategory=subcat AND c.name_of_category=cat AND p.size_of_product=psize
+        group by p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion;
+        $products_shop_view = DB::table('images i')
+        ->where('sb.name_of_subcategory', '=', $subcategory)
+        ->where('c.name_of_category', '=', $category)
+        ->whereIn('p.size_of_product', $checked)
+        ->leftJoin('products p', 'p.id_product', '=', 'i.id_product')
+        ->join('sub_categories sb', 'sb.id_sub_category', '=', 'p.id_sub_category')
+        ->join('categories c', 'c.id_category', '=', 'sb.id_category')
+        ->leftJoin('promotions prom', 'prom.id_promotion', '=', 'p.id_promotion')
+        ->select('MIN(image)', 'p.*', 'c.name_of_category', 'prom.size_of_promotion')
+        ->get();*/
+        //->min('image');
 
-        $products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        $products_shop_view = DB::select( DB::raw(" select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
+        left join products p on p.id_product = i.id_product
+        INNER JOIN sub_categories sb ON sb.id_sub_category = p.id_sub_category
+        INNER JOIN categories c ON c.id_category = sb.id_category 
+        LEFT JOIN promotions prom ON  prom.id_promotion = p.id_promotion
+        WHERE sb.name_of_subcategory='$subcategory' AND c.name_of_category='$category' AND p.size_of_product IN ($all_size)
+        group by p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion") );
+
+        //$products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
      
-       //dd($products_shop_view);
+        //dd($results);
         return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
     }
 
@@ -200,25 +232,33 @@ class ProductsController extends Controller
         $category = Session::get('category');
         $subcategory = Session::get('subcategory');
 
-        //$sizep = $_GET['sizep'];
+      
         $checked = $request->input('checked-color');
-       
+      
+        foreach ($checked as &$value) {
+            $value =  "'".$value."'";
+        }
+        unset($value);
 
-        ///$checked_colors = implode(', ', $checked);
-        //dd($checked_colors);
-        
-        ///dd($checked[0],$checked[1]);
-        //dd(count($checked));
+        $all_color = implode(', ', $checked);
+        //dd($all_color);
 
         $all_sizes = Session::get('all_sizes');
         $all_colors = Session::get('all_colors');
         $minPrize = Session::get('minPrize');
         $maxPrize = Session::get('maxPrize');
-    
+
+        $products_shop_view = DB::select( DB::raw(" select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
+        left join products p on p.id_product = i.id_product
+        INNER JOIN sub_categories sb ON sb.id_sub_category = p.id_sub_category
+        INNER JOIN categories c ON c.id_category = sb.id_category 
+        LEFT JOIN promotions prom ON  prom.id_promotion = p.id_promotion
+        WHERE sb.name_of_subcategory='$subcategory' AND c.name_of_category='$category' AND p.color IN ($all_color)
+        group by p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion") );
       
        
 
-        $products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        //$products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
      
        //dd($products_shop_view);

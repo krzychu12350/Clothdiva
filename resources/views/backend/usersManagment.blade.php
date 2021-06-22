@@ -22,8 +22,8 @@
 
                                             
                                         </div>
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-user">
-                                            <i class="zmdi zmdi-plus"></i>add user</button>
+                                        <!--<button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-user">
+                                            <i class="zmdi zmdi-plus"></i>add user</button>-->
                                     </div>
                                     <div class="table-responsive table-data">
 
@@ -55,26 +55,26 @@
 
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>{{$singlerow->name}}</h6>
+                                                            <h6 id="user-name">{{$singlerow->name}}</h6>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>{{$singlerow->surname}}</h6>
+                                                            <h6 id="user-surname">{{$singlerow->surname}}</h6>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>{{$singlerow->mobile}}</h6>
+                                                            <h6 id="user-mobile">{{$singlerow->mobile}}</h6>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6>{{$singlerow->email}}</h6>
+                                                            <h6 id="user-email">{{$singlerow->email}}</h6>
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <span class="role {{$singlerow->role_name}}">{{$singlerow->role_name}}</span>
+                                                        <span id="user-role" class="role {{$singlerow->role_name}}">{{$singlerow->role_name}}</span>
                                                     </td>
                                                    
                                                     <td>

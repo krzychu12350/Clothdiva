@@ -58,7 +58,7 @@
                                                     <td>
                                                         <div class="table-data__info">
                                                       
-                                                            <h6>{{$singlerow->name_of_subcategory}}</h6>
+                                                            <h6 id="pre-subcat">{{$singlerow->name_of_subcategory}}</h6>
                                                          
                                                           
                                                         </div>

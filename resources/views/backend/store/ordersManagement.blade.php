@@ -10,7 +10,9 @@
                                     @csrf
                                 </form>
                                 -->
-                               
+                                <form method="POST" action="{{ route('admin.store.order.update')}}" id="order-update">
+                                        @csrf
+                                    </form>
                                   
                                     <table class="table table-borderless table-data3">
                                         <thead>
@@ -27,17 +29,20 @@
                                         <tbody>
                                             @foreach($orders as $singlerow)
                                             <tr id="editp-row-{{$singlerow->id_order}}">
-                                                <td id="id-o" >{{$singlerow->id_order}}</td>
+                                    
+                                                <td id="id-o" >{{$singlerow->id_order}} </td>
+
                                                 <td>Men</td>
                                                 <td>
                                                   <div class="rs-select2--trans rs-select2--sm">
-                                                                <select class="form-control" id="selectOption" name='selectOption' form="edito">
-                                                                    <option value="{{$singlerow->id_order}}">{{$singlerow->status}}</option>
+                                                                <input type="hidden" form="order-update" name="order-id" value="{{$singlerow->id_order}}"></input>
+                                                                <select class="form-control" id="selectOption" name='selectOption' form="order-update">
+                                                                    <option value="{{$singlerow->status}}">{{$singlerow->status}}</option>
                                                                   
                                                                     @foreach($status as $single)
                                                                     
                                                                     @if($single->status !== $singlerow->status)
-                                                                    <option value="{{$single->id}}">{{$single->status}}</option>
+                                                                    <option value="{{$single->status}}">{{$single->status}}</option>
                                                                     @endif
                                                                    
                                                                     @endforeach
@@ -54,8 +59,8 @@
                                                 <td>{{$singlerow->name}} {{$singlerow->surname}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <a class="order-update" href="{{ route('admin.store.order.update',['id_o' => $singlerow->id_order, 'status' => 'ggge']) }}">
-                                                        <button class="item edit-order" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <a class="order-update" href="{{ route('admin.store.order.update') }}">
+                                                        <button type="submit" form="order-update" class="item edit-order" data-toggle="tooltip" data-placement="top" title="Edit">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
                                                         </a>

@@ -19,10 +19,11 @@ class subcategoriesManagementController extends Controller
     }
     public function create(Request $request)
     {
+        //dd($request->all());
         $subcat_name = $request->input('subcategory-name');
         $cat_name = $request->input('category-name');
-        $id_subcat = $request->input('id_subcat');
-         $procedureName = 'subcategories_CRUD.add_subcategory';
+        //$id_subcat = $request->input('id_subcat');
+        $procedureName = 'subcategories_CRUD.add_subcategory';
          
          $bindings = [
              'subc_name'  =>  $subcat_name,
@@ -31,11 +32,29 @@ class subcategoriesManagementController extends Controller
              
          $result = DB::executeProcedure($procedureName, $bindings);
          
-         return redirect()->back();
+         return redirect()->back()->with('status', 'Subcategory has been added!');
     }
     public function update(Request $request)
     {
-        dd($request);
+       // dd($request->all());
+
+        $subcat_name = $request->input('subcategory-name');
+        $cat_name = $request->input('category-name');
+        $id_subcat =  $request->input('id-subcat');
+
+        $procedureName = 'subcategories_CRUD.edit_subcategory';
+         
+        $bindings = [
+
+             'subcategory_name'  => $subcat_name,
+             'category_name'  => $cat_name,
+             'idcat' => $id_subcat,
+         ];
+             
+         $result = DB::executeProcedure($procedureName, $bindings);
+
+         return redirect()->back()->with('status', 'Subcategory has been update!');
+
     }
 
     public function destroy(Request $request)
@@ -54,7 +73,7 @@ class subcategoriesManagementController extends Controller
         $result = DB::executeProcedure($procedureName, $bindings);
         //dd($result);
         
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Subcategory has been removed!');
                 /*
         $pdo = DB::getPdo();
         $p1 = 'Dresses';

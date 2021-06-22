@@ -35,8 +35,8 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                <h2>{{$all_products}}</h2>
+                                                <span>products</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">

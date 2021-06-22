@@ -88,7 +88,7 @@ class bannersManagementController extends Controller
             
         $result = DB::executeProcedure($procedureName, $bindings);
         
-        return redirect()->back()->with('status', 'Slide has been removed from main webiste banner!');;
+        return redirect()->back()->with('status', 'Slide has been removed from main webiste banner!');
    
     }
 }
