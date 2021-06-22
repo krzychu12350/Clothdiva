@@ -4508,9 +4508,9 @@ section {
     border: none;
 }
 
-.table-data2.table tbody td input{
-   width: 70px !important;
-   height: 70px !important;
+.table-data2.table tbody td input, text, textarea{
+   width: 100px !important;
+   height: 150px !important;
 }
 
 .table-data2.table tbody td.desc {
@@ -14612,4 +14612,8 @@ section {
 
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
+}
+
+#slide{
+    width: 200px !important;
 }

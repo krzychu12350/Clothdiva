@@ -7,7 +7,9 @@
        <div class="user-data m-b-30 m-t-30 col-xl-12">
                                     <h3 class="title-3 m-b-30">
                                         <i class="zmdi zmdi-account-calendar"></i>Users</h3>
+                                        
                                     <div class="filters m-b-45">
+                                        
                                         <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
                                             <select class="js-select2" name="property">
                                        
@@ -17,8 +19,11 @@
                                                 @endforeach
                                             </select>
                                             <div class="dropDownSelect2"></div>
+
+                                            
                                         </div>
-                                    
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-user">
+                                            <i class="zmdi zmdi-plus"></i>add user</button>
                                     </div>
                                     <div class="table-responsive table-data">
 

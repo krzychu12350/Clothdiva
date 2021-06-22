@@ -641,8 +641,29 @@ $( ".add-slide" ).on( "click", function() {
   $("#banner-table").find('tbody')
   .prepend($('<tr>')
       .prepend($(
-        '<td><form action="" method="POST" enctype="multipart/form-data"> @csrf <div class="row"><input type="file" name="image" class="form-control"><button type="submit" class="btn btn-success">Upload</button></div></form> </td> <td><input type="text" form="addslider"  name="paragraph-large"></input></td> <td><input type="text" form="addslider"  name="paragraph-small"></input></td> <td><input type="text" form="addslider"  name="link"></input></td> <td><input type="text" form="addslider"  name="link-description"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addslider" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+        '<td> <input type="file" id="slide" name="slide" form="addslider"></input> </td> <td><textarea type="text" form="addslider"  name="paragraph-large"></textarea></td> <td><textarea type="text" form="addslider"  name="paragraph-small"></textarea></td> <td><textarea type="text" form="addslider"  name="link"></textarea></td> <td><textarea type="text" form="addslider"  name="link-description"></textarea></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addslider" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
       )
   );
 });
+
+$( ".edit-slide" ).on( "click", function() {
+  //var pre = $('#' + selRow +' .p-large').val();
+ // var pre = $('#banner-table #' + selRow +' #p-large').text();
+  var id = $("#id-s").text();
+  var pre = $("#p-large").text();
+  var pre1 = $("#p-small").text()
+  var pre2 = $("#l-href").text();
+  var pre3 = $("#l-desc").text();
+  var selRow = String($(this).closest('tr').attr('id'));
+  var textOfTd = $("#id-s").text();
+
+  $('#banner-table #' + selRow).find('td').empty();
+  $('#banner-table').find('tr#' + selRow)
+  .replaceWith($(
+        '<td> <input type="hidden" id="id-slide" name="id-slide" form="editslide" value="'+id+'"></input> <input type="file" id="slide" name="slide" form="editslide"></input> </td> <td><textarea type="text" form="editslide"  name="paragraph-large" placeholder="'+pre+'"></textarea></td> <td><textarea type="text" form="editslide"  name="paragraph-small" placeholder="'+pre1+'"></textarea></td> <td><textarea type="text" form="editslide"  name="link" placeholder="'+pre2+'"></textarea></td> <td><textarea type="text" form="editslide"  name="link-description" placeholder="'+pre3+'"></textarea></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editslide" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+      );
+  
+
+});
+
 
