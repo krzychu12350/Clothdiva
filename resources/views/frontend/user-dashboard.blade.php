@@ -53,6 +53,8 @@
 @endif
 
     <h2 class="text-center mt-2 mb-4">Account information</h2>
+    <form action="{{ route('update.account') }}" method="POST">
+        @csrf
         <div class="dashboard-div mt-4 text-center user-data">
         <a class="float-right mt-2 mr-2 edit-user-data"><i class="fas fa-user-edit" role="button"></i></a><br />
             @foreach($user_data as $single_info) 
@@ -68,9 +70,13 @@
             @endforeach
 
         </div>
+        </form>
 
+        <form action="{{ route('add.address.data') }}" method="POST">
+        @csrf
         <div class="dashboard-div mt-4 text-center user-address-data">
-        @if($user_orders->isNotEmpty())
+  
+        @if($user_data_addr->isNotEmpty())
         <a class="float-right mt-2 mr-2 edit-user-address-data"><i class="fas fa-cog" role="button"></i></a><br />
         @foreach($user_data as $single_info) 
         <h5 class="mt-4">ADDRESS DETAILS</h5>
@@ -92,7 +98,7 @@
               <h6 id="add-desc" class="text-center mt-4 mb-4">Add your address details </h6>
           @endif
         </div>
-        
+        </form>
         </div>
     </div>
     </div>

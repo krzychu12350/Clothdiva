@@ -377,14 +377,12 @@ $('.carousel-indicators:nth-child(1)').addClass('active');
 
 
 $( ".edit-user-data").on( "click", function() {
-    $(".user-data").prepend('<form action="" method="POST">');
     $(".user-name").replaceWith($('<input class="mt-2 mb-2" name="user-name" placeholder="' + $(".user-name").text() + '"></input>'));
     $(".user-surname").replaceWith($('<input class="mt-2 mb-2" name="user-surname" placeholder="' + $(".user-surname").text() + '"></input>'));
     $(".user-mobile").replaceWith($('<input class="mt-2 mb-2" name="user-mobile" placeholder="' + $(".user-mobile").text() + '"></input>'));
     $(".user-email").replaceWith($('<input class="mt-2 mb-2" name="user-email" placeholder="' + $(".user-email").text() + '"></input>'));
     $(".user-data").css("padding-bottom", "20px");
     $(".user-data").append('<button class="btn btn-primary button_class" type="submit">Change</button></form>');
-    $(".user-data").prepend('</form>');
 
   });
 

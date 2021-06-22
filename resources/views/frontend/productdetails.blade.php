@@ -125,8 +125,10 @@
                                 </li>
                                 -->
                                 <li>
-                                    <span>Available color:</span>
+                                    <span>Color:</span>
                                     <div class="color__checkbox">
+                                        <p>{{$product['color']}}</p>
+                                        <!--
                                         <label for="red">
                                             <input type="radio" name="color__radio" id="red" checked>
                                             <span class="checkmark"></span>
@@ -139,6 +141,7 @@
                                             <input type="radio" name="color__radio" id="grey">
                                             <span class="checkmark grey-bg"></span>
                                         </label>
+                                        -->
                                     </div>
                                 </li>
                                 <!--

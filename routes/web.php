@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\ProductsController;
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\Frontend\ProductsDetailsController;
 use App\Http\Controllers\Frontend\SearchEngineController;
+use App\Http\Controllers\Frontend\UserDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +41,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');
 Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('policy');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
-Route::get('/dashboard', [HomeController::class, 'showDashboard'])->name('user.dashboard');
+Route::get('/dashboard', [HomeController::class, 'showDashboard'])->name('user.dashboard')->middleware('auth');
+
+Route::post('/update-account-data', [UserDashboardController::class, 'updateAccountData'])->name('update.account')->middleware('auth');
+
+Route::post('/add-address-data', [UserDashboardController::class, 'addAddressData'])->name('add.address.data')->middleware('auth');
+
 
 //Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 //Route::get('/products/{type}/{subcategory}', [ProductsController::class, 'showProductsbySize'])->name('productsbySize');

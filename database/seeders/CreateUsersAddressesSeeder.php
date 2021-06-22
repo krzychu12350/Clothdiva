@@ -19,7 +19,7 @@ class CreateUsersAddressesSeeder extends Seeder
         'name_of_city'=>'Rzeszow',
         'post_code'=>'56-434',
         'name_of_street'=>'Kwiatowski',
-        'voideship'=>'podkarpackie',
+        //'voideship'=>'podkarpackie',
         'county'=>'rzeszowskie',
         'apartment_number'=>'23',
         'house_number'=>'5',
