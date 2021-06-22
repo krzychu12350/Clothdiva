@@ -2,19 +2,21 @@
         <div class = "women_products position-absolute bg-white col-xl-6 text-center" style = "display:none; right: 25%; margin: auto;">    
                 <div class="container">
                         <div class="row">
+                        <?php $i = 1 ?>
                             @foreach($sub_categories_women as $sub_category_woman)
-                            <div class="col-2 mx-auto">     
+                            <div class="col-3 mx-auto">     
                             <ul class = "submenu-submenu list-unstyled" style = "text-align:center">
-                                <img src="img\instagram\insta-1.jpg">
+                                <a style = "color:black" href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}"><img src='images\subcategories\women\women<?php echo $i; ?>.jpg'></a>
                                 <li class = "menu-item level-2"><a style = "color:black" href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}">{{$sub_category_woman->name_of_subcategory}}</a></li>
                                 <!-- href="{{ route('showProducts',['type'=> 'Women','subcategory'=> $sub_category_woman->name_of_subcategory]) }}" -->
                                 </ul>
                             </div>
+                            <?php $i++ ?>
                             @endforeach
                         </div>
                     </div>
                 </div>
-
+          
 
          <div class = "men_products position-absolute bg-white col-xl-6 text-center" style = "display:none; right: 25%; margin: auto;">
                 <div class="container">

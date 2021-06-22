@@ -662,6 +662,12 @@ ol {
 	margin-top: 10px;
 }
 
+#instafeed-container a img {
+	height: 350px;
+	width: 317px !important;
+	object-fit: cover;
+ }
+
 /*---------------------
   Footer
 -----------------------*/
