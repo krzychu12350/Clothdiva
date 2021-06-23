@@ -190,10 +190,40 @@
                                 @endforeach
                                 <div class="checkout__order__total">
                                     <ul>
+                                        <li>Shipping<span>$ 0</span></li>
                                         <li>Subtotal <span>$ {{ $total }}</span></li>
                                         <li>Total <span>$ {{ number_format((float) 1.03 * $total, 2, '.', '') }}</span></li>
+                        
+                                        <li>Payment method
+                                  
+                                        <div class="cnt_full text-center">
+                                            <div class="cnt_min">
+                                            <input type="radio" name="method" id="master-card" value="Master card" checked/><img  class="selected_img" src="{{ asset('img/payment/payment-1.png') }}" alt="">
+                                            </div>
+                                            <div class="cnt_min">
+                                            <input type="radio" name="method" id="visa" value="Visa"/><img class="selected_img" src="{{ asset('img/payment/payment-2.png') }}" alt="">
+                                            </div>
+                                            <div class="cnt_min">
+                                            <input type="radio" name="method" id="discover" value="Discover"/><img class="selected_img" src="{{ asset('img/payment/payment-3.png') }}" alt="">
+                                            </div>
+                                            <div class="cnt_min">
+                                            <input type="radio" name="method" id="paypal" value="Paypal" /><img class="selected_img" src="{{ asset('img/payment/payment-4.png') }}" alt="">
+                                            </div>
+                                            <div class="cnt_min">
+                                            <input type="radio" name="method" id="cirrus" value="Cirrus"/><img class="selected_img" src="{{ asset('img/payment/payment-5.png') }}" alt="">
+                                            </div>
+                                        </div>  
+
+                                        </li>
+
                                     </ul>
                                 </div>
+
+                    
+                               
+
+
+
                                 <div class="checkout__order__widget">
                                     
                                 <button type="submit" class="site-btn place-order">Place oder</button>
@@ -203,6 +233,17 @@
                 </form>
             </div>
         </section>
+
+        <script>
+    $(document).ready(function(){
+        $(".place-order']").click(function(){
+            var radioValue = $("input[name='method']:checked").val();
+            if(radioValue){
+                alert("Your are a - " + radioValue);
+            }
+        });
+    });
+</script>
         <!-- Checkout Section End -->
 
 @endsection

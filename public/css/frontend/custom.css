@@ -2250,6 +2250,39 @@ background-color: #ebebeb;;
 	content: "";
 }
 
+.cnt_full {
+
+	display:block;
+	margin:20px 10px;
+	width:100%;
+}
+
+.cnt_min {
+	display:inline-block;
+	position:relative;
+	padding:0 2%;
+}
+
+
+.cnt_min input[type="radio"] {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0;
+	cursor: pointer;
+}
+.selected_img {
+	
+}
+
+.cnt_min input[type="radio"]:checked ~ .selected_img
+{
+  border:solid 2px #ca1515;
+  border-radius:20px;
+}
+
 /*---------------------
   Contact
 -----------------------*/

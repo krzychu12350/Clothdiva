@@ -31,6 +31,9 @@ class CheckoutController extends Controller
 
     public function placeOrder(Request $request)
     {   
+        //dd($request->input('method'));
+        //$radio = $request->get('method');
+        //dd($radio);
         //$email = $request->input('email');
         //dd($request->input('email'));
        /*
@@ -86,7 +89,7 @@ class CheckoutController extends Controller
     DB::table('orders')->insert([
         'status' => 'Accepted',
         'date_of_placing_order' => $todayDate,
-        'payment_method' =>  'Bank transfer',
+        'payment_method' => $request->input('method'),
         'id_ushop' =>  $id,
     ]);
 
