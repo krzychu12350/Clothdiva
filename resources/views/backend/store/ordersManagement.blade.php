@@ -18,11 +18,14 @@
                                         <thead>
                                             <tr>
                                                 <th>Order number</th>
-                                                <th>Name of product</th>
+                                                <th>Id of products</th>
+                                                <th>Name of products</th>
+                                                <th>Quantity</th>
+                                                <th>Order Value</th>
                                                 <th>Status</th>
                                                 <th>Date of placing order</th>
                                                 <th>Payment method</th>
-                                                <th>Name client</th>
+                                                <th>Client name</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -32,13 +35,35 @@
                                     
                                                 <td id="id-o" >{{$singlerow->id_order}} </td>
 
-                                                <td>Men</td>
+                                                <td>
+                                                    @foreach($order_products as $singleproduct)
+                                                        {{$singleproduct->id_product}}<br />
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    @foreach($order_products as $singleproduct)
+                                                        {{$singleproduct->name}}<br />
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                    @foreach($order_products as $singleproduct)
+                                                        {{$singleproduct->quantity_order}}<br />
+                                                    @endforeach
+                                                </td>
+                                                <td>
+                                                {{$singlerow->order_value}}
+                                                </td>
                                                 <td>
                                                   <div class="rs-select2--trans rs-select2--sm">
                                                                 <input type="hidden" form="order-update" name="order-id" value="{{$singlerow->id_order}}"></input>
                                                                 <select class="form-control" id="selectOption" name='selectOption' form="order-update">
                                                                     <option value="{{$singlerow->status}}">{{$singlerow->status}}</option>
-                                                                  
+                                                                    <option value="In progress"> In progress</option>
+                                                                    <option value="Picked up by the courier">Picked up by the courier</option>
+                                                                    <option value="Sent">Sent</option>
+                                            
+                                                             
+                                                                    <!--
                                                                     @foreach($status as $single)
                                                                     
                                                                     @if($single->status !== $singlerow->status)
@@ -46,7 +71,8 @@
                                                                     @endif
                                                                    
                                                                     @endforeach
-                                                                
+                                                                    -->
+
                                                                 </select>
                                                     <?php
                                                       // echo Form::select('size', array('L' => 'Large', 'S' => $singlerow->status),'S');

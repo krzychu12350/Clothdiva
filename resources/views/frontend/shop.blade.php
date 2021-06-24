@@ -4,18 +4,16 @@ use Illuminate\Support\Facades\Storage;
 @extends('layouts.app')
 @section('shop')
 
-
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
 
  <!-- Breadcrumb Begin -->
  <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
-            
-    @if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-    @endif
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="{{ route('home')}}"><i class="fa fa-home"></i> Home</a>

@@ -22,7 +22,7 @@ class CheckoutController extends Controller
         $user_id = Auth::user()->id_ushop;
     
         $user_data = DB::table('ushop u')
-        ->join('user_addresses ua', 'ua.id_user_address', '=', 'u.id_user_address')
+        ->leftJoin('user_addresses ua', 'ua.id_user_address', '=', 'u.id_user_address')
         ->where('u.id_ushop', '=',  $user_id)
         ->get();
 
@@ -67,6 +67,8 @@ class CheckoutController extends Controller
     $cart = session()->get('cart');
     //dd($cart);
 
+    $total = 0;
+
     foreach($cart as $product){
         //$data1 = Product::find($id);
         //dd($product['quantity']);
@@ -82,16 +84,39 @@ class CheckoutController extends Controller
         ];
             
         $result = DB::executeProcedure($procedureName, $bindings);
-
+        $total += $product['prize'] * $product['quantity'];
     }
+    //dd($total);
+
     $todayDate = date(Carbon::now()->format('d/m/Y'));
     DB::setDateFormat('DD/MM/YYYY');
     DB::table('orders')->insert([
         'status' => 'Accepted',
         'date_of_placing_order' => $todayDate,
         'payment_method' => $request->input('method'),
+        'order_value' => number_format((float) 1.03 * $total, 2, '.', ''),
         'id_ushop' =>  $id,
     ]);
+
+    $last_order_id = DB::table('orders')
+    ->select('id_order')
+    ->latest('id_order')->first();
+
+    //dd($last_order_id->id_order);
+
+   foreach($cart as $product){
+        //$data1 = Product::find($id);
+        //dd($product['quantity']);
+        //dd($product['id_product']);
+        $idprod = $product['id_product'];
+        $quantity = $product['quantity'];
+        DB::table('orders_products')->insert([
+            'id_order' => $last_order_id->id_order,
+            'id_product' => $idprod,
+            'quantity' => $quantity,
+        ]);
+
+    }
 
     //$data_pdf["name"] = $request->input('fname');
 

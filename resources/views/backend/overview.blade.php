@@ -32,11 +32,11 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart"></i>
+                                                <i class="zmdi zmdi-collection-item"></i>
                                             </div>
                                             <div class="text">
                                                 <h2>{{$all_products}}</h2>
-                                                <span>products</span>
+                                                <span>All products</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -50,11 +50,11 @@
                                     <div class="overview__inner">
                                         <div class="overview-box clearfix">
                                             <div class="icon">
-                                                <i class="zmdi zmdi-collection-item"></i>
+                                                <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>1,086</h2>
-                                                <span>this week</span>
+                                                <h2>{{$all_orders}}</h2>
+                                                <span>All orders placed</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -71,12 +71,20 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
+                                                <h2>{{$total_earnings}}</h2>
+                                                <span>Total earnings</span>
+
+                                              
                                             </div>
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart4"></canvas>
+                                            
+                                            <script>
+                                           var totals4 = <?php echo json_encode($array_totals); ?>;
+                                           var months4 = <?php echo json_encode($array_months); ?>;
+                                            </script>
+                                            
                                         </div>
                                     </div>
                                 </div>

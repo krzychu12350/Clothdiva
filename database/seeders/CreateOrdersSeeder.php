@@ -20,6 +20,7 @@ class CreateOrdersSeeder extends Seeder
                'date_of_placing_order'=>'2021-05-01',
                'id_ushop'=>'2',
                'payment_method' => 'Blik',
+               'order_value'  => '500.32'
             ],
 
             [
@@ -27,6 +28,7 @@ class CreateOrdersSeeder extends Seeder
                'date_of_placing_order'=>'2021-03-01',
                'id_ushop'=>'3',
                'payment_method' => 'PayPal',
+               'order_value'  => '560.32'
             ],
 
             [
@@ -34,6 +36,7 @@ class CreateOrdersSeeder extends Seeder
                 'date_of_placing_order'=>'2021-09-12',
                 'id_ushop'=>'2', 
                 'payment_method' => 'PayPal',
+                'order_value'  => '49.99'
              ],
         ];
         foreach ($order as $key => $value) {

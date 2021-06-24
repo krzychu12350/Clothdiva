@@ -17,7 +17,9 @@
                                     </div>
                                     <div class="table-data__tool-right">
                                   
-                                    
+                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-promotion">
+                                                <i class="zmdi zmdi-plus"></i>add promotion</button>
+
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -42,7 +44,7 @@
                                                 <th>description</th>
                                                 <th>start of promotion</th>
                                                 <th>end of promotion</th>
-                                                <th>number product</th>
+                                                 <!-- <th>number product</th>-->
                                                 <th>category</th>
                                                 <th>subcategory</th>
                                             </tr>
@@ -57,7 +59,7 @@
                                                 <td>{{$singlerow->description}}</td>
                                                 <td class="desc">{{$singlerow->promotion_start_date}}</td>
                                                 <td>{{$singlerow->promotion_end_date}}</td>
-                                                <td>{{$singlerow->id_product}}</td>
+                                                <!--<td>{{$singlerow->id_product}}</td>-->
                                                 <td>{{$singlerow->name_of_subcategory}}</td>
                                                 <td>{{$singlerow->name_of_category}}</td>
                                                 <td>

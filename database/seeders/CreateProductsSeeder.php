@@ -24,7 +24,7 @@ class CreateProductsSeeder extends Seeder
                'description'=>'Height of female model: 180 cm. Round neck, short sleeves, ruffle hem.',
                'composition_and_conservation'=>'100% COTTON',
                'id_sub_category'=>1,
-               'id_order' => 1,
+               //'id_order' => 1,
             ],
 
             [
@@ -37,7 +37,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=>'100% COTTON',
                 'id_sub_category'=>'1',
                 'id_promotion' => '',
-                'id_order' => '2',    
+                //'id_order' => '2',    
             ],
 
             [
@@ -50,7 +50,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=>'100% COTTON',
                 'id_sub_category'=>'1',
                 'id_promotion' => '',
-                'id_order' => '3',
+                //'id_order' => '3',
             ],
             
             [
@@ -63,7 +63,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=>'52% VISCOSE, 48% POLYAMIDE',
                 'id_sub_category'=>'2',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
              ],
  
              [
@@ -76,7 +76,7 @@ class CreateProductsSeeder extends Seeder
                  'composition_and_conservation'=>'100% POLYESTER',
                  'id_sub_category'=>'2',
                  'id_promotion' => '3',
-                 'id_order' => '',
+                 //'id_order' => '',
              ],
  
              [
@@ -89,7 +89,7 @@ class CreateProductsSeeder extends Seeder
                  'composition_and_conservation' => '97% POLYESTER, 3% ELASTANE',
                  'id_sub_category'=>'2',
                  'id_promotion' => '4',
-                 'id_order' => '',
+                 //'id_order' => '',
              ],
 
              [
@@ -102,7 +102,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'3',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -115,7 +115,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'3',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -128,7 +128,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'3',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
 
@@ -142,7 +142,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'4',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -155,7 +155,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '98% COTTON, 2% ELASTANE',
                 'id_sub_category'=>'4',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -168,7 +168,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'4',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             //MEN
@@ -183,7 +183,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'5',
                 'id_promotion' => '2',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -196,7 +196,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'5',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
 
@@ -210,7 +210,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'5',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -223,7 +223,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '70% COTTON, 30% POLYESTER',
                 'id_sub_category'=>'6',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -236,7 +236,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'6',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -249,7 +249,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '80% COTTON, 20% POLYESTER',
                 'id_sub_category'=>'6',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
 
@@ -264,7 +264,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '98% COTTON, 2% ELASTANE',
                 'id_sub_category'=>'7',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -277,7 +277,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '99% COTTON, 1% ELASTANE',
                 'id_sub_category'=>'7',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -290,7 +290,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '99% COTTON, 1% ELASTANE',
                 'id_sub_category'=>'7',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
 
@@ -304,7 +304,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '60% COTTON, 40% POLYESTER',
                 'id_sub_category'=>'8',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -317,7 +317,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '60% COTTON, 40% POLYESTER',
                 'id_sub_category'=>'8',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -330,7 +330,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'8',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             //girls
@@ -345,7 +345,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON',
                 'id_sub_category'=>'9',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -358,7 +358,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'9',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -371,7 +371,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'9',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -384,7 +384,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '65% POLYESTER, 35% COTTON.',
                 'id_sub_category'=>'10',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -397,7 +397,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'10',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -410,7 +410,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '71% POLYESTER, 26% VISCOSE, 3% ELASTANE.',
                 'id_sub_category'=>'10',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -423,7 +423,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'11',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -436,7 +436,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'11',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
 
@@ -450,7 +450,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'11',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -463,7 +463,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '95% COTTON, 5% ELASTANE.',
                 'id_sub_category'=>'12',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -476,7 +476,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% LYOCELL.',
                 'id_sub_category'=>'12',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -489,7 +489,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% POLYSTER.',
                 'id_sub_category'=>'12',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -502,7 +502,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% POLYSTER.',
                 'id_sub_category'=>'13',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             
@@ -516,7 +516,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> ' 100% COTTON.',
                 'id_sub_category'=>'13',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -529,7 +529,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> ' 100% COTTON.',
                 'id_sub_category'=>'13',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -542,7 +542,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '77% POLYESTER, 18% VISCOSE, 5% ELASTANE.',
                 'id_sub_category'=>'14',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -555,7 +555,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '80% COTTON, 20% POLYESTER.',
                 'id_sub_category'=>'14',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -568,7 +568,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '80% COTTON, 20% POLYESTER.',
                 'id_sub_category'=>'14',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -581,7 +581,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '75% POLYESTER, 25% COTTON.',
                 'id_sub_category'=>'15',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -594,7 +594,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '100% COTTON.',
                 'id_sub_category'=>'15',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -607,7 +607,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> '70% COTTON, 30% POLYESTER.',
                 'id_sub_category'=>'15',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -620,7 +620,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> ' 98% COTTON, 2% ELASTANE.',
                 'id_sub_category'=>'16',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
 
@@ -634,7 +634,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> ' 98% COTTON, 2% ELASTANE.',
                 'id_sub_category'=>'16',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
             [
@@ -647,7 +647,7 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=> ' 98% COTTON, 2% ELASTANE.',
                 'id_sub_category'=>'16',
                 'id_promotion' => '',
-                'id_order' => '',
+                //'id_order' => '',
             ],
 
         ];

@@ -1,3 +1,9 @@
+//alert(data1);
+//alert(data2);
+//alert(arrayFromPHP1);
+//const myJSON = JSON.stringify(data1);
+
+
 
 (function ($) {
   // USE STRICT
@@ -215,11 +221,13 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          //labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          labels: months4,
           datasets: [
             {
               label: "My First dataset",
-              data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+              //data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+              data: totals4,
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "rgba(255,255,255,.3)"

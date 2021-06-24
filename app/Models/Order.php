@@ -14,6 +14,7 @@ class Order extends Model
         'status',
         'date_of_placing_order',
         'payment_method',
+        'order_value',
         //'id_invoice',
         'id_ushop',
     ];
@@ -23,9 +24,9 @@ class Order extends Model
         return $this->belongsTo(Payment::class);
     }
 
-    /*public function products(){
-        return $this->hasMany(Product::class);
-    }*/
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
     
   /*  public function invoice()
     {

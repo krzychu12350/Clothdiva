@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->string('status', 100);
             $table->string('date_of_placing_order');
             $table->string('payment_method', 20);
-
+            $table->double('order_value',6,2);
  
            /* $table->foreignId('id_invoice');
             $table->foreign('id_invoice')

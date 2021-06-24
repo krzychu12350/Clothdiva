@@ -67,11 +67,27 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                    
+            </li>                     
             @endguest
-         
-         
-            </li>
+            @guest  
+            @else  
+            <li>     
+                @if (auth()->user()->id_role == 1)
+                                
+                <a href="{{ route('admin.home') }}"><span class="fa fa-tachometer" aria-expanded="false"></a>
+                              
+                @endif  
+                 @if (auth()->user()->id_role == 2)
+                               
+                <a href="{{ route('user.dashboard') }}"><span class="fa fa-tachometer" aria-expanded="false"></a>
+                        
+                @endif 
+
+            </li> 
+            @endguest
+
+
+
 
             <li><span class=" mila icon_search search-switch"></span></li>
             <li>
@@ -147,7 +163,7 @@
                             </ul>
                              @endforeach
                              </div>
-                            
+                            <li><a class="restlink" style = "color:black" href="{{ route('faq') }}">Faq</a></li>
                             <li><a class="restlink" style = "color:black" href="{{ route('contact') }}">Contact</a></li>
                             
                         </ul>

@@ -20,12 +20,12 @@ class Product extends Model
         'composition_and_conservation',
         'id_subcategory',
         'id_promotion',
-        'id_order',
+       // 'id_order',
     ];
 
-   public function order()
+   public function orders()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsToMany(Order::class);
     }
     
     public function image(){

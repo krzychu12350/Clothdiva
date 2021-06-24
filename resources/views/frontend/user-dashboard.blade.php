@@ -23,6 +23,7 @@
       <th scope="col">Price</th>
       <th scope="col">Color</th>
       <th scope="col">Size</th>
+      <th scope="col">Order Value</th>
     </tr>
   </thead>
   <tbody>
@@ -35,11 +36,32 @@
       <td>{{$single_info->status}}</td>
       <td>{{$single_info->date_of_placing_order}}</td>
       <td>{{$single_info->payment_method}}</td>
-      <td>{{$single_info->name}}</td>
-      <td>Ilosc sztuk</td>
-      <td>{{$single_info->prize}}</td>
-      <td>{{$single_info->color}}</td>
-      <td>{{$single_info->size_of_product}}</td>
+      <td>
+      @foreach($order_products as $single_product) 
+        {{$single_product->name}}<br />
+      @endforeach
+      </td><!--nazwa-->
+      <td>
+      @foreach($order_products as $single_product) 
+        {{$single_product->quantity_order}}<br />
+      @endforeach
+      </td><!--ilosc-->
+      <td>
+      @foreach($order_products as $single_product) 
+        {{$single_product->prize}}<br />
+      @endforeach
+      </td><!--prize-->
+      <td>
+      @foreach($order_products as $single_product) 
+        {{$single_product->color}}<br />
+      @endforeach
+      </td><!--color-->
+      <td>
+      @foreach($order_products as $single_product) 
+        {{$single_product->size_of_product}}<br />
+      @endforeach
+      </td><!--size-->
+      <td>{{$single_info->order_value}}</td>
     </tr>
     <?php
     $i++;
