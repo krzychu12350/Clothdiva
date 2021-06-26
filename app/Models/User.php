@@ -41,6 +41,7 @@ class User extends Authenticatable
     ];
 
     public $timestamps = true;
+    
     protected $primaryKey = 'id_ushop';
     
     public function role(){

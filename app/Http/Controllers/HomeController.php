@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use DB;
+use DateTime;
 
 class HomeController extends Controller
 {
@@ -58,12 +59,16 @@ class HomeController extends Controller
 
 
         $all_registred_users = DB::table('ushop')->count();
-      
-        $all_registred_users_by_month = DB::select(DB::raw("SELECT COUNT(*) as all_users, TO_CHAR(TO_DATE(substr(created_at,4,3), 'MON'), 'Month')as month 
-        from ushop group by TO_CHAR(TO_DATE(substr(created_at,4,3), 'MON'), 'Month')"));
-
-        dd($all_registred_users_by_month);
-
+        DB::setDateFormat('DD/MM/YYYY');
+        $all_registred_users_by_month = DB::select("SELECT COUNT(*) as all_users, substr(created_at,4,2) as month from ushop group by substr(created_at,4,2)");
+        foreach ($all_registred_users_by_month as $single) {
+            $dateObj   = DateTime::createFromFormat('!m', $single->month);
+            $monthName = $dateObj->format('F');
+            $single->month = $monthName;
+        }
+        
+        //dd($all_registred_users_by_month);
+        
         $all_products = DB::table('products')->count();
         $total_earnings = DB::table('orders')->sum('order_value');
         $all_orders = DB::table('orders')->count();
