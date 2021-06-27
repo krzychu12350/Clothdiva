@@ -18,21 +18,6 @@ class subcategoriesManagementController extends Controller
        
     }
     public function create(Request $request)
-    {
-      /*  $id_subcategory = $request->input('id_subcategory');
-        $name_of_category = $request->input('subcategory-name');
-        $id_category = $request->input('category-name');
-    
-        //dd($request);
-
-        $procedureName = 'subcategories_CRUD.add_subcategory';
-        
-        $bindings = [
-            'id_subcategory'       =>  $id_subcategory,
-            'name_of_category'     =>  $name_of_category, 
-            'id_category'          =>  $id_category, 
-        ];
-            
         $result = DB::executeProcedure($procedureName, $bindings);
         return redirect()->back();*/
     }
