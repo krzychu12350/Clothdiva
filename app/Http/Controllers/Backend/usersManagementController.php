@@ -21,34 +21,50 @@ class usersManagementController extends Controller
         $mobile = $request->input('user-mobile');
         $email = $request->input('user-email');
         $id_role = $request->input('user-role');
-        dd($request); 
-    }
-       
-    public function update(Request $request)
-    {   
-        $id_user = $request->input('id_user');
-       
-        $name = $request->input('user-name');
-        $surname = $request->input('user-surname');
-        $mobile = $request->input('user-mobile');
-        $email = $request->input('user-email');
-        $id_role = $request->input('user-role');
-        //dd($request); 
-        
-        $procedureName = 'users_CRUD.edit_user';
+        ///dd($request);    
+
+        $procedureName = 'users_CRUD.cre_user';
 
         $bindings = [
-            'idushop'   => $id_user,
             'uname'     => $name,
             'surname'  => $surname,
             'mobile'    => $mobile,
             'email'     => $email,
             'idrole'    => $id_role,
+            
         ];
             
         $result = DB::executeProcedure($procedureName, $bindings); 
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'User has been created!');
+
+    }
+       
+    public function update(Request $request)
+    {   
+        $id_user = $request->input('id_user');
+        $name = $request->input('user-name');
+        $surname = $request->input('user-surname');
+        $mobile = $request->input('user-mobile');
+        $email = $request->input('user-email');
+        $id_role = $request->input('user-role');
+       // dd($request->all()); 
+        
+        $procedureName = 'users_CRUD.edit_user';
+
+        $bindings = [
+            'uname'     => $name,
+            'surname'  => $surname,
+            'mobile'    => $mobile,
+            'email'     => $email,
+            'idrole'    => $id_role,
+            'idushop'   => $id_user,
+            
+        ];
+            
+        $result = DB::executeProcedure($procedureName, $bindings); 
+
+        return redirect()->back()->with('status', 'User has been updated!');
 
     
     } 
@@ -64,7 +80,9 @@ class usersManagementController extends Controller
         ];
             
         $result = DB::executeProcedure($procedureName, $bindings);
-        return redirect()->back();
+
+        return redirect()->back()->with('status', 'User has been removed!');
+
             
     }
 }

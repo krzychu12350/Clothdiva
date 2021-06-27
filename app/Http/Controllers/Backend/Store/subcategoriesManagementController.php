@@ -18,28 +18,44 @@ class subcategoriesManagementController extends Controller
        
     }
     public function create(Request $request)
-        $result = DB::executeProcedure($procedureName, $bindings);
-        return redirect()->back();*/
+    {
+        //dd($request->all());
+        $subcat_name = $request->input('subcategory-name');
+        $cat_name = $request->input('category-name');
+        //$id_subcat = $request->input('id_subcat');
+        $procedureName = 'subcategories_CRUD.add_subcategory';
+         
+         $bindings = [
+             'subc_name'  =>  $subcat_name,
+             'id_cat'  => $cat_name,
+         ];
+             
+         $result = DB::executeProcedure($procedureName, $bindings);
+         
+         return redirect()->back()->with('status', 'Subcategory has been added!');
     }
 
     public function update(Request $request)
     {
-        $id_subcategory1 = $request->input('id_subcategory1');
-        $name_of_category = $request->input('subcategory-name');
-        $id_category = $request->input('category-name');
-    
-        //dd($request);
+       // dd($request->all());
+
+        $subcat_name = $request->input('subcategory-name');
+        $cat_name = $request->input('category-name');
+        $id_subcat =  $request->input('id-subcat');
 
         $procedureName = 'subcategories_CRUD.edit_subcategory';
-        
+         
         $bindings = [
-            'id_subcategory'       =>  $id_subcategory1,
-            'name_of_category'     =>  $name_of_category, 
-            'id_category'          =>  $id_category, 
-        ];
-            
-        $result = DB::executeProcedure($procedureName, $bindings);
-        return redirect()->back();
+
+             'subcategory_name'  => $subcat_name,
+             'category_name'  => $cat_name,
+             'idcat' => $id_subcat,
+         ];
+             
+         $result = DB::executeProcedure($procedureName, $bindings);
+
+         return redirect()->back()->with('status', 'Subcategory has been update!');
+
     }
 
     public function destroy(Request $request)
@@ -58,7 +74,7 @@ class subcategoriesManagementController extends Controller
         $result = DB::executeProcedure($procedureName, $bindings);
         //dd($result);
         
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Subcategory has been removed!');
                 /*
         $pdo = DB::getPdo();
         $p1 = 'Dresses';

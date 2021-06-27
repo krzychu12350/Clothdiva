@@ -34,8 +34,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
-    public $timestamps = false;
+
+    protected $casts = [
+        'created_at' => 'datetime:dd/mm/YYYY', 
+        'updated_at' => 'datetime:d/m/Y',
+    ];
+
+    public $timestamps = true;
     protected $primaryKey = 'id_ushop';
     
     public function role(){

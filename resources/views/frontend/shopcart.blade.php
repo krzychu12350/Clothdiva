@@ -33,7 +33,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
-                        <table>
+                        <table id="cart">
                             <thead>
                                 <tr>
                                     <th>Product</th>
@@ -45,13 +45,16 @@
                             </thead>
                             <tbody>
                          
-                            <?php $total = 0 
+                            <?php 
+                            $total = 0;
+                            $i=0;
                             //  @if(session('cart'))
                             ?>
                                 
                                 @foreach(session('cart') as $id => $details)
-                                    <?php $total += $details['prize'] * $details['quantity'] ?>
-                                <tr>
+                                    <?php $total += $details['prize'] * $details['quantity'] 
+                                    ?>
+                                <tr id="{{ $i }}">
                                     <td class="cart__product__item">
                                         <a href="/products/details/{{ $details['id_product'] }}"> 
                                             <img src="{{ $details['image'] }}.jpg" alt="">
@@ -69,16 +72,18 @@
                                         </div>
                                     </td>
                                     <td class="cart__total">$ {{ $details['prize'] * $details['quantity'] }} </td>
-                                    <td class="cart__close">
+                                    <td class="cart__close" data-id="{{ $id }}">
                                     <a class="remove-from-cart" data-id="{{ $id }}"><span class="icon_close"></span></a>
-
-                                    <a class="update-cart" data-id="{{ $id }}"><span class="icon_loading"></span></a>
+                                    <!-- <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>-->
+                                    <!--<a class="d-none" id="update-product-{{ $id }}" data-id="{{ $id }}"><span class="icon_loading"></span></a>-->
                                     
                                     </td>
                                 </tr>
-                            </tbody>
+                                <?php
+                                 $i++;
+                                ?>
                             @endforeach
-                          
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -90,8 +95,12 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="cart__btn update__btn">
-                   
+                    <div class="cart__btn update__btn" style="cursor: pointer">
+                        <!--<a class="update-cart quantity" data-id="{{ $id }}"><span class="icon_loading"></span>
+                           Update cart</a>-->
+                        <a class="update-cart-all"><span class="icon_loading"></span>
+                           Update cart</a>
+                        
                  
                     </div>
                 </div>
@@ -127,11 +136,43 @@
     
     @section('scripts')
     <script type="text/javascript">
-        
+          $(".update-cart-all").click(function (e) {
+           
+            $("#cart > tbody > tr").each(function (i, row) {
+            var q = $("tr#" + i + " td > div > input").val();
+           // alert(q);
+   
+           var pid = $("tr#" + i + " td:nth-child(5)").attr("data-id");
+           ///alert(pid);
+         
+           // alert(i, row);
+            //$('#product-1').trigger('click');
+            // alert($("#cart > tbody > tr#" + i).attr('id'));
+            //alert($("a.remove-from-cart").attr("data-id"));
+
+           // e.preventDefault();
+           //var ele = $(this);
+           //alert(find("#quantity").val()); $("#quantity").val() ele.parents("tr").find(".quantity").val()
+           
+            $.ajax({
+               url: '{{ url('/update-cart') }}',
+               method: "patch",
+               data: {_token: '{{ csrf_token() }}', id: pid, quantity: q},
+               success: function (response) {
+                   window.location.reload();
+               }
+            });
+
+
+        });
+
+        });
+
+        /*
         $(".update-cart").click(function (e) {
            e.preventDefault();
            var ele = $(this);
-           //alert(find("#quantity").val());
+           //alert(find("#quantity").val()); $("#quantity").val() ele.parents("tr").find(".quantity").val()
             $.ajax({
                url: '{{ url('/update-cart') }}',
                method: "patch",
@@ -140,7 +181,8 @@
                    window.location.reload();
                }
             });
-        });
+
+        });*/
 
         $(".remove-from-cart").click(function (e) {
             e.preventDefault();

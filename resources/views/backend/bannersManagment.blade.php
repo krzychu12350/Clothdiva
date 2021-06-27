@@ -25,10 +25,10 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
-                                <form method="POST" action="{{ route('admin.slider.create')}}" id="addslider">
+                                <form method="POST" action="{{ route('admin.slider.create')}}" id="addslider" enctype="multipart/form-data">
                                     @csrf
                                     </form>
-                                    <form method="POST" action="{{ route('admin.slider.update')}}" id="editslider">
+                                    <form method="POST" action="{{ route('admin.slider.update')}}" id="editslide" enctype="multipart/form-data">
                                         @csrf
                                     </form>
                                     <table id="banner-table" class="table table-data2">
@@ -49,16 +49,16 @@
                                          
                                             <tr class="tr-shadow" id="editslide-row-{{$singlerow->id_banner_image}}">
                                                
-                                                <td class="d-none">{{$singlerow->id_banner_image}}</td>
+                                                <td id="id-s" class="d-none">{{$singlerow->id_banner_image}}</td>
                                                 <td>
                                                    <img src="{{$singlerow->path_to_image}}"></img>
                                                 </td>
-                                                <td class="desc">{{$singlerow->paragraph_large}}</td>
-                                                <td>{{$singlerow->paragraph_small}}</td>
+                                                <td id="p-large" class="desc">{{$singlerow->paragraph_large}}</td>
+                                                <td id="p-small">{{$singlerow->paragraph_small}}</td>
                                                 <td>
-                                                    <span class="status--denied">{{$singlerow->link_href}}</span>
+                                                    <span id="l-href" class="status--denied">{{$singlerow->link_href}}</span>
                                                 </td>
-                                                <td>{{$singlerow->link_desc}}</td>
+                                                <td id="l-desc">{{$singlerow->link_desc}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
     

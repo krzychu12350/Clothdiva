@@ -14,7 +14,7 @@ class User_address extends Model
         'name_of_city',
         'post_code',
         'name_of_street',
-        'voideship',
+        //'voideship',
         'county',
         'apartment_number',
         'house_number',

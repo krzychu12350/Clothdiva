@@ -163,7 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Yajra\Oci8\Oci8ServiceProvider::class,
         andcarpi\Popper\PopperServiceProvider::class,
-       
+        Snowfire\Beautymail\BeautymailServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         //BaklySystems\LaravelMessenger\LaravelMessengerServiceProvider::class,
         /*
          * Package Service Providers...
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Popper' => andcarpi\Popper\Facades\Popper::class,
         'Messenger' => BaklySystems\LaravelMessenger\Facades\Messenger::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

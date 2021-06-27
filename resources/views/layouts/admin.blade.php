@@ -236,6 +236,12 @@
             <!-- HEADER DESKTOP-->
           
             <!-- MAIN CONTENT-->
+            @if (session('status'))
+            <div class="alert alert-success" style="margin-top: 80px;">
+                {{ session('status') }}
+            </div>
+            @endif
+
             <div class="main-content">
                 <div class="section__content section__content--p30">
                 @yield('orderssection')

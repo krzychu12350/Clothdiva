@@ -4,18 +4,16 @@ use Illuminate\Support\Facades\Storage;
 @extends('layouts.app')
 @section('shop')
 
-
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+    @endif
 
  <!-- Breadcrumb Begin -->
  <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
-            
-    @if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-    @endif
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="{{ route('home')}}"><i class="fa fa-home"></i> Home</a>
@@ -184,10 +182,11 @@ use Illuminate\Support\Facades\Storage;
 
                             <form method="post" id="filtr-by-color" action="/productsbyColor/{{$category}}/{{$subcategory}}">
                                     @csrf
+                                    
                                 @foreach($all_colors as $single_color) 
                                 <label for="{{$single_color->color}}">
                                     {{$single_color->color}}
-                                    <input type="checkbox" id="{{$single_color->color}}" name="checked[]" value="{{$single_color->color}}">
+                                    <input type="checkbox" id="{{$single_color->color}}" form="filtr-by-color" name="checked-color[]" value="{{$single_color->color}}">
                                     <span class="checkmark"></span>
                                 </label>
                                 @endforeach
@@ -199,6 +198,7 @@ use Illuminate\Support\Facades\Storage;
                                 </div>
                                 <a style="cursor: pointer;" onclick="document.getElementById('filtr-by-color').submit();">Filter</a>
                             </div>
+
                             </form>
 
                         </div>
@@ -246,7 +246,17 @@ use Illuminate\Support\Facades\Storage;
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="/products/details/{{$single_product->id_product}}">{{$single_product->name}} - {{$single_product->size_of_product}}</a></h6>
-                                    <div class="product__price">$ {{$single_product->prize}}</div>
+
+                                     <?php $promotion_price2 = number_format((float) $single_product->prize * (1.00 - $single_product->size_of_promotion/100), 2, '.', '') ; ?>
+
+                                    <div class="product__price">                             
+                                    @if($promotion_price2 != $single_product->prize)
+                                        $ {{$promotion_price2}}
+                                        <span>$ {{$single_product->prize}}</span>
+                                    @else  
+                                        $ {{$single_product->prize}}
+                                    @endif
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,3 +1,9 @@
+//alert(data1);
+//alert(data2);
+//alert(arrayFromPHP1);
+//const myJSON = JSON.stringify(data1);
+
+
 
 (function ($) {
   // USE STRICT
@@ -215,11 +221,13 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          //labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          labels: months4,
           datasets: [
             {
               label: "My First dataset",
-              data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+              //data: [78, 81, 80, 65, 58, 75, 60, 75, 65, 60, 60, 75],
+              data: totals4,
               borderColor: "transparent",
               borderWidth: "0",
               backgroundColor: "rgba(255,255,255,.3)"
@@ -551,16 +559,23 @@ $(".edit-promotion").on( "click", function() {
 });
 
 
-
+/*
 //USERS ADDING AND EDITING
 $( ".add-user" ).on( "click", function() {
     $("#users-table").find('tbody')
     .prepend($('<tr>')
         .prepend($(
-          '<td> <input form="addu" type="text" name="user-name"></input></td> <td><input type="text" form="addu"  name="user-surname"></input></td> <td><input type="text" form="addu" name="user-mobile"></input></td>  <td><input type="text" form="addu" name="user-email"></input></td> <td><input type="text" form="addu" name="user-email"></input></td> <td><input type="text" form="addu" name="user-role"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addu" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+          '<td> <input form="addu" type="text" name="user-name" placeholder="Name..."></input></td> <td><input type="text" form="addu"  name="user-surname" placeholder="Surname..."></input></td> <td><input type="text" form="addu" name="user-mobile" placeholder="Mobile..."></input></td>  <td><input type="text" form="addu" name="user-email" placeholder="E-mail..."></input></td>'
+          +'<td>'
+          +'<select class="js-select2" form="addu"  id="user-role" name="user-role">'
+          +'<option value="1">Admin</option>'
+          +'<option value="2">User</option>'
+          +'</select>'
+          +'</td>'
+          +'<td> <div class="table-data-feature"><button type="submit" form="addu" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
         )
     );
-});
+});*/
 
 
 $( ".edit-user").on( "click", function() {
@@ -568,12 +583,24 @@ $( ".edit-user").on( "click", function() {
  // alert(selRow);
   var currentRow=$(this).closest("tr"); 
   var id_ushop=currentRow.find("td:eq(0)").text();
+
+  var pre = currentRow.find("td:eq(1)").text();
+  var pre1 = currentRow.find("td:eq(2)").text();
+  var pre2 = currentRow.find("td:eq(3)").text();
+  var pre3 = currentRow.find("td:eq(4)").text();
+  var pre4 = currentRow.find("td:eq(5)").text();
   //var textOfTd = $("#id-u").find("id_ushop").text();
   //var textOfTd = $("#id-u").text();
   //alert("id usera" + id_ushop);
   $('#users-table #' + selRow).find('td').empty();
   $('#users-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editu" type="hidden" value=' + id_ushop + ' name="id_user"> <input form="editu" type="text" name="user-name"></input></td> <td><input type="text" form="editu"  name="user-surname"></input></td> <td><input type="text" form="editu" name="user-mobile"></input></td>  <td><input type="text" form="editu" name="user-email"></input></td> <td><input type="text" form="editu" name="user-role"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editu" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($('<td> <input form="editu" type="hidden" value=' + id_ushop + ' name="id_user"> <input form="editu" type="text" name="user-name" value=' + pre + '></input></td> <td><input type="text" form="editu"  name="user-surname" value=' + pre1 + '></input></td> <td><input type="text" form="editu" name="user-mobile" value=' + pre2 + '></input></td>  <td><input type="text" form="editu" name="user-email" value=' + pre3 + '></input></td>'
+  +'<td>'
+  +'<select class="js-select2" form="editu"  id="user-role" name="user-role">'
+  +'<option value="1">Admin</option>'
+  +'<option value="2">User</option>'
+  +'</select>'
+  +'</td><td> <div class="table-data-feature"><button type="submit" form="editu" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
 
@@ -583,7 +610,19 @@ $( ".add-subcategory" ).on( "click", function() {
     $("#subcategories-table").find('tbody')
     .prepend($('<tr>')
         .prepend($(
-          '<td> <input form="addsc" type="text" name="subcategory-name"></input></td> <td><input type="text" form="addsc"  name="category-name"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addsc" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+          '<td><input form="addsc" type="text" name="subcategory-name"></input></td>'
+         +'<td>'
+         +'<div class="rs-select2--trans rs-select2--sm">'
+         +'<select class="js-select2" form="addsc"  id="category-name" name="category-name">'
+         +'<option selected="selected" value=">1">Women</option>'
+         +'<option value="2">Men</option>'
+         +'<option value="3">Girls</option>'
+         +'<option value="4">Boys</option>'
+         +'</select>'
+         +'<div class="dropDownSelect2"></div>'
+         +'</div>'
+         +'</td>'
+         +'<td> <div class="table-data-feature"><button type="submit" form="addsc" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
         )
     );
 });
@@ -591,13 +630,25 @@ $( ".add-subcategory" ).on( "click", function() {
 
 $( ".edit-subcategory").on( "click", function() {
   var selRow = String($(this).closest('tr').attr('id'));
-  //alert(selRow);
-  var currentRow1=$(this).closest("tr"); 
-  var id_subcategory=currentRow1.find("td:eq(0)").text();
-  //var textOfTd = $("#id-u").text();
+  var currentRow=$(this).closest("tr"); 
+  var id_subcat = currentRow.find("td:eq(0)").text();
+  var pre = currentRow.find("td:eq(1)").text();
+
   $('#subcategories-table #' + selRow).find('td').empty();
   $('#subcategories-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editsc type="hidden" value=' + id_subcategory + ' name="id_subcategory1"> <input form="editsc" type="text" name="subcategory-name"></input></td> <td><input type="number" form="editsc"  name="category-name"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editsc" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($('<td> <input form="editsc" type="hidden" value=' + id_subcat + ' name="id-subcat"></input> <input form="editsc" type="text" value=' + pre + ' name="subcategory-name"></input></td>'
+         +'<td>'
+         +'<div class="rs-select2--trans rs-select2--sm">'
+         +'<select class="js-select2" form="editsc"  id="category-name" name="category-name">'
+         +'<option selected="selected" value=">1">Women</option>'
+         +'<option value="2">Men</option>'
+         +'<option value="3">Girls</option>'
+         +'<option value="4">Boys</option>'
+         +'</select>'
+         +'<div class="dropDownSelect2"></div>'
+         +'</div>'
+         +'</td>'
+          +'<td> <div class="table-data-feature"><button type="submit" form="editsc" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
 
@@ -632,18 +683,40 @@ $( ".edit-order").on( "click", function() {
   $('#products-table').find('tr#' + selRow)
   .replaceWith($('<td> <input form="editprod" type="text" name="product-name"></input></td> <td><input type="text" form="editprod"  name="product-image"></input></td> <td><input type="text" form="editprod"  name="product-prize"></input></td> <td><input type="text" form="editprod"  name="product-color"></input></td> <td><input type="text" form="editprod"  name="product-size"></input></td> <td><input type="text" form="editprod"  name="product-desc"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editprod" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
-});*/
+});
 
 $( ".order-update").on( "click", function() {
   alert($('#selectOption').find(":selected").text());
-});
+});*/
 
 
 $( ".add-slide" ).on( "click", function() {
   $("#banner-table").find('tbody')
   .prepend($('<tr>')
       .prepend($(
-        '<td><form action="" method="POST" enctype="multipart/form-data"> @csrf <div class="row"><input type="file" name="image" class="form-control"><button type="submit" class="btn btn-success">Upload</button></div></form> </td> <td><input type="text" form="addslider"  name="paragraph-large"></input></td> <td><input type="text" form="addslider"  name="paragraph-small"></input></td> <td><input type="text" form="addslider"  name="link"></input></td> <td><input type="text" form="addslider"  name="link-description"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addslider" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+        '<td> <input type="file" id="slide" name="slide" form="addslider"></input> </td> <td><textarea type="text" form="addslider"  name="paragraph-large"></textarea></td> <td><textarea type="text" form="addslider"  name="paragraph-small"></textarea></td> <td><textarea type="text" form="addslider"  name="link"></textarea></td> <td><textarea type="text" form="addslider"  name="link-description"></textarea></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addslider" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
       )
   );
 });
+
+$( ".edit-slide" ).on( "click", function() {
+  //var pre = $('#' + selRow +' .p-large').val();
+ // var pre = $('#banner-table #' + selRow +' #p-large').text();
+  var id = $("#id-s").text();
+  var pre = $("#p-large").text();
+  var pre1 = $("#p-small").text()
+  var pre2 = $("#l-href").text();
+  var pre3 = $("#l-desc").text();
+  var selRow = String($(this).closest('tr').attr('id'));
+  var textOfTd = $("#id-s").text();
+
+  $('#banner-table #' + selRow).find('td').empty();
+  $('#banner-table').find('tr#' + selRow)
+  .replaceWith($(
+        '<td> <input type="hidden" id="id-slide" name="id-slide" form="editslide" value="'+id+'"></input> <input type="file" id="slide" name="slide" form="editslide"></input> </td> <td><textarea type="text" form="editslide"  name="paragraph-large" placeholder="'+pre+'"></textarea></td> <td><textarea type="text" form="editslide"  name="paragraph-small" placeholder="'+pre1+'"></textarea></td> <td><textarea type="text" form="editslide"  name="link" placeholder="'+pre2+'"></textarea></td> <td><textarea type="text" form="editslide"  name="link-description" placeholder="'+pre3+'"></textarea></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editslide" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+      );
+  
+
+});
+
+
