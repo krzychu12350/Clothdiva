@@ -36,6 +36,8 @@ class CreateUsersTable extends Migration
             ->onDelete('cascade');
             //$table->timestamps();
             $table->timestamps();
+            $table->timestamp('EMAIL_VERIFIED_AT')->nullable();
+      
             
         });
     }

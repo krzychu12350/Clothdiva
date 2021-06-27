@@ -23,6 +23,7 @@ class CreateUsersSeeder extends Seeder
                'password'=> bcrypt('Password123'),
                'id_role'=>'1',
                'id_user_address'=>'1',
+               'email_verified_at' => '27-JUN-21 12.49.52.000000',
 
             ],
 
@@ -35,6 +36,7 @@ class CreateUsersSeeder extends Seeder
                'password'=> bcrypt('User123'),
                 'id_role'=>'2',
                 'id_user_address'=>'1',
+                'email_verified_at' => '27-JUN-21 12.49.52.000000',
 
             ],
 
@@ -47,6 +49,7 @@ class CreateUsersSeeder extends Seeder
                 'password'=> bcrypt('Patrycja123'),
                  'id_role'=>'2',
                  'id_user_address'=>'1',
+                 'email_verified_at' => '27-JUN-21 12.49.52.000000',
  
              ],
 
@@ -59,6 +62,7 @@ class CreateUsersSeeder extends Seeder
                 'password'=> bcrypt('Mirek123'),
                  'id_role'=>'2',
                  'id_user_address'=>'1',
+                 'email_verified_at' => '27-JUN-21 12.49.52.000000',
  
              ],
         ];

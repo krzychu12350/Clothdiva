@@ -7,7 +7,10 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmail;
+
+
+class User extends Authenticatable implements MustVerifyEmail
 {   
     use Notifiable;
     //use HasFactory;
@@ -29,15 +32,17 @@ class User extends Authenticatable
         'password',
         'id_role',
         'id_user_address',
+        'email_verified_at',
     ];
  
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+  
     protected $casts = [
         'created_at' => 'datetime:dd/mm/YYYY', 
         'updated_at' => 'datetime:d/m/Y',
+        'email_verified_at' => 'datetime',
     ];
 
     public $timestamps = true;

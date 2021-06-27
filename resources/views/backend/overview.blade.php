@@ -23,6 +23,10 @@
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart1"></canvas>
+                                            <script>
+                                           var users1 = <?php echo json_encode($array_number_of_users); ?>;
+                                           var months1 = <?php echo json_encode($array_months_users); ?>;
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -41,6 +45,10 @@
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart2"></canvas>
+                                            <script>
+                                           var products2 = <?php echo json_encode($array_number_of_products); ?>;
+                                           var months2 = <?php echo json_encode($array_months_products); ?>;
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -59,6 +67,11 @@
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart3"></canvas>
+                                            <script>
+                                           var orders3 = <?php echo json_encode($array_number_of_orders); ?>;
+                                           var months3 = <?php echo json_encode($array_months_orders); ?>;
+                                            </script>
+                                
                                         </div>
                                     </div>
                                 </div>
