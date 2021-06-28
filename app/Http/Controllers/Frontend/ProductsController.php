@@ -199,7 +199,7 @@ class ProductsController extends Controller
         $products_shop_view2 = DB::select("select products_by_prize('$subcategory', '$category', '$min_price', '$max_price') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
 
         $products_shop_view = $this->paginate($products_shop_view2);
-        $products_shop_view->setPath('productsbyPrice');
+        $products_shop_view->setPath('productsbyPrice')->appends(['min-amount' => $min_price,'max-amount' => $max_price]);
 
         return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
     }
@@ -268,7 +268,7 @@ class ProductsController extends Controller
       
         $products_shop_view = $this->paginate($products_shop_view2);
     
-        $products_shop_view->setPath($subcategory);
+        $products_shop_view->setPath($subcategory)->appends([ 'checked' => $checked2 ]);
         
         return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
     }
@@ -281,8 +281,14 @@ class ProductsController extends Controller
         $subcategory = Session::get('subcategory');
 
       
-        $checked = $request->input('checked-color');
-      
+        #$checked = $request->input('checked-color');
+        $checked2 = $request->input('checked-color');
+        Session::put('checked2', $checked2);
+        
+        //dd($checked2);
+        //dd($checked);
+        $checked = Session::get('checked2');
+        
         foreach ($checked as &$value) {
             $value =  "'".$value."'";
         }
@@ -306,7 +312,7 @@ class ProductsController extends Controller
       
        
         $products_shop_view = $this->paginate($products_shop_view2);
-        $products_shop_view->setPath($subcategory);
+        $products_shop_view->setPath($subcategory)->appends([ 'checked' => $checked2 ]);
         //$products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
      

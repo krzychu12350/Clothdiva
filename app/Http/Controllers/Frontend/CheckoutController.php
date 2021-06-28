@@ -92,6 +92,7 @@ class CheckoutController extends Controller
         $total += $product['prize'] * $product['quantity'];
     }
     //dd($total);
+    $payment_method = $request->input('method');
 
     $todayDate = date(Carbon::now()->format('d/m/Y'));
     DB::setDateFormat('DD/MM/YYYY');
@@ -107,7 +108,7 @@ class CheckoutController extends Controller
     ->select('id_order')
     ->latest('id_order')->first();
 
-    //dd($last_order_id->id_order);
+   
 
    foreach($cart as $product){
         //$data1 = Product::find($id);
@@ -139,14 +140,16 @@ class CheckoutController extends Controller
     ];
  
 
+   
+    $today_date = Carbon::today()->format('d/m/Y');
+    $invoice_id = $last_order_id->id_order;
 
- 
     $path = base_path('logo.png');
     $type = pathinfo($path, PATHINFO_EXTENSION);
     $data_logo = file_get_contents($path);
     $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data_logo);
 
-    $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadview('invoice', compact('base64','cart', 'data'));
+    $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadview('invoice', compact('base64','cart', 'data','payment_method','today_date','invoice_id'));
     $pdf->setPaper('A4','portrait');
     $pdf->stream();
  

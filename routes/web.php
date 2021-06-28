@@ -55,17 +55,17 @@ Route::post('/add-address-data', [UserDashboardController::class, 'addAddressDat
 
 //Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 //Route::get('/products/{type}/{subcategory}', [ProductsController::class, 'showProductsbySize'])->name('productsbySize');
+Route::get('/productsbyPrice', [ProductsController::class, 'showProductsbyPrice'])->name('shop.by.price');
 
-Route::get('/productsbySize/{category}/{subcategory}/{page?}', [ProductsController::class, 'showProductsbySize']);
-Route::post('/productsbyPrice', [ProductsController::class, 'showProductsbyPrice'])->name('shop.by.price');
+Route::get('/productsbySize/{category}/{subcategory}', [ProductsController::class, 'showProductsbySize']);
 
-Route::post('/productsbyColor/{category}/{subcategory}', [ProductsController::class, 'showProductsbyColor']);
+Route::get('/productsbyColor/{category}/{subcategory}', [ProductsController::class, 'showProductsbyColor']);
 
 
 Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
 Route::get('/products/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');
 
-Route::post('/search', [SearchEngineController::class, 'searchProducts'])->name('search');
+Route::get('/search', [SearchEngineController::class, 'searchProducts'])->name('search');
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

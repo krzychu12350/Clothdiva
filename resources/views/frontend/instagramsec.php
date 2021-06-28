@@ -16,7 +16,7 @@
                 target: "instafeed-container",
                 resolution: 'standard_resolution',
                 accessToken: 'IGQVJYRzQ2TF9feW5VU2ZAabkxMSmREMTFGU1V3SDdiSHI1YWpWd1E1aWJfeFZAodGhYN0g5ZADl1MmZAEeVBSN2dPWWJDNEd1NlczaGJGRkxTa0p2ZAVdnOE81NGJJdG8zYmRycjNBa29YVTNzVGRVX1k1MwZDZD',
-                template: '<a href="{{link}}"><img src="{{image}}" /></a>',
+                template: '<a target="_blank" href="{{link}}"><img src="{{image}}" /></a>',
             });
             userFeed.run();
             </script>

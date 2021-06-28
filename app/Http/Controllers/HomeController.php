@@ -115,6 +115,7 @@ class HomeController extends Controller
     }
     public function showDashboard()
     {
+
         $id = Auth::user()->id_ushop;
 
         $user_data = DB::table('ushop u')
@@ -134,16 +135,31 @@ class HomeController extends Controller
         ->where('u.id_ushop', '=', $id)
         ->select('o.*')
         ->distinct()->get();
-        
+        /*
         $order_products =  DB::select(DB::raw("SELECT pr.*, po.quantity as quantity_order FROM orders
         INNER JOIN orders_products po ON po.id_order = orders.id_order 
         INNER JOIN products pr ON pr.id_product = po.id_product 
         INNER JOIN ushop ON ushop.id_ushop = orders.id_ushop
         WHERE ushop.id_ushop = '$id'
-        "));
+        "));*/
+        $order_products =  DB::select(DB::raw("SELECT pr.name, pr.prize, pr.color, pr.size_of_product, po.quantity as quantity_order, orders.id_order FROM orders
+        INNER JOIN orders_products po ON po.id_order = orders.id_order 
+        INNER JOIN products pr ON pr.id_product = po.id_product 
+        INNER JOIN ushop ON ushop.id_ushop = orders.id_ushop
+        WHERE ushop.id_ushop = 2
+        GROUP BY pr.name, pr.prize, pr.color, pr.size_of_product, po.quantity, orders.id_order
+        ORDER BY orders.id_order ASC"));
+
+        $top_order_id = DB::select(DB::raw("SELECT orders.id_order FROM orders
+        INNER JOIN orders_products po ON po.id_order = orders.id_order 
+        INNER JOIN products pr ON pr.id_product = po.id_product 
+        INNER JOIN ushop ON ushop.id_ushop = orders.id_ushop
+        WHERE ushop.id_ushop = '$id'
+        GROUP BY pr.name, pr.prize, pr.color, pr.size_of_product, po.quantity, orders.id_order
+        ORDER BY orders.id_order ASC FETCH FIRST 1 ROWS ONLY"));
      
        //dd($order_products);
-        return view('frontend.user-dashboard',compact('user_data','user_orders','user_data_addr','order_products'));
+        return view('frontend.user-dashboard',compact('user_data','user_orders','user_data_addr','order_products','top_order_id'));
     }
   
 }

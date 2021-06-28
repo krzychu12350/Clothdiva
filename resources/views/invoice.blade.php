@@ -134,8 +134,8 @@
 								</td>
 
 								<td>
-									Invoice #123<br />
-									Created: June 21, 2021<br />
+									Invoice #{{$invoice_id}}<br />
+									Created: {{$today_date}}<br />
 								</td>
 							</tr>
 						</table>
@@ -169,7 +169,7 @@
 				</tr>
 
 				<tr class="details">
-					<td colspan="12">Bank transfer</td>
+					<td colspan="12">{{$payment_method}}</td>
 				</tr>
 
 				<tr class="heading">

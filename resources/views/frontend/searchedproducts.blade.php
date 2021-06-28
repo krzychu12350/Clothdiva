@@ -25,12 +25,14 @@
                         @endforeach
                        
                         <div class="col-lg-12 text-center">
+                        {{ $products_from_search->links('vendor.pagination.custom') }}
+                        <!--
                             <div class="pagination__option">
                                 <a href="#">1</a>
                                 <a href="#">2</a>
                                 <a href="#">3</a>
                                 <a href="#"><i class="fa fa-angle-right"></i></a>
-                            </div>
+                            </div>-->
                         </div>
 
                     </div>

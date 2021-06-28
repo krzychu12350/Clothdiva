@@ -442,21 +442,21 @@ $("#address-data").change(function() {
     }
 });
 
+$('.product__details__slider__content').magnificPopup({ 
+    type: 'image',
+    delegate: 'a',
+    
+    gallery:{enabled:true},
+    callbacks: {
+      
+      buildControls: function() {
+        // re-appends controls inside the main container
+        this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+      }
+      
+    }
+  });
 
-
-$('#pagination-here').bootpag({
-    total: 10,          
-    page: 1,            
-    maxVisible: 5,     
-    leaps: true,
-    href: "#result-page-{{number}}",
-})
-
-//page click action
-$('#pagination-here').on("page", function(event, num){
-    //show / hide content or pull via ajax etc
-    $("#content").html("Page " + num); 
-});
   
 
 })(jQuery);

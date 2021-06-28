@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use DB;
 use Sentry;
+use App\Models\Favorite_product;
 
 class FavouritesController extends Controller
 {
@@ -73,8 +74,15 @@ class FavouritesController extends Controller
         //$id = Auth::id();
         //return view('frontend.favourites')->with('user', $user);
         //session->id;
-    
+
+        $id = Auth::user()->id_ushop;
         $product_id = $request->input('id');
+    
+        //$product = Favorite_product::where('id_product', '=', $product_id)->where('id_ushop', '=', $id)->get();
+        if(Favorite_product::where('id_product', $product_id)->where('id_ushop', '=', $id)->exists()){
+            return redirect()->back()->with('error', 'Products already exists in your favourites products!');
+        }
+      
 
         //print($id);
        // echo $id;

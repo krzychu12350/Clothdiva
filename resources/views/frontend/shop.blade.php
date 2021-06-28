@@ -114,8 +114,8 @@ use Illuminate\Support\Facades\Storage;
                                 <div class="range-slider">
                                     <div class="price-input">
 
-                                    <form id="filtr-by-prize" action="{{ route('shop.by.price') }}" method="POST" class="d-none">
-                                        @csrf
+                                    <form id="filtr-by-prize" action="{{ route('shop.by.price', ['category'=> $category,'subcategory'=> $subcategory]) }}" method="get" class="d-none">
+                                  
                                     </form>
                                         <br />
                                         <p>Price:</p>
@@ -143,7 +143,7 @@ use Illuminate\Support\Facades\Storage;
                                 
                                
                             <form method="get" action="/productsbySize/{{$category}}/{{$subcategory}}">
-                                    @csrf
+                                 
                                
                                 @foreach( $all_sizes as $single_size) 
                                 <label for="{{$single_size->size_of_product}}">
@@ -180,8 +180,8 @@ use Illuminate\Support\Facades\Storage;
                             </div>
                             <div class="size__list color__list">
 
-                            <form method="post" id="filtr-by-color" action="/productsbyColor/{{$category}}/{{$subcategory}}">
-                                    @csrf
+                            <form method="get" id="filtr-by-color" action="/productsbyColor/{{$category}}/{{$subcategory}}">
+                            
                                     
                                 @foreach($all_colors as $single_color) 
                                 <label for="{{$single_color->color}}">
@@ -236,7 +236,7 @@ use Illuminate\Support\Facades\Storage;
            
                         <div class="col-lg-4 col-md-6 single-product">
                             <div class="product__item" href="/products/details/{{$single_product->id_product}}">
-                                <div onclick='location.href="/products/details/{{$single_product->id_product}}"' style='cursor:pointer;' class="product__item__pic set-bg" data-setbg='{{ asset ("$single_product->image_src.jpg") }}'>
+                                <div class="product__item__pic set-bg" data-setbg='{{ asset ("$single_product->image_src.jpg") }}'>
                                     <ul class="product__hover">
                                         <li><a href='{{ asset("$single_product->image_src.jpg") }}' class="image-popup"><span class="arrow_expand"></span></a></li>
                                      

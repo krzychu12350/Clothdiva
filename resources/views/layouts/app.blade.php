@@ -445,8 +445,8 @@
   <div class = "logo_searching"><img src="{{ asset('img/logo.png') }}" alt="Logo" class = img_logo_search></div>
     <div class="h-75 d-flex align-items-center justify-content-center">
         <div class="search-close-switch">+</div>
-        <form class="search-model-form" method="POST" action="{{ route('search') }}">
-            @csrf
+        <form class="search-model-form" method="GET" action="{{ route('search') }}">
+        
             <input type="text" id="search-input" name="search-input" placeholder="Search products..."> 
             <br/>
             <div class="d-flex justify-content-center">
