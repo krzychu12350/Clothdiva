@@ -1,12 +1,5 @@
 <p align="center"><img src="public\img\logo.png" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
 ## About Clohdiva
 
 # Projekt zaliczeniowy z przedmiotu: Aplikacje internetowe
@@ -48,5 +41,8 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 •	Filtrowanie produktów ze względu na cenę, rozmiar, kolor.
 
 ## Interfejs serwisu
+### EKRAN GŁÓWNY 
 
+### Strona główna aplikacji app.blade.php
 <p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\1.jpg" width="400"></p>
+<p align="center">Strona główna app.blade.php zawiera w sobie takie sekcje jak: header, banner oraz footer. Szablon tej strony jest powielany do wielu innych podstron za wyjątkiem sekcji banner.  Celem tej strony jest zaprezentowanie sklepu i ma ona charakter czysto wizualny. Jest to strona główna(home) nawigująca do innych podstron, która zarazem jest wizytówką sklepu internetowego Clothdiva.</p>
