@@ -163,8 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Yajra\Oci8\Oci8ServiceProvider::class,
         andcarpi\Popper\PopperServiceProvider::class,
-        Snowfire\Beautymail\BeautymailServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
+        //Snowfire\Beautymail\BeautymailServiceProvider::class,
+        //Barryvdh\DomPDF\ServiceProvider::class,
         //BaklySystems\LaravelMessenger\LaravelMessengerServiceProvider::class,
         /*
          * Package Service Providers...
