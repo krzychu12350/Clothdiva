@@ -6,8 +6,35 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class SearchEngineController extends Controller
 {
+     /**
+
+     * The attributes that are mass assignable.
+
+     *
+
+     * @var array
+
+     */
+
+    public function paginate($items, $perPage = 6, $page = null, $options = [])
+
+    {
+
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+         
+        
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+
+    }
+
     public function searchProducts(Request $request)
     {
         $search_query = $request->input('search-input');
@@ -30,8 +57,10 @@ class SearchEngineController extends Controller
         $products_from_search = DB::query(DB::raw($sql));
         */
 
-        $products_from_search = DB::select("select products_searched('$search_query') as products_searched from images FETCH FIRST 1 ROWS ONLY");
-        //dd($products_from_search);
+        $products_from_search2 = DB::select("select products_searched('$search_query') as products_searched from images FETCH FIRST 1 ROWS ONLY");
+        $products_from_search = $this->paginate($products_from_search2);
+        $products_from_search->setPath('search')->appends([ 'search-input' => $search_query ]);
+
         return view('frontend.searchedproducts', compact('products_from_search'));
     }
 

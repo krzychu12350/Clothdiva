@@ -29,6 +29,7 @@
   <tbody>
   <?php
     $i=1;
+    $id_order = $top_order_id[0]->id_order;
     ?>
   @foreach($user_orders as $single_info) 
     <tr>
@@ -38,33 +39,44 @@
       <td>{{$single_info->payment_method}}</td>
       <td>
       @foreach($order_products as $single_product) 
+        @if($single_product->id_order == $id_order)
         {{$single_product->name}}<br />
+        @endif
       @endforeach
       </td><!--nazwa-->
       <td>
       @foreach($order_products as $single_product) 
+      @if($single_product->id_order == $id_order)
         {{$single_product->quantity_order}}<br />
+        @endif
       @endforeach
       </td><!--ilosc-->
       <td>
       @foreach($order_products as $single_product) 
+      @if($single_product->id_order == $id_order)
         {{$single_product->prize}}<br />
+        @endif
       @endforeach
       </td><!--prize-->
       <td>
       @foreach($order_products as $single_product) 
+      @if($single_product->id_order == $id_order)
         {{$single_product->color}}<br />
+        @endif
       @endforeach
       </td><!--color-->
       <td>
       @foreach($order_products as $single_product) 
+      @if($single_product->id_order == $id_order)
         {{$single_product->size_of_product}}<br />
+        @endif
       @endforeach
       </td><!--size-->
       <td>{{$single_info->order_value}}</td>
     </tr>
     <?php
     $i++;
+    $id_order++;
     ?>
     @endforeach
   </tbody>
@@ -94,8 +106,13 @@
         </div>
         </form>
 
-        <form action="{{ route('add.address.data') }}" method="POST">
+        <form id="update-address-data" action="{{ route('update.address.data') }}" method="POST">
         @csrf
+        </form>
+
+        <form id="add-address-data" action="{{ route('add.address.data') }}" method="POST">
+        @csrf
+        </form>
         <div class="dashboard-div mt-4 text-center user-address-data">
   
         @if($user_data_addr->isNotEmpty())
@@ -120,7 +137,7 @@
               <h6 id="add-desc" class="text-center mt-4 mb-4">Add your address details </h6>
           @endif
         </div>
-        </form>
+     
         </div>
     </div>
     </div>

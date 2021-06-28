@@ -214,6 +214,27 @@ class CreateImagesSeeder extends Seeder
         $path142 = 'images/boys/shirt_C_2';
         $path143 = 'images/boys/shirt_C_3';
 
+
+        $path144 = 'images/women/dress_D_1';
+        $path145 = 'images/women/dress_D_2';
+        $path146 = 'images/women/dress_D_3';
+
+        $path147 = 'images/women/dress_E_1';
+        $path148 = 'images/women/dress_E_2';
+        $path149 = 'images/women/dress_E_3';
+
+        $path150 = 'images/women/dress_F_1';
+        $path151 = 'images/women/dress_F_2';
+        $path152 = 'images/women/dress_F_3';
+
+        $path153 = 'images/women/dress_G_1';
+        $path154 = 'images/women/dress_G_2';
+        $path155 = 'images/women/dress_G_3';
+
+        $path156 = 'images/women/dress_H_1';
+        $path157 = 'images/women/dress_H_2';
+        $path158 = 'images/women/dress_H_3';
+
         $image = [
 
             [
@@ -967,6 +988,86 @@ class CreateImagesSeeder extends Seeder
             [
             'image' => $path143,
             'id_product' => '48',
+            ],
+
+
+            [
+            'image' => $path144,
+            'id_product' => '49',
+            ],
+    
+            [
+            'image' => $path145,
+            'id_product' => '49',
+            ],
+    
+            [
+            'image' => $path146,
+            'id_product' => '49',
+            ],
+
+
+            [     
+            'image' => $path147,
+            'id_product' => '50',
+            ],
+    
+            [
+            'image' => $path148,
+            'id_product' => '50',
+            ],
+    
+            [
+            'image' => $path149,
+            'id_product' => '50',
+            ],
+            
+
+            [     
+            'image' => $path150,
+            'id_product' => '51',
+            ],
+    
+            [
+            'image' => $path151,
+            'id_product' => '51',
+            ],
+    
+            [
+            'image' => $path152,
+            'id_product' => '51',
+            ],
+
+
+            [     
+            'image' => $path153,
+            'id_product' => '52',
+            ],
+    
+            [
+            'image' => $path154,
+            'id_product' => '52',
+            ],
+    
+            [
+            'image' => $path155,
+            'id_product' => '52',
+            ],
+
+
+            [     
+            'image' => $path156,
+            'id_product' => '53',
+            ],
+    
+            [
+            'image' => $path157,
+            'id_product' => '53',
+            ],
+    
+            [
+            'image' => $path158,
+            'id_product' => '53',
             ],
     
         ];

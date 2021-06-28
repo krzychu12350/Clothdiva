@@ -33,34 +33,39 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes(['verify' => true]);
 
-Auth::routes();
+//Auth::routes();
 //Frontend routes
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');
 Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('policy');
-Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq')->middleware('guest');
 Route::get('/dashboard', [HomeController::class, 'showDashboard'])->name('user.dashboard')->middleware('auth');
 
 Route::post('/update-account-data', [UserDashboardController::class, 'updateAccountData'])->name('update.account')->middleware('auth');
+
+
+Route::post('/update-address-data', [UserDashboardController::class, 'updateAddressData'])->name('update.address.data')->middleware('auth');
+
 
 Route::post('/add-address-data', [UserDashboardController::class, 'addAddressData'])->name('add.address.data')->middleware('auth');
 
 
 //Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 //Route::get('/products/{type}/{subcategory}', [ProductsController::class, 'showProductsbySize'])->name('productsbySize');
+Route::get('/productsbyPrice', [ProductsController::class, 'showProductsbyPrice'])->name('shop.by.price');
 
-Route::post('/productsbySize/{category}/{subcategory}', [ProductsController::class, 'showProductsbySize']);
-Route::post('/productsbyPrice', [ProductsController::class, 'showProductsbyPrice'])->name('shop.by.price');
+Route::get('/productsbySize/{category}/{subcategory}', [ProductsController::class, 'showProductsbySize']);
 
-Route::post('/productsbyColor/{category}/{subcategory}', [ProductsController::class, 'showProductsbyColor']);
+Route::get('/productsbyColor/{category}/{subcategory}', [ProductsController::class, 'showProductsbyColor']);
 
 
 Route::get('/products/{type}', [ProductsController::class, 'showProducts'])->name('showProducts');
 Route::get('/products/details/{id}', [ProductsDetailsController::class, 'details'])->name('productdetails');
 
-Route::post('/search', [SearchEngineController::class, 'searchProducts'])->name('search');
+Route::get('/search', [SearchEngineController::class, 'searchProducts'])->name('search');
 
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');

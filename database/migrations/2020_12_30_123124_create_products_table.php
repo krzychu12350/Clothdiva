@@ -32,6 +32,7 @@ class CreateProductsTable extends Migration
             $table->foreign('id_promotion')
             ->references('id_promotion')->on('promotions')
             ->onDelete('cascade');
+            $table->timestamps();
             /*
             $table->foreignId('id_order')->unique()->nullable();
             $table->foreign('id_order')

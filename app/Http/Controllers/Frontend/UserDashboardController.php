@@ -10,6 +10,11 @@ use DB;
 class UserDashboardController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     public function addAddressData(Request $request)
     {
        
@@ -55,6 +60,7 @@ class UserDashboardController extends Controller
         $mobile = $request->input('user-mobile');
         $email = $request->input('user-email');
 
+       
         DB::table('ushop')
         ->where('id_ushop', $id)
         ->update([
@@ -66,4 +72,42 @@ class UserDashboardController extends Controller
 
         return redirect()->route('user.dashboard')->with('message', 'Your account data have been changed!');
     }
+    
+    public function updateAddressData(Request $request)
+    {
+        //dd($request->all());
+        //dd($request);
+        $id = Auth::user()->id_ushop;
+        
+        $street = $request->input('name-of-street');
+        $apartment_number = $request->input('apartment-number');
+        $house_number = $request->input('house-number');
+        $post_code = $request->input('post-code');
+        $city = $request->input('name-of-city');
+        $state = $request->input('name-of-state');
+
+      
+        $current_user_id_address_data = DB::table('user_addresses ua')
+        ->join('ushop u', 'u.id_user_address', '=', 'ua.id_user_address')
+        ->where('u.id_ushop','=',$id)
+        ->select('u.id_user_address')
+        ->get();
+
+        //dd($current_user_id_address_data[0]->id_user_address);
+
+        DB::table('user_addresses')
+        ->where('id_user_address', $current_user_id_address_data[0]->id_user_address)
+        ->update([
+            'name_of_city' => $city,
+            'post_code' => $post_code,
+            'name_of_street' => $street,
+            'county' =>  $state,
+            'apartment_number' => $apartment_number,
+            'house_number' => $house_number,
+
+        ]);
+
+        return redirect()->route('user.dashboard')->with('message', 'Your account data have been changed!');
+    }
+
 }

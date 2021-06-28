@@ -34,7 +34,10 @@ class CreateUsersTable extends Migration
             $table->foreign('id_user_address')
             ->references('id_user_address')->on('user_addresses')
             ->onDelete('cascade');
+            //$table->timestamps();
             $table->timestamps();
+            $table->timestamp('EMAIL_VERIFIED_AT')->nullable();
+      
             
         });
     }
