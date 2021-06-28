@@ -60,7 +60,7 @@
                                 ?>
                                 @foreach($images as $image)
                             
-                                <img data-hash="photo-{{$i}}" class="product__big__img" src='{{ asset("$image->image.jpg") }}' alt="">
+                                <a href='{{ asset("$image->image.jpg") }}' class="image-popup"><img data-hash="photo-{{$i}}" class="product__big__img" src='{{ asset("$image->image.jpg") }}' alt=""></a>
                                 <!--
                                 <img data-hash="product-2" class="product__big__img" src="{{ asset('storage/images/tracksuits.jpg') }}" alt="">
                                 <img data-hash="product-3" class="product__big__img" src="{{ asset('storage/images/suit-1.jpg') }}" alt="">

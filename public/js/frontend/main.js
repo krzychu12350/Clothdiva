@@ -377,10 +377,10 @@ $('.carousel-indicators:nth-child(1)').addClass('active');
 
 
 $( ".edit-user-data").on( "click", function() {
-    $(".user-name").replaceWith($('<input class="mt-2 mb-2" name="user-name" placeholder="' + $(".user-name").text() + '"></input>'));
-    $(".user-surname").replaceWith($('<input class="mt-2 mb-2" name="user-surname" placeholder="' + $(".user-surname").text() + '"></input>'));
-    $(".user-mobile").replaceWith($('<input class="mt-2 mb-2" name="user-mobile" placeholder="' + $(".user-mobile").text() + '"></input>'));
-    $(".user-email").replaceWith($('<input class="mt-2 mb-2" name="user-email" placeholder="' + $(".user-email").text() + '"></input>'));
+    $(".user-name").replaceWith($('<input class="mt-2 mb-2" name="user-name" value="' + $(".user-name").text() + '"></input>'));
+    $(".user-surname").replaceWith($('<input class="mt-2 mb-2" name="user-surname" value="' + $(".user-surname").text() + '"></input>'));
+    $(".user-mobile").replaceWith($('<input class="mt-2 mb-2" name="user-mobile" value="' + $(".user-mobile").text() + '"></input>'));
+    $(".user-email").replaceWith($('<input class="mt-2 mb-2" name="user-email" value="' + $(".user-email").text() + '"></input>'));
     $(".user-data").css("padding-bottom", "20px");
     $(".user-data").append('<button class="btn btn-primary button_class" type="submit">Change</button></form>');
 
@@ -411,14 +411,14 @@ $( ".edit-user-data").on( "click", function() {
 
 $( ".edit-user-address-data").on( "click", function() {
   
-    $(".name-of-street").replaceWith($('<input class="mt-2 mb-2" name="name-of-street" placeholder="' + $(".name-of-street").text() + '"></input>'));
-    $(".apartment-number").replaceWith($('<input class="mt-2 mb-2" name="apartment-number" placeholder="' + $(".apartment-number").text() + '"></input>'));
-    $(".house-number").replaceWith($('<input class="mt-2 mb-2" name="house-number" placeholder="' + $(".house-number").text() + '"></input>'));
-    $(".post-code").replaceWith($('<input class="mt-2 mb-2" name="post-code" placeholder="' + $(".post-code").text() + '"></input>'));
-    $(".name-of-city").replaceWith($('<input class="mt-2 mb-2" name="name-of-city" placeholder="' + $(".name-of-city").text() + '"></input>'));
-    $(".name-of-state").replaceWith($('<input class="mt-2 mb-2" name="name-of-state" placeholder="' + $(".name-of-state").text() + '"></input>'));
+    $(".name-of-street").replaceWith($('<input class="mt-2 mb-2" name="name-of-street" form="update-address-data" value="' + $(".name-of-street").text() + '"></input>'));
+    $(".apartment-number").replaceWith($('<input class="mt-2 mb-2" name="apartment-number" form="update-address-data" value="' + $(".apartment-number").text() + '"></input>'));
+    $(".house-number").replaceWith($('<input class="mt-2 mb-2" name="house-number" form="update-address-data" value="' + $(".house-number").text() + '"></input>'));
+    $(".post-code").replaceWith($('<input class="mt-2 mb-2" name="post-code" form="update-address-data" value="' + $(".post-code").text() + '"></input>'));
+    $(".name-of-city").replaceWith($('<input class="mt-2 mb-2" name="name-of-city" form="update-address-data" value="' + $(".name-of-city").text() + '"></input>'));
+    $(".name-of-state").replaceWith($('<input class="mt-2 mb-2" name="name-of-state" form="update-address-data" value="' + $(".name-of-state").text() + '"></input>'));
     $(".user-address-data").css("padding-bottom", "20px");
-    $(".user-address-data").append('<button class="btn btn-primary button_class" type="submit">Change</button>');
+    $(".user-address-data").append('<button class="btn btn-primary button_class" form="update-address-data" type="submit">Change</button>');
 });
 
 
@@ -441,6 +441,23 @@ $("#address-data").change(function() {
         $(".checkout__form .checkout__form__input input").val("");
     }
 });
+
+
+
+$('#pagination-here').bootpag({
+    total: 10,          
+    page: 1,            
+    maxVisible: 5,     
+    leaps: true,
+    href: "#result-page-{{number}}",
+})
+
+//page click action
+$('#pagination-here').on("page", function(event, num){
+    //show / hide content or pull via ajax etc
+    $("#content").html("Page " + num); 
+});
+  
 
 })(jQuery);
 

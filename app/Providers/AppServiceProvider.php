@@ -4,7 +4,7 @@ namespace App\Providers;
 use DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {        
+        Paginator::useBootstrap();
         //$sub_categories_women = DB::select('select name_of_subcategory from sub_categories where id_category=1');
         //$sub_categories_women = DB::select("select categories_women2() as name_of_subcategory from sub_categories");
         //print_r($sub_categories_women);

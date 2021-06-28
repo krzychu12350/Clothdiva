@@ -667,6 +667,23 @@ ol {
 	width: 317px !important;
 	object-fit: cover;
  }
+@media (max-width: 480px) {
+	#instafeed-container a img  {
+		width: 100% !important;
+	}
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+	#instafeed-container a img  {
+		width: 50% !important;
+	}
+}
+  
+@media (min-width: 768px) and (max-width: 1024px){
+	#instafeed-container a img  {
+		width: 50% !important;
+	}
+}
 
 /*---------------------
   Footer
@@ -1257,8 +1274,9 @@ ol {
 .sidebar__color .color__list label {
 	text-transform: capitalize;
 }
+/*.pagination__option a {*/
 
-.pagination__option a {
+.pagination__option ul li, .pagination__option ul li a {
 	display: inline-block;
 	height: 40px;
 	width: 40px;
@@ -3052,3 +3070,9 @@ background-color: #ebebeb;;
 	color: #ca1515;
 	font-size: 14px;
 }
+
+  
+
+
+
+

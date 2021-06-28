@@ -17,8 +17,8 @@
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>Order number</th>
-                                                <th>Id of products</th>
+                                                <th>Order Id</th>
+                                                <th>Products Id</th>
                                                 <th>Name of products</th>
                                                 <th>Quantity</th>
                                                 <th>Order Value</th>

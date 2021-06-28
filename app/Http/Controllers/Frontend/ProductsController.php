@@ -10,8 +10,13 @@ use App\Models\Product;
 use DB;
 use Session;
 
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class ProductsController extends Controller
 {
+
     public function showProducts(Request $request)
     {
         //try{
@@ -56,6 +61,8 @@ class ProductsController extends Controller
         $url = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         $category = $url[2];
         $subcategory = $_GET['subcategory'];
+        //$subcategory = $url[3];
+     
         Session::put('category', $category);
         Session::put('subcategory', $subcategory);
 
@@ -126,8 +133,14 @@ class ProductsController extends Controller
         //$sizep = $request->input('sizep');
         //dd($sizep);
 
-        $products_shop_view = DB::select("select products_shop_view('$subcategory','$category','') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        $products_shop_view2 = DB::select("select products_shop_view('$subcategory','$category','') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
 
+
+        $products_shop_view = $this->paginate($products_shop_view2);
+        $products_shop_view->setPath($category.'?subcategory='.$subcategory);
+ 
+    
+       
         /*
         $data2 = DB::table('images')
         ->join('products p', 'p.id_product', '=', 'images.id_product')
@@ -145,6 +158,31 @@ class ProductsController extends Controller
             report($e);
         }*/
     }
+    
+    /**
+
+     * The attributes that are mass assignable.
+
+     *
+
+     * @var array
+
+     */
+
+    public function paginate($items, $perPage = 2, $page = null, $options = [])
+
+    {
+
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+         
+        
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+
+    }
+
+
 
     public function showProductsbyPrice(Request $request){
         $category = Session::get('category');
@@ -158,32 +196,40 @@ class ProductsController extends Controller
         $min_price = $request->input('min-amount');
         $max_price = $request->input('max-amount');
 
-        $products_shop_view = DB::select("select products_by_prize('$subcategory', '$category', '$min_price', '$max_price') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+        $products_shop_view2 = DB::select("select products_by_prize('$subcategory', '$category', '$min_price', '$max_price') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
+
+        $products_shop_view = $this->paginate($products_shop_view2);
+        $products_shop_view->setPath('productsbyPrice');
 
         return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
     }
 
     public function showProductsbySize(Request $request){
-        $url = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+        //$url = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
         //$category = $url[2];
         //$subcategory = $url[3];
         $category = Session::get('category');
         $subcategory = Session::get('subcategory');
 
         //$sizep = $_GET['sizep'];
-        $checked = $request->input('checked');
+        $checked2 = $request->input('checked');
+        Session::put('checked2', $checked2);
+        
+        //dd($checked2);
         //dd($checked);
+        $checked = Session::get('checked2');
         foreach ($checked as &$value) {
             $value =  "'".$value."'";
         }
         unset($value);
-
+        $all_size = implode(', ', $checked);
+        
         //$all_size = implode("', '", $checked);
         //$all_size2 = implode("','", $all_size);
 
         //dd($checked[0],$checked[1]);
         //dd(count($checked));
-        $all_size = implode(', ', $checked);
+      
         //dd($all_size);
 
         $all_sizes = Session::get('all_sizes');
@@ -210,7 +256,7 @@ class ProductsController extends Controller
         ->get();*/
         //->min('image');
 
-        $products_shop_view = DB::select( DB::raw(" select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
+        $products_shop_view2 = DB::select( DB::raw(" select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
         left join products p on p.id_product = i.id_product
         INNER JOIN sub_categories sb ON sb.id_sub_category = p.id_sub_category
         INNER JOIN categories c ON c.id_category = sb.id_category 
@@ -220,8 +266,10 @@ class ProductsController extends Controller
 
         //$products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
-     
-        //dd($results);
+        $products_shop_view = $this->paginate($products_shop_view2);
+    
+        $products_shop_view->setPath($subcategory);
+        
         return view('frontend.shop', compact('products_shop_view','all_sizes','all_colors','minPrize','maxPrize','category','subcategory'));
     }
 
@@ -248,7 +296,7 @@ class ProductsController extends Controller
         $minPrize = Session::get('minPrize');
         $maxPrize = Session::get('maxPrize');
 
-        $products_shop_view = DB::select( DB::raw(" select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
+        $products_shop_view2 = DB::select( DB::raw(" select MIN(i.image) as image_src,  p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion from images i
         left join products p on p.id_product = i.id_product
         INNER JOIN sub_categories sb ON sb.id_sub_category = p.id_sub_category
         INNER JOIN categories c ON c.id_category = sb.id_category 
@@ -257,7 +305,8 @@ class ProductsController extends Controller
         group by p.id_product, p.name, p.prize, p.size_of_product, c.name_of_category, prom.size_of_promotion") );
       
        
-
+        $products_shop_view = $this->paginate($products_shop_view2);
+        $products_shop_view->setPath($subcategory);
         //$products_shop_view = DB::select("select products_shop_view('$subcategory', '$category', '$checked[0]') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
       
      

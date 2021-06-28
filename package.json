@@ -23,6 +23,7 @@
         "webpack-cli": "^4.6.0"
     },
     "dependencies": {
+        "bootpag": "^1.0.7",
         "jquery-validation": "^1.19.3"
     }
 }

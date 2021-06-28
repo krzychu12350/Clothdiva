@@ -11,6 +11,11 @@ use Session;
 
 class ShopcartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+    
     public function index()
     {
         
