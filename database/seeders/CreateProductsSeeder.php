@@ -37,7 +37,6 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=>'100% COTTON',
                 'id_sub_category'=>'1',
                 'id_promotion' => '',
-                //'id_order' => '2',    
             ],
 
             [
@@ -50,7 +49,6 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=>'100% COTTON',
                 'id_sub_category'=>'1',
                 'id_promotion' => '',
-                //'id_order' => '3',
             ],
             
             [
@@ -63,9 +61,8 @@ class CreateProductsSeeder extends Seeder
                 'composition_and_conservation'=>'52% VISCOSE, 48% POLYAMIDE',
                 'id_sub_category'=>'2',
                 'id_promotion' => '',
-                //'id_order' => '',
              ],
- 
+
              [
                  'name'=>'Nude skirt',
                  'quantity'=>'20',
@@ -649,6 +646,67 @@ class CreateProductsSeeder extends Seeder
                 'id_promotion' => '',
                 //'id_order' => '',
             ],
+               // 10 kolejnych sukieneks
+            [
+                'name'=>'Dress with openwork lace',
+                'quantity'=>'500',
+                'prize'=>'45.99',
+                'color'=>'Black',
+                'size_of_product'=>'M',
+                'description'=>'Height of female model: 180 cm Height of female model: ',
+                'composition_and_conservation'=>'100% COTTON, 100% COTTON',
+                'id_sub_category'=>'1',
+                'id_promotion' => '',
+             ],
+
+             [
+                'name'=>'Cami dress',
+                'quantity'=>'50',
+                'prize'=>'25.99',
+                'color'=>'Brown',
+                'size_of_product'=>'S',
+                'description'=>'Height of female model: 177 cm Model wears size S/36 ',
+                'composition_and_conservation'=>'78% MODAL, 22% POLYESTER',
+                'id_sub_category'=>'1',
+                'id_promotion' => '',
+             ],
+
+             
+             [
+                'name'=>'Dress with puff sleeves',
+                'quantity'=>'60',
+                'prize'=>'29.99',
+                'color'=>'Brown',
+                'size_of_product'=>'S',
+                'description'=>'Model wears size S/36  ECO AWARE Organic cotton is derived from genetically unmodified seeds, with respect to the environment and in line with the natural cycle of life. Fabrics made of organic cotton are delicate for the skin, breathable, antibacterial and biodegradable.',
+                'composition_and_conservation'=>'100% COTTON',
+                'id_sub_category'=>'1',
+                'id_promotion' => '',
+             ],
+
+             [
+                'name'=>'Cross over dress',
+                'quantity'=>'80',
+                'prize'=>'15.99',
+                'color'=>'Pink',
+                'size_of_product'=>'S',
+                'description'=>'V neck with wrap front cami straps elasticated drawstring waist Height of female model: 177 cm',
+                'composition_and_conservation'=>'70% POLYESTER, 25% VISCOSE, 5% ELASTANE',
+                'id_sub_category'=>'1',
+                'id_promotion' => '',
+             ],
+
+             [
+                'name'=>'Stripe mini dress',
+                'quantity'=>'80',
+                'prize'=>'25.99',
+                'color'=>'Pink',
+                'size_of_product'=>'L',
+                'description'=>'Trapeze dress made of cotton rich jersey. Model wears size S/36 Height of female model: 177 cm Limited collection, available online and at selected stores.',
+                'composition_and_conservation'=>'70% COTTON, 30% POLYESTER',
+                'id_sub_category'=>'1',
+                'id_promotion' => '',
+             ],
 
         ];
         foreach ($product as $key => $value) {

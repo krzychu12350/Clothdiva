@@ -134,7 +134,7 @@ class ProductsController extends Controller
         //dd($sizep);
 
         $products_shop_view2 = DB::select("select products_shop_view('$subcategory','$category','') as products_shop_view from images FETCH FIRST 1 ROWS ONLY");
-
+     
 
         $products_shop_view = $this->paginate($products_shop_view2);
         $products_shop_view->setPath($category.'?subcategory='.$subcategory);
@@ -169,7 +169,7 @@ class ProductsController extends Controller
 
      */
 
-    public function paginate($items, $perPage = 2, $page = null, $options = [])
+    public function paginate($items, $perPage = 6, $page = null, $options = [])
 
     {
 
