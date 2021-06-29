@@ -49,7 +49,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 
 ## Interfejs serwisu
-                            CZĘŚĆ PRZEZNACZONA DLA KLIENTA
+                                      # CZĘŚĆ PRZEZNACZONA DLA KLIENTA 
 
 
 <p align="center"> Strona główna aplikacji app.blade.php </p>
@@ -362,9 +362,13 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 <br/>
 
 ## Skrypt do utworzenia struktury bazy danych
-
 <br/>
 
+#### Naciśnij pobierz, aby pobrać skrypt do utworzenia bazy danych
+
+<a href="logo.png" download>Pobierz</a>
+
+<br/>
 
 # Wykorzystane technologie
 
