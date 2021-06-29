@@ -26,6 +26,7 @@ class UserDashboardController extends Controller
         $post_code = $request->input('post-code');
         $city = $request->input('name-of-city');
         $state = $request->input('name-of-state');
+        $country = $request->input('name-of-country');
 
         DB::table('user_addresses')->insert([
             'name_of_city' => $city,
@@ -34,6 +35,7 @@ class UserDashboardController extends Controller
             'county' =>  $state,
             'apartment_number' => $apartment_number,
             'house_number' => $house_number,
+            'country' => $country,
 
         ]);
         //$address_id = DB::select( DB::raw("select id_user_address from user_addresses ORDER BY id_user_address DESC FETCH FIRST 1 ROWS ONLY") );
@@ -85,7 +87,7 @@ class UserDashboardController extends Controller
         $post_code = $request->input('post-code');
         $city = $request->input('name-of-city');
         $state = $request->input('name-of-state');
-
+        $country = $request->input('name-of-country');
       
         $current_user_id_address_data = DB::table('user_addresses ua')
         ->join('ushop u', 'u.id_user_address', '=', 'ua.id_user_address')
@@ -104,6 +106,7 @@ class UserDashboardController extends Controller
             'county' =>  $state,
             'apartment_number' => $apartment_number,
             'house_number' => $house_number,
+            'country' => $country,
 
         ]);
 

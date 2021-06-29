@@ -34,6 +34,12 @@ class ordersManagementController extends Controller
          INNER JOIN ushop ON ushop.id_ushop = orders.id_ushop
          GROUP BY pr.name, pr.prize, pr.color, pr.size_of_product, po.quantity, orders.id_order
          ORDER BY orders.id_order ASC FETCH FIRST 1 ROWS ONLY"));
+         
+        
+       
+     
+        
+
     /*
         $order_products = DB::table('orders o')
            // ->join('orders_products po', 'po.id_order', '=', 'o.id_order ')

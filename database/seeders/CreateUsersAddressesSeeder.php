@@ -23,6 +23,7 @@ class CreateUsersAddressesSeeder extends Seeder
         'county'=>'rzeszowskie',
         'apartment_number'=>'23',
         'house_number'=>'5',
+        'country'=>'Poland',
             ],
 
         ];

@@ -41,7 +41,7 @@ Auth::routes(['verify' => true]);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about-us');
 Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('policy');
-Route::get('/faq', [HomeController::class, 'faq'])->name('faq')->middleware('guest');
+Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/dashboard', [HomeController::class, 'showDashboard'])->name('user.dashboard')->middleware('auth');
 
 Route::post('/update-account-data', [UserDashboardController::class, 'updateAccountData'])->name('update.account')->middleware('auth');

@@ -631,7 +631,7 @@ $( ".add-subcategory" ).on( "click", function() {
          +'<td>'
          +'<div class="rs-select2--trans rs-select2--sm">'
          +'<select class="js-select2" form="addsc"  id="category-name" name="category-name">'
-         +'<option selected="selected" value=">1">Women</option>'
+         +'<option selected="selected" value="1">Women</option>'
          +'<option value="2">Men</option>'
          +'<option value="3">Girls</option>'
          +'<option value="4">Boys</option>'
@@ -657,7 +657,7 @@ $( ".edit-subcategory").on( "click", function() {
          +'<td>'
          +'<div class="rs-select2--trans rs-select2--sm">'
          +'<select class="js-select2" form="editsc"  id="category-name" name="category-name">'
-         +'<option selected="selected" value=">1">Women</option>'
+         +'<option selected="selected" value="1">Women</option>'
          +'<option value="2">Men</option>'
          +'<option value="3">Girls</option>'
          +'<option value="4">Boys</option>'
@@ -670,16 +670,16 @@ $( ".edit-subcategory").on( "click", function() {
 });
 
 //PRODUCTS ADDING AND EDITING
-alert(subcat);
-alert(cat);
-
+//alert(subcat);
+//alert(cat);
+/*
   //var your_object = JSON.parse(text);
   $.each(cat , function(k, item) { 
      $('#product-subcat-and-cat')
            .append($("<option></option>")
            .attr("value", item)
            .text(item));
-  });
+  });*/
 
 $( ".add-product" ).on( "click", function() {
     $("#products-table").find('tbody').prepend($('<tr>').prepend($(
@@ -748,7 +748,7 @@ $( ".order-update").on( "click", function() {
 });*/
 
 
-$( ".add-slide" ).on( "click", function() {
+$( ".add-slidee" ).on( "click", function() {
   $("#banner-table").find('tbody')
   .prepend($('<tr>')
       .prepend($(
@@ -771,7 +771,7 @@ $( ".edit-slide" ).on( "click", function() {
   $('#banner-table #' + selRow).find('td').empty();
   $('#banner-table').find('tr#' + selRow)
   .replaceWith($(
-        '<td> <input type="hidden" id="id-slide" name="id-slide" form="editslide" value="'+id+'"></input> <input type="file" id="slide" name="slide" form="editslide"></input> </td> <td><textarea type="text" form="editslide"  name="paragraph-large" placeholder="'+pre+'"></textarea></td> <td><textarea type="text" form="editslide"  name="paragraph-small" placeholder="'+pre1+'"></textarea></td> <td><textarea type="text" form="editslide"  name="link" placeholder="'+pre2+'"></textarea></td> <td><textarea type="text" form="editslide"  name="link-description" placeholder="'+pre3+'"></textarea></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editslide" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+        '<td> <input type="hidden" id="id-slide" name="id-slide" form="editslide" value="'+id+'"></input> <input type="file" id="slide" name="slide" form="editslide"></input> </td> <td><textarea type="text" form="editslide"  name="paragraph-large" value="'+pre+'">'+pre+'</textarea></td> <td><textarea type="text" form="editslide"  name="paragraph-small"  value="'+pre1+'">'+pre1+'</textarea></td> <td><textarea type="text" form="editslide"  name="link"  value="'+pre2+'">'+pre2+'</textarea></td> <td><textarea type="text" form="editslide"  name="link-description"  value="'+pre3+'">'+pre3+'</textarea></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editslide" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
       );
   
 

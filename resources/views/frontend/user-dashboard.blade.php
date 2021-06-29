@@ -129,8 +129,10 @@
                 <p class="post-code">{{$single_info->post_code}}</p>
                 <h6>City<h6>
                 <p class="name-of-city">{{$single_info->name_of_city}}</p>
-                <h6>State<h6>
+                <h6>County<h6>
                 <p class="name-of-state">{{$single_info->county}}</p>
+                <h6>Country<h6>
+                <p class="name-of-country">{{$single_info->country}}</p>
             @endforeach
           @else
               <a id="add-icon" class="text-center mt-2 mr-2 add-user-address-data"><i class="fas fa-plus" role="button"></i></a><br />

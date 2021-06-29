@@ -30,10 +30,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                                $id_order = $top_order_id[0]->id_order;
-                                            ?>
-
+                                         
+                                            {{ isset($top_order_id[0]) ? $top_order_id[0]->id_order : 0 }}
+                                            {{$id_order = $top_order_id[0]->id_order}}
+                                          
                                             @foreach($orders as $singlerow)
                                             <tr id="editp-row-{{$singlerow->id_order}}">
                                           

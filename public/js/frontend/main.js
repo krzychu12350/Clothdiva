@@ -396,13 +396,14 @@ $( ".edit-user-data").on( "click", function() {
     $(".add-user-address-data").append($('<h6>State<h6><input class="mt-2 mb-2" name="name-of-state" placeholder="State"></input>'));*/
     
     $("#add-desc").replaceWith('<h5 class="mt-4">YOUR ADDRESS DETAILS</h5>'
-    +'<h6 class="mt-4">Street<h6><input class="mt-2 mb-2" name="name-of-street" placeholder="Street"></input>'
-    +'<h6>Apartment number<h6><input class="mt-2 mb-2" name="apartment-number" placeholder="Apartment number"></input>'
-    +'<h6>House number<h6><input class="mt-2 mb-2" name="house-number" placeholder="House number"></input>'
-    +'<h6>Post_code<h6><input class="mt-2 mb-2" name="post-code" placeholder="Post code"></input>'
-    +'<h6>City<h6><input class="mt-2 mb-2" name="name-of-city" placeholder="City"></input>'
-    +'<h6>State<h6><input class="mt-2 mb-2" name="name-of-state" placeholder="State"></input>'
-    +'<br /><button class="btn btn-primary button_class" type="submit">Add</button>');
+    +'<h6 class="mt-4">Street<h6><input class="mt-2 mb-2" name="name-of-street" form="add-address-data" placeholder="Street"></input>'
+    +'<h6>Apartment number<h6><input class="mt-2 mb-2" name="apartment-number" form="add-address-data" placeholder="Apartment number"></input>'
+    +'<h6>House number<h6><input class="mt-2 mb-2" name="house-number" form="add-address-data" placeholder="House number"></input>'
+    +'<h6>Post_code<h6><input class="mt-2 mb-2" name="post-code" form="add-address-data" placeholder="Post code"></input>'
+    +'<h6>City<h6><input class="mt-2 mb-2" name="name-of-city" form="add-address-data" placeholder="City"></input>'
+    +'<h6>State<h6><input class="mt-2 mb-2" name="name-of-state" form="add-address-data" placeholder="State"></input>'
+    +'<h6>Country<h6><input class="mt-2 mb-2" name="name-of-country" form="add-address-data" placeholder="Country"></input>'
+    +'<br /><button class="btn btn-primary button_class" form="add-address-data" type="submit">Add</button>');
     $("#add-icon").replaceWith('');
     $(".user-address-data").css("padding-bottom", "20px");
  
@@ -417,6 +418,7 @@ $( ".edit-user-address-data").on( "click", function() {
     $(".post-code").replaceWith($('<input class="mt-2 mb-2" name="post-code" form="update-address-data" value="' + $(".post-code").text() + '"></input>'));
     $(".name-of-city").replaceWith($('<input class="mt-2 mb-2" name="name-of-city" form="update-address-data" value="' + $(".name-of-city").text() + '"></input>'));
     $(".name-of-state").replaceWith($('<input class="mt-2 mb-2" name="name-of-state" form="update-address-data" value="' + $(".name-of-state").text() + '"></input>'));
+    $(".name-of-country").replaceWith($('<input class="mt-2 mb-2" name="name-of-country" form="update-address-data" value="' + $(".name-of-country").text() + '"></input>'));
     $(".user-address-data").css("padding-bottom", "20px");
     $(".user-address-data").append('<button class="btn btn-primary button_class" form="update-address-data" type="submit">Change</button>');
 });

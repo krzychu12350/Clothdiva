@@ -65,7 +65,9 @@
                                                 <td>
                                                     <div class="table-data-feature">
                                                        
-                                                          
+                                                             <button class="item edit-promotion">
+                                                                <i class="zmdi zmdi-edit"></i>
+                                                            </button>
 
                                                             <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">
                                                             <button class="item">

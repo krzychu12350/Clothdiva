@@ -19,7 +19,8 @@
                                             <div class="dropDownSelect2"></div>
                                         </div>
                                        
-                                        
+                                               <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-subcategory">
+                                                <i class="zmdi zmdi-plus"></i>add subcategories</button>
                                     </div>
                                     <div class="table-responsive table-data">
 
@@ -43,7 +44,12 @@
                                         
                                             @foreach($scmanagement as $singlerow)
                                             <tr id="editsc-row-{{$singlerow->id_sub_category}}">
-                                                    
+                                                    <!-- <td>
+                                                        <label class="au-checkbox">
+                                                            <input type="checkbox">
+                                                            <span class="au-checkmark"></span>
+                                                        </label>
+                                                    </td> -->
                                                     <td id="id-sc" class="d-none">
                                                         {{$singlerow->id_sub_category}}
                                                     </td>
@@ -93,7 +99,9 @@
                                                         </form>
                                                         to nizej jest dzialajace
                                                         -->
-                                                       
+                                                        <button class="item edit-subcategory">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
 
                                                         <a class="favdel" href="{{ route('admin.store.subcategories.destroy',['subcat_name' => $singlerow->name_of_subcategory,'cat_name' => $category->name_of_category]) }}">
                                                         <button class="item">

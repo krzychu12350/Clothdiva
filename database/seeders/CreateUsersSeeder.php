@@ -50,6 +50,7 @@ class CreateUsersSeeder extends Seeder
                  'id_role'=>'2',
                  'id_user_address'=>'1',
                  'email_verified_at' => '27-JUN-21 12.49.52.000000',
+                 'created_at' => '27-APR-21 12.49.52.000000',
  
              ],
 
@@ -63,8 +64,39 @@ class CreateUsersSeeder extends Seeder
                  'id_role'=>'2',
                  'id_user_address'=>'1',
                  'email_verified_at' => '27-JUN-21 12.49.52.000000',
+                 'created_at' => '27-MAR-21 12.49.52.000000',
+                 
  
              ],
+
+             [
+                'name'=>'Tomasz',
+                'surname'=>'Kowalski',
+                'mobile'=>'232323232',
+                'login'=>'Tomasz213',
+                'email'=>'Tomasz321@gmail.com',
+                'password'=> bcrypt('Tomasz123'),
+                 'id_role'=>'2',
+                 'id_user_address'=>'1',
+                 'email_verified_at' => '27-JUN-21 12.49.52.000000',
+                 'created_at' => '27-MAY-21 12.49.52.000000',
+ 
+             ],
+
+             [
+                'name'=>'Janusz',
+                'surname'=>'Gadowski',
+                'mobile'=>'232323232',
+                'login'=>'Janusz313',
+                'email'=>'Janusz313@gmail.com',
+                'password'=> bcrypt('Janusz313'),
+                 'id_role'=>'2',
+                 'id_user_address'=>'1',
+                 'email_verified_at' => '27-JUN-21 12.49.52.000000',
+                 'created_at' => '27-MAY-21 12.49.52.000000',
+ 
+             ],
+
         ];
 
         foreach ($user as $key => $value) {

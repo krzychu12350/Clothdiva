@@ -18,6 +18,7 @@ class User_address extends Model
         'county',
         'apartment_number',
         'house_number',
+        'country',
     ];
    
     /**
