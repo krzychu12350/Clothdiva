@@ -1,10 +1,13 @@
-<p align="center"><img src="public\img\logo.png" width="400"></p>
+<p align="center"><img src="public\img\logo.png" width="400" height="100"></p>
 
 # Projekt zaliczeniowy z przedmiotu: Aplikacje internetowe
 
 # Temat projektu: Internetowy sklep odzieżowy Clothdiva
 
 ## Skład grupy: Krzysztof Karaś, Patrycja Gaweł
+
+## Specyfikacja projektu
+
 <br/>
 
 ## Cel projektu: Stworzenie platformy umożliwiające dokonywanie zakupów online. 
@@ -21,7 +24,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 ## Funkcjonalności
 <br/>
 
-### ADMIN:
+### ADMINISTRATOR:
 <br/>
                                       
 •	Role i uprawnienia administratora. <br/>
@@ -32,7 +35,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 •	Zarządzanie użytkownikami(możliwość edycji oraz usuwania).<br/>
 •	Zarządzanie promocjami(możliwość dodawania i usuwania).
 
-### USER DASHBOARD:
+### UŻYTKOWNIK:
 <br/>
 
 •	System logowania i rejestracji użytkowników (klientów).<br/>
@@ -46,7 +49,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 
 ## Interfejs serwisu
-                                    # EKRAN GŁÓWNY
+                                     EKRAN GŁÓWNY
 
 
 <p align="center"> Strona główna aplikacji app.blade.php </p>
@@ -246,7 +249,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 ### Diagram ERD
 <br/>
-<p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\DIAGRAM ERD.jpg" width="400"></p>
+<p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\DIAGRAM ERD.png" width="400"></p>
 
 ## Tabela roles <br/>
 Encja przechowująca role, które są przypisywane do użytkowników i jest połączona z encją Shop_users relacją jeden do wielu, ponieważ każdy użytkownik musi mieć przypisaną rolę użytkownika lub administratora. 
