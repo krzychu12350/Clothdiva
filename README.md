@@ -359,10 +359,9 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 •	id_user – klucz obcy, przypisuję ulubionym produktom danego użytkownika.<br/>
 •	id_product – klucz obcy, przypisuję ulubionym produktom dany produkt.<br/>
 
-<br/>
+<br/> 
 
 ## Skrypt do utworzenia struktury bazy danych
-<br/>
 
 #### Naciśnij pobierz, aby pobrać skrypt do utworzenia bazy danych
 
@@ -373,6 +372,8 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 # Wykorzystane technologie
 
 1.	PHP v7.3.27 <br/>
+<img src="documentation\images\php-logo.jpg" width="100" height="100">
+<br/>
 2.  Laravel Framework 8.37.0 <br/>
 3.	Javascript(JQuery) <br/>
 4.	HTML5 <br/>
