@@ -247,18 +247,18 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 # Baza danych
 
-### Diagram ERD
+## Diagram ERD
 <br/>
 <p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\DIAGRAM ERD.jpg" width="400"></p>
 
-## Tabela roles <br/>
+### Tabela roles <br/>
 Encja przechowująca role, które są przypisywane do użytkowników i jest połączona z encją Shop_users relacją jeden do wielu, ponieważ każdy użytkownik musi mieć przypisaną rolę użytkownika lub administratora. 
 
 •	id_role – identyfikator roli <br/>
 •	role_name –  kolumna przechowująca nazwe roli (użytkownik lub administrator <br/> 
 <br/>
 
-## Tabela users_shop
+### Tabela users_shop
 Encja przechowująca informację na temat użytkowników czyli imię, login, hasło, e-mail. Jest połączona z encją Users_addresses relacją jeden do wielu.
 
 •	id_ushop – identyfikator użytkownika. <br/>
@@ -271,7 +271,7 @@ Encja przechowująca informację na temat użytkowników czyli imię, login, has
 •	id_role – klucz obcy, określający rolę danego użytkownika. <br/>
 •	id_user_address – klucz obcy, przypisuję dane adresowe użytkownikowi. <br/> <br/>
 
-## Tabela users_addresses
+### Tabela users_addresses
 Encja przechowująca dane adresowe użytkowników. Jest połączona z encją Shop_users, ponieważ każdy użytkownik musi mieć adres zamieszkania.
 
 •	id_user_address – identyfikator adresu użytkownika. <br/>
@@ -283,21 +283,21 @@ Encja przechowująca dane adresowe użytkowników. Jest połączona z encją Sho
 •	apartament_number - kolumna przechowująca numer mieszkania. <br/>
 •	house_number - kolumna przechowująca numer domu. <br/> <br/>
 
-## Tabela categories
+### Tabela categories
 Encja przechowująca nazwy kategorii i jest połączona z encją Sub_categories relacją jeden do wielu. <br/>
 
 •	id_category – identyfikator kategorii. <br/>
 •	name_of_category – nazwa kategorii. <br/>
 <br/>
 
-## Tabela sub_categories <br/>
+### Tabela sub_categories <br/>
 Encja przechowująca nazwy podkategorii i jest połączona z encją Products relacją jeden do wielu.<br/>
 
 •	id_sub_category – identyfikator podkategorii.<br/>
 •	name_of_subcategory – kolumna przechowująca nazwę podkategorii.<br/>
 •	id_category – klucz obcy, przypisuję podkategorii daną kategorię. 
 
-## Tabela products <br/>
+### Tabela products <br/>
 Encja przechowująca informację na temat danego produktu (np. nazwa, ilość produktów, rozmiar, kolor oraz do jakiej podkategorii oraz kategorii należy. Jest połączona z encją images relacją jeden do wielu. <br/>
 
 •	id_product – identyfikator produktu. <br/>
@@ -312,14 +312,14 @@ Encja przechowująca informację na temat danego produktu (np. nazwa, ilość pr
 •	id_promotion – klucz obcy, przypisuję produktowi daną promocję. <br/>
 •	id_order – klucz obcy, przypisuję produktowi dane zamówienie. <br/>
 
-## Tabela images 
+### Tabela images 
 Encja przechowująca ścieżki do zdjęć, które będą przypisane do każdego produktu i wyświetlane na sklepie. <br/>
 
-•	id_photo – identyfikator zdjęcia. <br/>
+•	id_image – identyfikator zdjęcia. <br/>
 •	image - kolumna przechowująca ścieżkę pliku. <br/>
 •	id_product – klucz obcy, przypisuję zdjęciom dany produkt. <br/><br/>
 
-## Tabela promotions 
+### Tabela promotions 
 Encja przechowująca informację na temat promocji oraz rabatów, które będą występować na sklepie w określonym czasie. Jest połączona z encją products relacją jeden do wielu. <br/>
 
 •	id_promotion – identyfikator promocji. <br/>
@@ -329,33 +329,52 @@ Encja przechowująca informację na temat promocji oraz rabatów, które będą 
 •	promotion_end_date – kolumna przechowująca datę zakończenia promocji. <br/>
 •	description - kolumna przechowująca opis promocji. <br/><br/>
 
-## Tabela orders 
+### Tabela orders 
 
-Encja ta jest jedną z główniejszych, ponieważ posiada informacja na temat złożonych zamówień. W tej encji znajdują się informacje na temat zamówionego produktu, na temat użytkownika który produkt zamówił oraz jest połączona z encją faktury relacją jeden do jednego. 
-•	id_order – identyfikator zamówienia.
-•	status - kolumna przechowująca status zamówienia.
-•	date_of_placing_order - kolumna przechowująca datę złożenia zamówienia.
-•	payment_method - kolumna przechowująca sposób płatności.
-•	id_ushop – klucz obcy, przypisuję zamówieniom danego użytkownika.
-
-Tabela favourite_products 
-Encja przechowująca informacje na temat ulubionych produktów przez użytkowników. Każdy użytkownik ma możliwość zapisać na swoim koncie produkty, które mu się podobają. Tabela ta jest połączona z tabelą products oraz users_shop.
-
-•	id_favourite_product – identyfikator ulubionego produktu.
-•	id_user – klucz obcy, przypisuję ulubionym produktom danego użytkownika.
-•	id_product – klucz obcy, przypisuję ulubionym produktom dany produkt.
-
+Encja ta jest jedną z główniejszych, ponieważ posiada informacja na temat złożonych zamówień. W tej encji znajdują się informacje na temat zamówionego produktu, na temat użytkownika który produkt zamówił.
 <br/><br/>
+•	id_order – identyfikator zamówienia.<br/>
+•	status - kolumna przechowująca status zamówienia.<br/>
+•	date_of_placing_order - kolumna przechowująca datę złożenia zamówienia.<br/>
+•	payment_method - kolumna przechowująca sposób płatności.<br/>
+•	order_value - kolumna przechowująca całkowitą wartość zamówienia.<br/>
+•	id_ushop – klucz obcy, przypisuję zamówieniom danego użytkownika.<br/>
+
+<br/>
+
+### Tabela Orders_Products
+
+Encja ta przechowuje informację na temat produktów znajdujących się w danym zamówieniu oraz ilość w jakiej zostały zamówione.
+<br/><br/>
+•	quantity – ilość produktu przypisanego do konkretnego zamówienia<br/>
+•	id_order – klucz obcy, przypisuję danemu zamówieniu.<br/>
+•	id_product – klucz obcy, przypisuję danemu produktowi.<br/>
+
+<br/>
+
+###  Tabela favourite_products 
+Encja przechowująca informacje na temat ulubionych produktów przez użytkowników. Każdy użytkownik ma możliwość zapisać na swoim koncie produkty, które mu się podobają. Tabela ta jest połączona z tabelą products oraz users_shop.
+<br/><br/>
+•	id_favourite_product – identyfikator ulubionego produktu.<br/>
+•	id_user – klucz obcy, przypisuję ulubionym produktom danego użytkownika.<br/>
+•	id_product – klucz obcy, przypisuję ulubionym produktom dany produkt.<br/>
+
+<br/>
+
+## Skrypt do utworzenia struktury bazy danych
+
+<br/>
+
 
 # Wykorzystane technologie
 
-•	 PHP v7.3.27 <br/>
-•	Laravel Framework 8.37.0 <br/>
-•	JQuery <br/>
-•	HTML5 <br/>
-•	CSS <br/>
-•	Bootstrap4 <br/>
-•	PL/SQL <br/>
+1.	PHP v7.3.27 <br/>
+2.  Laravel Framework 8.37.0 <br/>
+3.	Javascript(JQuery) <br/>
+4.	HTML5 <br/>
+5.	CSS3 <br/>
+6.	Bootstrap4 <br/>
+7.	PL/SQL <br/>
 
 <br/>
 
@@ -410,11 +429,9 @@ php artisan serve
 5.	W przeglądarkę wpisać localhost:8000.
 6.	Jeśli chcesz się zalogować jako administrator wpisz w formularzu logowania Email/Password: admin@gmail.com/Password123, natomiast jeśli chcesz się zalogować jako standardowy użytkownik wpisz w formularzu logowania Email/Password: user@gmail.com/User123
 
-<br><br>
+<br/>
 
 # Potrzebne nazwy użytkowników do uruchomienia aplikacji
-
-<br>
 
 W aplikacji istnieją już konta początkowe.
 
@@ -422,15 +439,14 @@ W aplikacji istnieją już konta początkowe.
 E-MAIL: admin@gmail.com<br>
 HASŁO: Password123
 
-<br><br>
+<br/>
 
 •	UŻYTKOWNIK(klient)
 
 E-MAIL: user@gmail.com<br>
 HASŁO: User123 <br>
 
-<br><br>
-
+<br/>
 Dostęp do bazy danych(Oracle)
 
 LOGIN: system <br>
