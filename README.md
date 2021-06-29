@@ -1,7 +1,5 @@
 <p align="center"><img src="public\img\logo.png" width="400"></p>
 
-## About Clohdiva
-
 # Projekt zaliczeniowy z przedmiotu: Aplikacje internetowe
 
 # Temat projektu: Internetowy sklep odzieżowy Clothdiva
@@ -385,7 +383,7 @@ W trakcie instalacji w miejscu wybrania lokalizacji pliku trzeba wybrać lokaliz
 
 <br><br>
 
-### JQUERY + NPM
+### NODE.JS(NPM)
 
 1.	Pobrać i zainstalować  npm
 2.	Aby sprawdzić czy instalacja przebiegła pomyślnie trzeba wpisać w terminalu poniższą komendę:
@@ -393,8 +391,7 @@ npm – v <br>
 W wyniku powinny pojawić się takie informacje:
 
 <p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\NPM.jpg" width="400"></p>
-3.	Kolejnym krokiem jest pobranie kopii biblioteki JQuery.
-https://jquery.com/download/
+
 
 <br><br>
 
@@ -418,15 +415,15 @@ php artisan serve
 
 W aplikacji istnieją już konta początkowe.
 
-• 	ADMINISTRATOR <br>
-LOGIN: admin <br>
+• 	ADMINISTRATOR<br>
+E-MAIL: admin@gmail.com<br>
 HASŁO: Password123
 
 <br><br>
 
 •	UŻYTKOWNIK(klient)
 
-LOGIN: user <br>
+E-MAIL: user@gmail.com<br>
 HASŁO: User123 <br>
 
 <br><br>
