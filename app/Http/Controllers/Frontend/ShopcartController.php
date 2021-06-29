@@ -77,7 +77,7 @@ class ShopcartController extends Controller
             "prize" => $product->prize,
         ];
         session()->put('cart', $cart);
-        return redirect()->back()->with('status', 'Product added to cart successfully!');
+        return redirect()->back()->with('status', 'Product has been added to cart successfully!');
     }
 
     public function updatefromCart(Request $request)
@@ -87,7 +87,7 @@ class ShopcartController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            session()->flash('status', 'Cart updated successfully');
+            session()->flash('status', 'Cart has been updated successfully');
         }
     }
 
@@ -101,7 +101,7 @@ class ShopcartController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('status', 'Product removed successfully');
+            session()->flash('status', 'Product has been removed successfully');
         }
         
     }
