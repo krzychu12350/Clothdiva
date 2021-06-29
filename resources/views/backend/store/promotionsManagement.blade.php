@@ -17,9 +17,17 @@
                                     </div>
                                     <div class="table-data__tool-right">
                                   
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                    
+=======
+                                       
+>>>>>>> 47e3ffa (l)
+=======
                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-promotion">
                                                 <i class="zmdi zmdi-plus"></i>add promotion</button>
 
+>>>>>>> c65ee22cfbdbf48c1946d6545915bea5af09be9c
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -63,8 +71,12 @@
                                                 <td>{{$singlerow->name_of_category}}</td>
                                                 <td>{{$singlerow->name_of_subcategory}}</td>
                                                 <td>
+<<<<<<< HEAD
                                                     <div class="table-data-feature">
                                                        
+=======
+                                                  
+>>>>>>> 47e3ffa (l)
                                                           
 
                                                             <a class="promotiondel" href="{{ route('admin.promotion.destroy',['id_promotion' => $singlerow->id_promotion]) }}">

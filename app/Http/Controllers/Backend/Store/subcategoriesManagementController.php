@@ -35,6 +35,7 @@ class subcategoriesManagementController extends Controller
          
          return redirect()->back()->with('status', 'Subcategory has been added!');
     }
+
     public function update(Request $request)
     {
        // dd($request->all());
