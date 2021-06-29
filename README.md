@@ -49,7 +49,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 
 ## Interfejs serwisu
-                                     EKRAN GŁÓWNY
+                            CZĘŚĆ PRZEZNACZONA DLA KLIENTA
 
 
 <p align="center"> Strona główna aplikacji app.blade.php </p>
@@ -89,157 +89,157 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 <br/>
 
-<p align="center"><img src="documentation\images\8.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\8.jpg" width="800"></p>
 <p align="center">Każda z kategorii (WOMEN, MEN, GIRLS, BOYS) posiada własne produkty podzielone również na podkategorie(np. DRESSES, SKIRTS, T-SHIRTS, JEANS). Po kliknięciu na interesujący nas przedmiot użytkownik zostanie przeniesiony na podstronę z wybranymi produktami. </p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\9.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\9.jpg" width="800"></p>
 <p align="center"> wyszukiwarka app.blade.php </p>
 <p align="center">W menu nawigacyjnym widoczna jest również wyszukiwarka. Przeszukuje ona nazwy produktów w poszukiwaniu słów zbliżonych do podanych przez użytkownika. Jeżeli natrafi na podobny rekord to wyświetla go na podstronie app.serachedproducts.php.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\10.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\10.jpg" width="800"></p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\11.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\11.jpg" width="800"></p>
 <p align="center"> serachedproducts.php </p>
 <p align="center">Przykład działania wyszukiwarki.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\12.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\12.jpg" width="800"></p>
 <p align="center"> shop.blade.php</p>
 <p align="center">Na tej stronie wyświetlane są wszystkie produkty z bazy danych. W zależności jaką kategorie wybierzemy na stronie wyświetlą się produkty o id przypisanym do wybranych kategorii oraz podkategorii. Zdjęcia w bazie danych są przechowywane w postaci ścieżki pliku. Po lewej stronie widoczne są filtry które możemy ustalić dla produktów m.in. kategorie, cene, rozmiar oraz kolor. Te informacje są również wypisywane z bazy danych. </p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\13.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\13.jpg" width="800"></p>
 <p align="center"> product.blade.php</p>
 <p align="center">Strona product.php pozwala użytkownikowi na dokładniejsze obejrzenie produktu oraz przeczytanie opisu. Użytkownik może wybrać ilość danej rzeczy, dodać go do koszyka lub do ulubionych. Cała zawartość strony jest generowana na podstawie informacji zawartych w bazie danych. Strona ta jest szablonem do którego podstawiane są wszystkie rzeczy z bazy danych w zależności co użytkownik wybierze.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\14.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\14.jpg" width="800"></p>
 <p align="center"> favourites.blade.php</p>
 <p align="center">Każdy zalogowany użytkownik ma możliwość dodawania produktów do ulubionych. Strona favourites.php wyświetla na ekranie informacje o polubionym produkcie przez użytkownika. Wszystko dzieje się za pośrednictwem bazy danych, ponieważ każdy polubiony produkt tam trafia i łączy się z identyfikatorem użytkownika oraz identyfikatorem produktu. </p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\15.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\15.jpg" width="800"></p>
 <p align="center"> shopcart.blade.php</p>
 <p align="center">W przypadku gdy użytkownik nie doda produktu do koszyka (czyli zmienna sesyjna jest pusta), na ekranie wyświetla się komunikat, że koszyk jest pusty. Przycisk „continue shopping” przenosi użytkownika z powrotem na stronę główną sklepu.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\16.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\16.jpg" width="800"></p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\17.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\17.jpg" width="800"></p>
 
 <p align="center"> shopcart.blade.php</p>
 <p align="center">Po dodaniu produktów do koszyka, użytkownik uzyskuje na ekranie dane o swoim aktualnym zamówieniu wraz z jego szczegółami. Ma możliwość usunięcia danego przedmiotu z koszyka lub zwiększenia jego ilości. Poniżej produktów zliczana jest kwota zamówienia.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\18.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\18.jpg" width="800"></p>
 <p align="center"> checkout.blade.php</p>
 <p align="center">Po zaakceptowaniu swojego zamówienia użytkownik zostanie przeniesiony na podstronę checkout.blade.php. Wymaganym etapem do złożenia zamówienia jest podanie swoich danych adresowych. Wszystkie pola muszą być obowiązkowo wypełnione, ponieważ system walidacji nie przepuści pustych i źle wypełnionych pól. Po ostatecznym zaakceptowaniu zamówienie zostaje dodane do bazy danych. </p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\19.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\19.jpg" width="300" height="200"></p>
 <br/>
 
-<p align="center"><img src="documentation\images\20.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\20.jpg" width="800"></p>
 <p align="center"> dashboard.blade.php</p>
 <p align="center">Użytkownik może zobaczyć swoje dane oraz zamówienia za pomocą podstrony Dashboard. Informacje są pobierane z bazy danych.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\21.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\21.jpg"  width="300" height="200"></p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\22.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\22.jpg"  width="300" height="200"></p>
 <p align="center">Użytkownik poprzez stronę główną może zalogować się lub założyć nowe konto w sklepie. Zakładka zaloguj się (przycisk ludzika) jest dynamicznie kontrolowana przez status sesji. Gdy użytkownik posiada już konto oraz poprawnie się zaloguje to następuje podmiana przycisku zaloguj się, na przycisk wyloguj się oraz pod ikonką znajduję się nazwa użytkownika. Po kliknięciu przycisku wyloguj się, sesja zostaje zamknięta.</p>
 
 
 <br/>
 
-<p align="center"><img src="documentation\images\23.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\23.jpg" width="800"></p>
 <p align="center"> login.blade.php</p>
 <p align="center">Strona ta umożliwia zalogowanie się użytkownikom do systemu. Jeżeli użytkownik zapomni hasła lub chciałby je zmienić może to zrobić klikając na przycisk „forgot your password”.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\24.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\24.jpg" width="800"></p>
 <p align="center"> reset.blade.php</p>
 
 <p align="center">Ta podstrona umożliwia użytkownikom reset hasła. Wystarczy podać e-mail na które zostało założone konto i na niego zostanie wysłała wiadomość z linkiem do zresetowania hasła.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\25.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\25.jpg" width="600"></p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\26.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\26.jpg" width="800"></p>
 <p align="center"> reset.blade.php</p>
 <p align="center">Link z e-maila automatycznie przekieruję użytkownika na stronę zmiany hasła. W bazie danych stare hasło zostanie nadpisane nowo zmienionym hasłem. </p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\27.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\27.jpg" width="800"></p>
 <p align="center"> register.blade.php</p>
 
 <p align="center">W panelu rejestracyjnym użytkownik może założyć własne konto. Wszystkie pola muszą być obowiązkowo wypełnione, ponieważ system walidacji nie przepuści pustych i źle wypełnionych pól. Po rejestracji na e-mail użytkownika przychodzi mail z informacją, że rejestracja przebiegła pomyślnie.</p>
 
 <br/>
 
-                                # EKRAN ADMINISTRATORA 
+                            # CZĘŚĆ PRZEZNACZONA DLA ADMINISTRATORA 
 
-<p align="center"><img src="documentation\images\28.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\28.jpg" width="800"></p>
 <p align="center"> admin.blade.php</p>
 
 <p align="center">Strona główna panelu administratora - admin.blade.php zawiera w sobie takie sekcje jak: header, menu-sidebar oraz main-content. Szablon tej strony jest powielany do innych podstron z panelu administratora.  Jest to strona główna nawigująca poprzez boczne menu do innych podstron.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\29.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\29.jpg" width="800"></p>
 <p align="center"> promotionsManagament.blade.php </p>
 <p align="center">Na tej stronie administrator ma możliwość zarządzania promocjami. Może dodać, edytować oraz usunąć wybraną promocję. Każda opcja zapisuje wszystko na nowo w bazie danych oraz wszystkie informacje na temat promocji są przekazywane z bazy.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\30.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\30.jpg" width="800"></p>
 <p align="center"><p align="center"> promotionsManagament.blade.php </p>
 <p align="center"> Na tej stronie administrator ma możliwość zarządzania produktami. Może dodać, edytować oraz usunąć wybrany produkt. Każda opcja zapisuje wszystko na nowo w bazie danych oraz wszystkie informacje na temat produktów są przekazywane z bazy. </p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\31.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\31.jpg" width="800"></p>
 <p align="center"><p align="center"> productsManagament.blade.php </p>
 <p align="center">Na tej stronie administrator ma możliwość zarządzania podkategoriami. Może dodać, edytować oraz usunąć wybraną podkategorię. Każda opcja zapisuje wszystko na nowo w bazie danych oraz wszystkie informacje na temat podkategorii są przekazywane z bazy.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\32.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\32.jpg" width="800"></p>
 <p align="center"><p align="center"> ordersManagament.blade.php </p>
 <p align="center">Na tej stronie administrator ma możliwość zarządzania zamówieniami. Może edytować oraz usunąć wybraną podkategorię. Każda opcja zapisuje wszystko na nowo w bazie danych oraz wszystkie informacje na temat zamówień są przekazywane z bazy.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\33.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\33.jpg" width="800"></p>
 <p align="center"><p align="center"> usersManagament.blade.php </p>
 <p align="center">Zakładka USERS służy do zarządzania wszystkimi zarejestrowanymi użytkownikami. Administrator może usunąć lub z edytować dane użytkownika. Administrator może również nadać rolę użytkownikowi. Cała zawartość strony jest importowana z bazy danych.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\34.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\34.jpg" width="800"></p>
 <p align="center"><p align="center"> sliderManagment.blade.php </p>
 <p align="center">Na tej stronie administrator ma możliwość zarządzania banerami. Może dodać, edytować oraz usunąć wybraną podkategorię. Każda opcja zapisuje wszystko na nowo w bazie danych oraz wszystkie informacje na temat banerów są przekazywane z bazy.</p>
 
