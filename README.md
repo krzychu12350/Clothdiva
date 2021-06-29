@@ -249,7 +249,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 ### Diagram ERD
 <br/>
-<p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\DIAGRAM ERD.png" width="400"></p>
+<p align="center"><img src="photos\ZDJĘCIA DO DOKUMENTACJI\DIAGRAM ERD.jpg" width="400"></p>
 
 ## Tabela roles <br/>
 Encja przechowująca role, które są przypisywane do użytkowników i jest połączona z encją Shop_users relacją jeden do wielu, ponieważ każdy użytkownik musi mieć przypisaną rolę użytkownika lub administratora. 
