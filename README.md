@@ -53,38 +53,38 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 
 <p align="center"> Strona główna aplikacji app.blade.php </p>
-<p align="center"><img src="documentation\images\1.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\1.jpg" width="800"></p>
 <p align="center">Strona główna app.blade.php zawiera w sobie takie sekcje jak: header, banner oraz footer. Szablon tej strony jest powielany do wielu innych podstron za wyjątkiem sekcji banner.  Celem tej strony jest zaprezentowanie sklepu i ma ona charakter czysto wizualny. Jest to strona główna(home) nawigująca do innych podstron, która zarazem jest wizytówką sklepu internetowego Clothdiva.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\2.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\2.jpg" width="800"></p>
 <p align="center">W sekcji header znajduję się menu nawigacyjne. To dzięki niemu użytkownik może swobodnie się poruszać po całym sklepie internetowym. Po lewej stronie widnieje logo firmy, po środku widoczne są zakładki prowadzące już bezpośrednio do produktów dostępnych na sklepie, które zostały podzielone na kategorie. Natomiast po prawej stronie widnieją ikony dotyczące użytkownika, wyszukiwarki, ulubionych produktów oraz koszyka.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\3.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\3.jpg" width="800"></p>
 <p align="center">Sekcja footer strony głównej jest częścią statyczną.  Znajduję się tutaj logo firmy, krótki opis sklepu internetowego i przydatne linki dotyczące firmy oraz konta. Sklep jest również połączony z innymi portalami społecznościowymi m.in. z Facebookiem i za pomocą ikon SOCIALS można przedostać się na wybrane social media.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\4.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\4.jpg" width="800"></p>
 <p align="center"> contact.blade.php </p>
 <p align="center">Zakładka CONTACT przenosi nas na stronę kontaktową sklepu. Widoczne są informację kontaktowe oraz adres sklepu. Za pomocą API pobierana jest mapa i dzięki niej ukazana jest lokalizacja sklepu(są to fałszywe dane podstawione w celu zaprezentowania funkcjonalności). Strona ta posiada również formularz kontaktowy, dzięki któremu użytkownik może skontaktować się z administratorem. Wiadomość zostanie wysłana na e-mail sklepu odzieżowego.</p>
 
 <br/>
 
-<p align="center"><img src="documentation\images\5.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\5.jpg" width="800"></p>
 
 
 <br/>
 
-<p align="center"><img src="documentation\images\6.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\6.jpg" width="800"></p>
 
 
 <br/>
 
-<p align="center"><img src="documentation\images\7.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\7.jpg" width="800"></p>
 
 
 <br/>
@@ -249,7 +249,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 ## Diagram ERD
 <br/>
-<p align="center"><img src="documentation\images\DIAGRAM ERD.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\DIAGRAM ERD.jpg" width="800"></p>
 
 ### Tabela roles <br/>
 Encja przechowująca role, które są przypisywane do użytkowników i jest połączona z encją Shop_users relacją jeden do wielu, ponieważ każdy użytkownik musi mieć przypisaną rolę użytkownika lub administratora. 
