@@ -55,7 +55,7 @@ class ordersManagementController extends Controller
 
     public function update(Request $request)
     {   
-        //dd($request->all());  
+     
         $id_order = $request->input('order-id');
         $sel_status = $request->input('selectOption');
 
@@ -84,7 +84,7 @@ class ordersManagementController extends Controller
             
         $result = DB::executeProcedure($procedureName, $bindings);
         
-        return redirect()->back()->with('status', 'User has been removed!');
+        return redirect()->back()->with('status', 'Order has been removed!');
    
     }
 

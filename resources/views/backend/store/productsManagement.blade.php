@@ -20,6 +20,10 @@
                                     <div class="table-data__tool-right">
                                         <button class="au-btn au-btn-icon au-btn--green au-btn--small add-product">
                                             <i class="zmdi zmdi-plus"></i>add product</button>
+                                            <script>
+                                           var subcat = <?php echo json_encode($array_sub_category); ?>;
+                                           var cat = <?php echo json_encode($array_category); ?>;
+                                            </script>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             
                                             <div class="dropDownSelect2"></div>
@@ -27,10 +31,11 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data2">
-                                <form method="POST" action="{{ route('admin.store.subcategories.create')}}" id="addprod">
+                             
+                                <form method="POST" action="{{ route('admin.store.product.create')}}" id="addprod" enctype="multipart/form-data">
                                     @csrf
                                     </form>
-                                    <form method="POST" action="{{ route('admin.store.subcategories.update')}}" id="editprod">
+                                    <form method="POST" action="{{ route('admin.store.product.update')}}" id="editprod">
                                         @csrf
                                     </form>
                                     <table id="products-table" class="table table-data2">

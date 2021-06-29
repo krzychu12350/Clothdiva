@@ -60,8 +60,8 @@
                                                 <td class="desc">{{$singlerow->promotion_start_date}}</td>
                                                 <td>{{$singlerow->promotion_end_date}}</td>
                                                 <!--<td>{{$singlerow->id_product}}</td>-->
-                                                <td>{{$singlerow->name_of_subcategory}}</td>
                                                 <td>{{$singlerow->name_of_category}}</td>
+                                                <td>{{$singlerow->name_of_subcategory}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                        

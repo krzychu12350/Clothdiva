@@ -532,6 +532,7 @@
   }
 })(jQuery);
 
+
 try {
 $( ".add-promotion" ).on( "click", function() {
   //alert("Obsługuje przycisk!");
@@ -539,9 +540,25 @@ $( ".add-promotion" ).on( "click", function() {
     .prepend($('<tr>')
       .attr('class', 'tr-shadow')
         .prepend($(
-          '<td> <input form="addp" type="text" name="promotion-name"></input></td> <td><input type="text" form="addp"  name="size-of-promotion"></input></td> <td><input type="text" form="addp" name="description"></input></td>  <td><input type="text" form="addp" name="start-of-promotion"></input></td> <td><input type="text" form="addp" name="end-of-promotion"></input></td> <td><input type="text" form="addp" name="id-product"></input></td>  <td><input type="text" form="addp" name="category-product"></input></td>   <td><input type="text" form="addp" name="subcategory-product"></input></td>   </form>  <td> <div class="table-data-feature"><button type="submit" form="addp" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+          '<td> <input form="addp" type="text" name="promotion-name"></input></td> <td><input type="number" min=2 max=99 form="addp"  name="size-of-promotion"></input></td> <td><input type="text" form="addp" name="description"></input></td>  <td><input type="date" id="tbDate" min="01/01/1997" max="31/12/2050" form="addp" name="start-of-promotion"></input></td> <td><input type="date" form="addp" name="end-of-promotion"></input></td>'
+          +'<td>'
+          +'<div class="rs-select2--trans rs-select2--sm">'
+          +'<select class="js-select2" form="addp"  id="category-product" name="category-product">'
+          +'<option selected="selected" value="1">Women</option>'
+          +'<option value="2">Men</option>'
+          +'<option value="3">Girls</option>'
+          +'<option value="4">Boys</option>'
+          +'</select>'
+          +'<div class="dropDownSelect2"></div>'
+          +'</div>'
+          +'</td>' 
+          +'<td><input type="text" form="addp" name="subcategory-product"></input></td>'
+          +'<td> <div class="table-data-feature"><button type="submit" form="addp" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
         )
     );
+    $('input[id$=tbDate]').datepicker({
+      dateFormat: 'dd/mm/yy'
+    });
 });
 } catch (error) {
   console.log(error);
@@ -555,7 +572,7 @@ $(".edit-promotion").on( "click", function() {
   alert(textOfTd);
   $('#promotion-table #' + selRow).find('td').empty();
   $('#promotion-table').find('tr#' + selRow)
-  .replaceWith($( '<td>  <input form="editp" type="hidden" value=' + textOfTd + ' name="id-promotion"><input form="editp" type="text" name="promotion-name"></input></td> <td><input type="text" form="editp"  name="size-of-promotion"></input></td> <td><input type="text" form="editp" name="description"></input></td>  <td><input type="text" form="editp" name="start-of-promotion"></input></td> <td><input type="text" form="editp" name="end-of-promotion"></input></td> <td><input type="text" form="editp" name="id-products"></input></td>  <td><input type="text" form="editp" name="category-product"></input></td>   <td><input type="text" form="editp" name="subcategory-product"></input></td>    </form>  <td> <div class="table-data-feature"><button type="submit" form="editp" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
+  .replaceWith($( '<td>  <input form="editp" type="hidden" value=' + textOfTd + ' name="id-promotion"><input form="editp" type="text" name="promotion-name"></input></td> <td><input type="text" form="editp"  name="size-of-promotion"></input></td> <td><input type="date" form="editp" name="description"></input></td>  <td><input type="date" form="editp" name="start-of-promotion"></input></td> <td><input type="text" form="editp" name="end-of-promotion"></input></td> <td><input type="text" form="editp" name="category-product"></input></td>   <td><input type="text" form="editp" name="subcategory-product"></input></td>      <td> <div class="table-data-feature"><button type="submit" form="editp" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
 });
 
 
@@ -653,14 +670,55 @@ $( ".edit-subcategory").on( "click", function() {
 });
 
 //PRODUCTS ADDING AND EDITING
+alert(subcat);
+alert(cat);
+
+  //var your_object = JSON.parse(text);
+  $.each(cat , function(k, item) { 
+     $('#product-subcat-and-cat')
+           .append($("<option></option>")
+           .attr("value", item)
+           .text(item));
+  });
 
 $( ".add-product" ).on( "click", function() {
-    $("#products-table").find('tbody')
-    .prepend($('<tr>')
-        .prepend($(
-          '<td> <input form="addprod" type="text" name="product-name"></input></td> <td><input type="text" form="addprod"  name="product-image"></input></td> <td><input type="text" form="addprod"  name="product-prize"></input></td> <td><input type="text" form="addprod"  name="product-color"></input></td> <td><input type="text" form="addprod"  name="product-size"></input></td> <td><input type="text" form="addprod"  name="product-desc"></input></td>   <td><input type="text" form="addprod"  name="id_subcat"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="addprod" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+    $("#products-table").find('tbody').prepend($('<tr>').prepend($(
+          '<td> <textarea form="addprod" type="text" name="product-name"></textarea></td> <td>'
+          +'<input type="file" form="addprod" name="images[]" multiple class="form-control" accept="image/*">'
+          +'</td>'
+          +'<td><textarea type="text" form="addprod"  name="product-prize"></textarea></td> <td><textarea type="text" form="addprod"  name="product-color"></textarea></td>' 
+          +'<td>'
+          +'<select name="product-size" id="product-size" form="addprod">'
+          +'<option value="XS">XS</option>'
+          +'<option value="S">S</option>'
+          +'<option value="M">M</option>'
+          +'<option value="L">L</option>'
+          +'<option value="XL">XL</option>'
+          +'</select>'
+          +'</td>'
+          +'<td><textarea type="text" form="addprod"  name="product-desc"></textarea></td>'
+          +'<td>'
+          +'<select name="product-subcat-and-cat" id="product-subcat-and-cat" form="addprod">'
+          +'<option value="1">Dresses</option>'
+          +'<option value="2">Skirts</option>'
+          +'</select>'
+          +'</td>'
+          +'<td> <div class="table-data-feature"><button type="submit" form="addprod" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>'
+          )
         )
     );
+
+});
+
+$(document).ready(function() {
+  $(".btn-success").click(function(){ 
+      var lsthmtl = $(".clone").html();
+      $(".increment").after(lsthmtl);
+  });
+  $("body").on("click",".btn-danger",function(){ 
+      $(this).parents(".hdtuto control-group lst").remove();
+  });
+
 });
 
 $( ".edit-product").on( "click", function() {

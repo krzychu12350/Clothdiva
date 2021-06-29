@@ -30,11 +30,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
-                                            $id_order = $top_order_id[0]->id_order;
-                                        ?>
+                                            <?php
+                                                $id_order = $top_order_id[0]->id_order;
+                                            ?>
+
                                             @foreach($orders as $singlerow)
                                             <tr id="editp-row-{{$singlerow->id_order}}">
+                                          
                                                 <td id="id-o" >{{$singlerow->id_order}} </td>
 
                                                 <td>
@@ -46,16 +48,16 @@
                                                 </td>
                                                 <td>
                                                     @foreach($order_products as $singleproduct)
-                                                        @if($singleproduct->id_order == $id_order)
-                                                            {{$singleproduct->name}}<br />
-                                                        @endif    
+                                                    @if($singleproduct->id_order == $id_order)
+                                                        {{$singleproduct->name}}<br />
+                                                    @endif    
                                                     @endforeach
                                                 </td>
                                                 <td>
                                                     @foreach($order_products as $singleproduct)
-                                                        @if($singleproduct->id_order == $id_order)
-                                                            {{$singleproduct->quantity_order}}<br />
-                                                        @endif 
+                                                    @if($singleproduct->id_order == $id_order)
+                                                        {{$singleproduct->quantity_order}}<br />
+                                                    @endif   
                                                     @endforeach
                                                 </td>
                                                 <td>

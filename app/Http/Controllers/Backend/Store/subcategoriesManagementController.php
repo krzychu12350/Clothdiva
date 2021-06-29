@@ -14,6 +14,7 @@ class subcategoriesManagementController extends Controller
 
     public function index()
     {
+        
         return view('backend.store.subcategoriesManagement');
        
     }
