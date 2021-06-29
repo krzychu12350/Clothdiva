@@ -200,7 +200,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 <br/>
 
-                            # CZĘŚĆ PRZEZNACZONA DLA ADMINISTRATORA 
+                                      # CZĘŚĆ PRZEZNACZONA DLA ADMINISTRATORA 
 
 <p align="center"><img src="documentation\images\28.jpg" width="800"></p>
 <p align="center"> admin.blade.php</p>
