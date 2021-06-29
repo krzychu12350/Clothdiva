@@ -473,7 +473,6 @@
 <script src="{{ asset('js/frontend/sweetalerts.js') }}"></script>
 <script src="{{ asset('js/frontend/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('js/frontend/checkout-form-validation.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/frontend/jquery.bootpag.js') }}"></script>
 
 
 @yield('scripts')
