@@ -567,9 +567,9 @@ $( ".add-promotion" ).on( "click", function() {
 $(".edit-promotion").on( "click", function() {
   //alert("Działa edycja!");
   var selRow = String($(this).closest('tr').attr('id'));
-  alert(selRow);
+  //alert(selRow);
   var textOfTd = $("#id-p").text();
-  alert(textOfTd);
+ // alert(textOfTd);
   $('#promotion-table #' + selRow).find('td').empty();
   $('#promotion-table').find('tr#' + selRow)
   .replaceWith($( '<td>  <input form="editp" type="hidden" value=' + textOfTd + ' name="id-promotion"><input form="editp" type="text" name="promotion-name"></input></td> <td><input type="text" form="editp"  name="size-of-promotion"></input></td> <td><input type="date" form="editp" name="description"></input></td>  <td><input type="date" form="editp" name="start-of-promotion"></input></td> <td><input type="text" form="editp" name="end-of-promotion"></input></td> <td><input type="text" form="editp" name="category-product"></input></td>   <td><input type="text" form="editp" name="subcategory-product"></input></td>      <td> <div class="table-data-feature"><button type="submit" form="editp" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
@@ -682,9 +682,11 @@ $( ".edit-subcategory").on( "click", function() {
   });*/
 
 $( ".add-product" ).on( "click", function() {
+  //alert(subcat[0]);
     $("#products-table").find('tbody').prepend($('<tr>').prepend($(
-          '<td> <textarea form="addprod" type="text" name="product-name"></textarea></td> <td>'
-          +'<input type="file" form="addprod" name="images[]" multiple class="form-control" accept="image/*">'
+          '<td> <textarea form="addprod" type="text" name="product-name"></textarea></td> '
+          +'<td> <input form="addprod" type="number" min=1 name="product-quantity"></input></td> <td>'
+          +'<input type="file" id="add-products-images" form="addprod" name="images[]" multiple class="form-control" accept="image/*">'
           +'</td>'
           +'<td><textarea type="text" form="addprod"  name="product-prize"></textarea></td> <td><textarea type="text" form="addprod"  name="product-color"></textarea></td>' 
           +'<td>'
@@ -697,10 +699,9 @@ $( ".add-product" ).on( "click", function() {
           +'</select>'
           +'</td>'
           +'<td><textarea type="text" form="addprod"  name="product-desc"></textarea></td>'
-          +'<td>'
-          +'<select name="product-subcat-and-cat" id="product-subcat-and-cat" form="addprod">'
-          +'<option value="1">Dresses</option>'
-          +'<option value="2">Skirts</option>'
+          +'<td><textarea type="text" form="addprod"  name="product-comp"></textarea></td>'
+          +'<td id="cat-and-subcat">'
+          +'<select name="product-cat-and-subcat" id="product-cat-and-subcat" form="addprod">'
           +'</select>'
           +'</td>'
           +'<td> <div class="table-data-feature"><button type="submit" form="addprod" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>'
@@ -708,6 +709,38 @@ $( ".add-product" ).on( "click", function() {
         )
     );
 
+    
+      /*
+      $.map(subcat, function( val, i ) {
+       
+        return i.val;
+        });
+      })*/
+     // '<h1>'+subcat[0]+'</h1>'
+    
+     var i = 1;
+     $.each(subcat, function() {
+      //alert('this is ' + this);
+
+      $("#product-cat-and-subcat").append($(
+          //'<h1>'+this+'</h1>'
+          '<option value="'+i+'">'+this+'</option>'
+        )
+        );
+        
+        i++;
+    })
+
+    
+      
+
+/*
+  '<select name="product-subcat-and-cat" id="product-subcat-and-cat" form="addprod">'
+      +'<option value="1">'+subcat[0]+'</option>'
+     +'<option value="2">Skirts</option>'
+     +'</select>'
+     */
+  
 });
 
 $(document).ready(function() {

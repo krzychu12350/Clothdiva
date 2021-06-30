@@ -28,14 +28,17 @@ class ordersManagementController extends Controller
         INNER JOIN ushop ON ushop.id_ushop = orders.id_ushop
         "));
 
-         $top_order_id = DB::select(DB::raw("SELECT orders.id_order FROM orders
+        $top_id = DB::select(DB::raw("SELECT orders.id_order FROM orders
          INNER JOIN orders_products po ON po.id_order = orders.id_order 
          INNER JOIN products pr ON pr.id_product = po.id_product 
          INNER JOIN ushop ON ushop.id_ushop = orders.id_ushop
          GROUP BY pr.name, pr.prize, pr.color, pr.size_of_product, po.quantity, orders.id_order
          ORDER BY orders.id_order ASC FETCH FIRST 1 ROWS ONLY"));
-         
+         $id_order = current(head($top_id));
         
+ 
+    
+     
        
      
         
@@ -50,7 +53,7 @@ class ordersManagementController extends Controller
 
         
        
-        return view('backend.store.ordersManagement', compact('orders','status','order_products','order_products2','top_order_id'));
+        return view('backend.store.ordersManagement', compact('orders','status','order_products','order_products2','id_order'));
        
     }
 

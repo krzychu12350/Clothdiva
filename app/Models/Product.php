@@ -18,7 +18,7 @@ class Product extends Model
         'size_of_product',
         'description',
         'composition_and_conservation',
-        'id_subcategory',
+        'id_sub_category',
         'id_promotion',
        // 'id_order',
     ];

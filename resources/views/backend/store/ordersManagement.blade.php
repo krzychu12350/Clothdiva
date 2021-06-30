@@ -31,8 +31,7 @@
                                         </thead>
                                         <tbody>
                                          
-                                            {{ isset($top_order_id[0]) ? $top_order_id[0]->id_order : 0 }}
-                                            {{$id_order = $top_order_id[0]->id_order}}
+                                    
                                           
                                             @foreach($orders as $singlerow)
                                             <tr id="editp-row-{{$singlerow->id_order}}">
@@ -95,6 +94,13 @@
                                                 <td>{{$singlerow->name}} {{$singlerow->surname}}</td>
                                                 <td>
                                         
+                                                    
+                                                <div class="table-data-feature">
+                                                <a class="order-update" href="{{ route('admin.store.order.update') }}">
+                                                        <button type="submit" form="order-update" class="item edit-order" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        </a>
                                                     
 
                                                         <a class="orderdel" href="{{ route('admin.store.order.destroy',['id_o' => $singlerow->id_order]) }}">

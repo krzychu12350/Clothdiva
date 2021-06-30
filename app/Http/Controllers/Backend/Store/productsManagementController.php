@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Store;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Product;
 
 class productsManagementController extends Controller
 {
@@ -17,14 +18,27 @@ class productsManagementController extends Controller
         foreach ($scmanagement as $single) {
             array_push($array_sub_category, $single->name_of_subcategory);
             array_push($array_category, $single->name_of_category);
+            $combined = array_map(function($a, $b) { return $a . ' ' . $b; }, $array_category, $array_sub_category);
         }
+        //dd($combined);
        
-        return view('backend.store.productsManagement',compact('array_sub_category','array_category'));
+        return view('backend.store.productsManagement',compact('combined'));
        
     }
     public function create(Request $request)
     {   
-        dd($request->all());  
+     //  dd($request->all());  
+
+        $product = Product::create([
+            'name' =>  $request->input('product-name'),
+            'quantity' => $request->input('product-quantity'),
+            'prize' => $request->input('product-prize'),
+            'size_of_product' => $request->input('product-size'),
+            'color' => $request->input('product-color'),
+            'description' => $request->input('product-size'),
+            'composition_and_conservation' => '100% Cotton',
+            'id_sub_category' => '1',
+        ]);
 
        /*
         $file = $request->file('slide');
@@ -50,13 +64,7 @@ class productsManagementController extends Controller
         $test = $file->move(public_path('img\banner'), $newImageName);
         //dd($newImageName);
         
-        $slide = Banner_image::create([
-            "path_to_image" => 'img/banner/'. $newImageName,
-            "paragraph_large" => $request->input('paragraph-large'),
-            "paragraph_small" => $request->input('paragraph-small'),
-            "link_href" => $request->input('link'),
-            "link_desc" => $request->input('link-description'),
-        ]);
+      
 
         
         /*
@@ -95,6 +103,7 @@ class productsManagementController extends Controller
     {   
 
         $id_product = $request->input('idproduct');
+        //dd($id_product);
         /*
         'name'=>$singlerow->name,
         'prize'=>$singlerow->prize,
@@ -105,12 +114,12 @@ class productsManagementController extends Controller
         $procedureName = 'products_CRUD.del_product';
         
         $bindings = [
-            '$id_product'  =>  $id_product,
+            'idproduct'  =>  $id_product,
         ];
             
         $result = DB::executeProcedure($procedureName, $bindings);
         
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Product has been removed!');
    
     }
 }
