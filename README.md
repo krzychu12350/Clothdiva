@@ -367,6 +367,20 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 
 <a href="logo.png" download>Pobierz</a>
 
+# Plik konfiguracyjny do połączenia z bazą danych<br/>oraz połączenia aplikacji z skrzynką pocztową
+
+Do poprawnego działania aplikacji należy skopiować plik '.env.example'(widoczny na poniższym zrzucie ekranu) i zmienić jego nazwę na '.env' oraz skonfigurować odpowiednie opcję pozwalające na połaczenie z bazą danych oraz skrzynką pocztową.
+<br/>
+<img src="documentation\images\instafeed.jpg">
+
+# Konfiguracja połączenia z API Instagrama
+Połaczenie z API Instagrama odbywa się przy wykorzystaniu javascriptowej wtyczki Instafeed.js
+<br/>
+https://instafeedjs.com/
+<br/>
+Aby połączyć aplikację z API Instagrama wystarczy wygenerować token dostępu i przypisać go do opcji accessToken tak jak na poniższym zrzucie ekranu.
+
+<img src="documentation\images\plik-konfiguracyjny.jpg">
 <br/>
 
 # Wykorzystane technologie
@@ -374,11 +388,11 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 1.	PHP v7.3.27 <br/>
 <img src="documentation\images\php-logo.jpg" width="100" height="100">
 <br/>
-2.  Laravel Framework 8.37.0 <br/>
+2.  Laravel Framework 8.37.0 <br/><br/>
 <img src="documentation\images\laravel-logo.jpg" width="100" height="100">
 
 3.	Javascript(JQuery) <br/>
-<img src="documentation\images\jquery-logo.jpg" width="100" height="100">
+<img src="documentation\images\jquery-logo.jpg" width="300" height="100">
 
 4.	HTML5 <br/>
 <img src="documentation\images\html5-logo.jpg" width="100" height="100">
