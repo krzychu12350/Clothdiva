@@ -54,7 +54,7 @@
                                                     <td id="id-sc" class="d-none">
                                                         {{$singlerow->id_sub_category}}
                                                     </td>
-
+                                                 
                                             
                                                     <td>
                                                         <div class="table-data__info">
@@ -62,7 +62,7 @@
                                                         </div>
                                                     </td>
                                                     <td style="width: 400px !important">
-                                                        <img src="{{$singlerow->image_of_subcategory}}" class="w-50">
+                                                        <img src="{{$singlerow->image_of_subcategory}}" class="w-50" class="image-popup">
 
                                                     </td>
                                                     <td>
