@@ -22,7 +22,6 @@
                                             <i class="zmdi zmdi-plus"></i>add product</button>
                                             <script>
                                            var subcat = <?php echo json_encode($combined); ?>;
-                                        
                                             </script>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             
@@ -35,13 +34,13 @@
                                 <form method="POST" action="{{ route('admin.store.product.create')}}" id="addprod" enctype="multipart/form-data">
                                     @csrf
                                     </form>
-                                    <form method="POST" action="{{ route('admin.store.product.update')}}" id="editprod">
+                                    <form method="POST" action="{{ route('admin.store.product.update')}}" id="editprod" enctype="multipart/form-data">
                                         @csrf
                                     </form>
                                     <table id="products-table" class="table table-data2">
                                         <thead>
                                             <tr>
-                                                
+                                                <th class="d-none">id</th>
                                                 <th>name</th>
                                                 <th>quantity</th>
                                                 <th>image</th>

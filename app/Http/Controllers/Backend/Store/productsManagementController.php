@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product;
+use App\Models\Image;
 
 class productsManagementController extends Controller
 {
@@ -26,19 +27,44 @@ class productsManagementController extends Controller
        
     }
     public function create(Request $request)
-    {   
-     //  dd($request->all());  
-
-        $product = Product::create([
+    {      
+        
+        //dd($request->all());
+        Product::create([
             'name' =>  $request->input('product-name'),
             'quantity' => $request->input('product-quantity'),
             'prize' => $request->input('product-prize'),
             'size_of_product' => $request->input('product-size'),
             'color' => $request->input('product-color'),
-            'description' => $request->input('product-size'),
-            'composition_and_conservation' => '100% Cotton',
-            'id_sub_category' => '1',
+            'description' => $request->input('product-desc'),
+            'composition_and_conservation' => $request->input('product-comp'),
+            'id_sub_category' => $request->input('product-cat-and-subcat'),
         ]);
+        
+        $last_id = DB::table('products')->select('id_product')->latest('id_product')->first();
+        //dd($last_id);  
+
+
+
+        if ($request->hasfile('images')) {
+            foreach ($request->file('images') as $file) {
+                //$file = $file3;
+                $file2 = $file->getClientOriginalName();
+          
+                $filename = pathinfo($file2, PATHINFO_FILENAME);
+                $extension = pathinfo($file2, PATHINFO_EXTENSION);
+                $newImageName = 'images/'.time(). '-' . $filename. '.' . $extension;
+                $newImageName2 = 'images/'.time(). '-' . $filename;
+
+                Image::create([
+                    'image' =>  $newImageName2,
+                    'id_product' => $last_id->id_product,
+                ]);
+
+                $file->move(public_path('images'), $newImageName);
+                
+            }
+        }
 
        /*
         $file = $request->file('slide');
@@ -90,12 +116,49 @@ class productsManagementController extends Controller
         $file->save();
         return back()->with('success', 'Data Your files has been successfully added');
         */
- 
+        return redirect()->back()->with('status', 'Product has been added!');
     }
 
     public function update(Request $request)
     {   
-        dd($request);  
+       // dd($request->all());  
+        $id_product = $request->input('product-id');
+        Product::where('id_product', '=', $id_product)->update([
+            'name' =>  $request->input('product-name'),
+            'quantity' => $request->input('product-quantity'),
+            'prize' => $request->input('product-prize'),
+            'size_of_product' => $request->input('product-size'),
+            'color' => $request->input('product-color'),
+            'description' => $request->input('product-desc'),
+            'composition_and_conservation' => $request->input('product-comp'),
+            'id_sub_category' => $request->input('product-cat-and-subcat'),
+        ]);
+        
+        $first_id_where_id_product = DB::table('images')->select('id_image')->where('id_product', '=', $id_product)->first();
+        $id = $first_id_where_id_product->id_image;
+        //dd($first_id_where_id_product->id_image);
+
+        if ($request->hasfile('images')) {
+            foreach ($request->file('images') as $file) {
+                //dd($request->file('images'));
+                $file2 = $file->getClientOriginalName();
+                $filename = pathinfo($file2, PATHINFO_FILENAME);
+                $extension = pathinfo($file2, PATHINFO_EXTENSION);
+                $newImageName = 'images/'.time(). '-' . $filename. '.' . $extension;
+                $newImageName2 = 'images/'.time(). '-' . $filename;
+
+                Image::where('id_product', '=', $id_product)->where('id_image', '=',$id)->update([
+                    'image' =>  $newImageName2,
+                ]);
+
+                $file->move(public_path('images'), $newImageName);
+                $id++;
+                
+            }
+        }
+
+        return redirect()->back()->with('status', 'Product has been updated!');
+   
     }
 
     

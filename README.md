@@ -8,8 +8,6 @@
 
 ## Specyfikacja projektu
 
-<br/>
-
 ## Cel projektu: Stworzenie platformy umożliwiające dokonywanie zakupów online. 
 <br/>
 
@@ -22,7 +20,6 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 <br/> <br/>
 
 ## Funkcjonalności
-<br/>
 
 ### ADMINISTRATOR:
 <br/>
@@ -371,7 +368,8 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 
 Do poprawnego działania aplikacji należy skopiować plik '.env.example'(widoczny na poniższym zrzucie ekranu) i zmienić jego nazwę na '.env' oraz skonfigurować odpowiednie opcję pozwalające na połaczenie z bazą danych oraz skrzynką pocztową.
 <br/>
-<img src="documentation\images\instafeed.jpg">
+<img src="documentation\images\plik-konfiguracyjny.jpg">
+
 
 # Konfiguracja połączenia z API Instagrama
 Połaczenie z API Instagrama odbywa się przy wykorzystaniu javascriptowej wtyczki Instafeed.js
@@ -379,8 +377,8 @@ Połaczenie z API Instagrama odbywa się przy wykorzystaniu javascriptowej wtycz
 https://instafeedjs.com/
 <br/>
 Aby połączyć aplikację z API Instagrama wystarczy wygenerować token dostępu i przypisać go do opcji accessToken tak jak na poniższym zrzucie ekranu.
-
-<img src="documentation\images\plik-konfiguracyjny.jpg">
+<br/>
+<img src="documentation\images\instafeed.jpg">
 <br/>
 
 # Wykorzystane technologie

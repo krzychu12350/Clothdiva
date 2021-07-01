@@ -19,8 +19,8 @@ class CreatePromotionsSeeder extends Seeder
             [
                 'name_of_promotion' => 'Promotion for women products',
                 'size_of_promotion' => '20',
-                'promotion_start_date' => '2021-06-02',
-                'promotion_end_date' => '2021-07-02',
+                'promotion_start_date' => '02/06/2021',
+                'promotion_end_date' => '25/06/2021',
                 'description' => 'Monthly promotion for women products!',
             ],
 
@@ -28,24 +28,24 @@ class CreatePromotionsSeeder extends Seeder
             [
                 'name_of_promotion' => 'Promotion for mens products',
                 'size_of_promotion' => '35',
-                'promotion_start_date' => '2021-07-22',
-                'promotion_end_date' => '2021-07-29',
+                'promotion_start_date' => '07/06/2021',
+                'promotion_end_date' => '20/06/2021',
                 'description' => 'Promotion for men clothes for one week only',
             ],
 
             [
                 'name_of_promotion' => 'Promotion for girls products',
                 'size_of_promotion' => '15',
-                'promotion_start_date' => '2021-06-11',
-                'promotion_end_date' => '2021-06-12',
+                'promotion_start_date' => '11/06/2021',
+                'promotion_end_date' => '12/06/2021',
                 'description' => 'Weekend promotion for girls clothes',
             ],
 
             [
                 'name_of_promotion' => 'Promotion for boys products',
                 'size_of_promotion' => '40',
-                'promotion_start_date' => '2021-06-11',
-                'promotion_end_date' => '2021-06-12',
+                'promotion_start_date' => '11/08/2021',
+                'promotion_end_date' => '21/08/2021',
                 'description' => 'Weekend promotion for boys clothes',
             ],    
 

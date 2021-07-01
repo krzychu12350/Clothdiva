@@ -540,40 +540,64 @@ $( ".add-promotion" ).on( "click", function() {
     .prepend($('<tr>')
       .attr('class', 'tr-shadow')
         .prepend($(
-          '<td> <input form="addp" type="text" name="promotion-name"></input></td> <td><input type="number" min=2 max=99 form="addp"  name="size-of-promotion"></input></td> <td><input type="text" form="addp" name="description"></input></td>  <td><input type="date" id="tbDate" min="01/01/1997" max="31/12/2050" form="addp" name="start-of-promotion"></input></td> <td><input type="date" form="addp" name="end-of-promotion"></input></td>'
+          '<td> <textarea form="addp" type="text" name="promotion-name"></textarea></td> <td><input type="number" min=2 max=99 form="addp"  name="size-of-promotion"></input></td> <td><textarea type="text" form="addp" name="description"></textarea></td>  <td><input type="date" id="tbDate" min="01/01/1997" max="31/12/2050" form="addp" name="start-of-promotion"></input></td> <td><input type="date" form="addp" name="end-of-promotion"></input></td>'
           +'<td>'
-          +'<div class="rs-select2--trans rs-select2--sm">'
-          +'<select class="js-select2" form="addp"  id="category-product" name="category-product">'
-          +'<option selected="selected" value="1">Women</option>'
-          +'<option value="2">Men</option>'
-          +'<option value="3">Girls</option>'
-          +'<option value="4">Boys</option>'
+          +'<select name="product-cat-and-subcat" id="product-cat-and-subcat" form="addp">'
           +'</select>'
-          +'<div class="dropDownSelect2"></div>'
-          +'</div>'
           +'</td>' 
-          +'<td><input type="text" form="addp" name="subcategory-product"></input></td>'
           +'<td> <div class="table-data-feature"><button type="submit" form="addp" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
         )
     );
-    $('input[id$=tbDate]').datepicker({
-      dateFormat: 'dd/mm/yy'
-    });
+
+    var i = 1;
+    $.each(subcat, function() {
+     $("#product-cat-and-subcat").append($(
+         '<option value="'+i+'">'+this+'</option>'
+       )
+       );
+       i++;
+   })
+
+
+
 });
 } catch (error) {
   console.log(error);
 }
 
-$(".edit-promotion").on( "click", function() {
-  //alert("Działa edycja!");
-  var selRow = String($(this).closest('tr').attr('id'));
-  //alert(selRow);
-  var textOfTd = $("#id-p").text();
- // alert(textOfTd);
-  $('#promotion-table #' + selRow).find('td').empty();
-  $('#promotion-table').find('tr#' + selRow)
-  .replaceWith($( '<td>  <input form="editp" type="hidden" value=' + textOfTd + ' name="id-promotion"><input form="editp" type="text" name="promotion-name"></input></td> <td><input type="text" form="editp"  name="size-of-promotion"></input></td> <td><input type="date" form="editp" name="description"></input></td>  <td><input type="date" form="editp" name="start-of-promotion"></input></td> <td><input type="text" form="editp" name="end-of-promotion"></input></td> <td><input type="text" form="editp" name="category-product"></input></td>   <td><input type="text" form="editp" name="subcategory-product"></input></td>      <td> <div class="table-data-feature"><button type="submit" form="editp" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
-});
+try {
+  $( ".edit-promotion" ).on( "click", function() {
+     var currentRow=$(this).closest("tr"); 
+     var id_promotion=currentRow.find("td:eq(0)").text();
+  
+      $("#promotion-table").find('tbody')
+      .prepend($('<tr>')
+        .attr('class', 'tr-shadow')
+          .prepend($(
+            '<td> <input type="hidden" value="'+id_promotion+'" name="promotion-id" form="editp"></input> <textarea form="editp" type="text" name="promotion-name"></textarea></td> <td><input type="number" min=2 max=99 form="editp"  name="size-of-promotion"></input></td> <td><textarea type="text" form="editp" name="description"></textarea></td>  <td><input type="date" id="tbDate" min="01/01/1997" max="31/12/2050" form="editp" name="start-of-promotion"></input></td> <td><input type="date" form="editp" name="end-of-promotion"></input></td>'
+            +'<td>'
+            +'<select name="product-cat-and-subcat" id="product-cat-and-subcat" form="editp">'
+            +'</select>'
+            +'</td>' 
+            +'<td> <div class="table-data-feature"><button type="submit" form="editp" class="item"><i class="zmdi zmdi-collection-add"></i></div></td>')
+          )
+      );
+  
+      var i = 1;
+      $.each(subcat, function() {
+       $("#product-cat-and-subcat").append($(
+           '<option value="'+i+'">'+this+'</option>'
+         )
+         );
+         i++;
+     })
+  
+  
+  
+  });
+  } catch (error) {
+    console.log(error);
+  }
 
 
 /*
@@ -682,7 +706,6 @@ $( ".edit-subcategory").on( "click", function() {
   });*/
 
 $( ".add-product" ).on( "click", function() {
-  //alert(subcat[0]);
     $("#products-table").find('tbody').prepend($('<tr>').prepend($(
           '<td> <textarea form="addprod" type="text" name="product-name"></textarea></td> '
           +'<td> <input form="addprod" type="number" min=1 name="product-quantity"></input></td> <td>'
@@ -709,39 +732,70 @@ $( ".add-product" ).on( "click", function() {
         )
     );
 
-    
-      /*
-      $.map(subcat, function( val, i ) {
-       
-        return i.val;
-        });
-      })*/
-     // '<h1>'+subcat[0]+'</h1>'
-    
      var i = 1;
      $.each(subcat, function() {
-      //alert('this is ' + this);
-
       $("#product-cat-and-subcat").append($(
-          //'<h1>'+this+'</h1>'
           '<option value="'+i+'">'+this+'</option>'
         )
         );
-        
         i++;
     })
-
-    
-      
-
-/*
-  '<select name="product-subcat-and-cat" id="product-subcat-and-cat" form="addprod">'
-      +'<option value="1">'+subcat[0]+'</option>'
-     +'<option value="2">Skirts</option>'
-     +'</select>'
-     */
-  
 });
+
+$( ".edit-product" ).on( "click", function() {
+  var currentRow=$(this).closest("tr"); 
+  var id_product = currentRow.find("td:eq(0)").text();
+  var pre_name = currentRow.find("td:eq(1)").text();
+ 
+  var pre_quantity = currentRow.find("td:eq(2)").text();
+  var pre_prize = currentRow.find("td:eq(4)").text();
+  var pre_color = currentRow.find("td:eq(5)").text();
+  var pre_size = currentRow.find("td:eq(6)").text();
+  var pre_desc = currentRow.find("td:eq(7)").text();
+  var pre_comp = currentRow.find("td:eq(8)").text();
+  var pre_cat = currentRow.find("td:eq(9)").text();
+
+  $("#products-table").find('tbody').prepend($('<tr>').prepend($(
+        '<td> <input type="hidden" value="'+id_product+'" name="product-id" form="editprod"></input><textarea form="editprod" type="text" name="product-name">'+pre_name+'</textarea></td> '
+        +'<td> <input form="editprod" type="number" value="'+pre_quantity+'" min=1 name="product-quantity"></input></td> <td>'
+        +'<input type="file" id="add-products-images" form="editprod" name="images[]" multiple class="form-control" accept="image/*">'
+        +'</td>'
+        +'<td><textarea type="text" form="editprod"  name="product-prize">'+pre_prize+'</textarea></td> <td><textarea type="text" form="editprod"  name="product-color">'+pre_color+'</textarea></td>' 
+        +'<td>'
+        +'<select name="product-size" id="product-size" form="editprod">'
+        +'<option value="XS">XS</option>'
+        +'<option value="S">S</option>'
+        +'<option value="M">M</option>'
+        +'<option value="L">L</option>'
+        +'<option value="XL">XL</option>'
+        +'</select>'
+        +'</td>'
+        +'<td><textarea type="text" form="editprod" name="product-desc">'+pre_desc+'</textarea></td>'
+        +'<td><textarea type="text" form="editprod" name="product-comp">'+pre_comp+'</textarea></td>'
+        +'<td id="cat-and-subcat">'
+        +'<select name="product-cat-and-subcat" id="product-cat-and-subcat" form="editprod">'
+        +'</select>'
+        +'</td>'
+        +'<td> <div class="table-data-feature"><button type="submit" form="editprod" class="item"><i class="zmdi zmdi-check"></i></div></td>'
+        )
+      )
+  );
+
+  $('#product-size option[value='+pre_size+']').attr('selected','selected');
+
+  var i = 1;
+   $.each(subcat, function() {
+    $("#product-cat-and-subcat").append($(
+        '<option value="'+i+'">'+this+'</option>'
+      )
+      );
+      i++;
+  })
+  
+  $('select option:contains("'+pre_cat+'")').attr('selected', true);
+
+});
+
 
 $(document).ready(function() {
   $(".btn-success").click(function(){ 
@@ -753,7 +807,7 @@ $(document).ready(function() {
   });
 
 });
-
+/*
 $( ".edit-product").on( "click", function() {
   var selRow = String($(this).closest('tr').attr('id'));
   //alert(selRow);
@@ -763,23 +817,7 @@ $( ".edit-product").on( "click", function() {
   .replaceWith($('<td> <input form="editprod" type="text" name="product-name"></input></td> <td><input type="text" form="editprod"  name="product-image"></input></td> <td><input type="text" form="editprod"  name="product-prize"></input></td> <td><input type="text" form="editprod"  name="product-color"></input></td> <td><input type="text" form="editprod"  name="product-size"></input></td> <td><input type="text" form="editprod"  name="product-desc"></input></td> <td><input type="text" form="editprod"  name="id_subcat"></input></td>  <td> <div class="table-data-feature"><button type="submit" form="editprod" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
   
 });
-
-//ORDERS ADDING AND EDITING
-/*
-$( ".edit-order").on( "click", function() {
-  var selRow = String($(this).closest('tr').attr('id'));
-  alert(selRow);
-  var textOfTd = $("#id-o").text();
-  $('#products-table #' + selRow).find('td').empty();
-  $('#products-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editprod" type="text" name="product-name"></input></td> <td><input type="text" form="editprod"  name="product-image"></input></td> <td><input type="text" form="editprod"  name="product-prize"></input></td> <td><input type="text" form="editprod"  name="product-color"></input></td> <td><input type="text" form="editprod"  name="product-size"></input></td> <td><input type="text" form="editprod"  name="product-desc"></input></td> </form>  <td> <div class="table-data-feature"><button type="submit" form="editprod" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
-  
-});
-
-$( ".order-update").on( "click", function() {
-  alert($('#selectOption').find(":selected").text());
-});*/
-
+*/
 
 $( ".add-slidee" ).on( "click", function() {
   $("#banner-table").find('tbody')

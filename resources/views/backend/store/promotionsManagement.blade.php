@@ -19,7 +19,9 @@
                                   
                                     <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-promotion">
                                                 <i class="zmdi zmdi-plus"></i>add promotion</button>
-
+                                        <script>
+                                           var subcat = <?php echo json_encode($combined); ?>;
+                                        </script>
                                         <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -40,13 +42,11 @@
                                             <tr>
                                                 <th class="d-none"></th>
                                                 <th>promotion name</th>
-                                                <th>size of promotion</th>
+                                                <th>size of promotion<br />(in percents)</th>
                                                 <th>description</th>
                                                 <th>start of promotion</th>
                                                 <th>end of promotion</th>
-                                                 <!-- <th>number product</th>-->
                                                 <th>category</th>
-                                                <th>subcategory</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -60,8 +60,7 @@
                                                 <td class="desc">{{$singlerow->promotion_start_date}}</td>
                                                 <td>{{$singlerow->promotion_end_date}}</td>
                                                 <!--<td>{{$singlerow->id_product}}</td>-->
-                                                <td>{{$singlerow->name_of_category}}</td>
-                                                <td>{{$singlerow->name_of_subcategory}}</td>
+                                                <td>{{$singlerow->name_of_category}} {{$singlerow->name_of_subcategory}}</td>
                                                 <td>
                                                     <div class="table-data-feature">
                                                        
