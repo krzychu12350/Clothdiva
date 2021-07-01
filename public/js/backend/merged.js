@@ -652,6 +652,7 @@ $( ".add-subcategory" ).on( "click", function() {
     .prepend($('<tr>')
         .prepend($(
           '<td><input form="addsc" type="text" name="subcategory-name"></input></td>'
+         +'<td><input type="file" id="sc-image" name="sc-image" form="addsc" style="width: 300px !important;"></input></td>'
          +'<td>'
          +'<div class="rs-select2--trans rs-select2--sm">'
          +'<select class="js-select2" form="addsc"  id="category-name" name="category-name">'
@@ -673,11 +674,15 @@ $( ".edit-subcategory").on( "click", function() {
   var selRow = String($(this).closest('tr').attr('id'));
   var currentRow=$(this).closest("tr"); 
   var id_subcat = currentRow.find("td:eq(0)").text();
-  var pre = currentRow.find("td:eq(1)").text();
+  var pre = currentRow.find("#pre-subcat").text();
+  var pre_name = currentRow.find("#pre-subcat-name").text();
+
 
   $('#subcategories-table #' + selRow).find('td').empty();
   $('#subcategories-table').find('tr#' + selRow)
-  .replaceWith($('<td> <input form="editsc" type="hidden" value=' + id_subcat + ' name="id-subcat"></input> <input form="editsc" type="text" value=' + pre + ' name="subcategory-name"></input></td>'
+  .replaceWith($('<td> <input form="editsc" type="hidden" value=' + id_subcat + ' name="id-subcat"></input>' 
+        +'<input form="editsc" type="text" value="'+pre+'" name="subcategory-name"></input></td>'
+        +'<td><input type="file" id="sc-image" name="sc-image" form="editsc" style="width: 300px !important;"></input></td>'
          +'<td>'
          +'<div class="rs-select2--trans rs-select2--sm">'
          +'<select class="js-select2" form="editsc"  id="category-name" name="category-name">'
@@ -690,7 +695,9 @@ $( ".edit-subcategory").on( "click", function() {
          +'</div>'
          +'</td>'
           +'<td> <div class="table-data-feature"><button type="submit" form="editsc" class="item"><i class="zmdi zmdi-check"></i></div></td>'));
-  
+
+  $('select option:contains("'+pre_name+'")').attr('selected', true);
+
 });
 
 //PRODUCTS ADDING AND EDITING
@@ -740,6 +747,7 @@ $( ".add-product" ).on( "click", function() {
         );
         i++;
     })
+
 });
 
 $( ".edit-product" ).on( "click", function() {

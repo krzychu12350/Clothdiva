@@ -20,18 +20,47 @@ class subcategoriesManagementController extends Controller
     }
     public function create(Request $request)
     {
-        //dd($request->all());
+       // dd($request->all());
+
         $subcat_name = $request->input('subcategory-name');
         $cat_name = $request->input('category-name');
-        //$id_subcat = $request->input('id_subcat');
+     
+        $file = $request->file('sc-image');
+        $file2 = $request->file('sc-image')->getClientOriginalName();
+        $filename = pathinfo($file2, PATHINFO_FILENAME);
+        $extension = pathinfo($file2, PATHINFO_EXTENSION);
+        $newImageName = time(). '-' . $filename . '.' . $extension;
+
+        //dd($newImageName);
+
+        if($cat_name == 1){
+            $subpath = 'images/subcategories/women/';
+        }
+        if($cat_name == 2){
+            $subpath = 'images/subcategories/men/';
+            
+        }
+        if($cat_name == 3){
+            $subpath = 'images/subcategories/girls/';
+        }
+        if($cat_name == 4){
+            $subpath = 'images/subcategories/boys/';
+        }
+
+        $file->move(public_path($subpath), $newImageName);
+
+        $path = $subpath.$newImageName;
+
+       // dd($path);
         $procedureName = 'subcategories_CRUD.add_subcategory';
-         
-         $bindings = [
+
+        $bindings = [
              'subc_name'  =>  $subcat_name,
+             'subc_image'  =>  $path,
              'id_cat'  => $cat_name,
          ];
              
-         $result = DB::executeProcedure($procedureName, $bindings);
+         DB::executeProcedure($procedureName, $bindings);
          
          return redirect()->back()->with('status', 'Subcategory has been added!');
     }
@@ -39,16 +68,42 @@ class subcategoriesManagementController extends Controller
     public function update(Request $request)
     {
        // dd($request->all());
+      
+       $subcat_name = $request->input('subcategory-name');
+       $cat_name = $request->input('category-name');
+       $id_subcat =  $request->input('id-subcat');
+    
+       $file = $request->file('sc-image');
+       $file2 = $request->file('sc-image')->getClientOriginalName();
+       $filename = pathinfo($file2, PATHINFO_FILENAME);
+       $extension = pathinfo($file2, PATHINFO_EXTENSION);
+       $newImageName = time(). '-' . $filename . '.' . $extension;
 
-        $subcat_name = $request->input('subcategory-name');
-        $cat_name = $request->input('category-name');
-        $id_subcat =  $request->input('id-subcat');
+        if($cat_name == 1){
+            $subpath = 'images/subcategories/women/';
+        }
+        if($cat_name == 2){
+            $subpath = 'images/subcategories/men/';
+            
+        }
+        if($cat_name == 3){
+            $subpath = 'images/subcategories/girls/';
+        }
+        if($cat_name == 4){
+            $subpath = 'images/subcategories/boys/';
+        }
+    
+        $file->move(public_path($subpath), $newImageName);
+
+        $path = $subpath.$newImageName;
+
 
         $procedureName = 'subcategories_CRUD.edit_subcategory';
          
         $bindings = [
 
              'subcategory_name'  => $subcat_name,
+             'subc_image'  =>  $path,
              'category_name'  => $cat_name,
              'idcat' => $id_subcat,
          ];

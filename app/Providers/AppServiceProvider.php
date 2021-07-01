@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
         $products_selection = DB::select("select products_selection() as products_selection from products FETCH FIRST 1 ROWS ONLY");
         $promotions_management =  DB::select("select promotion_CRUD.red_promotions() as promotions_management from products FETCH FIRST 1 ROWS ONLY");
      
+   
         view()->share('sub_categories_women',$sub_categories_women);
         view()->share('sub_categories_men',$sub_categories_men);
         view()->share('sub_categories_girls',$sub_categories_girls);

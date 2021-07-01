@@ -17,6 +17,7 @@ class CreateSubCategoriesTable extends Migration
             $table->id('id_sub_category');
             $table->string('name_of_subcategory', 100);
             //$table->binary('photo');
+            $table->string('image_of_subcategory');
             $table->foreignId('id_category');
             $table->foreign('id_category')
             ->references('id_category')->on('categories')

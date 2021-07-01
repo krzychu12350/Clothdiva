@@ -20,14 +20,14 @@
                                         </div>
                                        
                                                <button class="au-btn au-btn-icon au-btn--green au-btn--small float-right add-subcategory">
-                                                <i class="zmdi zmdi-plus"></i>add subcategories</button>
+                                                <i class="zmdi zmdi-plus"></i>add subcategory</button>
                                     </div>
                                     <div class="table-responsive table-data">
 
-                                    <form method="POST" action="{{ route('admin.store.subcategories.create')}}" id="addsc">
+                                    <form method="POST" action="{{ route('admin.store.subcategories.create')}}" id="addsc" enctype="multipart/form-data">
                                     @csrf
                                     </form>
-                                    <form method="POST" action="{{ route('admin.store.subcategories.update')}}" id="editsc">
+                                    <form method="POST" action="{{ route('admin.store.subcategories.update')}}" id="editsc" enctype="multipart/form-data">
                                         @csrf
                                     </form>
 
@@ -36,6 +36,7 @@
                                                 <tr>
                                                     <td class="d-none">id subcategory</td>
                                                     <td>Subcategory</td> 
+                                                    <td>Subcategory image</td>
                                                     <td>Category</td>
                                                     <td></td>
                                                 </tr>
@@ -57,28 +58,16 @@
                                             
                                                     <td>
                                                         <div class="table-data__info">
-                                                      
                                                             <h6 id="pre-subcat">{{$singlerow->name_of_subcategory}}</h6>
-                                                         
-                                                          
                                                         </div>
                                                     </td>
-                                        
+                                                    <td style="width: 400px !important">
+                                                        <img src="{{$singlerow->image_of_subcategory}}" class="w-50">
+
+                                                    </td>
                                                     <td>
-                                                        <div class="rs-select2--trans rs-select2--sm">
-                                                            <select class="js-select2" name="property">
-                                                                <option selected="selected">{{$singlerow->name_of_category}}</option>
-                                                                @foreach($all_categories as $category)
-                                                             
-                                                                @if($category->name_of_category !== $singlerow->name_of_category)
-                                                                <option value="">
-                                                                    {{$category->name_of_category}}
-                                                                </option>
-                                                                @endif
-                                                         
-                                                                @endforeach    
-                                                            </select>
-                                                            <div class="dropDownSelect2"></div>
+                                                        <div class="table-data__info">
+                                                                <h6 id="pre-subcat-name" selected="selected">{{$singlerow->name_of_category}}</h6>
                                                         </div>
                                                     </td>
                                                     <td>
