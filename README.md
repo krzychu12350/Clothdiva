@@ -375,12 +375,22 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 <img src="documentation\images\php-logo.jpg" width="100" height="100">
 <br/>
 2.  Laravel Framework 8.37.0 <br/>
-3.	Javascript(JQuery) <br/>
-4.	HTML5 <br/>
-5.	CSS3 <br/>
-6.	Bootstrap4 <br/>
-7.	PL/SQL <br/>
+<img src="documentation\images\laravel-logo.jpg" width="100" height="100">
 
+3.	Javascript(JQuery) <br/>
+<img src="documentation\images\jquery-logo.jpg" width="100" height="100">
+
+4.	HTML5 <br/>
+<img src="documentation\images\html5-logo.jpg" width="100" height="100">
+
+5.	CSS3 <br/>
+<img src="documentation\images\css3-logo.jpg" width="100" height="100">
+
+6.	Bootstrap4 <br/>
+<img src="documentation\images\bootstrap-logo.jpg" width="100" height="100">
+
+7.	PL/SQL <br/>
+<img src="documentation\images\plsql-logo.jpg" width="100" height="100">
 <br/>
 
 # Opis wymagań aplikacyjnych 
@@ -390,7 +400,7 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 3.	instantclient_19_10
 4.	PHP w wersji minimum 7.3.27
 5.	NPM w wersji minimum 6.14.12
-
+ 
 <br><br>
 
 #  Proces uruchomienia aplikacji
