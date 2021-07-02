@@ -8,7 +8,7 @@
 
 ## Specyfikacja projektu
 
-## Cel projektu: Stworzenie platformy umożliwiające dokonywanie zakupów online. 
+## Cel projektu: Stworzenie platformy umożliwiającej dokonywanie zakupów online. 
 <br/>
 
 Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  Strona internetowa posiada elementy dynamiczne oparte o system CMS, służący do zarządzania treścią witryny. Dzięki temu administratorzy posiadają pełną kontrolę nad asortymentem sklepu poprzez możliwość dodawania, usuwania oraz modyfikacji między innymi produktów, promocji, zarejestrowanych użytkowników i zawartości bannera. Natomiast użytkownicy będą mieli kontrolę nad swoimi zakupami. Mają oni możliwość dodawania oraz usuwania produktów do ulubionych oraz dodawania, modyfikowania i usuwania zawartości koszyka. Aplikacja pobiera wszystkie produkty wybrane przez klienta, oblicza stan koszyka i po złożeniu zamówienia eksportuje wszystko do bazy danych. Wszystko to odbywa się po stronie serwera. Strona internetowa zawiera takie elementy jak krótki opis sklepu, stronę główną sklepu, stronę produktów, które zostały podzielone na różne kategorie i podkategorie oraz stronę kontaktową dzięki której, użytkownicy mogą zadawać pytania, zgłaszać problemy i komunikować się z administratorami sklepu. W szablonie jest dostępnych 48 produktów, wraz z informacjami takimi jak cena, rozmiar oraz kolor produktu, opis wraz z składem i konserwacją produktu oraz ilość danego produktu.  Aplikacja głównie służy do symulowania sklepu internetowego. <br/><br/>
@@ -24,23 +24,26 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 ### ADMINISTRATOR:
 <br/>
                                       
-•	Role i uprawnienia administratora. <br/>
-•	Zarządzanie produktami na sklepie. (możliwość dodawania, usuwania oraz edycji)<br/>
-•	Zarządzanie banerami. (możliwość dodawania oraz usuwania).<br/>
-•	Zarządzanie zamówieniami (możliwość edycji oraz usuwania).<br/>
-•	Zarządzenia kategoriami (możliwość dodawania oraz usuwania).<br/>
-•	Zarządzanie użytkownikami(możliwość edycji oraz usuwania).<br/>
-•	Zarządzanie promocjami(możliwość dodawania i usuwania).
+•	Statystyki dotyczące zarejestrowanych użytkowników, liczby produktów w sklepie, złożonych zamówień, a także zarobków sklepu na przestrzeni kolejnych miesięcy<br/>
+•	Zarządzanie promocjami dla poszczególnych kategorii produktów <br/>
+•	Zarządzanie produktami<br/>
+•	Zarządzanie zamówieniami (możliwość edycji statusu zamówienia oraz usuwania)<br/>
+•	Zarządzenia kategoriami produktów <br/>
+•	Zarządzanie zamówieniami<br/>
+•	Zarządzanie użytkownikami<br/>
+•	Zarządzanie sliderem na stronie głównej sklepu
 
 ### UŻYTKOWNIK:
 <br/>
 
 •	System logowania i rejestracji użytkowników (klientów).<br/>
-•	Koszyk klienta.<br/>
+•	Koszyk klienta<br/>
 •	Składanie wirtualnych zamówień.<br/>
-•	Dodawanie produktów do ulubionych.<br/>
+•	Dodawanie oraz usuwanie ulubionych produktów klienta<br/>
 •	Możliwość komunikacji użytkownika z administratorem poprzez formularz kontaktowy<br/>
-•	Filtrowanie produktów ze względu na cenę, rozmiar, kolor.
+•	Filtrowanie produktów ze względu na cenę, rozmiar, kolor<br/>
+•	Wyszukiwarka produktów<br/>
+•	Panel klienta pozwalający na edycję danych konta oraz danych adresowych, a także pozwalający nad podgląd złożonych zamówień<br/>
 
 <br/>
 
@@ -360,9 +363,9 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 
 ## Skrypt do utworzenia struktury bazy danych
 
-#### Naciśnij pobierz, aby pobrać skrypt do utworzenia bazy danych
+#### Naciśnij link, aby przejść do skryptu pozwalającego na utworzenia bazy danych
 
-<a download="documentation\clothdiva2.sql" >Pobierz</a>
+<a href="documentation\clothdiva2.sql" >Link</a>
 
 # Plik konfiguracyjny do połączenia z bazą danych<br/>oraz połączenia aplikacji z skrzynką pocztową
 
@@ -407,56 +410,61 @@ Aby połączyć aplikację z API Instagrama wystarczy wygenerować token dostęp
 
 # Opis wymagań aplikacyjnych 
 
-1.	Baza danych Oracle (najlepiej 19.3 wersja)
-2.	Composer
-3.	instantclient_19_10
-4.	PHP w wersji minimum 7.3.27
-5.	NPM w wersji minimum 6.14.12
+1.	PHP w wersji minimum 7.3.27
+2.	Composer w wersji minimum 2.0.12
+3.	Rozszerzenie OCI8 pozwalające na połączenie PHP z bazą danych Oracle
+4.	Baza danych Oracle (najlepiej w wersko 19.3 Enterprise Edition)
+5.	Oracle Instant Client w wersji minimum 19.10
+6.	NPM w wersji minimum 6.14.12
  
 <br><br>
 
 #  Proces uruchomienia aplikacji
 
-INSTALACJA OPROGRAMOWANIA
-LARAVEL + ORACLE + COMPOSER
-
-1.	Krok pierwszy to pobranie i zainstalowanie XAMPP’A 
-https://www.apachefriends.org/pl/download.html
-2.	Krok  drugi to pobranie i zainstalowanie Composera https://getcomposer.org
-W trakcie instalacji w miejscu wybrania lokalizacji pliku trzeba wybrać lokalizacje pliku php.exe. Zazwyczaj jest on w lokalizacji XAMPP/php/php.exe
+1.	Zainstalować program/pakiet zawierający interpreter PHP np. XAMPP
+https://www.apachefriends.org/pl/download.html<br/>
+2.  Pobrać rozszerzenia OCI8 dla wersji 7.3.27 PHP i wkleić go do katalogu \php\ext w przypadku pakietu XAMPP<br/>
+https://pecl.php.net/package/oci8<br/>
+3.  Pobrać i zainstalować Composer dla wspomnianej we wcześniejszym kroku wersji PHP https://getcomposer.org<br/>
+W trakcie instalacji w miejscu wybrania lokalizacji pliku trzeba wybrać lokalizacje pliku php.exe. Zazwyczaj jest on w lokalizacji XAMPP\php\php.exe
 <br><br> Jeśli instalacja przebiegła pomyślnie, w terminalu po wpisaniu Composer powinien pojawić się komunikat taki jak poniżej:
 
 <p align="center"><img src="documentation\images\IN.jpg" width="400"></p>
 
-3. Krok trzeci to pobranie bazy Oracle w wersji 19.3 https://www.oracle.com/pl/database/technologies/oracle19c-windows-downloads.html
+4. Pobrać i zainstalować wersję bazy danych Oracle w wersji minimum 19.3 <br/>https://www.oracle.com/pl/database/technologies/oracle19c-windows-downloads.html
 
-<br><br>
+5. Pobrać i zainstalować Oracle Instant Client w wersji minimum 19.10 <br>https://www.oracle.com/pl/database/technologies/instant-client/downloads.html
 
-### NODE.JS(NPM)
+5. Pobrać i zainstalować Node.js(NPM)<br/>
+https://nodejs.org/en/download/<br/>
 
-1.	Pobrać i zainstalować  npm
-2.	Aby sprawdzić czy instalacja przebiegła pomyślnie trzeba wpisać w terminalu poniższą komendę:
-npm – v <br>
-W wyniku powinny pojawić się takie informacje:
+    Aby sprawdzić czy instalacja przebiegła pomyślnie należy wpisać w terminalu następującą komendę:
+<br>npm – v. 
+Jako rezulat komendy powinna zostać w wyświetlona w terminalu wersja NPM minimum 6.14.12:
 
-<p align="center"><img src="documentation\images\NPM.jpg" width="400"></p>
+<p align="center"><img src="documentation\images\NPM.jpg" width="800"></p>
 
+6.	Uruchomić Oracle Database Configuration Assistant i utworzyć nową instancję bazy danych o nazwie 'clothdiva2' oraz haśle administracyjnym na przykład 'Password123'
 
-<br><br>
+7.	Zaimportować bazę danych z pliku 'clothdiva2.sql' znajdującego się w katalogu 'documentation' przy wykorzystaniu np. środowiska Oracle SQL Develeloper<br/>
+https://www.oracle.com/tools/downloads/sqldev-downloads.html
 
-1.	Uruchomić Oracle
-2.	Utworzyć nową bazę danych o nazwie Clothdiva
-3.	Zaimportować do niej bazę
-4.	Przejść do głównego folderu Clothdiva i wpisać w terminalu następujące komendy:
-composer install
-php artistan storage: link
-npm install
-npm start
-php artisan serve
-5.	W przeglądarkę wpisać localhost:8000.
-6.	Jeśli chcesz się zalogować jako administrator wpisz w formularzu logowania Email/Password: admin@gmail.com/Password123, natomiast jeśli chcesz się zalogować jako standardowy użytkownik wpisz w formularzu logowania Email/Password: user@gmail.com/User123
+8.	Sklonować repozytorium 
 
+9.	Skopiowwać plik '.env.example' i zmienić jego nazwy na '.env' oraz odpowiednio skonfigurować tak, aby aplikacja miała możliwość łaczyć się z bazą danych bazą danych oraz skrzynką pocztową.<br/>
+
+10.	Przejść do głównego katalogu aplikacji i wpisać w terminalu następujące komendy:
 <br/>
+•	composer install<br/>
+•	php artisan key:generate<br/>
+•	php artistan storage: link<br/>
+•	npm install<br/>
+•	npm start<br/>
+•	php artisan serve<br/>
+
+11.	W przeglądarkę interenowej wpisać http://127.0.0.1:8000.<br/>
+
+12.	Aby zalogować się jako administrator należy zalogować się przy pomocy następujących danych logowania email/hasło: admin@gmail.com/Password123, natomiast, aby zalogować jako standardowy użytkownik należy wpisać do formularza nastepujące dane logowania email/hasło: user@gmail.com/User123 albo stworzyć nowe konto przy pomocy formularza rejestracji<br/>
 
 # Potrzebne nazwy użytkowników do uruchomienia aplikacji
 
