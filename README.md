@@ -442,7 +442,7 @@ https://nodejs.org/en/download/<br/>
 <br>npm – v. 
 Jako rezulat komendy powinna zostać w wyświetlona w terminalu wersja NPM minimum 6.14.12:
 
-<p align="center"><img src="documentation\images\NPM.jpg" width="800"></p>
+<p align="center"><img src="documentation\images\npm.jpg" width="800"></p>
 
 6.	Uruchomić Oracle Database Configuration Assistant i utworzyć nową instancję bazy danych o nazwie 'clothdiva2' oraz haśle administracyjnym na przykład 'Password123'
 
