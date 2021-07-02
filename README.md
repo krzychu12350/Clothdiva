@@ -362,7 +362,7 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 
 #### Naciśnij pobierz, aby pobrać skrypt do utworzenia bazy danych
 
-<a href="documentation\clothdiva2.sql" download>Pobierz</a>
+<a download="documentation\clothdiva2.sql" >Pobierz</a>
 
 # Plik konfiguracyjny do połączenia z bazą danych<br/>oraz połączenia aplikacji z skrzynką pocztową
 
