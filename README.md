@@ -368,7 +368,7 @@ Encja przechowująca informacje na temat ulubionych produktów przez użytkownik
 
 Do poprawnego działania aplikacji należy skopiować plik '.env.example'(widoczny na poniższym zrzucie ekranu) i zmienić jego nazwę na '.env' oraz skonfigurować odpowiednie opcję pozwalające na połaczenie z bazą danych oraz skrzynką pocztową.
 <br/>
-<img src="documentation\images\plik-konfiguracyjny.jpg">
+<img src="documentation\images\plik-konfiguracyjny.jpg" download>
 
 
 # Konfiguracja połączenia z API Instagrama
