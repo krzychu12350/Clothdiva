@@ -454,7 +454,6 @@ https://www.oracle.com/tools/downloads/sqldev-downloads.html
 9.	Skopiowwać plik '.env.example' i zmienić jego nazwy na '.env' oraz odpowiednio skonfigurować tak, aby aplikacja miała możliwość łaczyć się z bazą danych bazą danych oraz skrzynką pocztową.<br/>
 
 10.	Przejść do głównego katalogu aplikacji i wpisać w terminalu następujące komendy:
-<br/>
 •	composer install<br/>
 •	php artisan key:generate<br/>
 •	php artistan storage: link<br/>
