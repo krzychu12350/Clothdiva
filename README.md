@@ -1,17 +1,18 @@
-<p align="center"><img src="public\img\logo.png" width="400" height="100"></p>
 
-# Projekt zaliczeniowy z przedmiotu: Aplikacje internetowe
+# Clothdiva
 
-# Temat projektu: Internetowy sklep odzieżowy Clothdiva
-
-## Skład grupy: Krzysztof Karaś, Patrycja Gaweł
-
-## Specyfikacja projektu
-
-## Cel projektu: Stworzenie platformy umożliwiającej dokonywanie zakupów online. 
-<br/>
+## Table of contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Setup](#setup)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+<br>
 
 Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  Strona internetowa posiada elementy dynamiczne oparte o system CMS, służący do zarządzania treścią witryny. Dzięki temu administratorzy posiadają pełną kontrolę nad asortymentem sklepu poprzez możliwość dodawania, usuwania oraz modyfikacji między innymi produktów, promocji, zarejestrowanych użytkowników i zawartości bannera. Natomiast użytkownicy będą mieli kontrolę nad swoimi zakupami. Mają oni możliwość dodawania oraz usuwania produktów do ulubionych oraz dodawania, modyfikowania i usuwania zawartości koszyka. Aplikacja pobiera wszystkie produkty wybrane przez klienta, oblicza stan koszyka i po złożeniu zamówienia eksportuje wszystko do bazy danych. Wszystko to odbywa się po stronie serwera. Strona internetowa zawiera takie elementy jak krótki opis sklepu, stronę główną sklepu, stronę produktów, które zostały podzielone na różne kategorie i podkategorie oraz stronę kontaktową dzięki której, użytkownicy mogą zadawać pytania, zgłaszać problemy i komunikować się z administratorami sklepu. W szablonie jest dostępnych 48 produktów, wraz z informacjami takimi jak cena, rozmiar oraz kolor produktu, opis wraz z składem i konserwacją produktu oraz ilość danego produktu.  Aplikacja głównie służy do symulowania sklepu internetowego. <br/><br/>
+
 
 ## Cele szczegółowe:
 
@@ -19,7 +20,31 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 2. Zarządzanie asortymentem sklepu przez administratorów.
 <br/> <br/>
 
-## Funkcjonalności
+## Technologies Used
+
+1.	PHP v7.3.27 <br/>
+<img src="documentation\images\php-logo.jpg" width="100" height="100">
+<br/>
+2.  Laravel Framework 8.37.0 <br/><br/>
+<img src="documentation\images\laravel-logo.jpg" width="100" height="100">
+
+3.	Javascript(JQuery) <br/>
+<img src="documentation\images\jquery-logo.jpg" width="300" height="100">
+
+4.	HTML5 <br/>
+<img src="documentation\images\html5-logo.jpg" width="100" height="100">
+
+5.	CSS3 <br/>
+<img src="documentation\images\css3-logo.jpg" width="100" height="100">
+
+6.	Bootstrap4 <br/>
+<img src="documentation\images\bootstrap-logo.jpg" width="100" height="100">
+
+7.	PL/SQL <br/>
+<img src="documentation\images\plsql-logo.jpg" width="100" height="100">
+<br/>
+
+## Features
 
 ### ADMINISTRATOR:
 <br/>
@@ -48,7 +73,7 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 <br/>
 
 
-## Interfejs serwisu
+## Screenshots
                                       # CZĘŚĆ PRZEZNACZONA DLA KLIENTA 
 
 
@@ -245,122 +270,6 @@ Aplikacja służy do procesów zewnętrznych czyli komunikacja oraz sprzedaż.  
 
 <br/>
 
-# Baza danych
-
-## Diagram ERD
-<br/>
-<p align="center"><img src="documentation\images\DIAGRAM ERD.jpg" width="800"></p>
-
-### Tabela roles <br/>
-Encja przechowująca role, które są przypisywane do użytkowników i jest połączona z encją Shop_users relacją jeden do wielu, ponieważ każdy użytkownik musi mieć przypisaną rolę użytkownika lub administratora. 
-
-•	id_role – identyfikator roli <br/>
-•	role_name –  kolumna przechowująca nazwe roli (użytkownik lub administrator <br/> 
-<br/>
-
-### Tabela users_shop
-Encja przechowująca informację na temat użytkowników czyli imię, login, hasło, e-mail. Jest połączona z encją Users_addresses relacją jeden do wielu.
-
-•	id_ushop – identyfikator użytkownika. <br/>
-•	name – kolumna przechowująca imię użytkownika. <br/>
-•	surname - kolumna przechowująca nazwisko użytkownika. <br/>
-•	mobile - kolumna przechowująca numer telefonu użytkownika. <br/>
-•	email - kolumna przechowująca e-mail użytkownika. <br/>
-•	login - kolumna przechowująca login użytkownika. <br/>
-•	password - kolumna przechowująca hasło użytkownika. <br/>
-•	id_role – klucz obcy, określający rolę danego użytkownika. <br/>
-•	id_user_address – klucz obcy, przypisuję dane adresowe użytkownikowi. <br/> <br/>
-
-### Tabela users_addresses
-Encja przechowująca dane adresowe użytkowników. Jest połączona z encją Shop_users, ponieważ każdy użytkownik musi mieć adres zamieszkania.
-
-•	id_user_address – identyfikator adresu użytkownika. <br/>
-•	name_of_city - kolumna przechowująca nazwę miasta. <br/>
-•	post_code - kolumna przechowująca  kod pocztowy. <br/>
-•	name_of_street - kolumna przechowująca nazwę ulicy. <br/>
-•	voideship - kolumna przechowująca nazwę województwa.  <br/>
-•	county - kolumna przechowująca nazwę powiatu. <br/>
-•	apartament_number - kolumna przechowująca numer mieszkania. <br/>
-•	house_number - kolumna przechowująca numer domu. <br/> <br/>
-
-### Tabela categories
-Encja przechowująca nazwy kategorii i jest połączona z encją Sub_categories relacją jeden do wielu. <br/>
-
-•	id_category – identyfikator kategorii. <br/>
-•	name_of_category – nazwa kategorii. <br/>
-<br/>
-
-### Tabela sub_categories <br/>
-Encja przechowująca nazwy podkategorii i jest połączona z encją Products relacją jeden do wielu.<br/>
-
-•	id_sub_category – identyfikator podkategorii.<br/>
-•	name_of_subcategory – kolumna przechowująca nazwę podkategorii.<br/>
-•	id_category – klucz obcy, przypisuję podkategorii daną kategorię. 
-
-### Tabela products <br/>
-Encja przechowująca informację na temat danego produktu (np. nazwa, ilość produktów, rozmiar, kolor oraz do jakiej podkategorii oraz kategorii należy. Jest połączona z encją images relacją jeden do wielu. <br/>
-
-•	id_product – identyfikator produktu. <br/>
-•	name – kolumna przechowująca nazwę produktu. <br/>
-•	quantity - kolumna przechowująca ilość produktu. <br/>
-•	prize - kolumna przechowująca cenę produktu. <br/>
-•	color - kolumna przechowująca kolor produktu. <br/>
-•	size_of_products - kolumna przechowująca rozmiar produktu. <br/>
-•	description - kolumna przechowująca opis produktu. <br/>
-•	composition_and_conservation - kolumna przechowująca skład i konserwację produktu. <br/>
-•	id_sub_category – klucz obcy, przypisuję produktowi daną podkategorię. <br/>
-•	id_promotion – klucz obcy, przypisuję produktowi daną promocję. <br/>
-•	id_order – klucz obcy, przypisuję produktowi dane zamówienie. <br/>
-
-### Tabela images 
-Encja przechowująca ścieżki do zdjęć, które będą przypisane do każdego produktu i wyświetlane na sklepie. <br/>
-
-•	id_image – identyfikator zdjęcia. <br/>
-•	image - kolumna przechowująca ścieżkę pliku. <br/>
-•	id_product – klucz obcy, przypisuję zdjęciom dany produkt. <br/><br/>
-
-### Tabela promotions 
-Encja przechowująca informację na temat promocji oraz rabatów, które będą występować na sklepie w określonym czasie. Jest połączona z encją products relacją jeden do wielu. <br/>
-
-•	id_promotion – identyfikator promocji. <br/>
-•	name_of_promotion - kolumna przechowująca nazwę promocji. <br/>
-•	size_of_promotion - kolumna przechowująca rozmiar promocji. <br/>
-•	promotion_start_date - kolumna przechowująca datę rozpoczęcia promocji. <br/>
-•	promotion_end_date – kolumna przechowująca datę zakończenia promocji. <br/>
-•	description - kolumna przechowująca opis promocji. <br/><br/>
-
-### Tabela orders 
-
-Encja ta jest jedną z główniejszych, ponieważ posiada informacja na temat złożonych zamówień. W tej encji znajdują się informacje na temat zamówionego produktu, na temat użytkownika który produkt zamówił.
-<br/><br/>
-•	id_order – identyfikator zamówienia.<br/>
-•	status - kolumna przechowująca status zamówienia.<br/>
-•	date_of_placing_order - kolumna przechowująca datę złożenia zamówienia.<br/>
-•	payment_method - kolumna przechowująca sposób płatności.<br/>
-•	order_value - kolumna przechowująca całkowitą wartość zamówienia.<br/>
-•	id_ushop – klucz obcy, przypisuję zamówieniom danego użytkownika.<br/>
-
-<br/>
-
-### Tabela Orders_Products
-
-Encja ta przechowuje informację na temat produktów znajdujących się w danym zamówieniu oraz ilość w jakiej zostały zamówione.
-<br/><br/>
-•	quantity – ilość produktu przypisanego do konkretnego zamówienia<br/>
-•	id_order – klucz obcy, przypisuję danemu zamówieniu.<br/>
-•	id_product – klucz obcy, przypisuję danemu produktowi.<br/>
-
-<br/>
-
-###  Tabela favourite_products 
-Encja przechowująca informacje na temat ulubionych produktów przez użytkowników. Każdy użytkownik ma możliwość zapisać na swoim koncie produkty, które mu się podobają. Tabela ta jest połączona z tabelą products oraz users_shop.
-<br/><br/>
-•	id_favourite_product – identyfikator ulubionego produktu.<br/>
-•	id_user – klucz obcy, przypisuję ulubionym produktom danego użytkownika.<br/>
-•	id_product – klucz obcy, przypisuję ulubionym produktom dany produkt.<br/>
-
-<br/> 
-
 ## Skrypt do utworzenia struktury bazy danych
 
 #### Naciśnij link, aby przejść do skryptu pozwalającego na utworzenia bazy danych
@@ -384,30 +293,6 @@ Aby połączyć aplikację z API Instagrama wystarczy wygenerować token dostęp
 <img src="documentation\images\instafeed.jpg">
 <br/>
 
-# Wykorzystane technologie
-
-1.	PHP v7.3.27 <br/>
-<img src="documentation\images\php-logo.jpg" width="100" height="100">
-<br/>
-2.  Laravel Framework 8.37.0 <br/><br/>
-<img src="documentation\images\laravel-logo.jpg" width="100" height="100">
-
-3.	Javascript(JQuery) <br/>
-<img src="documentation\images\jquery-logo.jpg" width="300" height="100">
-
-4.	HTML5 <br/>
-<img src="documentation\images\html5-logo.jpg" width="100" height="100">
-
-5.	CSS3 <br/>
-<img src="documentation\images\css3-logo.jpg" width="100" height="100">
-
-6.	Bootstrap4 <br/>
-<img src="documentation\images\bootstrap-logo.jpg" width="100" height="100">
-
-7.	PL/SQL <br/>
-<img src="documentation\images\plsql-logo.jpg" width="100" height="100">
-<br/>
-
 # Opis wymagań aplikacyjnych 
 
 1.	PHP w wersji minimum 7.3.27
@@ -419,7 +304,7 @@ Aby połączyć aplikację z API Instagrama wystarczy wygenerować token dostęp
  
 <br><br>
 
-#  Proces uruchomienia aplikacji
+## Setup
 
 1.	Zainstalować program/pakiet zawierający interpreter PHP np. XAMPP
 https://www.apachefriends.org/pl/download.html<br/>
@@ -486,6 +371,26 @@ Dostęp do bazy danych(Oracle)
 
 LOGIN: system <br>
 HASŁO: Password123
+
+## Project Status
+
+Project is in progress.
+
+## Room for Improvement
+
+Room for improvement:
+- Improvement to be done 1
+- Improvement to be done 2
+
+To do:
+- Feature to be added 1
+- Feature to be added 2
+
+
+
+
+
+
 
 
 
